@@ -1,3 +1,4 @@
+//The manager of the battle battling
 mainOptionsNames = [];
 
 global.borderWidth = 100;
