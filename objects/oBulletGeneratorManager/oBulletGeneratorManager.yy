@@ -9,8 +9,8 @@
   "name":"oBulletGeneratorManager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/Objects/Battle/Managers.yy",
+    "name":"Turn Based battle system",
+    "path":"Turn Based battle system.yyp",
   },
   "parentObjectId":null,
   "persistent":false,

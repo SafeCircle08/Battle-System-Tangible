@@ -25,6 +25,8 @@ createBaseFX = function() {
 	instance_create_layer(enchantedItemX + xAdder - 17, itemSpriteY - 18, LAYER_UNDER_EFFECT, oEnchBaseFX); 
 }
 
+itemNotPlaced = function() { return placedItem == undefined }
+
 removeBaseFX = function() {
 	if (instance_exists(oAlphaSinFX)) {
 		instance_destroy(oAlphaSinFX);
@@ -37,7 +39,7 @@ placeItem = function()
 	placeItemTimer = setTimer(placeItemTimer);
 	if (placeItemTimer == 0)
 	{
-		if (keyboard_check_pressed(vk_enter)) && (placedItem == undefined)
+		if (keyboard_check_pressed(vk_enter)) && (itemNotPlaced())
 		{
 			var _selectedItem = global.equippedItems[oBattleManager.selected_option];
 			closeBattleBook();
@@ -52,19 +54,24 @@ placeItem = function()
 }
 
 removeItem = function() {
-	var _myFX = instance_create_layer(itemSpriteX + xAdder + 16, itemSpriteY + 16, LAYER_EFFECT_TOP, oChangeAlphaDimObjFX);
-	_myFX.startXScale = 1;
-	_myFX.startYScale = 1;
-	_myFX.finalXScale = 5;
-	_myFX.finalYScale = 5;
-	_myFX.startAlpha = 1;
-	_myFX.finalAlpha = 0;
-	_myFX.alphaAmount = 0.02;
-	_myFX.scaleAmount = 0.02;
-	_myFX.rotates = true;
-	_myFX.rotationAmount = 5;
-	_myFX.sprite_index = sStoppedEnchantDeco;
-	placedItem = undefined; removeBaseFX(); 
+	if (!itemNotPlaced())
+	{
+		var _myFX = instance_create_layer(itemSpriteX + xAdder + 16, itemSpriteY + 16, LAYER_EFFECT_TOP, oChangeAlphaDimObjFX);
+		_myFX.startXScale = 1;
+		_myFX.startYScale = 1;
+		_myFX.finalXScale = 5;
+		_myFX.finalYScale = 5;
+		_myFX.startAlpha = 1;
+		_myFX.finalAlpha = 0;
+		_myFX.alphaAmount = 0.02;
+		_myFX.scaleAmount = 0.02;
+		_myFX.rotates = true;
+		_myFX.rotationAmount = 5;
+		_myFX.image_speed = 1;
+		_myFX.sprite_index = sStoppedEnchantDeco;
+		placedItem = undefined; 
+		removeBaseFX(); 
+	}
 }
 
 playerHasGold = function() {
@@ -85,7 +92,7 @@ confirmEnchant = function()
 
 setToStartStateItemVars = function()
 {
-	if (placedItem != undefined) { removeItem(); }
+	if (!itemNotPlaced()) { removeItem(); }
 	removeBaseFX();
 	placeItemTimer = 2;
 }
