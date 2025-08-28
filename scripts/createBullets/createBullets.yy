@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createBullets",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createBullets",
+  "parent":{
+    "name":"bulletScripts",
+    "path":"folders/Scripts/bulletScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

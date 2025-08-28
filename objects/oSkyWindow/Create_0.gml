@@ -1,0 +1,1 @@
+makeAlphaSinEffect(5, 0, "Effects", 4, sSkyWindowLight, 3);

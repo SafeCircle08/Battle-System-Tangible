@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"makeAlphaSinEffect",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"makeAlphaSinEffect",
+  "parent":{
+    "name":"generalUse",
+    "path":"folders/Scripts/generalUse.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

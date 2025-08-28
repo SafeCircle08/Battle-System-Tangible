@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createExclamationMarks",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createExclamationMarks",
+  "parent":{
+    "name":"In_battle",
+    "path":"folders/Scripts/generalUse/In_battle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

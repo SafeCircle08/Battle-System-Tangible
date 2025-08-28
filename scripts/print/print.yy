@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"print",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"print",
+  "parent":{
+    "name":"MenagementScripts",
+    "path":"folders/Scripts/MenagementScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

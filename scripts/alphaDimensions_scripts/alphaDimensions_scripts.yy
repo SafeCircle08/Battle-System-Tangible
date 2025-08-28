@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"alphaDimensions_scripts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"alphaDimensions_scripts",
+  "parent":{
+    "name":"generalUse",
+    "path":"folders/Scripts/generalUse.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
