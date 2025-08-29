@@ -81,6 +81,7 @@ function resetNavigation(_lastOption = 0, _sound = sndResetNavigation, _resetMet
 	
 	_resetMethod();
 	
+	hideCursor();
 	closeBattleBook();
 	resetTextVars();
 	easeOutBg();
@@ -106,7 +107,8 @@ function terminateAction(_ds_list = [], _method = function() {})
 		battleDelay = 3;
 		closeBattleBook();
 		_method();
-	
+		
+		hideCursor();
 		hideMirrors();
 		resetTextVars();
 	

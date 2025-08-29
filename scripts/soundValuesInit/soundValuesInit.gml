@@ -22,6 +22,12 @@ function playSound(sndIndex, sndChannel, loop = false, gainValue = 1)
 	audio_play_sound(sndIndex, sndChannel, loop, global.soundGain * gainValue);
 }
 
+function playSoundPitch(sndIndex, sndChannel, loop = false, gainValue = 1, _minPitch = 0, _maxPitch = 1)
+{
+	var _pitch = irandom_range(_minPitch, _maxPitch);
+	audio_play_sound(sndIndex, sndChannel, loop, global.soundGain * gainValue, 0, _pitch);
+}
+
 function playMusic(mscIndex, mscChannel, loop = true, gainValue = 1)
 {
 	audio_play_sound(mscIndex, mscChannel, loop, global.musicGain * gainValue);

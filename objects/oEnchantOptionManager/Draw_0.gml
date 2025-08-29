@@ -12,8 +12,6 @@ var _goldCostY = 114;
 
 draw_set_font(fHungrySkinny);
 
-print(placedItem)
-
 //Draws the enchant properties
 if (placedItem != undefined)
 {

@@ -125,14 +125,17 @@
   "ranges":[
     {"lower":32,"upper":127,},
   ],
-  "regenerateBitmap":false,
+  "regenerateBitmap":true,
   "resourceType":"GMFont",
   "resourceVersion":"2.0",
   "sampleText":"abcdef ABCDEF\n0123456789 .,<>\"'&!?\nthe quicAhiafGNQgqYk GIbrown fox jumps over the lazy dog\nTHE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\nDefault character: ▯ (9647)\r\nJjms\r\nAy\r\nJKMNRSVWZQ\r\nGgpqCq acqua5(q/<?A@q\r\naaaaaaaaaaaaaaaMaaaa2",
   "sdfSpread":2,
   "size":12.0,
   "styleName":"Regular",
-  "textureGroupId":null,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
   "TTFName":"",
   "usesSDF":false,
 }

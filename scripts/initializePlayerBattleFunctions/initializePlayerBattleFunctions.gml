@@ -68,7 +68,7 @@ function initialiseCryOptionFunction()
 	selectedCryOption = function() { selectAction(true, false, sndSelecting_2, ["<>Crying won't do nothing\n  but dehydratate you to death.", "\n<>Stop it."]); }		
 }
 function initializeInventoryOptionFunctions()
-{	
+{		
 	drawStatistics = function(_index, _itemSprX, _itemSprY, _border) {
 		var _item = global.equippedItems[_index];
 		for (var k = 0; k < MAX_PROPERTIES_NUMBER; k++)
@@ -76,6 +76,7 @@ function initializeInventoryOptionFunctions()
 			draw_sprite(_item.propertiesList[k], 0, _itemSprX - _border - 1 + inventoryXAdder, _itemSprY + (10 * k + (1 * k)));	
 		}	
 	}
+	
 	drawEnchants = function(_index, _itemSprX, _itemSprY, _border) {
 		var _item = global.equippedItems[_index];
 		var _enchantsN = array_length(_item.enchants);
@@ -122,12 +123,14 @@ function initializeInventoryOptionFunctions()
 		if (array_length(global.equippedItems) > 0)
 		{
 			selectAction(true, true, sndOpeningInventory, [], method(self, function() {
+				showCursor();
 				selected_option = 0;
 				playingGuiAnimation = true; 
 			}));
 		}
 		else { resetNavigation(3, sndClosingInventory, method(self, function() { moreStepsAct = true; })); }
 	}
+	
 	navigatingInventoryFunction = function()
 	{
 		easeInBg();
@@ -153,7 +156,7 @@ function initializeInventoryOptionFunctions()
 					var _border = 10;
 					var _sprBG = sInventoryBG;
 					var _bgH = sprite_get_height(_sprBG) * 2;
-					createOutPutMessage(_inventoryX + _border + inventoryXAdder,_inventoryY + (_bgH / 2) + _border / 2);
+					createOutPutMessage(_inventoryX + _border + inventoryXAdder, _inventoryY + (_bgH / 2) + _border / 2);
 				}
 			}
 		}
@@ -296,6 +299,7 @@ function initializeEnchantingFunctions()
 	selectedEnchantOption = function() 
 	{ 
 		selectAction(true, true, sndSelecting_2, []);
+		showCursor();
 		if (!instance_exists(oEnchantOptionManager)) { instance_create_layer(x, y, "Instances", oEnchantOptionManager); } 
 		else { oEnchantOptionManager.setTofadeIn(); }
 	}

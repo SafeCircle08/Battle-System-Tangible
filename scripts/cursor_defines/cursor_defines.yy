@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"cursor_defines",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cursor_defines",
+  "parent":{
+    "name":"CursorInfo",
+    "path":"folders/Scripts/CursorInfo.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

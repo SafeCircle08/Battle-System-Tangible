@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"makeLittleSpark",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"makeLittleSpark",
+  "parent":{
+    "name":"FX",
+    "path":"folders/Scripts/FX.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
