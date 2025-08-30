@@ -132,7 +132,7 @@ if (!isInBulletHellSection())
 		{
 			//Draws the button
 			var _index = 0;
-			if (decidingSubAction == false)
+			if (playerMainActionTurn())
 			{
 				if (selected_option == i) { _index = 1 };
 			}
@@ -164,8 +164,8 @@ if (!isInBulletHellSection())
 		
 		var _itemWidth = sprite_get_width(sItemSprite);
 		var _border = 10;
-		var _inventoryX = room_width / 2 - 80 - (59);
-		var _inventoryY =  room_width / 2 - 55;
+		var _inventoryX = INVENTORY_X;
+		var _inventoryY =  INVENTORY_Y;
 		
 		var _sprBG = sInventoryBG;
 		var _bgW = sprite_get_width(_sprBG) * 3;

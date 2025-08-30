@@ -33,7 +33,7 @@ function enchantItem(_item)
 		changeToNewEnchants(_changedItem);
 		playSound(sndEnchanting, SOUND_CHANNEL_1);
 	}
-	return;
+	return _changedItem;
 }
 
 function disenchantItem(_item) {

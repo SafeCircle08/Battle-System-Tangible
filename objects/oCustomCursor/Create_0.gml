@@ -8,6 +8,8 @@ cursorCursing = function()
 	with (oCustomCursor) {
 		x = mouse_x;
 		y = mouse_y;
+		x = clamp(x, 0, room_width - 5);
+		y = clamp(y, 0, room_height);
 	}
 	
 	var _cursor = global.choosenCursor;

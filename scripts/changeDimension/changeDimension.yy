@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"changeDimension",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"changeDimension",
+  "parent":{
+    "name":"ObjectProperties",
+    "path":"folders/Scripts/ObjectProperties.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"changeAlpha",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"changeAlpha",
+  "parent":{
+    "name":"ObjectProperties",
+    "path":"folders/Scripts/ObjectProperties.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

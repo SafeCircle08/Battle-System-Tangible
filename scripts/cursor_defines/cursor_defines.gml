@@ -22,10 +22,14 @@ function setToDefault() {
 	global.choosenCursor = DEFAULT_CURSOR;
 }
 
-function createSplatClick(_x, _y, _sprite, _imageSpeed = 0) {
+function createSplatClick(_x, _y, _sprite, _customFunc = void, _imageSpeed = 0) {
 	if (instance_number(oCursorSplatObj) < MAX_SPLAT_OBJ_NUMBER)
 	{
 		var _splatFX = instance_create_layer(_x, _y, LAYER_EFFECT_TOP, oCursorSplatObj);
+		_splatFX.setScaleVars(1, 1, 0, 0, 0, 0);
+		_splatFX.setAlphaVars(1, 0, -0.005);
+		_splatFX.setUpFadeOutTimer();
+		_splatFX.customMethod = _customFunc;
 		_splatFX.sprite_index = _sprite;
 		_splatFX.image_speed = _imageSpeed
 		_splatFX.image_angle = irandom_range(0, 360);
@@ -48,8 +52,24 @@ global.jazzyBeingCursor = createNewMouseCursor(sJazzyBeingCursor, sJazzyBeingCur
 global.toolCursor = createNewMouseCursor(sToolCursor, sToolCursor, undefined, void);
 global.psiCursor = createNewMouseCursor(sPsiCursor, sPsiCursor, undefined, void);
 global.bloodCursor = createNewMouseCursor(sBloodCursor, sBloodCursor, undefined, function setSplat() {
-	createSplatClick(oCustomCursor.x, oCustomCursor.y, sBloodDrop_1); 
+	var _func = function() { oCursorSplatObj.makeSplatGoUp(1); }
+	createSplatClick(oCustomCursor.x, oCustomCursor.y, sBloodDrop_1, _func); 
 	playSound(sndSplat, SOUND_CHANNEL_1);
 	playSoundPitch(sndGoofyScream, SOUND_CHANNEL_2, false, 1, 1, 2); 
 });
-chooseRandomCursor();
+global.nightPetalCursor = createNewMouseCursor(sNightPetalCursor, sNightPetalCursor, undefined, void);
+global.pizzaCursor = createNewMouseCursor(sPizzaCursor, sPizzaCursor, undefined, void);
+
+selectCursor(global.pizzaCursor);
+
+
+
+
+
+
+
+
+
+
+
+

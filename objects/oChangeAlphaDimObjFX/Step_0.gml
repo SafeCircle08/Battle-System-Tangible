@@ -1,4 +1,4 @@
-changeAlpha(self, finalAlpha, alphaAmount, true);
-changeDim(self, finalXScale, finalYScale, scaleAmount, scaleSign, true);
+changeAlphaValue(startAlpha, finalAlpha, -alphaAmount)
+changeDimension(startXScale, startYScale, finalXScale, finalYScale, scaleAmount);
 
 if (rotates) { rotation(rotationAmount); }

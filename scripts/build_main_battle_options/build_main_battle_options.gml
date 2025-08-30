@@ -69,11 +69,11 @@ function buildNewMainMenuOptions(_name, _decoSprite, selectFunc, func, fadeInFun
 function initializePlayerMainBattleMenuOptions()
 {	
 	choosing_battle_option = buildNewMainMenuOptions("BATTLE", sAttackDeco, selectedBattleOption, navigatingSubMenuFunction,
-			method(self, function() { with (oBattleManager) { if (playingGuiAnimation) { subMenuFadeIn();}}}),
+			method(self, function() { with (oBattleManager) { subMenuFadeIn(); }}),
 			method(self, function() { with (oBattleManager) { subMenuFadeOut(); }}))
 
 	choosing_inventory_option = buildNewMainMenuOptions("ITEM", sInvDeco, selectedInventoryOption, navigatingInventoryFunction,
-			method(self, function() { with (oBattleManager) { if (playingGuiAnimation) { inventoryFadeIn();}}}),
+			method(self, function() { with (oBattleManager) { inventoryFadeIn();}}),
 			method(self, function() { with (oBattleManager) { inventoryFadeOut(); }}));
 
 	choosing_cry_option = buildNewMainMenuOptions("CRY", sCryDeco, selectedCryOption, noone, 

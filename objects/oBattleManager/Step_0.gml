@@ -4,7 +4,7 @@ randomize();
 if (playerMainActionTurn())
 {
 	navigatingBattle(0, 3);
-	if keyboard_check_pressed(vk_enter)
+	if (keyboard_check_pressed(vk_enter))
 	{
 		decidingSubAction = true;
 		oBulletGeneratorManager.generatorCreated = false;
@@ -54,7 +54,14 @@ if (decidingSubAction == true)
 	if (showingSubWindow) { global.settedMainBattleOptions[mainPressed]._function(); }
 	if (actionChoosen) { global.playerEquippedOptions[selected_option]._function(); }	
 }
-else { global.settedMainBattleOptions[mainPressed]._fadeOutFunc(); }
+else { 
+	//To fix:
+	//When the animation of an option is still playing,
+	//if you select another option, his fadeout animation will stop playing.
+	//To fix this, make different object. (like the oEnchantOptionManager).
+	//All the animations are inside the object. You don't draw into the oBattleManager anymore.
+	global.settedMainBattleOptions[mainPressed]._fadeOutFunc(); 
+}
 
 if (isNotPlayerTurn())
 {

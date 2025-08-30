@@ -52,7 +52,6 @@ setUpVars = function (
 	setUpScaleVars(_startX, _startY, _finalX, _finalY, _signScale, _amountScale);
 	setUpAlphaVars(_startA, _finalA, _signAlpha, _amountAlpha);
 }
-
 setUpGravity = function(_grv, _hspd, _vspd)
 {
 	gravity = _grv;

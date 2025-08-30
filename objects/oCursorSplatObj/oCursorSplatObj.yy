@@ -1,7 +1,10 @@
 {
   "$GMObject":"",
   "%Name":"oCursorSplatObj",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"oCursorSplatObj",
   "overriddenProperties":[],
@@ -9,10 +12,7 @@
     "name":"Cursors",
     "path":"folders/Objects/Main/Cursors.yy",
   },
-  "parentObjectId":{
-    "name":"oChangeAlphaDimObjFX",
-    "path":"objects/oChangeAlphaDimObjFX/oChangeAlphaDimObjFX.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

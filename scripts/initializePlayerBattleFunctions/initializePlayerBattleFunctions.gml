@@ -5,6 +5,15 @@
 // define_player_main_actions -> for main actions
 // define_player_sub_actions  -> for sub actions
 
+
+#macro GET_INPUTS true
+#macro DONT_GET_INPUTS false
+#macro CAN_NAVIGATE true
+#macro CANT_NAVIGATE false
+
+#macro INVENTORY_X room_width / 2 - 80 - (59)
+#macro INVENTORY_Y room_width / 2 - 55
+
 function createAnimationObject(sprite, _messages, _method = function() {})
 {
 	if (!instance_exists(fadeInOutAnimationsParent))
@@ -25,6 +34,7 @@ function initializeNavigatingBattleOptionFunctions()
 				playingGuiAnimation = true;
 		}));
 	}
+	
 	navigatingSubMenuFunction = function(_drawArrow = false)
 	{
 		showMirrors();
@@ -131,35 +141,38 @@ function initializeInventoryOptionFunctions()
 		else { resetNavigation(3, sndClosingInventory, method(self, function() { moreStepsAct = true; })); }
 	}
 	
-	navigatingInventoryFunction = function()
+	navigatingInventoryFunction = function(_getInputs = GET_INPUTS, _canNavigate = CAN_NAVIGATE)
 	{
 		easeInBg();
-		//When you decide not to use the inventory
-		if (keyboard_check_pressed(ord("X")) && (!instance_exists(itemOutputMessage))) { resetNavigation(3, sndClosingInventory); }
+		var _itemsNumber = array_length(global.equippedItems); 
 		
-		takenOptionDelay = setTimer(takenOptionDelay);
-		if (takenOptionDelay == 0)
-		{
-			var _itemsNumber = array_length(global.equippedItems);
-			if (keyboard_check_pressed(ord("V"))) { enchantItem(global.equippedItems[selected_option]); }
-			if (keyboard_check_pressed(ord("O"))) { disenchantItem(global.equippedItems[selected_option]); }
-			navigatingBattle(0, _itemsNumber - 1); 
-			if (keyboard_check_pressed(vk_enter))
-			{ 
-				if (instance_exists(itemOutputMessage)) { 
-					instance_destroy(itemOutputMessage);
-					terminateAction(["<>Finished using the \n  Inventory."]);
-				}
-				else {
-					var _inventoryX = room_width / 2 - 80 - (59);
-					var _inventoryY =  room_width / 2 - 60;
-					var _border = 10;
-					var _sprBG = sInventoryBG;
-					var _bgH = sprite_get_height(_sprBG) * 2;
-					createOutPutMessage(_inventoryX + _border + inventoryXAdder, _inventoryY + (_bgH / 2) + _border / 2);
+		if (!instance_exists(itemOutputMessage)) { if (_canNavigate) { navigatingBattle(0, _itemsNumber - 1); }}	
+	
+		if (_getInputs) { 
+			if (keyboard_check_pressed(ord("X")) && (!instance_exists(itemOutputMessage))) { resetNavigation(3, sndClosingInventory); } 
+			
+			takenOptionDelay = setTimer(takenOptionDelay);
+			if (takenOptionDelay == 0)
+			{
+				if (keyboard_check_pressed(vk_enter))
+				{ 
+					if (instance_exists(itemOutputMessage)) 
+					{ 
+						instance_destroy(itemOutputMessage);
+						terminateAction(["<>Finished using the \n  Inventory."]);
+					}
+					else 
+					{
+						var _border = 10;
+						var _sprBG = sInventoryBG;
+						var _bgH = sprite_get_height(_sprBG) * 2;
+						createOutPutMessage(INVENTORY_X + _border + inventoryXAdder, INVENTORY_Y + (_bgH / 2) + _border / 2);
+					}
 				}
 			}
 		}
+		if (keyboard_check_pressed(ord("V"))) { enchantItem(global.equippedItems[selected_option]); }
+		if (keyboard_check_pressed(ord("O"))) { disenchantItem(global.equippedItems[selected_option]); }
 		draw_set_font(fFontino);
 	}
 }
@@ -317,8 +330,6 @@ function initializeEnchantingFunctions()
 			} else {
 				_enchantManager.showingInv = false; //doesnt call the invFunc anymore
 				goToPreviousOption(method(self, function() { 
-					inventoryXAdder = 0; 
-					inventoryAlpha = 0; 
 					oEnchantOptionManager.setToStartStateItemVars();
 				}));					
 			}
