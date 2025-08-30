@@ -53,6 +53,7 @@ initializeSubBattleMenuAnimations();
 subMenuX = 0;
 subMenuY = 0;
 mainPressed = 0;
+lastPressed = 0;
 
 playingGuiAnimation = false;
 

@@ -71,6 +71,7 @@ function resetNavigation(_lastOption = 0, _sound = sndResetNavigation, _resetMet
 	playSound(_sound, SOUND_CHANNEL_1, false, 0.7);
 	actualDrawAlpha = 0;
 	selected_option = _lastOption;
+	lastPressed = _lastOption;
 	decidingSubAction = false;
 	moreStepsAct = false;
 	actualDrawAlpha = 0;

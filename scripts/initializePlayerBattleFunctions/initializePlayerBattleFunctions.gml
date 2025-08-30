@@ -29,43 +29,18 @@ function createAnimationObject(sprite, _messages, _method = function() {})
 function initializeNavigatingBattleOptionFunctions()
 {
 	selectedBattleOption = function() { 
-		selectAction(true, true, sndSelecting_2, [],
-			method(self, function() { 
-				playingGuiAnimation = true;
-		}));
+		selectAction(true, true, sndSelecting_2, []);
+		if (!instance_exists(oSubMenuManager)) { instance_create_layer(x, y, "Instances", oSubMenuManager); } 
+		else { oSubMenuManager.setTofadeIn(); }
 	}
 	
-	navigatingSubMenuFunction = function(_drawArrow = false)
-	{
+	navigatingSubMenuFunction = function() {
 		showMirrors();
 		easeInBg();
-	
-		//Resets the navigation
-		if (keyboard_check_pressed(ord("X"))) { resetNavigation(0); }
-	
-		var _optionList = global.playerEquippedOptions;
-		var _optionNumber = array_length(_optionList);
-		var _options = [];
-	
-		//Draws the secondary options (BUTTONS)
-		for (var i = 0; i < _optionNumber; i++)
-		{
-			//Pushing the right names
-			array_push(_options, global.playerEquippedOptions[i].name);
-		}
-		
-		//Select An Action
-		battleDelay = setTimer(battleDelay);
-		if (battleDelay == 0)
-		{
-			if (showingSubSubWindow == false)
-			{
-				navigatingBattle(0, _optionNumber - 1);
-				if (keyboard_check_pressed(vk_enter))
-				{
-					_optionList[selected_option]._selectFunction();
-				}
-			}
+		var _subManager = instance_find(oSubMenuManager, instance_number(oSubMenuManager) - 1);
+		if (keyboard_check_pressed(ord("X"))) { 
+			_subManager.setToFadeOut();
+			resetNavigation(0); 
 		}
 	}
 }
@@ -182,12 +157,15 @@ function initializeHealCheatFunction()
 }
 function initializeAttackFunctions()
 {
-	selectedAttackFunction = function() { selectAction(false, false, sndSelecting_2, []) }
+	selectedAttackFunction = function() { 
+		selectAction(false, false, sndSelecting_2, []); 
+		oSubMenuManager.setToFadeOut();
+	}
 	
 	attackFunction = function()
 	{
 		hideMirrors();
-		easeInBg(1);
+		easeInBg();
 		
 		//TIMER DEL PLAYER (PER QUANTI FRAME PUO' ATTACCARE)
 		global.playerAttackTime++;

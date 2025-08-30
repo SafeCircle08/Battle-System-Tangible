@@ -38,6 +38,7 @@ function usingItem(_index)
 
 function itemInfo(_index)
 {
+	if (_index >= array_length(global.equippedItems)) { return "There is nothing to show here.\nHave a good day!"; }
 	var _actualItem = global.equippedItems[_index];
 	var _itemInfo = _actualItem.info;
 	return _itemInfo;

@@ -72,18 +72,7 @@ if (!isInBulletHellSection())
 	draw_set_color(c_white);
 	#endregion
 	
-	#region DRAWING SUB MENU 
-	var _optionList = global.playerEquippedOptions;
-	var _optionNumber = array_length(_optionList);
-	var _h = sprite_get_height(sLittleRectangle) / 2;
-	var _w = sprite_get_width(sLittleRectangle) / 2;
-		
-	//Sub Menu Button Pos
-	setSubMenuPositions(
-		(room_width / 2) - 48, 
-		(room_height / 2 - 20) - ((_h * (_optionNumber - 2)) + 5 * (_optionNumber - 2)) - 5
-	);
-	
+	#region DRAWING MAIN MENU
 	var _bgH = 25;
 	var _xBorder = 17;
 	var _yBorder = 4;
@@ -93,33 +82,6 @@ if (!isInBulletHellSection())
 	var _sprButton = sLittleRectangle;
 	var _buttonW = sprite_get_width(_sprButton);
 	var _buttonH = sprite_get_height(_sprButton);
-		
-	if (subMenuAlpha > 0)
-	{
-		drawFadeInSprite(sSelectArrow, subMenuX - 49, subMenuY + (_bgH * _optionNumber) / 2, subMenuAlpha, subMenuXAdder);
-		drawFadeInSpriteStretched(sInventory, subMenuX - 49, subMenuY, subMenuAlpha, subMenuXAdder, _bgW, _bgH * _optionNumber);
-		drawFadeInSprite(sSteamPunkMiniPortrait, subMenuX - 49 + _bgW / 2, subMenuY + 3, subMenuAlpha, subMenuXAdder);	
-		var _options = [];
-	
-		draw_set_alpha(subMenuAlpha);
-		//Draws the secondary options (BUTTONS)
-		for (var i = 0; i < _optionNumber; i++)
-		{
-			//Pushing the right names
-			array_push(_options, global.playerEquippedOptions[i].name);
-			//Draws the buttons and the text
-			var _btnX = subMenuX + _xBorder - 58;
-			var _btnY = subMenuY + (_h * i + 1 * i) + _yBorder + 2;
-			var _index = 0;
-			if (i == selected_option) { _index = 1; } 
-			draw_sprite_ext(sGUIBattleButton, _index, _btnX + subMenuXAdder, _btnY, 1, 1, 0, c_white, subMenuAlpha);
-			draw_text(_btnX + _w / 4 - 7 + subMenuXAdder, _btnY + _yBorder + 2, _options[i]);
-		}
-		draw_set_alpha(1);
-	}
-	#endregion
-	
-	#region DRAWING MAIN MENU
 	//Button BG
 	draw_sprite_stretched(sInventory, 0, startButtonX - 50, _buttonY - 5, _buttonW / 2 + 71.5, _buttonH * 2 + 15);
 	//Mini player portrait
@@ -244,7 +206,10 @@ if (!isInBulletHellSection())
 		{	
 			draw_set_color(c_white);
 			var _info = itemInfo(selected_option);
-			draw_text_ext_transformed(_itemInfoX + _infoBorder * 2 + inventoryXAdder,  _itemInfoBgY + _border / 2, _info[0], 20, 200, scale, scale, 0);
+			var _finalMessage;
+			if (is_array(_info)) { _finalMessage = _info[0]; }
+			else { _finalMessage = _info; }
+			draw_text_ext_transformed(_itemInfoX + _infoBorder * 2 + inventoryXAdder,  _itemInfoBgY + _border / 2, _finalMessage, 20, 200, scale, scale, 0);
 		}
 
 		var _itemInfoBgY = _inventoryY + (_bgH / 2);

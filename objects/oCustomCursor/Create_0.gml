@@ -1,7 +1,17 @@
 sprite_index = global.choosenCursor.sprite;
-image_speed = 1;
+image_speed = global.choosenCursor.imageSpd;
 
 cursorOn = false;
+
+setUpCursorVars = function(_angle = global.choosenCursor.angle, _spd = global.choosenCursor.imageSpd, _setIndex = true)
+{
+	with (oCustomCursor) {
+		image_angle = global.choosenCursor.angle;
+		sprite_index = global.choosenCursor.sprite;
+		image_speed = _spd;
+		if (_setIndex) { image_index = 0; }
+	}
+}
 
 cursorCursing = function()
 {
