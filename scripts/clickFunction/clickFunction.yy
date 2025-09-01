@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"clickFunction",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"clickFunction",
+  "parent":{
+    "name":"CursorInfo",
+    "path":"folders/Scripts/CursorInfo.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

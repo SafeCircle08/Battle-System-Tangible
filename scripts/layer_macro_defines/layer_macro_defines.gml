@@ -5,4 +5,4 @@
 #macro LAYER_EFFECT_TOP "EffectTop"
 #macro LAYER_EXPLOSION "Explosion"
 #macro LAYER_SHELLS "Shells" //drumpad
-#macro LAYER_SCOPE "Scope" //drumpad
+#macro LAYER_SCOPE "Scope"

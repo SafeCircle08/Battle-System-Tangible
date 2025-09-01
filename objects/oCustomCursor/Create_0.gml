@@ -1,12 +1,14 @@
 sprite_index = global.choosenCursor.sprite;
 image_speed = global.choosenCursor.imageSpd;
+if (global.choosenCursor.enableRotation) { image_angle = global.choosenCursor.angle;}
 
 cursorOn = false;
 
 setUpCursorVars = function(_angle = global.choosenCursor.angle, _spd = global.choosenCursor.imageSpd, _setIndex = true)
 {
 	with (oCustomCursor) {
-		image_angle = global.choosenCursor.angle;
+		if (global.choosenCursor.enableRotation) { image_angle = global.choosenCursor.angle; }
+		else { image_angle = 0; }
 		sprite_index = global.choosenCursor.sprite;
 		image_speed = _spd;
 		if (_setIndex) { image_index = 0; }
@@ -21,30 +23,29 @@ cursorCursing = function()
 		x = clamp(x, 0, room_width - 5);
 		y = clamp(y, 0, room_height);
 	}
-	
 	var _cursor = global.choosenCursor;
-	if (mouse_check_button_pressed(mb_left)) {
-		cursorOnClick(_cursor);
-	}
-	if (mouse_check_button_released(mb_left)) {
-		resetCursor(_cursor);
-	}
+	
+	if (mouse_check_button_pressed(mb_left)) { cursorOnClick(_cursor); }
+	if (mouse_check_button_released(mb_right)) { playSound(_cursor.leftClickSound, SOUND_CHANNEL_4); }
+	if (mouse_check_button_released(mb_left)) { resetCursor(_cursor); }
 }
 
 cursorOnClick = function(_cursor)
 {
 	if (_cursor.clickSound != undefined) {
-		playCursorClickSounds(_cursor);	
+		if (_cursor.enableSounds) { playCursorClickSounds(_cursor, _cursor.playSoundType); }
 	}
-	sprite_index = _cursor.clickSprite;
-	_cursor.clickFunction();
+		if (_cursor.enableFX) {
+		sprite_index = _cursor.clickSprite;
+		_cursor.onClickFunction();
+	}
 }
 
 resetCursor = function(_cursor) {
 	sprite_index = _cursor.sprite;
 }
 
-playCursorClickSounds = function(_cursor)
+playCursorClickSounds = function(_cursor, _playWhenSilence = CURSOR_PLAY_SOUND_WHEN_SILENCE)
 {
 	if (is_array(_cursor.clickSound))
 	{
@@ -60,13 +61,19 @@ playCursorClickSounds = function(_cursor)
 				break;
 			}
 		}	
-		if (!audio_is_playing(_clickSound) && _anySoundIsPlaying == false) { 
-			playSound(_clickSound, SOUND_CHANNEL_1); 
-		}
+		if (_playWhenSilence) {
+			if (!audio_is_playing(_clickSound) && _anySoundIsPlaying == false) { 
+				playSound(_clickSound, SOUND_CHANNEL_1);
+			}
+		} else { playSound(_clickSound, SOUND_CHANNEL_1); }
 	}
 	else
 	{ 
-		if (!audio_is_playing(_cursor.clickSound)) { playSound(_cursor.clickSound, SOUND_CHANNEL_1); } 
+		if (_playWhenSilence) {
+			if (!audio_is_playing(_cursor.clickSound)) { 
+				playSound(_cursor.clickSound, SOUND_CHANNEL_1);
+			} 
+		} else { playSound(_cursor.clickSound, SOUND_CHANNEL_1); }
 	}
 }
 

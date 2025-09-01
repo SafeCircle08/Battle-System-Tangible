@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"hideCursor",
   "parent":{
-    "name":"CursorInfo",
-    "path":"folders/Scripts/CursorInfo.yy",
+    "name":"Activation",
+    "path":"folders/Scripts/CursorInfo/Cursor Settings/Activation.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

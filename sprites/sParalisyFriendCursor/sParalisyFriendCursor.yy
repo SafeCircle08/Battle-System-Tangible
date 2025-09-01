@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Cursors",
-    "path":"folders/Sprites/Cursors.yy",
+    "name":"ParalisyCursor",
+    "path":"folders/Sprites/Cursors/ParalisyCursor.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

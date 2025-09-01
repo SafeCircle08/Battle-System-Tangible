@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sndParalisy_2",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":1,
+  "conversionMode":0,
+  "duration":5.5640817,
+  "name":"sndParalisy_2",
+  "parent":{
+    "name":"ParalisyCursor",
+    "path":"folders/Sounds/CursorsSounds/ParalisyCursor.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sndParalisy_2.mp3",
+  "type":0,
+  "volume":1.0,
+}

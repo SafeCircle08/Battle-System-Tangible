@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Cursors",
-    "path":"folders/Sprites/Cursors.yy",
+    "name":"YinYanCursor",
+    "path":"folders/Sprites/Cursors/YinYanCursor.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
