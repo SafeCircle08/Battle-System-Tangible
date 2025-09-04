@@ -114,28 +114,28 @@ global.painKiller = createNewItem("P.Kill", sPainKillerItem, 35, sndPlayerEating
 	["Your " + string(choose("stomach", "head", "leg", "back", "arms")) + " still hurts, but it's bearable."],
 	method(self, function() { healPlayer(25, sndPlayerEatingHeal); }));
 
-global.bandages = createNewItem("M.Wraps", sBandagesItem, 215, sndPlayerBasicHeal,
-	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_DOUBLE_HEAL, ITEM_PROPERTY_ADD_TO_INV],
-	[hpMessage("Bandages used to treat Injuries", 215)],
-	[fullHpMessage("Your deepest wounds got healed")],
-	["Cuts are less annoying if they are protected."],
-	method(self, function() { healPlayer(global.bandages.hp, global.bandages.outSound);}),
-	method(self, function() { healPlayer(global.bandages.hp, global.bandages.outSound);}),
-	method(self, function() { addItemToInventory(global.painKiller); }));
+	global.bandages = createNewItem("M.Wraps", sBandagesItem, 215, sndPlayerBasicHeal,
+		[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_DOUBLE_HEAL, ITEM_PROPERTY_ADD_TO_INV],
+		[hpMessage("Bandages used to treat Injuries", 215)],
+		[fullHpMessage("Your deepest wounds got healed")],
+		["Cuts are less annoying if they are protected."],
+		method(self, function() { healPlayer(global.bandages.hp, global.bandages.outSound);}),
+		method(self, function() { healPlayer(global.bandages.hp, global.bandages.outSound);}),
+		method(self, function() { addItemToInventory(global.painKiller); }));
 	
-global.mint = createNewItem("Dropint", sMintDrop, 75, sndPlayerEatingHeal,
-	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
-	[hpMessage("Gathered from pine drops.", 75)],
-	[fullHpMessage("Fresh. Winter. Snow. Cold")],
-	["Make sure not to drink fresh water in the next 5 minutes!"],
-	method(self, function() { healPlayer(global.mint.hp, global.mint.outSound); }))
+	global.mint = createNewItem("Dropint", sMintDrop, 75, sndPlayerEatingHeal,
+		[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
+		[hpMessage("Gathered from pine drops.", 75)],
+		[fullHpMessage("Fresh. Winter. Snow. Cold")],
+		["Make sure not to drink fresh water in the next 5 minutes!"],
+		method(self, function() { healPlayer(global.mint.hp, global.mint.outSound); }))
 	
-global.cocoMilk = createNewItem("C.Milk", sCocoMilk, 122, sndPlayerDrinkingHeal,
-	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
-	[hpMessage("Gives a awesome feeling of fresh.", 122)],
-	[fullHpMessage("This milk really refreshed you!")],
-	["This milf really gives you that summer feeling! Sadly..."],
-	method(self, function() { healPlayer(global.cocoMilk.hp, global.cocoMilk.outSound); }))	
+	global.cocoMilk = createNewItem("C.Milk", sCocoMilk, 122, sndPlayerDrinkingHeal,
+		[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
+		[hpMessage("Gives a awesome feeling of fresh.", 122)],
+		[fullHpMessage("This milk really refreshed you!")],
+		["This milf really gives you that summer feeling! Sadly..."],
+		method(self, function() { healPlayer(global.cocoMilk.hp, global.cocoMilk.outSound); }))	
 
 function cadAddToInventory() {
 	if (array_length(global.equippedItems) + 1 <= MAX_ITEMS_NUM) { return true; }

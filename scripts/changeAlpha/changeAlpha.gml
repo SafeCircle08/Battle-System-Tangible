@@ -1,8 +1,8 @@
-function changeAlphaValue(startAlpha, finalAlpha, _alphaAmount) 
+function changeAlphaValue(startAlpha, finalAlpha, _alphaAmount, _destroyWhen0 = true) 
 {
 	//Checking if the alpha has reached the wanted value
 	if (image_alpha == finalAlpha) { 
-		instance_destroy();
+		if (_destroyWhen0) { instance_destroy(); }
 		return;
 	}
 	

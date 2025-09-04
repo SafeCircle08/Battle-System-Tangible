@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"menageBgs",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"menageBgs",
+  "parent":{
+    "name":"BackGrounds",
+    "path":"folders/Scripts/BackGrounds.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

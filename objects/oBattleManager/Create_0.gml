@@ -1,6 +1,10 @@
 //The manager of the battle battling
 mainOptionsNames = [];
 
+layers = ["LoopBg_1", "LoopBg_2"];
+
+flavourTextIndex = 0;
+
 global.borderWidth = 100;
 global.borderHeight = 100;
 

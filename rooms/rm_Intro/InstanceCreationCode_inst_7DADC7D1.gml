@@ -1,7 +1,7 @@
 textList = 
 [
-	"<>Even If there are stars shining\n  in the sky...",
-	"<>You are grateful for this\n  lampion lighting the place."
+	"<>Even If there are stars\n shining in the sky...",
+	"<>You are grateful for\n this lampion lighting\n the place."
 ];
 
 playerShouldFace = sPlayerOwBehind;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createObjFX",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createObjFX",
+  "parent":{
+    "name":"CursorInfo",
+    "path":"folders/Scripts/CursorInfo.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

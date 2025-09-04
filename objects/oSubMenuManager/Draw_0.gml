@@ -2,11 +2,11 @@ var _optionList = global.playerEquippedOptions;
 var _optionNumber = array_length(_optionList);
 var _h = sprite_get_height(sLittleRectangle) / 2;
 var _w = sprite_get_width(sLittleRectangle) / 2;
-		
+
 //Sub Menu Button Pos
 setSubMenuPositions(
 	(room_width / 2) - 48, 
-	(room_height / 2 - 20) - ((_h * (_optionNumber - 2)) + 5 * (_optionNumber - 2)) - 5
+	(room_height / 2 - 20) - ((_h * (_optionNumber - 2)) + 5 * (_optionNumber - 2)) - 6
 );
 	
 var _bgH = 25;

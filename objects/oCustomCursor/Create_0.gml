@@ -4,6 +4,19 @@ if (global.choosenCursor.enableRotation) { image_angle = global.choosenCursor.an
 
 cursorOn = false;
 
+startCursorX = mouse_x;
+startCursorY = mouse_y;
+framesSpentMoving = 0;
+
+setNewCursorStartCoords = function() {
+	startCursorX = mouse_x;
+	startCursorY = mouse_y;			
+}
+
+resetSpentMovingTimer = function() { 
+	if (framesSpentMoving != 0) { framesSpentMoving = 0; }		
+}
+
 setUpCursorVars = function(_angle = global.choosenCursor.angle, _spd = global.choosenCursor.imageSpd, _setIndex = true)
 {
 	with (oCustomCursor) {
@@ -24,6 +37,10 @@ cursorCursing = function()
 		y = clamp(y, 0, room_height);
 	}
 	var _cursor = global.choosenCursor;
+	
+	if (cursorIsMoving(_cursor, true, 5)) {
+		_cursor.stepFunction();	
+	}
 	
 	if (mouse_check_button_pressed(mb_left)) { cursorOnClick(_cursor); }
 	if (mouse_check_button_released(mb_right)) { playSound(_cursor.leftClickSound, SOUND_CHANNEL_4); }

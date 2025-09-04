@@ -165,7 +165,7 @@ function initializeAttackFunctions()
 	attackFunction = function()
 	{
 		hideMirrors();
-		easeInBg();
+		easeInBg(1);
 		
 		//TIMER DEL PLAYER (PER QUANTI FRAME PUO' ATTACCARE)
 		global.playerAttackTime++;

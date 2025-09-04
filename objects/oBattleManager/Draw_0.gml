@@ -6,7 +6,7 @@ if (!isInBulletHellSection())
 	var _sprTextBox = sNewBox;
 	var _textBoxW = sprite_get_width(_sprTextBox);
 	var _textBoxH = sprite_get_height(_sprTextBox);
-	var _battleFont = fFontino;
+	var _battleFont = Mono;
 	var fontSize = font_get_size(_battleFont);
 	var	BUFFER = 12;
 	draw_set_font(_battleFont);
@@ -40,7 +40,7 @@ if (!isInBulletHellSection())
 	#region DRAWING PLAYER HP, CAGE STATE
 	//Draws the player variables
 	var _playerInfoX = BUFFER - 5;
-	var _playerInfoY = guiY - (_textBoxH) - 7;
+	var _playerInfoY = guiY - (_textBoxH) - 9;
 	
 	//Hp
 	draw_set_colour(playerHpTextColor);
@@ -48,12 +48,13 @@ if (!isInBulletHellSection())
 	draw_set_color(c_white);
 	
 	//Cage State
-	var _csX = _playerInfoX + (10 * BUFFER) - 30;
+	var _csX = _playerInfoX + (10 * BUFFER) - 28;
+	var _csY = _playerInfoY + 3;
 	var _barCsW = 121;
 	var _barCsH = 10;
 	draw_text(_csX, _playerInfoY, "CS: ");
-	draw_sprite(sCSBarBG, 0, _csX + 22, _playerInfoY - 1);
-	draw_sprite_stretched(sCSBar, 0, _csX + 22, _playerInfoY - 1, (global.CSvalue/global.CSvalueMax) * _barCsW, _barCsH);
+	draw_sprite(sCSBarBG, 0, _csX + 22, _csY);
+	draw_sprite_stretched(sCSBar, 0, _csX + 22, _csY, (global.CSvalue/global.CSvalueMax) * _barCsW, _barCsH);
 	
 	//Gold
 	var _goldStr = string(global.playerGold);
@@ -107,13 +108,11 @@ if (!isInBulletHellSection())
 			//Button Properties (name, deco, ecc...)		
 			var text = global.settedMainBattleOptions[i].name;
 			draw_sprite(global.settedMainBattleOptions[i].decoSprite, _index, _x + 66, _y + 2)
-			var textX = startButtonX + 10;
-			var textY = (_buttonY + 5) + (_buttonH / 2 + 1) * i + 0.5;
+			var textX = startButtonX + 6;
+			var textY = (_buttonY + 5) + (_buttonH / 2 + 1) * i - 2;
 			draw_text(textX, textY, text);
 		}
-		//TO CHANGE
-		var _textList = ["<>It's like the surrounding heat\n  is taking your breath away...", "<>You should probably find a way\n  to finish all of this...\n<>And get some water :>"];
-		drawFreeText_battle(_textList);
+		drawTextBoxText(global.battleFlavourTexts[flavourTextIndex], Mono, true, true);
 	}
 	else { decreaseMainMenuXPos(); }
 	#endregion
@@ -287,7 +286,7 @@ if (isEnemySpeaking())
 	var _page = global.textList[turnNumber];
 	
 	draw_sprite_stretched(sTextBG, 0, _textBgX, _textBgY, _textBgW, _textBgH);
-	draw_set_font(fFontino);
+	draw_set_font(fFontinoNewAge);
 	draw_set_color(c_white);
 	
 	//IL TESTO VIENE MOSTRATO SUBITO E SI PUO' SKIPPARE SUBITO

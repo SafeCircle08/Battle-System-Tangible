@@ -45,7 +45,7 @@ function createClickDrop(_sprite, _angle, _dropSound, _moveCursor = false, _rand
 
 function createNewMouseCursor(
 	_baseSprite, _clickedSprite, _clickSound, 
-	_clickFunction = void, _angle = 0, _imageSpeed = 0,
+	_clickFunction = void, _stepFunction = void, _angle = 0, _imageSpeed = 0,
 	_playSoundType = CURSOR_PLAY_SOUND_WHEN_SILENCE, _leftSoundClick = sndBasicLeftMouseClick,
 	_description = ""
 ) {
@@ -54,6 +54,7 @@ function createNewMouseCursor(
 		clickSound: _clickSound,
 		clickSprite: _clickedSprite,
 		onClickFunction: _clickFunction,
+		stepFunction: _stepFunction,
 		angle : _angle,
 		imageSpd: _imageSpeed,
 		playSoundType: _playSoundType,
@@ -71,34 +72,41 @@ function createNewMouseCursor(
 }
 
 global.defaultCursor = createNewMouseCursor(sCursor_basic, sCursor_basic, sndBasicSoundClick);
-global.jazzyBeingCursor = createNewMouseCursor(sJazzyBeingCursor, sJazzyBeingCursorClicked, [sndJazzy_1, sndJazzy_2, sndJazzy_3], void, 0, 1);
+global.jazzyBeingCursor = createNewMouseCursor(sJazzyBeingCursor, sJazzyBeingCursorClicked, [sndJazzy_1, sndJazzy_2, sndJazzy_3], void, void, 0, 1);
 global.toolCursor = createNewMouseCursor(sToolCursor, sToolCursor, sndBasicSoundClick);
 global.psiCursor = createNewMouseCursor(sPsiCursor, sPsiCursor, sndBasicSoundClick);
 
 global.bloodCursor = createNewMouseCursor(sBloodCursor, sBloodCursor, undefined, function() {
 					 var _func = function() { oCursorSplatObj.makeSplatGoUp(1); }
-					 createSplatClick(oCustomCursor.x, oCustomCursor.y, sBloodDrop_1, _func); 
+					 createCursorFX(oCustomCursor.x, oCustomCursor.y, sBloodDrop_1, _func); 
 					 playSound(sndSplat, SOUND_CHANNEL_1);
 					 playSoundPitch(sndGoofyScream, SOUND_CHANNEL_2, false, 1, 1, 2); });
 
 global.nightPetalCursor = createNewMouseCursor(sNightPetalCursor, sNightPetalCursor, sndBasicSoundClick);
 global.pizzaCursor = createNewMouseCursor(sPizzaCursor, sPizzaCursor, sndBasicSoundClick);
-global.wineGlassCursor = createNewMouseCursor(sWineGlassCursor, sWineGlassCursor, undefined, function() { createClickDrop(sWineDropCursorFX, 140, sndLiquidDrop, true); }, -135, );
-global.yinYanCursor = createNewMouseCursor(sYinYanCursor, sYinYanCursor, undefined, function() { changeCursorImg(); clickFunction(sYinYanFX); }, true);
+global.wineGlassCursor = createNewMouseCursor(sWineGlassCursor, sWineGlassCursor, undefined, function() { createClickDrop(sWineDropCursorFX, 140, sndLiquidDrop, true); }, void, -135);
+global.yinYanCursor = createNewMouseCursor(sYinYanCursor, sYinYanCursor, undefined, function() { changeCursorImg(); clickFunction(sYinYanFX); }, void, true);
 global.waterMelonCursor = createNewMouseCursor(sWaterMelonCursor, sWaterMelonCursor, sndBasicSoundClick);
 
 global.paralisyFriend = createNewMouseCursor(sParalisyFriendCursor, sParalisyFriendCursorClicked, 
 					    [sndParalisy_1, sndParalisy_2, sndParalisy_3, sndParalisy_4], 
-						function () { clickFunction(sParalisyFriendCursorFX); },
+						function () { clickFunction(sParalisyFriendCursorFX); }, void,
 						0, 1, CURSOR_PLAY_SOUND_WHEN_SILENCE);
 
 global.containmentCursor = createNewMouseCursor(sContainmentCursor, sContainmentCursor, sndBasicSoundClick);
 global.lemonSliceCursor = createNewMouseCursor(sLemonSliceCursor, sLemonSliceCursor, sndBasicSoundClick);
-global.whatTheFuckCursor = createNewMouseCursor(sWhatTheFuckCursor, sWhatTheFuckCursor, sndBasicSoundClick);
+//global.whatTheFuckCursor = createNewMouseCursor(sWhatTheFuckCursor, sWhatTheFuckCursor, sndBasicSoundClick);
 global.signDirtCursor = createNewMouseCursor(sSignDirtCursor, sSignDirtCursor, [sndMetalHit_1, sndMetalHit_2, sndMetalHit_3, sndMetalHit_4, sndMetalHit_5],
-						function () { clickFunction(sDirtFX, false); },
+						function () { clickFunction(sDirtFX, false); }, void,
 						0, 0, CURSORS_PLAY_SOUND_ALWAYS);
 						
-global.wasdCursor = createNewMouseCursor(sWasdCursor, sWasdCursor, undefined, function() { clickFunction(noone); changeCursorImg(false); }, 45, 0);
+global.wasdCursor = createNewMouseCursor(sWasdCursor, sWasdCursor, undefined, function() { clickFunction(noone); changeCursorImg(false); }, void, 45, 0);
 
-selectCursor(global.wineGlassCursor);
+global.lampionCursor = createNewMouseCursor(sLampionCursor, sLampionCursor, undefined, function() { clickFunction(undefined); changeCursorImg(true); }, void, 0, 0);
+
+global.soapCursor = createNewMouseCursor(sSoapCursor, sSoapCursor, undefined, 
+					function() { clickFunction(undefined); }, 
+					function() { createCursorFX(oCustomCursor.x, oCustomCursor.y, choose(sSoapSpark, sBubbleFX), void, 1, false, 0.5, 0.5, 0, 0, -1, -0.003, 1, 0, 1, 0); });
+
+chooseRandomCursor();
+selectCursor(global.soapCursor);

@@ -1,4 +1,4 @@
 textList = 
 [
-	"<>That tree seems to be very old.",
+	"*That tree seems to be\n very old.\n*Very... OLD!!!",
 ];

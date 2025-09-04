@@ -6,6 +6,7 @@ function initializeNewTurn(createT, created, timer, bltCreated, bW, bH, bX, bY, 
 	boxDimensions(bW, bH);
 	setBoxOrigin(bX, bY);
 	playerSetState(_playerState);
+	backGroundLayersVisible(oBattleManager.layers, true);
 }
 
 function destroyBulletsGensExtras()
@@ -36,6 +37,11 @@ function finishTurn()
 			turnNumber += 1;
 			actualDrawAlpha = 0;
 			defended = 0;
+			flavourTextIndex = getRandomIndex(global.battleFlavourTexts);
+			
+			//reset players stats function goes here
+			
+			backGroundLayersVisible(layers, false);
 		}
 	}
 }

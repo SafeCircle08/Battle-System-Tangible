@@ -46,7 +46,7 @@ if (_roomTrigger) && (!instance_exists(oTransitionRoom))
 	startChangeRoom(_destRoom, _playerX, _playerY);
 }
 
-if (instance_exists(oInstanceText) || instance_exists(oInstanceCharText))  
+if (instance_exists(oBasicTextHolder) || instance_exists(oInstanceCharText))  
 { 
 	image_speed = 0;
 	canMove = false; 
@@ -62,17 +62,17 @@ var _actualTxtCharTrigger = instance_place(x, y, oTextCharacterTrigger);
 //text trigger (no character face)
 if (_actualTrigger) && (keyboard_check_pressed(vk_enter)) 
 {
-	//checkingText(_actualTrigger, oInstanceText);	
+	//checkingText(_actualTrigger, oBasicTextHolder);	
 	if (_actualTrigger.playerShouldFace == "All")
 	{
-		var _myText = instance_create_layer(x, y, "Text", oInstanceText);
+		var _myText = instance_create_layer(x, y, "Text", oBasicTextHolder);
 		_myText.text = _actualTrigger.textList;
 	}
 	else
 	{
 		if (sprite_index == _actualTrigger.playerShouldFace)
 		{
-			var _myText = instance_create_layer(x, y, "Text", oInstanceText);
+			var _myText = instance_create_layer(x, y, "Text", oBasicTextHolder);
 			_myText.text = _actualTrigger.textList;	
 			_myText.refObj = _actualTrigger.npcReference;
 		}

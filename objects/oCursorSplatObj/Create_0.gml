@@ -1,8 +1,22 @@
-timer = 0;
+goAwayTimer = 0;
+
+startXScale = 0;
+startYScale = 0;
+startAlpha = 0;
+finalXScale = 0;
+finalYScale = 0;
+scaleXAmount = 0;
+scaleYAmount = 0;
+alphaAmount = 0;
+startAlpha = 0;
+finalAlpha = 0;
+
+scaleSign = 0;
+alphaSign = 0;
 
 setScaleVars = function (
 	_startScaleX = 1, _startScaleY = 1, _finalScaleX = 0, 
-	_finalScaleY = 0, _scaleXAmount = 0.005, _scaleYamount = _scaleXAmount
+	_finalScaleY = 0, _scaleXAmount = 0.005, _scaleYamount = _scaleXAmount,
 ) {
 	startXScale = _startScaleX; 
 	startYScale = _startScaleY;
@@ -10,7 +24,7 @@ setScaleVars = function (
 	finalYScale = _finalScaleY;
 	scaleXAmount = _scaleXAmount;
 	scaleYAmount = _scaleYamount;
-}	
+}
 
 setAlphaVars = function(_startA = 1, _finalA = 0, _aAmount = 0.005) {
 	startAlpha = _startA;

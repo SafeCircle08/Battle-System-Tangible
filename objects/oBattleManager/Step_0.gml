@@ -60,7 +60,7 @@ else {
 	//if you select another option, his fadeout animation will stop playing.
 	//To fix this, make different object. (like the oEnchantOptionManager).
 	//All the animations are inside the object. You don't draw into the oBattleManager anymore.
-	global.settedMainBattleOptions[lastPressed]._fadeOutFunc(); 
+	global.settedMainBattleOptions[mainPressed]._fadeOutFunc();
 }
 
 if (isNotPlayerTurn())

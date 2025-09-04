@@ -3,6 +3,7 @@ function selectAction(main = true, _moreStepsAct = true, _sound = sndSelecting_2
 {
 	var soundGain = 0.7;
 	playSound(_sound, SOUND_CHANNEL_1, false, soundGain);
+	dontGetTextInputs();
 	if (main)
 	{
 		_method();
@@ -30,12 +31,7 @@ function selectAction(main = true, _moreStepsAct = true, _sound = sndSelecting_2
 }
 
 //Reset the text variables to show all the texts
-function resetTextVars()
-{
-	charCount = 0;
-	page = 0;
-	btTextWrote = 0;
-}
+function resetTextVars() { setToFirstPage(); }
 
 //Self explanatory lol
 function showMirrors() { instance_activate_object(oMirror); }
@@ -69,6 +65,7 @@ function resetNavigation(_lastOption = 0, _sound = sndResetNavigation, _resetMet
 {
 	var soundGain = 0.7;
 	playSound(_sound, SOUND_CHANNEL_1, false, 0.7);
+	getTextInputs();
 	actualDrawAlpha = 0;
 	selected_option = _lastOption;
 	lastPressed = _lastOption;
@@ -109,6 +106,7 @@ function terminateAction(_ds_list = [], _method = function() {})
 		closeBattleBook();
 		_method();
 		
+		getTextInputs();
 		hideCursor();
 		hideMirrors();
 		resetTextVars();

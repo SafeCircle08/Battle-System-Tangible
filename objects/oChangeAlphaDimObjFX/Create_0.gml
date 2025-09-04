@@ -15,6 +15,8 @@ rotates = false;
 rotationAmount = 0;
 frame = 0;
 
+
+
 sprite_index = sBandagesItem;
 image_speed = 0;
 
