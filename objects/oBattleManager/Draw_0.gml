@@ -21,6 +21,8 @@ if (!isInBulletHellSection())
 	
 	if (showBattleText)
 	{
+		drawTextBoxText(flavourText, Mono, true, ord("Z"), true, true, sndBasicTxt1, 0, 0);
+		/*
 		//Draws the text box and the battle messages
 		var dsBoxX = camera_get_view_x(view_camera[view_current]) + sprite_get_width(sNewBox) / 2;
 		var dsBoxY = camera_get_view_height(view_camera[view_current]);
@@ -33,14 +35,15 @@ if (!isInBulletHellSection())
 			draw_text_ext(_dsX + _border + 0.5, _textY + fontSize * a * 2 + 2.5, ds_messages[| a], fontSize + 9, _textBoxW - BUFFER * 3);
 			draw_set_color(c_white);
 			draw_text_ext(_dsX + _border, _textY + fontSize * a * 2 + 2, ds_messages[| a], fontSize + 9, _textBoxW - BUFFER * 3);
-		}	
+		}
+		*/
 	}
 	#endregion
 	
 	#region DRAWING PLAYER HP, CAGE STATE
 	//Draws the player variables
-	var _playerInfoX = BUFFER - 5;
-	var _playerInfoY = guiY - (_textBoxH) - 9;
+	var _playerInfoX = BUFFER - 10;
+	var _playerInfoY = guiY - (_textBoxH) - 11;
 	
 	//Hp
 	draw_set_colour(playerHpTextColor);
@@ -112,7 +115,7 @@ if (!isInBulletHellSection())
 			var textY = (_buttonY + 5) + (_buttonH / 2 + 1) * i - 2;
 			draw_text(textX, textY, text);
 		}
-		drawTextBoxText(global.battleFlavourTexts[flavourTextIndex], Mono, true, true);
+		drawTextBoxText(global.battleFlavourTexts[flavourTextIndex], Mono, false, ord("Z"), true, true, sndBasicTxt1, 0, 0);
 	}
 	else { decreaseMainMenuXPos(); }
 	#endregion
@@ -322,9 +325,11 @@ if (isEnemySpeaking())
 		}
 		else 
 		{
+			changeTurn();
 			enemyTextShowed = true; 
-			charCount = 0;
-			page = 0;
+			resetTextVars();
+			//charCount = 0;
+			//page = 0;
 			speechSpeed = 0.5;
 		}  
 	}

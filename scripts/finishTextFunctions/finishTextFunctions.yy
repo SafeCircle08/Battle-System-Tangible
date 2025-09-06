@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"finishTextFunctions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"finishTextFunctions",
+  "parent":{
+    "name":"textScripts",
+    "path":"folders/Scripts/textScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

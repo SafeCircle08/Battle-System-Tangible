@@ -57,7 +57,7 @@ removeItem = function() {
 	if (!itemNotPlaced())
 	{
 		var _myFX = instance_create_layer(itemSpriteX + xAdder + 16, itemSpriteY + 16, LAYER_EFFECT_TOP, oChangeAlphaDimObjFX);
-		_myFX.setUpVars(1, 1, 5, 5, 1, 0.02, 1, 0, 1, 0.02);
+		_myFX.setUpVars(1, 1, 5, 5, 1, -0.02, 1, 0, 1, -0.02);
 		_myFX.rotates = true;
 		_myFX.rotationAmount = 5;
 		_myFX.image_speed = 1;

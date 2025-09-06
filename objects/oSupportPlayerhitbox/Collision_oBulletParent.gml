@@ -13,7 +13,7 @@ if (canCollide == true)
 	if (global.playerShield > 1) { shield_shards(); }
 	
 	//SE E' DIFESO SUBIRA MENO DANNI
-	if oBattleManager.defended == true
+	if (oBattleManager.defended == true)
 	{
 		global.defenceValue = irandom_range(10, 15); //Defence value casuale
 		//DAMAGE POP EFFECT
@@ -23,7 +23,11 @@ if (canCollide == true)
 		{ 
 			global.playerShield -= global.attackRandom; oFloatingText.damageIndex = 1;
 		}
-		else { global.playerHP -= global.attackRandom - global.defenceValue; oFloatingText.damageIndex = 0; };	
+		else { 
+			oSoul.damageTaken += global.attackRandom * -1;
+			global.playerHP -= global.attackRandom - global.defenceValue; 
+			oFloatingText.damageIndex = 0; 
+		};	
 	} 
 	else
 	{
@@ -34,7 +38,11 @@ if (canCollide == true)
 		if (godMode = 0) 
 		{	
 			if (global.playerShield > 0) { global.playerShield -= global.attackRandom; oFloatingText.damageIndex = 1;}
-			else { global.playerHP -= global.attackRandom; oFloatingText.damageIndex = 0;}
+			else { 
+				global.playerHP -= global.attackRandom; 
+				oFloatingText.damageIndex = 0;
+				oSoul.damageTaken += global.attackRandom;
+			}
 		}
 	}
 	godMode = 50;

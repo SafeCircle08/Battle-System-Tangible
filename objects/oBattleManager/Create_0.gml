@@ -4,13 +4,14 @@ mainOptionsNames = [];
 layers = ["LoopBg_1", "LoopBg_2"];
 
 flavourTextIndex = 0;
+flavourText = [];
 
 global.borderWidth = 100;
 global.borderHeight = 100;
 
 //PLAYER VARIABLES
 battle = true;
-turnNumber = 0;
+turnNumber = 1;
 defended = false;
 playerDeath = false;
 playerTurn = true;

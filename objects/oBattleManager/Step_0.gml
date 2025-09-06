@@ -25,22 +25,6 @@ if (showBattleText)
 	if (oPinkDetails.image_alpha > 0) { oPinkDetails.image_alpha -= 0.05; }
 	
 	messageTimer++;
-	
-	if (messageTimer >= timeBeforePressed)
-	{
-		if (keyboard_check_pressed(vk_enter))
-		{
-			if (messageCounter + 1) <= ds_list_size(ds_messages) - 1 { messageCounter++ }
-			else
-			{
-				if (enemyTextShowed == false) { enemyCanShowText = true; }
-				if (enemyTextShowed == true) { changeTurn(); }
-			}
-			messageTimer = 0;
-			if (global.playerHP <= 0) { game_end(); }
-			if (global.monsterHP <= 0) { game_restart(); }
-		}
-	}
 }
 
 //Navigating sub actions windows (ex. inventory menu or battle sub menu)

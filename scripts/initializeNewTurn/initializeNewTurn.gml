@@ -33,15 +33,18 @@ function finishTurn()
 			showBattleText = true;
 			oBattleBox.visible = false;
 			global.enemyTimer = 0;
-			global.playerShield = global.playerMaxShield;
+			global.getTextBoxInputs = true;
 			turnNumber += 1;
 			actualDrawAlpha = 0;
-			defended = 0;
+			
+			flavourText = ["*Turn Finished."];
+			menageAfterTurnFlavourTexts();
 			flavourTextIndex = getRandomIndex(global.battleFlavourTexts);
 			
-			//reset players stats function goes here
-			
 			backGroundLayersVisible(layers, false);
+			global.playerShield = global.playerMaxShield;
+			defended = 0;
+			oSoul.damageTaken = 0;
 		}
 	}
 }

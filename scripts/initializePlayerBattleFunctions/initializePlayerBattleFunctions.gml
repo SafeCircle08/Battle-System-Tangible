@@ -159,7 +159,6 @@ function initializeAttackFunctions()
 {
 	selectedAttackFunction = function() { 
 		selectAction(false, false, sndSelecting_2, []); 
-		oSubMenuManager.setToFadeOut();
 	}
 	
 	attackFunction = function()
@@ -244,7 +243,7 @@ function initializeDefenceFunctions()
 function initializePrayFunctions() 
 {
 	selectedPrayOption = function() { 
-		selectAction(true, true, sndSelecting_2, []); 
+		selectAction(true, true, sndSelecting_2, ["You deciced to pray."]);
 		if (!instance_exists(oAdSlidingManager)) {
 			var _downAds = instance_create_layer(x, y, layer, oAdSlidingManager);
 			_downAds._sign = 1;
@@ -289,7 +288,7 @@ function initializeEnchantingFunctions()
 {
 	selectedEnchantOption = function() 
 	{ 
-		selectAction(true, true, sndSelecting_2, []);
+		selectAction(true, true, sndSelecting_2, ["*You enchante an Item.","*You'll be able\n to use it next turn."]);
 		showCursor();
 		if (!instance_exists(oEnchantOptionManager)) { instance_create_layer(x, y, "Instances", oEnchantOptionManager); } 
 		else { oEnchantOptionManager.setTofadeIn(); }

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"menageAfterTurnFlavourTexts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"menageAfterTurnFlavourTexts",
+  "parent":{
+    "name":"FlavourTextScript",
+    "path":"folders/Scripts/textScripts/FlavourTextScript.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

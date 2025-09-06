@@ -11,6 +11,9 @@ function selectAction(main = true, _moreStepsAct = true, _sound = sndSelecting_2
 		if (moreStepsAct) { showingSubWindow = true; }
 		var _pages = array_length(_flavourText);
 		ds_messages = ds_list_create();
+		
+		flavourText = _flavourText;
+		
 		if ((_pages >= 0) && (_moreStepsAct == false))
 		{
 			for (var i = 0; i < _pages; i++)
@@ -26,7 +29,8 @@ function selectAction(main = true, _moreStepsAct = true, _sound = sndSelecting_2
 		playingGuiAnimation = false;
 		showingSubWindow = false;
 		battleDelay = 3;
-		moreStepsAct = false;			
+		moreStepsAct = false;
+		oSubMenuManager.setToFadeOut();
 	}
 }
 
@@ -103,6 +107,9 @@ function terminateAction(_ds_list = [], _method = function() {})
 		oAttackBG.fadingOut = true;
 		setSelectionDelay();
 		battleDelay = 3;
+		
+		flavourText = _ds_list;
+		
 		closeBattleBook();
 		_method();
 		
