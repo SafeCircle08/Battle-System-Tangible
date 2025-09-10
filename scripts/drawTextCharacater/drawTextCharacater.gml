@@ -74,7 +74,7 @@ function drawFreeCharacter(_textList,_charObj, _font = fFontino)
 	draw_sprite(spriteFace, 0, _xPos - 10, _yPos - 5);
 	
 	//If you click X, the text gets drawn all at once
-	if keyboard_check_pressed(ord("X")) { charCount = string_length(_textList[page]); }
+	if (cancelPressed()) { charCount = string_length(_textList[page]); }
 	
 	//Adds delay if there are commas or points (gives funky feeling)
 	dialogueDelay = setTimer(dialogueDelay);

@@ -39,7 +39,7 @@ placeItem = function()
 	placeItemTimer = setTimer(placeItemTimer);
 	if (placeItemTimer == 0)
 	{
-		if (keyboard_check_pressed(vk_enter)) && (itemNotPlaced())
+		if (confirmPressed()) && (itemNotPlaced())
 		{
 			var _selectedItem = global.equippedItems[oBattleManager.selected_option];
 			closeBattleBook();

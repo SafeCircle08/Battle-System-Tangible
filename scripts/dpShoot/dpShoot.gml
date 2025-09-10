@@ -1,6 +1,6 @@
 function dpShoot(_damageAdder)
 {
-	if (keyboard_check_pressed(vk_enter))
+	if (confirmPressed())
 	{
 		pressed = true;
 		canShoot = false;

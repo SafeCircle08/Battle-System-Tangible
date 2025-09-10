@@ -1,3 +1,5 @@
+#macro TEXT_FINISHED_TIMER 30
+
 global.getTextBoxInputs = true;
 
 function dontGetTextInputs() { 
@@ -10,11 +12,13 @@ function getTextInputs() {
 }
 
 function setToFirstPage() {
+	textFinishedTimer = TEXT_FINISHED_TIMER;
 	charCount = 0;
 	page = 0;
 }	
 
 function goToNextPage() {
+	textFinishedTimer = TEXT_FINISHED_TIMER;
 	page++;
 	charCount = 0;
 }
@@ -24,7 +28,10 @@ function textUnfinished(_textList) {
 }	
 
 function textFinished(_textList) {
-	return (charCount >= string_length(_textList[page]));		
+	textFinishedTimer = setTimer(textFinishedTimer);
+	if (textFinishedTimer <= 0) {
+		return (charCount >= string_length(_textList[page]));
+	}
 }
 
 function pagesFinished(_textList) {
@@ -56,7 +63,14 @@ function advanceText(_textList, _advanceSound, _pDel = 10, _cDel = 5) {
 	checkForPauses(_textList, _pDel, _cDel);
 }
 
-function drawTextBoxText(_textList, _font = Mono, isBattleFlavourText = false, _confirmKey = vk_enter, inBox = true, inBattle = false, _txtSound = sndBasicTxt1, _pDel = 10, _cDel = 5) 
+function drawTextBoxText(
+	_textList, _font = Mono, isBattleFlavourText = false, 
+	_confirmKey = vk_enter, inBox = true, inBattle = false, 
+	_txtSound = sndBasicTxt1, _pDel = 10, _cDel = 5,
+	_bX = 10, _bY = _bX - 1, _lSep = 15, _maxWidth = sprite_get_width(sTextBoxBg) - _bX,
+	_scale = 1, _textX = undefined, _textY = undefined,
+	_enemySpeech = false
+) 
 {
 	var _cam = view_camera[view_current];
 	var _camW = camera_get_view_width(_cam);
@@ -65,7 +79,7 @@ function drawTextBoxText(_textList, _font = Mono, isBattleFlavourText = false, _
 	var _camY = camera_get_view_y(_cam);
 	
 	//Sprite properties
-	var _sprTextBox = sTextBoxBg;
+	var _sprTextBox = global.selectedGuiStyle.textBox;
 	var _boxW = sprite_get_width(_sprTextBox); 
 	var _boxH = sprite_get_height(_sprTextBox)
 	
@@ -74,7 +88,6 @@ function drawTextBoxText(_textList, _font = Mono, isBattleFlavourText = false, _
 	
 	if (inBattle) { 
 		_confirmKey = ord("Z"); 
-		_txtSound = sndBasicTxt2;
 	}
 	
 	if (inBattle == false)
@@ -85,63 +98,85 @@ function drawTextBoxText(_textList, _font = Mono, isBattleFlavourText = false, _
 		}
 	}
 	
-	if (inBox) { draw_sprite(_sprTextBox, 0,  _txtBoxX, _txtBoxY); }
+	if (inBox) { 
+		draw_sprite(_sprTextBox, 0, _txtBoxX, _txtBoxY);	
+	}
 	
-	if (!oBattleManager.isEnemySpeaking())
-	{
-		dialogueDelay = setTimer(dialogueDelay);
-		if (canAdvanceText(_textList)) { advanceText(_textList, _txtSound, _pDel, _cDel); }
+	if (isBattleFlavourText) && (oBattleManager.isEnemySpeaking()) { return; }
 	
-		//Text Properties + Coords
-		var _borderX = 10;
-		var _borderY = _borderX - 2;
-		var _lineSep = 15;
-		var _maxW = _boxW - (_borderX);
-		var _txtScale = 1;
-		var _txtX = _txtBoxX - (_boxW / 2) + _borderX;
-		var _txtY = _txtBoxY - _boxH + _borderY;
+	//Text Properties + Coords
+	var _borderX = _bX;
+	var _borderY = _bY;
+	var _lineSep = _lSep;
+	var _maxW = _maxWidth;
+	var _txtScale = _scale;
+	var _txtX = _txtBoxX - (_boxW / 2) + _borderX;
+	var _txtY = _txtBoxY - _boxH + _borderY;
+	if (_textX != undefined) && (_textY != undefined) {
+		_txtX = _textX + 3;
+		_txtY = _textY;
+	}	
 	
-		var _textPart = string_copy(_textList[page], 1, charCount);
-		draw_set_font(_font);
-		draw_set_color(c_dkgray);
-		draw_text_ext(_txtX + 0.5, _txtY + 0.5, _textPart, _lineSep, _maxW);
-		draw_set_color(c_white);
-		draw_text_ext(_txtX, _txtY, _textPart, _lineSep, _maxW);
+	static arrowIndex = 0.1;
+	arrowIndex += 0.1;
 	
-		static arrowIndex = 0.1;
-		arrowIndex += 0.1;
-	
+	if (_enemySpeech) {
+		var _bgSpr = sTextBG;
+		draw_sprite(sTextBG, 0, _textX, _textY);
+		var _bgW = sprite_get_width(_bgSpr);
+		var _bgH = sprite_get_height(_bgSpr);
 		if (textFinished(_textList)) { 
+			draw_sprite(sNextPageArrow, arrowIndex, _textX + _bgW - _borderX * 3, _textY + _boxH - _borderY - 3); 
+		}
+	}
+	
+	if (inBox) { draw_sprite(_sprTextBox, 0,  _txtBoxX, _txtBoxY); }
+	dialogueDelay = setTimer(dialogueDelay);
+	if (canAdvanceText(_textList)) { advanceText(_textList, _txtSound, _pDel, _cDel); }
+	
+	var _textPart = string_copy(_textList[page], 1, charCount);
+	draw_set_font(_font);
+	draw_set_color(c_dkgray);
+	draw_text_ext_transformed(_txtX + 0.5, _txtY + 0.5, _textPart, _lineSep, _maxW, _scale, _scale, 0);
+	draw_set_color(c_white);
+	draw_text_ext_transformed(_txtX, _txtY, _textPart, _lineSep, _maxW, _scale, _scale, 0);
+	
+	if (textFinished(_textList)) {
+		if (_enemySpeech == false) {
 			if (!morePages(_textList)) { draw_sprite(sPagesAllWritten_NowRestart, 0, _txtBoxX + 118, _txtBoxY - 7); }
 			draw_sprite(sNextPageArrow, arrowIndex, _txtBoxX + 108, _txtBoxY - 7); 
 		}
+	}
 		
-		//Managing text
-		if (global.getTextBoxInputs) {
-			if (keyboard_check_pressed(_confirmKey) && (textFinished(_textList)))
-			{
-				if (morePages(_textList)) { 
-					goToNextPage();	
-					return;
-				}
-				else 
-				{
-					if (inBattle == false) { destroyTextBoxOW(); }
-				
-					if (isBattleFlavourText) {
-						with (oBattleManager) {
-							if (enemyTextShowed == false) { stopTextBoxInputsShowEnemyText(); }
-							if (enemyTextShowed == true) { changeTurn(); }
-						}
+	//Managing text
+	if (global.getTextBoxInputs) {
+		if (keyboard_check_pressed(global.confirmTextKey) && (textFinished(_textList))) {
+			if (morePages(_textList)) { 
+				goToNextPage();	
+				return;
+			}
+			else {
+				if (inBattle == false) { destroyTextBoxOW(); }
+				else {
+					if (oBattleManager.isEnemySpeaking()) {
+						oBattleManager.enemyTextShowed = true;
+						oBattleManager.changeTurn();
 					}
-					speechSpeed = 0.5;
-					setToFirstPage();
-					return;
-				}  
-			}
-			if (charCount > 5) { 
-				if (keyboard_check_pressed(_confirmKey) && (textUnfinished(_textList))) { showFullText(_textList); }
-			}
+				}
+				
+				if (isBattleFlavourText) {
+					with (oBattleManager) {
+						if (enemyTextShowed == false) { showEnemyText(); }
+						if (enemyTextShowed == true) { changeTurn(); }
+					}
+				}
+				speechSpeed = 0.5;
+				setToFirstPage();
+				return;
+			}  
+		}
+		if (charCount >= 1) { 
+			if (keyboard_check_pressed(global.confirmTextKey) && (textUnfinished(_textList))) { showFullText(_textList); }
 		}
 	}
 }

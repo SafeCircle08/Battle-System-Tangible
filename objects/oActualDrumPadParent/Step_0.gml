@@ -59,7 +59,7 @@ if (attackTime > 0)
 }
 
 //SE IL MIRINO E' VICINO ALLA CAMERA CON I PROIETTILI----------
-if (keyboard_check_pressed(vk_enter) && !oDrumPadScope.canShoot)
+if (confirmPressed() && !oDrumPadScope.canShoot)
 { audio_play_sound(sndEmptyChamber, 50, false); exit; }
 
 if (!oDrumPadScope.canShoot) { exit; }

@@ -25,26 +25,9 @@ function finishTurn()
 		destroyBulletsGensExtras();
 		with (oBattleManager)
 		{
-			ds_messages = ds_list_create();
-			ds_messages[| 0] = "<>Turn ended.";
-			ds_messages[| 1] = "<>The Fight continues.";
-			selected_option = 0;
-			enemyTextShowed = true;
-			showBattleText = true;
-			oBattleBox.visible = false;
-			global.enemyTimer = 0;
-			global.getTextBoxInputs = true;
-			turnNumber += 1;
-			actualDrawAlpha = 0;
-			
-			flavourText = ["*Turn Finished."];
-			menageAfterTurnFlavourTexts();
-			flavourTextIndex = getRandomIndex(global.battleFlavourTexts);
-			
 			backGroundLayersVisible(layers, false);
-			global.playerShield = global.playerMaxShield;
-			defended = 0;
-			oSoul.damageTaken = 0;
+			setManagerValuesToStartTurn();
+			resetBattlePlayerVars();
 		}
 	}
 }

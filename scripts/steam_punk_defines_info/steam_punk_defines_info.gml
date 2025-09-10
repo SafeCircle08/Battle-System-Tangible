@@ -6,33 +6,35 @@ function steamPunkEnemyBattleInfo()
 	var steamEnemyText =
 	[
 		[
-		 "AAAnnnnd, I have\nchanged my Font again...\nIs this better???\nPLEASE! You have to\ntell me!\nTwT",
-		 "Loading packages...",
+		 "AAAnnnnd, I have\nchanged my Font\nagain...",
+		 "Is this better???\nPLEASE!\nYou have to\ntell me!",
+		 "#Loading\n packages...",
 		 "std::cout <<\n 'FINALLY' \n<< std::endl;",
-		 "I've finally obtained\n a voice!",
-		 "And you know,\n I've invented \n  much everything here;\n I think a little\n  gift won't hurt me!",
-		 "You can't understand\n for how long I've\n  waited for this\nmoment!",
-		 "I should probably call\n my BOSS, my Robots,\n  my-",
+		 "I've finally\nobtained a\nvoice!",
+		 "You can't\nunderstand for\nhow long I've\nbeen waiting!",
+		 "I should\nprobably call\nmy BOSS, my\nRobots, my-",
+		 "...",
 		 "You know what?",
-		 "Let's not tell\n anything to BOSS",
-		 "He'd probably\n starts a business\n  on ts",
+		 "Let's not tell\nanything to BOSS",
+		 "He'd probably\nstart some\nkind of\nbusiness on ts",
 		 "&&",
 		 "I hate\n my boss!\n  => (LOL)",
 		],
 		[
-			"This is very annoying... for real ngl",   
-			"I'll gain a lot of POWER!",
+			"This is very\nannoying\nnot gonna lie.",   
+			"Like, can you\nbelieve it?",
+			"I have to do all\nof this just\nbecause text can't\nbe scaled."
 		],
 		[
-			"The BOSS will finally understand my importance here!",
-			"I'll finally be considered as an INNOVATOR!",
+			"The BOSS will\nfinally\nunderstand my\nimportance!",
+			"I'll finally be\nconsidered as\nan INNOVATOR!",
 			"FOREVER."
 		],
 		[
 			"And, please...",
-			"Don't think that I like doing this to you.",
+			"Don't think\nthat I like\ndoing this to you.",
 		],
-		["My will is against what i HAVE to do."],
+		["My will is\nagainst what\nI HAVE to do."],
 		[
 			"So now i have a new font\nuh?\nWell, if this is so,\ni'll make the\ncreator very very HAPPY!",
 			"You are just..."

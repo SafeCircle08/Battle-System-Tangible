@@ -4,7 +4,7 @@ randomize();
 if (playerMainActionTurn())
 {
 	navigatingBattle(0, 3);
-	if (keyboard_check_pressed(vk_enter))
+	if (confirmPressed())
 	{
 		decidingSubAction = true;
 		oBulletGeneratorManager.generatorCreated = false;
@@ -18,13 +18,11 @@ if (playerMainActionTurn())
 	}
 }
 
-if (showBattleText)
+if (showFlavourText)
 {
-	easeOutBg();
+	//if (!isEnemySpeaking())	{ easeOutBg(); }
 	if (oBlack.image_alpha > 0) { oBlack.image_alpha -= 0.05; } 
 	if (oPinkDetails.image_alpha > 0) { oPinkDetails.image_alpha -= 0.05; }
-	
-	messageTimer++;
 }
 
 //Navigating sub actions windows (ex. inventory menu or battle sub menu)

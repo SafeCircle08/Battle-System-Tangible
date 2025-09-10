@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"defaultCommandsKeys",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"defaultCommandsKeys",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

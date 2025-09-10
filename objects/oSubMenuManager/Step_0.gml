@@ -18,7 +18,7 @@ if (battleDelay == 0)
 	if (oBattleManager.showingSubSubWindow == false)
 	{
 		navigatingBattle(0, _optionNumber - 1);
-		if (keyboard_check_pressed(vk_enter))
+		if (confirmPressed())
 		{
 			_optionList[oBattleManager.selected_option]._selectFunction();
 		}

@@ -1,6 +1,6 @@
 if (finishedEnchanting == false)
 {
-	if (keyboard_check_pressed(vk_enter)) && (placedItem != undefined) { confirmEnchant(); }
+	if (confirmPressed()) && (placedItem != undefined) { confirmEnchant(); }
 	if (mouse_check_button_pressed(mb_right))
 	{ 
 		if (mouseCursorIsOn(
@@ -20,7 +20,7 @@ if (showingInv)
 		else { inventoryFadeOut(); } 
 		navigatingInventoryFunction(DONT_GET_INPUTS, CAN_NAVIGATE);
 	}
-	if (keyboard_check_pressed(vk_enter)) { placeItem(); }
+	if (confirmPressed()) { placeItem(); }
 } else { with (oBattleManager) { inventoryFadeOut(); } }
 
 //Animationd

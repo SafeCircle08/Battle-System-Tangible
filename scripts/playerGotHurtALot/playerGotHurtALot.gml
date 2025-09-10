@@ -10,10 +10,8 @@ enum TEXT_INDEXES {
 
 function flavourPlayerHurt() {
 	var _hurtVals = [A_LOT_OF_DAMAGE, A_MEDIUM_DAMAGE, A_LITTLE_DAMAGE, FLAWLESS];
-	print(oSoul.damageTaken)
 	for (var i = 0; i < array_length(_hurtVals); i++) {
 		if (oSoul.damageTaken >= _hurtVals[i][TEXT_INDEXES.VALUE]) {
-			print(_hurtVals[i][TEXT_INDEXES.STRINGS])
 			return 	_hurtVals[i][TEXT_INDEXES.STRINGS];
 		}
 	}

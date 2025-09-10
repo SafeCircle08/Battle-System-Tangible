@@ -5,7 +5,8 @@ function destroyTextBoxOW() {
 	instance_destroy();	
 }
 
-function stopTextBoxInputsShowEnemyText() {
-	global.getTextBoxInputs = false;
+function showEnemyText() {
+	resetTextVars();
+	textFinishedTimer = 10;
 	enemyCanShowText = true; 			
 }

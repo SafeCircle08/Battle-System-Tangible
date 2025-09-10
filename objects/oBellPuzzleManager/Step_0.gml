@@ -4,7 +4,7 @@ with (oPlayerOW)
 	var _resetButton = instance_position(x, y, oResetButton);
 	var _playSoundButton = instance_position(x, y, oPlaySoundButton);
 	
-	if (keyboard_check_pressed(vk_enter)) && (other.performing == false)
+	if (confirmPressed()) && (other.performing == false)
 	{
 		//The sounds
 		if (place_meeting(x, y, _bellButton))

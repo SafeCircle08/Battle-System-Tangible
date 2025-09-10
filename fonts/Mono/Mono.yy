@@ -119,8 +119,8 @@
   "maintainGms1Font":false,
   "name":"Mono",
   "parent":{
-    "name":"Try Font",
-    "path":"folders/Animation Curves/Try Font.yy",
+    "name":"ImportantFonts",
+    "path":"folders/Fonts/ImportantFonts.yy",
   },
   "pointRounding":0,
   "ranges":[
@@ -134,7 +134,10 @@
   "sdfSpread":8,
   "size":11.0,
   "styleName":"Medium",
-  "textureGroupId":null,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
   "TTFName":"",
   "usesSDF":false,
 }

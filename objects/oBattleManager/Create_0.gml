@@ -3,6 +3,8 @@ mainOptionsNames = [];
 
 layers = ["LoopBg_1", "LoopBg_2"];
 
+textFinishedTimer = TEXT_FINISHED_TIMER;
+
 flavourTextIndex = 0;
 flavourText = [];
 
@@ -11,7 +13,7 @@ global.borderHeight = 100;
 
 //PLAYER VARIABLES
 battle = true;
-turnNumber = 1;
+turnNumber = 0;
 defended = false;
 playerDeath = false;
 playerTurn = true;
@@ -30,7 +32,7 @@ page = 0;
 speechSpeed = 0.5;
 ds_messages = ds_list_create();
 messageCounter = 0;
-showBattleText = false;
+showFlavourText = false;
 messageTimer = 0;
 timeBeforePressed = 15;
 enemyTextShowed = false;
@@ -105,21 +107,21 @@ isEnemySpeaking = function()
 playerMainActionTurn = function()
 {
 	return (playerTurn == true) &&
-		   (showBattleText == false) && 
+		   (showFlavourText == false) && 
 		   (decidingSubAction == false)	
 }
 
 isNotPlayerTurn = function()
 {
 	return (playerTurn == false) &&
-		   (showBattleText == false)
+		   (showFlavourText == false)
 }
 
 goToBulletHellSection = function()
 {
 	resetTextVars();
 	enemyTextShowed = true;
-	showBattleText = false;
+	showFlavourText = false;
 	playerTurn = false; 
 	messageCounter = 0;
 }
@@ -127,7 +129,7 @@ goToBulletHellSection = function()
 changeTurn = function()
 {
 	resetTextVars();
-	showBattleText = false;
+	showFlavourText = false;
 	playerTurn = !playerTurn; 
 	buttonFrame = 0;
 	messageCounter = 0;
@@ -140,8 +142,30 @@ changeTurn = function()
 
 isInBulletHellSection = function() { return (oBattleBox.visible); }
 
+increaseTurn = function() {
+	turnNumber += 1;		
+}
+
+setToStartTurn = function() {
+	selected_option = 0;
+	enemyTextShowed = true;
+	showFlavourText = true;
+	actualDrawAlpha = 0;
+	oBattleBox.visible = false;
+	global.enemyTimer = 0;
+	global.getTextBoxInputs = true;
+	
+	flavourText = ["*Turn Finished."];
+	flavourTextIndex = 0;
+	var _flavourTextProbs = irandom_range(0, 7);
+	if (_flavourTextProbs == 6) {
+		menageAfterTurnFlavourTexts(); 
+		flavourTextIndex = getRandomIndex(global.battleFlavourTexts);
+	}		
+}
+
 //The effect
-makeAlphaSinEffect(15, 0, LAYER_UNDER_EFFECT, 5, sInventory, 3, false, 2, 1.8, true);
+//makeAlphaSinEffect(15, 0, LAYER_UNDER_EFFECT, 5, global.selectedGuiStyle.bg, 3, false, 2, 1.8, true);
 //Initialize the "coded" functions
 initializeAllCreatedFunctions();
 

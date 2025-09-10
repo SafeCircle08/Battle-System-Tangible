@@ -38,7 +38,7 @@ function initializeNavigatingBattleOptionFunctions()
 		showMirrors();
 		easeInBg();
 		var _subManager = instance_find(oSubMenuManager, instance_number(oSubMenuManager) - 1);
-		if (keyboard_check_pressed(ord("X"))) { 
+		if (cancelPressed()) { 
 			_subManager.setToFadeOut();
 			resetNavigation(0); 
 		}
@@ -124,12 +124,12 @@ function initializeInventoryOptionFunctions()
 		if (!instance_exists(itemOutputMessage)) { if (_canNavigate) { navigatingBattle(0, _itemsNumber - 1); }}	
 	
 		if (_getInputs) { 
-			if (keyboard_check_pressed(ord("X")) && (!instance_exists(itemOutputMessage))) { resetNavigation(3, sndClosingInventory); } 
+			if (cancelPressed()) && (!instance_exists(itemOutputMessage)) { resetNavigation(3, sndClosingInventory); } 
 			
 			takenOptionDelay = setTimer(takenOptionDelay);
 			if (takenOptionDelay == 0)
 			{
-				if (keyboard_check_pressed(vk_enter))
+				if (confirmPressed())
 				{ 
 					if (instance_exists(itemOutputMessage)) 
 					{ 
@@ -299,7 +299,7 @@ function initializeEnchantingFunctions()
 		easeInBg();
 		var _enchantManager = instance_find(oEnchantOptionManager, instance_number(oEnchantOptionManager) - 1);
 		
-		if (resetKey()) {
+		if (cancelPressed()) {
 			if (_enchantManager.showingInv == false) {
 				_enchantManager.setToStartStateItemVars();
 				_enchantManager.setToFadeOut();
@@ -315,10 +315,12 @@ function initializeEnchantingFunctions()
 		takenOptionDelay = setTimer(takenOptionDelay);
 		if (takenOptionDelay == 0) 
 		{
-			if ((pressedEnter()) && (_enchantManager.placedItem == undefined) && (array_length(global.equippedItems) > 0)) 
+			if (confirmPressed(false)) && (_enchantManager.placedItem == undefined) && (array_length(global.equippedItems) > 0) 
 			{ 
 				setSelectionDelay();
-				if (_enchantManager.showingInv == false) { selected_option = 0; _enchantManager.showingInv = true; }
+				if (_enchantManager.showingInv == false) { 
+					selected_option = 0; _enchantManager.showingInv = true; 
+				}
 			}
 		}
 	}

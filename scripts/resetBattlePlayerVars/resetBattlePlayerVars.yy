@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"resetBattlePlayerVars",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"resetBattlePlayerVars",
+  "parent":{
+    "name":"PlayerScripts",
+    "path":"folders/Scripts/PlayerScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

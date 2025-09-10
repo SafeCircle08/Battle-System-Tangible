@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"setManagerValuesToStartTurn",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"setManagerValuesToStartTurn",
+  "parent":{
+    "name":"BattleBookScripts",
+    "path":"folders/Scripts/BattleScripts/BattleBookScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

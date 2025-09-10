@@ -1,6 +1,6 @@
 if (!isInBulletHellSection())
 {
-	#region //VARIABLES
+	#region VARIABLES
 	var guiX = room_width / 2;
 	var guiY = room_height;
 	var _sprTextBox = sNewBox;
@@ -12,46 +12,40 @@ if (!isInBulletHellSection())
 	draw_set_font(_battleFont);
 	#endregion
 	
-	#region DRAWING DS MESSAGES
+	#region DRAWING FLAVOUR TEXT && ENEMY SPEECH
 	var _dsBgW = sprite_get_width(_sprTextBox);
 	var _dsBgH = sprite_get_height(_sprTextBox);
 	var _dsX = camera_get_view_x(view_camera[view_current]);
 	var _dsY = camera_get_view_height(view_camera[view_current]);
 	var _border = 10;
 	
-	if (showBattleText)
-	{
-		drawTextBoxText(flavourText, Mono, true, ord("Z"), true, true, sndBasicTxt1, 0, 0);
-		/*
-		//Draws the text box and the battle messages
-		var dsBoxX = camera_get_view_x(view_camera[view_current]) + sprite_get_width(sNewBox) / 2;
-		var dsBoxY = camera_get_view_height(view_camera[view_current]);
-		draw_sprite(_sprTextBox, 0, dsBoxX, dsBoxY);
-		var _textX = guiX - (_textBoxW / 2) + BUFFER;
-		var _textY = _dsY - _dsBgH + 13;
-		for (var a = 0; a <= messageCounter; a++)
-		{
-			draw_set_color(c_gray);
-			draw_text_ext(_dsX + _border + 0.5, _textY + fontSize * a * 2 + 2.5, ds_messages[| a], fontSize + 9, _textBoxW - BUFFER * 3);
-			draw_set_color(c_white);
-			draw_text_ext(_dsX + _border, _textY + fontSize * a * 2 + 2, ds_messages[| a], fontSize + 9, _textBoxW - BUFFER * 3);
-		}
-		*/
+	if (showFlavourText) && (!isEnemySpeaking()) { 
+		drawTextBoxText(flavourText, Mono, true, ord("Z"), true, true, sndBasicTxt1, 0, 0); 
+	}
+	
+	if (isEnemySpeaking()) { 
+		drawTextBoxText(
+			global.textList[turnNumber], fHungrySkinny, false, global.confirmTextKey, 
+			true, true, sndSteamPunkTalk, 10, 5, 10, 8, 20, 
+			sprite_get_width(sTextBoxBg) - 10, 0.5, 
+			183, 35, true
+		); 
 	}
 	#endregion
 	
 	#region DRAWING PLAYER HP, CAGE STATE
 	//Draws the player variables
-	var _playerInfoX = BUFFER - 10;
-	var _playerInfoY = guiY - (_textBoxH) - 11;
+	draw_set_font(fHungryBig);
+	var _playerInfoX = BUFFER - 8;
+	var _playerInfoY = guiY - (_textBoxH) - 9;
 	
 	//Hp
 	draw_set_colour(playerHpTextColor);
-	draw_text(_playerInfoX, _playerInfoY, "HP:" + string(global.playerHP) + "/" + string(global.playerMAX_HP) + ";");
+	draw_text(_playerInfoX, _playerInfoY, "HP:" + string(global.playerHP) + "/" + string(global.playerMAX_HP));
 	draw_set_color(c_white);
 	
 	//Cage State
-	var _csX = _playerInfoX + (10 * BUFFER) - 28;
+	var _csX = _playerInfoX + (10 * BUFFER) -35;
 	var _csY = _playerInfoY + 3;
 	var _barCsW = 121;
 	var _barCsH = 10;
@@ -77,6 +71,7 @@ if (!isInBulletHellSection())
 	#endregion
 	
 	#region DRAWING MAIN MENU
+	draw_set_font(Mono);
 	var _bgH = 25;
 	var _xBorder = 17;
 	var _yBorder = 4;
@@ -87,11 +82,11 @@ if (!isInBulletHellSection())
 	var _buttonW = sprite_get_width(_sprButton);
 	var _buttonH = sprite_get_height(_sprButton);
 	//Button BG
-	draw_sprite_stretched(sInventory, 0, startButtonX - 50, _buttonY - 5, _buttonW / 2 + 71.5, _buttonH * 2 + 15);
+	draw_sprite_stretched(global.selectedGuiStyle.bg, 0, startButtonX - 50, _buttonY - 5, _buttonW / 2 + 71.5, _buttonH * 2 + 15);
 	//Mini player portrait
-	draw_sprite_ext(sPlayerMiniPortrait, 0, startButtonX + 40, _buttonY - 2, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(global.selectedGuiStyle.miniPortrait, 0, startButtonX + 40, _buttonY - 2, 1, 1, 0, c_white, 1);
 	
-	if (!showBattleText)
+	if (!showFlavourText)
 	{
 		increaseMainMenuXPos();	
 		for (var i = 0; i < array_length(mainOptionsNames); i++)
@@ -106,14 +101,14 @@ if (!isInBulletHellSection())
 			var _x = startButtonX;
 			
 			//Actual button
-			draw_sprite(sGUIBattleButton, _index, _x, _y);
+			draw_sprite(global.selectedGuiStyle.buttons, _index, _x, _y);
 			
 			//Button Properties (name, deco, ecc...)		
 			var text = global.settedMainBattleOptions[i].name;
 			draw_sprite(global.settedMainBattleOptions[i].decoSprite, _index, _x + 66, _y + 2)
 			var textX = startButtonX + 6;
 			var textY = (_buttonY + 5) + (_buttonH / 2 + 1) * i - 2;
-			draw_text(textX, textY, text);
+			draw_text(textX, textY - 0.5, text);
 		}
 		drawTextBoxText(global.battleFlavourTexts[flavourTextIndex], Mono, false, ord("Z"), true, true, sndBasicTxt1, 0, 0);
 	}
@@ -131,7 +126,7 @@ if (!isInBulletHellSection())
 		var _inventoryX = INVENTORY_X;
 		var _inventoryY =  INVENTORY_Y;
 		
-		var _sprBG = sInventoryBG;
+		var _sprBG = global.selectedGuiStyle.bg;
 		var _bgW = sprite_get_width(_sprBG) * 3;
 		var _bgH = sprite_get_height(_sprBG) * 2;
 
@@ -139,10 +134,10 @@ if (!isInBulletHellSection())
 		draw_sprite_stretched(_sprBG, 0, _inventoryX + inventoryXAdder, _inventoryY, _bgW, _bgH);
 		
 		//Draws the Inventory Mini Portrait (can an inventory have a portrait?, Idk lol)
-		draw_sprite(sInventoryMiniPortrait, 0, _inventoryX + _bgW - 30 + inventoryXAdder, _inventoryY + 3)
+		draw_sprite(global.selectedGuiStyle.inventoryPortrait, 0, _inventoryX + _bgW - 30 + inventoryXAdder, _inventoryY + 3)
 		
 		//Draws the inventory space (useless but cool)
-		draw_set_font(fFontino);
+		draw_set_font(fHungryBig);
 		var _invCapacity = string(array_length(global.equippedItems)) + "/" + string(MAX_ITEMS_NUM);
 		draw_set_color(c_black);
 		draw_text(_inventoryX + _border * 3 + inventoryXAdder + 1, _inventoryY - _border + 1, _invCapacity);
@@ -215,8 +210,9 @@ if (!isInBulletHellSection())
 		}
 
 		var _itemInfoBgY = _inventoryY + (_bgH / 2);
-		var _bookW = sprite_get_width(sItemStatisticsBook);
-		var _bookH = sprite_get_height(sItemStatisticsBook);
+		var _bookSpr = global.selectedGuiStyle.itemStatsBook;
+		var _bookW = sprite_get_width(_bookSpr);
+		var _bookH = sprite_get_height(_bookSpr);
 		var _bookX = _inventoryX + _bgW - _bookW - _border;
 		var _bookY = _itemInfoBgY + _border / 2 + 1.5;
 		var _bookSubImg = 0;
@@ -234,7 +230,7 @@ if (!isInBulletHellSection())
 				}
 			}
 		}
-		draw_sprite(sItemStatisticsBook, _bookSubImg, _bookX + inventoryXAdder, _bookY - 2);
+		draw_sprite(_bookSpr, _bookSubImg, _bookX + inventoryXAdder, _bookY - 2);
 		draw_set_alpha(1);
 	}
 	#endregion
@@ -256,83 +252,15 @@ else
 	draw_sprite_stretched(sHealthBar, 0, _bX + _xOffSet, _bY + _yOffSet, (global.playerHP/global.playerMAX_HP) * _bW, _bH);
 	draw_sprite_stretched(sShieldBar, 0, _bX + _bW + (_xOffSet * 2), _bY + _yOffSet, (global.playerShield/global.playerMaxShield) * _bW, _bH);
 	
-	var _font = fGenericText;
+	var _font = Mono;
 	draw_set_font(_font);
 	draw_set_halign(fa_center);
 	draw_set_color(c_white);
 	
-	draw_text_ext_transformed(_bX + _xOffSet + (_bW / 2) - 5, _bY - 11, "HP: " + string(global.playerHP) + " / " + string(global.playerMAX_HP) + ";", 3, 9999, 0.5, 0.5, 0);
+	draw_text_ext_transformed(_bX + _xOffSet + (_bW / 2) - 5, _bY - 14, "HP: " + string(global.playerHP) + " / " + string(global.playerMAX_HP) + ";", 3, 9999, 1, 1, 0);
 		
 	draw_set_halign(fa_left);
 	#endregion
-}
-
-if (isEnemySpeaking())
-{
-	var _xSep = 17;
-	var _ySep = 5;	
-	var _lSep = 13;
-
-	//Text BG coords
-	var _textBgX = room_width / 2 + 30;
-	var _textBgY = 20;
-	
-	//Sprite properties
-	var _textBgW = 110;
-	var _textBgH = 60;
-	var _border = 10;
-	
-	//Text Coords
-	var _textX = _textBgX + _border;
-	var _textY = _textBgY + _border;
-
-	var _page = global.textList[turnNumber];
-	
-	draw_sprite_stretched(sTextBG, 0, _textBgX, _textBgY, _textBgW, _textBgH);
-	draw_set_font(fFontinoNewAge);
-	draw_set_color(c_white);
-	
-	//IL TESTO VIENE MOSTRATO SUBITO E SI PUO' SKIPPARE SUBITO
-	if keyboard_check_pressed(ord("X")) { charCount = string_length(_page[page]); }
-	
-	dialogueDelay = setTimer(dialogueDelay);
-	if (dialogueDelay == 0) && (charCount < string_length(_page[page]))
-	{
-		charCount += speechSpeed; 
-		playVoice(sndSteamPunkTalk, 2, _page);
-		if (string_char_at(_page[page], charCount) == "." || string_char_at(_page[page], charCount) == "?" || string_char_at(_page[page], charCount) == "!") 
-		{
-			dialogueDelay = 15;
-		}
-		if (string_char_at(_page[page], charCount) == "," || string_char_at(_page[page], charCount) == ";")
-		{
-			dialogueDelay = 7;
-		}
-	}
-
-	//FA PROGREDIRE IL TESTO LETTERA PER LETTERA	
-	var _textPart = string_copy(_page[page], 1, charCount);
-	var _col = make_color_rgb(0, 42, 127);
-	draw_set_color(c_white);
-	draw_text_ext_transformed(_textX, _textY, _textPart, _lSep, _textBgW * 2 - _border, 0.5, 0.5, 0);	
-	//SE PUOI EFFETTIVAMENTE SKIPPAR
-	if keyboard_check_pressed(vk_enter) && (charCount >= string_length(_page[page]))
-	{
-		if (page + 1 < array_length(_page))
-		{
-			page++;
-			charCount = 0;				
-		}
-		else 
-		{
-			changeTurn();
-			enemyTextShowed = true; 
-			resetTextVars();
-			//charCount = 0;
-			//page = 0;
-			speechSpeed = 0.5;
-		}  
-	}
 }
 
 draw_set_color(c_white);

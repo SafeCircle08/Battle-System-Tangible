@@ -1,8 +1,6 @@
 //When you choose an action in the submenu
 function selectAction(main = true, _moreStepsAct = true, _sound = sndSelecting_2, _flavourText = [], _method = function() {})
 {
-	var soundGain = 0.7;
-	playSound(_sound, SOUND_CHANNEL_1, false, soundGain);
 	dontGetTextInputs();
 	if (main)
 	{
@@ -67,8 +65,6 @@ function easeOutBg(_finalAlpha = 0, _bgObj = oAttackBG)
 //When you are in the sub menu and you press "X"
 function resetNavigation(_lastOption = 0, _sound = sndResetNavigation, _resetMethod = function() {})
 {
-	var soundGain = 0.7;
-	playSound(_sound, SOUND_CHANNEL_1, false, 0.7);
 	getTextInputs();
 	actualDrawAlpha = 0;
 	selected_option = _lastOption;
@@ -85,7 +81,7 @@ function resetNavigation(_lastOption = 0, _sound = sndResetNavigation, _resetMet
 	
 	hideCursor();
 	closeBattleBook();
-	resetTextVars();
+	//resetTextVars();
 	easeOutBg();
 	hideMirrors();
 }
@@ -99,7 +95,7 @@ function terminateAction(_ds_list = [], _method = function() {})
 {
 	with (oBattleManager)
 	{
-		showBattleText = true;
+		showFlavourText = true;
 		enemyTextShowed = false;
 		decidingSubAction = false;
 		showingSubWindow = false;

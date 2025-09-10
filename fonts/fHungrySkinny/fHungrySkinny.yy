@@ -119,8 +119,8 @@
   "maintainGms1Font":false,
   "name":"fHungrySkinny",
   "parent":{
-    "name":"Fonts",
-    "path":"folders/Fonts.yy",
+    "name":"ImportantFonts",
+    "path":"folders/Fonts/ImportantFonts.yy",
   },
   "pointRounding":0,
   "ranges":[
@@ -134,7 +134,10 @@
   "sdfSpread":8,
   "size":15.0,
   "styleName":"Medium",
-  "textureGroupId":null,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
   "TTFName":"",
   "usesSDF":false,
 }
