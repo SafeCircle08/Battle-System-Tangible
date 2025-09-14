@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createBasicCircuit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createBasicCircuit",
+  "parent":{
+    "name":"circuitFoundamentalShapes",
+    "path":"folders/Scripts/CircuitScripts/circuitFoundamentalShapes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

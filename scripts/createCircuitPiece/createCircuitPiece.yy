@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createCircuitPiece",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createCircuitPiece",
+  "parent":{
+    "name":"CircuitScripts",
+    "path":"folders/Scripts/CircuitScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

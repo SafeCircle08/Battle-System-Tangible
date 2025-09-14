@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createCircuitResistance",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createCircuitResistance",
+  "parent":{
+    "name":"CircuitScripts",
+    "path":"folders/Scripts/CircuitScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,3 @@
+function createElectricImpule(_positiveCat) {
+	
+}

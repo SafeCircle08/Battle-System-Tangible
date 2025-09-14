@@ -1,7 +1,7 @@
 var bookBgX = bookX;
 var bookBgY = bookY;
 
-var bookBgSpr = sInventoryBG;
+var bookBgSpr = global.selectedGuiStyle.bg;
 
 draw_set_alpha(drawAlpha);
 

@@ -6,18 +6,18 @@ function steamPunkEnemyBattleInfo()
 	var steamEnemyText =
 	[
 		[
-		 "AAAnnnnd, I have\nchanged my Font\nagain...",
-		 "Is this better???\nPLEASE!\nYou have to\ntell me!",
-		 "#Loading\n packages...",
-		 "std::cout <<\n 'FINALLY' \n<< std::endl;",
-		 "I've finally\nobtained a\nvoice!",
-		 "You can't\nunderstand for\nhow long I've\nbeen waiting!",
-		 "I should\nprobably call\nmy BOSS, my\nRobots, my-",
-		 "...",
-		 "You know what?",
-		 "Let's not tell\nanything to BOSS",
-		 "He'd probably\nstart some\nkind of\nbusiness on ts",
-		 "&&",
+		// "AAAnnnnd, I have\nchanged my Font\nagain...",
+		 //"Is this better???\nPLEASE!\nYou have to\ntell me!",
+		 //"#Loading\n packages...",
+		 //"std::cout <<\n 'FINALLY' \n<< std::endl;",
+		 //"I've finally\nobtained a\nvoice!",
+		// "You can't\nunderstand for\nhow long I've\nbeen waiting!",
+		// "I should\nprobably call\nmy BOSS, my\nRobots, my-",
+		// "...",
+		// "You know what?",
+		// "Let's not tell\nanything to BOSS",
+		// "He'd probably\nstart some\nkind of\nbusiness on ts",
+		// "&&",
 		 "I hate\n my boss!\n  => (LOL)",
 		],
 		[
@@ -122,6 +122,13 @@ function steamPunkEnemyBattleInfo()
 		["*I can't wait for Winter\n to come.", "*Dark Afternoons,\n\n*(very dark afternoons)", "*Cozy Blankets,\n\n*(cozy, cozy)", "*Hoodies...\n\n*(Nirvana Ones...)", "*How Isn't that the best of\n feelings?"],
 	]
 	#endregion
+	#region PORTRAITS
+	var _portraits = [
+		sSteamPunkMiniPortrait_DEFAULT,
+		sSteamPunkMiniPortrait
+		//others
+	];
+	#endregion
 	
 	global.monsterHP = 1500;
 	global.maxMonsterHp = 1500;
@@ -130,6 +137,7 @@ function steamPunkEnemyBattleInfo()
 	global.textList = steamEnemyText;
 	global.inUseGenerator = steamPunkBulletGenerator;
 	global.battleFlavourTexts = steamPunkBattleFlavourTexts;
+	global.enemyPortrait = _portraits[global.styleSelection];
 }
 
 

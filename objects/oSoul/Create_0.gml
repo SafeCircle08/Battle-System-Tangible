@@ -18,6 +18,7 @@ stateUsingUmbrella();
 stateGravityLoad();
 stateSpiderLoad();
 stateCartingLoad();
+stateCircuitLoad();
 
 state = stateFree;
 

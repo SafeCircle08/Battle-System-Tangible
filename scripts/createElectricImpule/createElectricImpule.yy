@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createElectricImpule",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createElectricImpule",
+  "parent":{
+    "name":"CircuitScripts",
+    "path":"folders/Scripts/CircuitScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

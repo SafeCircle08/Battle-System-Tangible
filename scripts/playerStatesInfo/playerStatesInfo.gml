@@ -33,4 +33,7 @@ function loadPlayerStateInfo()
 	
 	global.playerUsingUmbrella = createNewPlayerStateInfo(oSoul.stateGravity, sPlayerUmbrella, 
 							     sUmbrellaEffect, 0, "Up", 0, 0, 0, 0);
+								 
+	global.playerCircuit	   = createNewPlayerStateInfo(oSoul.stateCircuit, sPlayerCircuit, 
+								 sPlayerCircuit, 0, "Up", 0, 0, 0, 0);
 }

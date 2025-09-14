@@ -20,7 +20,7 @@ if (showingInv)
 		else { inventoryFadeOut(); } 
 		navigatingInventoryFunction(DONT_GET_INPUTS, CAN_NAVIGATE);
 	}
-	if (confirmPressed()) { placeItem(); }
+	if (confirmPressed(false)) { placeItem(); }
 } else { with (oBattleManager) { inventoryFadeOut(); } }
 
 //Animationd

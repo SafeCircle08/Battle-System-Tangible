@@ -13,3 +13,4 @@ spriteFace = 0;
 inBox = false;
 character = 0;
 refObj = 0;
+textFinishedTimer = 30;

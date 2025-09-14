@@ -76,7 +76,7 @@ confirmEnchant = function()
 	if (playerHasGold()) && (array_length(placedItem.enchants) + 1 < 4) {
 		
 		finishedEnchanting = true;
-		placedItem = enchantItem(placedItem);
+		placedItem = enchantItem(placedItem, 3);
 		global.playerGold -= goldCost;
 		removeBaseFX();
 		fadingOut = true;

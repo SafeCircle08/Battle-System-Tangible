@@ -5,5 +5,5 @@ event_inherited();
 	playerChangeState(global.playerStateFree);	
 }
 */
-
+/*
 jumpDebugKeys();

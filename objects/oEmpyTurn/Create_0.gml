@@ -1,12 +1,47 @@
 event_inherited();
 
 oSoul.inUseGravity = global.playerJumpStateMoveInfo.gravityLeft;
-initializeNewTurn(0, false, 99999, 0, 220, 100, room_width / 2, room_height / 2, oSoul.stateGravity);
+initializeNewTurn(0, false, 99999, 0, 220, 100, room_width / 2, room_height / 2 - 5, oSoul.stateCircuit);
+changePlayerOffset(0, -20);
+
 oSoul.image_alpha = 1;
 oSoul.canMove = true;
 oBattleBox.draw = true;
 
+var _rightDownCornerX = global.boxOriginX + (global.borderWidth / 2) - 10;
+var _leftDownCornerX = global.boxOriginX - (global.borderWidth / 2) + 10;
+var _rightDownCornerY = global.boxOriginY + (global.borderHeight / 2) - 10;
+var _rightUpCornerY = global.boxOriginY - (global.borderHeight / 2) + 10;
 
+var _leftUpCorner = [_leftDownCornerX, _rightUpCornerY];
+var _rightUpCorner = [_rightDownCornerX, _rightUpCornerY];
+
+var _leftDownCorner = [_leftDownCornerX, _rightDownCornerY];
+var _rightDownCorner = [_rightDownCornerX, _rightDownCornerY];
+
+//createBasicCircuit(_leftUpCorner, _rightUpCorner, _rightDownCorner, _leftDownCorner, 40);
+
+createCircuitPiece(_rightDownCorner[0], _rightDownCorner[1], 20, -180);
+
+createElectricLinkPosNeg(_rightDownCorner[0] - 20, _rightDownCorner[1], _rightDownCorner[0] - 160, _rightDownCorner[1], 180);
+createCircuitPiece(_rightDownCorner[0] - 160, _rightDownCorner[1], global.borderWidth - 180, 180);
+
+createCircuitPiece(_leftDownCorner[0], _leftDownCorner[1], global.borderHeight - 20, 090);
+createCircuitPiece(_leftUpCorner[0], _leftUpCorner[1],  40, 0);
+createCircuitResistance(_leftUpCorner[0] + 40, _leftUpCorner[1], 0);
+createCircuitPiece(_leftDownCorner[0] + 76, _leftUpCorner[1], global.borderWidth - 76 - 20, 0);
+
+//createElectricLinkPosNeg(_rightUpCorner[0], _rightUpCorner[1], _rightDownCorner[0], _rightDownCorner[1], -90);
+createElectricLinkPosNeg(_rightDownCorner[0], _rightDownCorner[1], _rightUpCorner[0], _rightUpCorner[1] + 1, 90);
+
+//createCircuitPiece(_rightUpCorner[0], _rightUpCorner[1],  global.borderHeight - 20, -90);
+createCircuitPiece(global.boxOriginX, global.boxOriginY - (global.borderHeight / 2) + 10, 40, -90);
+createCircuitPiece(global.boxOriginX, global.boxOriginY - 10, 80, 0);
+createCircuitPiece(global.boxOriginX + 80, global.boxOriginY - 10, 70, -90);
+
+//createCircuitPiece(_leftDownCorner[0], _leftDownCorner[1], sqrt(((global.borderWidth - 20) * (global.borderWidth - 20)) + ((global.borderHeight - 20) * (global.borderHeight - 20))), 21.8);
+
+/*
 var _x = global.boxOriginX - 60;
 var _y = global.boxOriginY + 30;
 

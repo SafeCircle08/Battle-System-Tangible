@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createElectricLinkPosNeg",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createElectricLinkPosNeg",
+  "parent":{
+    "name":"CircuitScripts",
+    "path":"folders/Scripts/CircuitScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

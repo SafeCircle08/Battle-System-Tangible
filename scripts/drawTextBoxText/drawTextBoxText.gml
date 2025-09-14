@@ -81,10 +81,10 @@ function drawTextBoxText(
 	//Sprite properties
 	var _sprTextBox = global.selectedGuiStyle.textBox;
 	var _boxW = sprite_get_width(_sprTextBox); 
-	var _boxH = sprite_get_height(_sprTextBox)
+	var _boxH = sprite_get_height(_sprTextBox);
 	
 	var _txtBoxX = _camX + (_camW / 2) - 1;
-	var _txtBoxY = _camY + _camH;
+	var _txtBoxY = _camY + _camH - 3;
 	
 	if (inBattle) { 
 		_confirmKey = ord("Z"); 

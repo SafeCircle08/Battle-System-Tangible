@@ -1,9 +1,10 @@
 var _border = 5;
+var _enchantSysBg = global.selectedGuiStyle.systemEnchBg;
 var _enchBGX = MAIN_BATTLE_MENU_X + _border - xAdderRef; 
 var _enchBGY = MAIN_BATTLE_MENU_Y;
-var _enchBGH = sprite_get_width(sEnchantSystemBG);
+var _enchBGH = sprite_get_width(_enchantSysBg);
 draw_set_alpha(drawAlpha);
-draw_sprite(sEnchantSystemBG, 0, _enchBGX + xAdder, _enchBGY);
+draw_sprite(_enchantSysBg, 0, _enchBGX + xAdder, _enchBGY);
 
 var _enchLevelX = 185 - xAdderRef;
 var _enchLevelY = 105;
@@ -45,7 +46,7 @@ if (placedItem != undefined)
 	shader_reset();
 } else {
 	//N/A values
-	draw_text_transformed(_enchLevelX + xAdder, _enchLevelY, "N/A", 0.5, 0.5, 0);
-	draw_text_transformed(_goldCostX + xAdder, _goldCostY, "N/A", 0.5, 0.5, 0);	
+	draw_text_transformed(_enchLevelX + xAdder, _enchLevelY, "#<N/A>", 0.5, 0.5, 0);
+	draw_text_transformed(_goldCostX + xAdder, _goldCostY, "#<N/A>", 0.5, 0.5, 0);	
 }
 draw_set_alpha(1);

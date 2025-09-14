@@ -54,11 +54,12 @@ function initializeSubBattleMenuAnimations()
 	}	
 }
 
-function buildNewMainMenuOptions(_name, _decoSprite, selectFunc, func, fadeInFunc, fadeOutFunc)
+function buildNewMainMenuOptions(_name, _decoSprite, _textSprite, selectFunc, func, fadeInFunc, fadeOutFunc)
 {
 	return {
 		name: _name,
 		decoSprite: _decoSprite,
+		textSprite: _textSprite,
 		_selectFunction: selectFunc,
 		_function: func,
 		_fadeInFunc: fadeInFunc,
@@ -68,27 +69,27 @@ function buildNewMainMenuOptions(_name, _decoSprite, selectFunc, func, fadeInFun
 
 function initializePlayerMainBattleMenuOptions()
 {	
-	choosing_battle_option = buildNewMainMenuOptions("BATTLE", sAttackDeco, selectedBattleOption, navigatingSubMenuFunction,
+	choosing_battle_option = buildNewMainMenuOptions("(SUB)", sAttackDeco, sSubTextSprite, selectedBattleOption, navigatingSubMenuFunction,
 			method(self, function() { with (oBattleManager) { subMenuFadeIn(); }}),
 			method(self, function() { with (oBattleManager) { subMenuFadeOut(); }}))
 
-	choosing_inventory_option = buildNewMainMenuOptions("ITEM", sInvDeco, selectedInventoryOption, navigatingInventoryFunction,
+	choosing_inventory_option = buildNewMainMenuOptions("(ITEM)", sInvDeco, sInventoryTextSprite, selectedInventoryOption, navigatingInventoryFunction,
 			method(self, function() { with (oBattleManager) { inventoryFadeIn();}}),
 			method(self, function() { with (oBattleManager) { inventoryFadeOut(); }}));
 
-	choosing_cry_option = buildNewMainMenuOptions("CRY", sCryDeco, selectedCryOption, noone, 
+	choosing_cry_option = buildNewMainMenuOptions("<CRY", sCryDeco, sInventoryTextSprite, selectedCryOption, noone, 
 			method(self, function() {}),
 			method(self, function() {}));
 
-	choosing_heal_option = buildNewMainMenuOptions("HEAL", sHealDeco, selectedHealCheatOption, noone, 
+	choosing_heal_option = buildNewMainMenuOptions("<HEAL", sHealDeco, sInventoryTextSprite, selectedHealCheatOption, noone, 
 			method(self, function() {}),
 			method(self, function() {}));
 	
-	choosing_pray_option = buildNewMainMenuOptions("PRAY", sPrayDeco, selectedPrayOption, prayOption,
+	choosing_pray_option = buildNewMainMenuOptions("(PRAY)", sPrayDeco, sPrayTextSprite, selectedPrayOption, prayOption,
 			method(self, function() {}),
 			method(self, function() {}));
 			
-	choosing_enchant_option = buildNewMainMenuOptions("MAGICK", sEnchantDeco, selectedEnchantOption, enchantingOption,
+	choosing_enchant_option = buildNewMainMenuOptions("(MGK)", sEnchantDeco, sMagicTextSprite, selectedEnchantOption, enchantingOption,
 			method(self, function() {}),
 			method(self, function() {}));
 	

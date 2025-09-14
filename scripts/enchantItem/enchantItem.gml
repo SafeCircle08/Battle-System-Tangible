@@ -24,12 +24,18 @@ function isEnchanted(_item) {
 	return _item.enchanted;	
 }
 
-function enchantItem(_item)
+function enchantItem(_item, enchantsN = undefined)
 {
 	var _changedItem = variable_clone(_item);
 	_changedItem.enchanted = true;
 	if (canEnchant(_item.enchants)) {
-		addEnchant(_changedItem.enchants);	
+		if (enchantsN == undefined) {
+			addEnchant(_changedItem.enchants);	
+		} else {
+			for (var i = 0; i < enchantsN; i++) {
+				addEnchant(_changedItem.enchants);
+			}
+		}
 		changeToNewEnchants(_changedItem);
 		playSound(sndEnchanting, SOUND_CHANNEL_1);
 	}

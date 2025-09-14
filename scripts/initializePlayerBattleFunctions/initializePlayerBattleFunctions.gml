@@ -319,7 +319,8 @@ function initializeEnchantingFunctions()
 			{ 
 				setSelectionDelay();
 				if (_enchantManager.showingInv == false) { 
-					selected_option = 0; _enchantManager.showingInv = true; 
+					selected_option = 0; 
+					_enchantManager.showingInv = true; 
 				}
 			}
 		}

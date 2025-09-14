@@ -20,7 +20,7 @@ if (!isInBulletHellSection())
 	var _border = 10;
 	
 	if (showFlavourText) && (!isEnemySpeaking()) { 
-		drawTextBoxText(flavourText, Mono, true, ord("Z"), true, true, sndBasicTxt1, 0, 0); 
+		drawTextBoxText(flavourText, Mono, true, ord("Z"), true, true, sndBasicTxt5, 0, 0); 
 	}
 	
 	if (isEnemySpeaking()) { 
@@ -37,7 +37,7 @@ if (!isInBulletHellSection())
 	//Draws the player variables
 	draw_set_font(fHungryBig);
 	var _playerInfoX = BUFFER - 8;
-	var _playerInfoY = guiY - (_textBoxH) - 9;
+	var _playerInfoY = guiY - (_textBoxH) - 12;
 	
 	//Hp
 	draw_set_colour(playerHpTextColor);
@@ -71,7 +71,7 @@ if (!isInBulletHellSection())
 	#endregion
 	
 	#region DRAWING MAIN MENU
-	draw_set_font(Mono);
+	draw_set_font(fMonoNotMono);
 	var _bgH = 25;
 	var _xBorder = 17;
 	var _yBorder = 4;
@@ -81,6 +81,7 @@ if (!isInBulletHellSection())
 	var _sprButton = sLittleRectangle;
 	var _buttonW = sprite_get_width(_sprButton);
 	var _buttonH = sprite_get_height(_sprButton);
+	
 	//Button BG
 	draw_sprite_stretched(global.selectedGuiStyle.bg, 0, startButtonX - 50, _buttonY - 5, _buttonW / 2 + 71.5, _buttonH * 2 + 15);
 	//Mini player portrait
@@ -91,11 +92,15 @@ if (!isInBulletHellSection())
 		increaseMainMenuXPos();	
 		for (var i = 0; i < array_length(mainOptionsNames); i++)
 		{
+			draw_set_color(c_white);
 			//Draws the button
 			var _index = 0;
 			if (playerMainActionTurn())
 			{
-				if (selected_option == i) { _index = 1 };
+				if (selected_option == i) { 
+					_index = 1;
+					draw_set_color(global.selectedGuiStyle.selectionColor);
+				};
 			}
 			var _y = _buttonY + 21 * i;
 			var _x = startButtonX;
@@ -105,18 +110,21 @@ if (!isInBulletHellSection())
 			
 			//Button Properties (name, deco, ecc...)		
 			var text = global.settedMainBattleOptions[i].name;
-			draw_sprite(global.settedMainBattleOptions[i].decoSprite, _index, _x + 66, _y + 2)
-			var textX = startButtonX + 6;
-			var textY = (_buttonY + 5) + (_buttonH / 2 + 1) * i - 2;
-			draw_text(textX, textY - 0.5, text);
+			var _textSprite = global.settedMainBattleOptions[i].textSprite;
+			draw_sprite(global.selectedGuiStyle.decoBg, _index, _x + 66, _y + 2); //deco bg
+			draw_sprite(global.settedMainBattleOptions[i].decoSprite, _index, _x + 66, _y + 2); //actual deco
+			var textX = startButtonX;
+			var textY = (_buttonY + 5) + (_buttonH / 2 + 1) * i - 5.5;
+			var _nameL = string_length(text)
+			//draw_text(textX - (4 * (_nameL - 3)) + 14.5, textY - 0.5, text);
+			draw_sprite(_textSprite, 0, textX, textY);
 		}
-		drawTextBoxText(global.battleFlavourTexts[flavourTextIndex], Mono, false, ord("Z"), true, true, sndBasicTxt1, 0, 0);
+		drawTextBoxText(global.battleFlavourTexts[flavourTextIndex], Mono, false, ord("Z"), true, true, sndBasicTxt5, 0, 0);
 	}
 	else { decreaseMainMenuXPos(); }
 	#endregion
 	
 	#region	DRAWING THE INVENTORY
-	
 	if (inventoryAlpha > 0 )
 	{
 		draw_set_alpha(inventoryAlpha);
@@ -166,7 +174,7 @@ if (!isInBulletHellSection())
 				shader_reset();
 				drawStatistics(i, _itemSprX, _itemSprY, _border);
 				drawEnchants(i, _itemSprX, _itemSprY, _border);
-				draw_set_color(c_custom_yellow); 
+				draw_set_color(global.selectedGuiStyle.selectionColor); 
 			}
 			else { draw_set_color(c_white); }
 			

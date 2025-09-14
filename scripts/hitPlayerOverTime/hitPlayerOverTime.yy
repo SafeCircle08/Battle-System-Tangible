@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"hitPlayerOverTime",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"hitPlayerOverTime",
+  "parent":{
+    "name":"PlayerScripts",
+    "path":"folders/Scripts/PlayerScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
