@@ -9,8 +9,8 @@
   "name":"oOverTimeHealingManager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/Objects/Battle/Managers.yy",
+    "name":"Enchanting",
+    "path":"folders/Objects/Battle/Managers/Enchanting.yy",
   },
   "parentObjectId":null,
   "persistent":false,

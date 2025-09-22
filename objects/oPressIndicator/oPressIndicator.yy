@@ -9,8 +9,8 @@
   "name":"oPressIndicator",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"USER-INDICATORS",
+    "path":"folders/Objects/Main/USER-INDICATORS.yy",
   },
   "parentObjectId":null,
   "persistent":false,

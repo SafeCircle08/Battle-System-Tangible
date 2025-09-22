@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createNewSegnalino",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createNewSegnalino",
+  "parent":{
+    "name":"MenagePlayerSegnalini",
+    "path":"folders/Scripts/MenagePlayerSegnalini.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

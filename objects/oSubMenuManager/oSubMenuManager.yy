@@ -10,8 +10,8 @@
   "name":"oSubMenuManager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/Objects/Battle/Managers.yy",
+    "name":"Menu-GUI",
+    "path":"folders/Objects/Battle/Managers/Menu-GUI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

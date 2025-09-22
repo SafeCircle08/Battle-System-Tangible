@@ -3,13 +3,14 @@
   "%Name":"oDarkVision",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"oDarkVision",
   "overriddenProperties":[],
   "parent":{
-    "name":"PlayerBadProperyManagers",
-    "path":"folders/Objects/PlayerBadProperyManagers.yy",
+    "name":"DarkSegnalino",
+    "path":"folders/Objects/Battle/Soul/PlayerSegnalini/DarkSegnalino.yy",
   },
   "parentObjectId":{
     "name":"oExtrasParent",

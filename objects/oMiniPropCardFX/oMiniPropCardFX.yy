@@ -1,13 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"oSegnaliniSoulManager",
-  "eventList":[],
+  "%Name":"oMiniPropCardFX",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"oSegnaliniSoulManager",
+  "name":"oMiniPropCardFX",
   "overriddenProperties":[],
   "parent":{
-    "name":"Soul",
-    "path":"folders/Objects/Battle/Soul.yy",
+    "name":"Menu-GUI",
+    "path":"folders/Objects/Battle/Managers/Menu-GUI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

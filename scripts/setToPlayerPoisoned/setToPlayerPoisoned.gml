@@ -1,16 +1,13 @@
- #macro SEGNALINO_POISON "poison"
-
-function setToPlayerPoisoned() {
-	var _poisonFunc = function() {
-		var _poisonHit = 100;
-		static frame = 0;
-		frame += 1;
-		if (frame % _poisonHit == 0) {
-			var _poisonDmg = irandom_range(20, 50);
-			hitPlayer(_poisonDmg);	
-			frame = 0;
-		}
+function setPlayerToPoisoned(_poisonTimer = 500, _poisonFreq = 100) {
+	var _poisonSeg;
+	if (!instance_exists(oPoisonSegnalino)) {
+		//If doesnt exit, it creates one
+		_poisonSeg = instance_create_layer(0, 0, LAYER_EFFECT_TOP_2, oPoisonSegnalino);
+	} else {
+		//If it exists, if finds it
+		_poisonSeg = instance_find(oPoisonSegnalino, 1);
 	}
-	var _poisonHit = 100;
-	oSoul.setSegnalino(_poisonFunc, (_poisonHit * 10) + 1, SEGNALINO_POISON);
+	//It always initializes it
+	_poisonSeg.poisonTimer = _poisonTimer;
+	_poisonSeg.poisonFreq = _poisonFreq;
 }

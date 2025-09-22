@@ -10,8 +10,8 @@
   "name":"oBattleInvBookPropDesc",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/Objects/Battle/Managers.yy",
+    "name":"BattleBook",
+    "path":"folders/Objects/Battle/Managers/Menu-GUI/BattleBook.yy",
   },
   "parentObjectId":null,
   "persistent":false,

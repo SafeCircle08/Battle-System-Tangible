@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"FunkyBullets",
-    "path":"folders/Objects/Battle/BulletsObjects/FunkyBullets.yy",
+    "path":"folders/Objects/Battle/BULLETS/BulletsObjects/FunkyBullets.yy",
   },
   "parentObjectId":{
     "name":"oExtrasParent",

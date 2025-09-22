@@ -10,8 +10,8 @@
   "name":"oStarShine",
   "overriddenProperties":[],
   "parent":{
-    "name":"Extras(Object that doesn't deal Damage)",
-    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage).yy",
+    "name":"Deco",
+    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage)/Deco.yy",
   },
   "parentObjectId":null,
   "persistent":false,

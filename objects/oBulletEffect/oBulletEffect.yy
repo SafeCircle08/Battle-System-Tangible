@@ -9,8 +9,8 @@
   "name":"oBulletEffect",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"BULLETS",
+    "path":"folders/Objects/Battle/BULLETS.yy",
   },
   "parentObjectId":{
     "name":"oExtrasParent",

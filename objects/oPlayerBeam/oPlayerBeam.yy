@@ -9,8 +9,8 @@
   "name":"oPlayerBeam",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/Objects/Battle/Managers.yy",
+    "name":"FloatingText-FXs",
+    "path":"folders/Objects/Battle/Soul/FloatingText-FXs.yy",
   },
   "parentObjectId":null,
   "persistent":false,

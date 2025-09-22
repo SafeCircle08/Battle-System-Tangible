@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"OSQUARETEST",
+  "%Name":"oMiniPropCardFX_out",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"OSQUARETEST",
+  "name":"oMiniPropCardFX_out",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Menu-GUI",
+    "path":"folders/Objects/Battle/Managers/Menu-GUI.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"SQUARETEST",
-    "path":"sprites/SQUARETEST/SQUARETEST.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

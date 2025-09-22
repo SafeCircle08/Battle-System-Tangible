@@ -263,8 +263,8 @@ else
 	var _font = Mono;
 	draw_set_font(_font);
 	draw_set_halign(fa_center);
-	draw_set_color(c_white);
 	
+	draw_set_colour(playerHpTextColor);
 	draw_text_ext_transformed(_bX + _xOffSet + (_bW / 2) - 5, _bY - 14, "HP: " + string(global.playerHP) + " / " + string(global.playerMAX_HP) + ";", 3, 9999, 1, 1, 0);
 		
 	draw_set_halign(fa_left);
@@ -272,4 +272,3 @@ else
 }
 
 draw_set_color(c_white);
-draw_set_font(fGenericText);

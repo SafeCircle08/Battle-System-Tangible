@@ -1,7 +1,7 @@
 newSpr = 0;
 
 changeToFadeOut = function() {
-	var _outFx = instance_create_layer(x, y, LAYER_EFFECT_TOP_2, OSQUARETEST_OUT);
+	var _outFx = instance_create_layer(x, y, LAYER_EFFECT_TOP_2, oMiniPropCardFX_out);
 	_outFx.sprite_index = newSpr;
 	instance_destroy(self);
 }

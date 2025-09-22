@@ -1,4 +1,4 @@
-draw_set_font(fText);
+draw_set_font(fMonoNotMono);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_alpha(image_alpha);
@@ -15,4 +15,4 @@ draw_text(x, y - 1, textReference);
 draw_set_color(c_white);
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
-draw_set_font(Mono);
+draw_set_font(fHungrySkinny);

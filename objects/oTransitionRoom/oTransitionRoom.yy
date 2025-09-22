@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"ChangeRoom",
-    "path":"folders/Objects/Triggers/ChangeRoom.yy",
+    "path":"folders/Objects/OverWorld/OW_Triggers/ChangeRoom.yy",
   },
   "parentObjectId":null,
   "persistent":true,

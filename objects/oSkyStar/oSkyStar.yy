@@ -9,8 +9,8 @@
   "name":"oSkyStar",
   "overriddenProperties":[],
   "parent":{
-    "name":"OverWorld",
-    "path":"folders/Objects/OverWorld.yy",
+    "name":"Deco",
+    "path":"folders/Objects/OverWorld/NIGHT_PETAL_ZONE/Deco.yy",
   },
   "parentObjectId":null,
   "persistent":false,

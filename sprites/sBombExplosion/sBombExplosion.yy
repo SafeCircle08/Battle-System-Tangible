@@ -34,8 +34,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Extras(Object that doesn't deal Damage)",
-    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage).yy",
+    "name":"Deco",
+    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage)/Deco.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

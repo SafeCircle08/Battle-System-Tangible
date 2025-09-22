@@ -8,8 +8,8 @@
   "name":"oChangeRoomTrigger",
   "overriddenProperties":[],
   "parent":{
-    "name":"Triggers",
-    "path":"folders/Objects/Triggers.yy",
+    "name":"OW_Triggers",
+    "path":"folders/Objects/OverWorld/OW_Triggers.yy",
   },
   "parentObjectId":null,
   "persistent":false,

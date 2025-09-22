@@ -9,8 +9,8 @@
   "name":"oMineLamp",
   "overriddenProperties":[],
   "parent":{
-    "name":"Extras(Object that doesn't deal Damage)",
-    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage).yy",
+    "name":"Deco",
+    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage)/Deco.yy",
   },
   "parentObjectId":{
     "name":"oBulletParent",

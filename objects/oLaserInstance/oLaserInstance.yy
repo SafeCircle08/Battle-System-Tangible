@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Lasers",
-    "path":"folders/Objects/CircuitStuff/Obstacles/Lasers.yy",
+    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage)/CircuitStuff/Obstacles/Lasers.yy",
   },
   "parentObjectId":{
     "name":"oObstacleParent",

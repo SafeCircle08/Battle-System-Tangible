@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"BellPuzzles",
-    "path":"folders/Objects/OverWorld/Puzzles/nightPuzzles/BellPuzzles.yy",
+    "path":"folders/Objects/OverWorld/NIGHT_PETAL_ZONE/nightPuzzles/BellPuzzles.yy",
   },
   "parentObjectId":null,
   "persistent":false,

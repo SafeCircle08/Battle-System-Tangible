@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Answers Bullets",
-    "path":"folders/Objects/Battle/BulletsObjects/Answers Bullets.yy",
+    "path":"folders/Objects/Battle/BULLETS/BulletsObjects/Answers Bullets.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -9,8 +9,8 @@
   "name":"oPlayerEffect",
   "overriddenProperties":[],
   "parent":{
-    "name":"Soul",
-    "path":"folders/Objects/Battle/Soul.yy",
+    "name":"FloatingText-FXs",
+    "path":"folders/Objects/Battle/Soul/FloatingText-FXs.yy",
   },
   "parentObjectId":null,
   "persistent":false,

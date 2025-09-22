@@ -9,8 +9,8 @@
   "name":"oEnchBaseFX",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Enchanting",
+    "path":"folders/Objects/Battle/Managers/Enchanting.yy",
   },
   "parentObjectId":null,
   "persistent":false,

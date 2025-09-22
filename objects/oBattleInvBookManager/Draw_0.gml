@@ -45,8 +45,8 @@ for (var i = 0; i < array_length(global.propertiesKind); i++)
 				hoovering = true;
 				
 				//Creates the FX
-				if (!instance_exists(OSQUARETEST)) {
-					var _fx = instance_create_layer(_miniPropX + 5 + (_miniPropW * (z - 1) + 1 * (z - 1)), _miniPropY + 5, LAYER_EFFECT_TOP_2, OSQUARETEST);
+				if (!instance_exists(oMiniPropCardFX)) {
+					var _fx = instance_create_layer(_miniPropX + 5 + (_miniPropW * (z - 1) + 1 * (z - 1)), _miniPropY + 5, LAYER_EFFECT_TOP_2, oMiniPropCardFX);
 					_fx.sprite_index = global.propertiesKind[i][k].sprite;
 					_fx.duplicateSprite();
 					_fx.setSpriteOffSet();
@@ -80,8 +80,8 @@ if (hoovering == false) {
 	if (instance_exists(oBattleInvBookPropDesc)) {
 		instance_destroy(oBattleInvBookPropDesc);
 	}
-	if (instance_exists(OSQUARETEST)) {
-		OSQUARETEST.changeToFadeOut();
+	if (instance_exists(oMiniPropCardFX)) {
+		oMiniPropCardFX.changeToFadeOut();
 	}
 }	
 draw_set_alpha(1);

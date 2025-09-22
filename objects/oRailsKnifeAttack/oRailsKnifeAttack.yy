@@ -9,8 +9,8 @@
   "name":"oRailsKnifeAttack",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"BulletsGenerators",
+    "path":"folders/Objects/Battle/BULLETS/BulletsGenerators.yy",
   },
   "parentObjectId":{
     "name":"oBulletGeneratorParent",

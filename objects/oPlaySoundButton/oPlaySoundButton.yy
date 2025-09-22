@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Buttons",
-    "path":"folders/Objects/OverWorld/Puzzles/nightPuzzles/BellPuzzles/Buttons.yy",
+    "path":"folders/Objects/OverWorld/NIGHT_PETAL_ZONE/nightPuzzles/BellPuzzles/Buttons.yy",
   },
   "parentObjectId":{
     "name":"oButtonParent",

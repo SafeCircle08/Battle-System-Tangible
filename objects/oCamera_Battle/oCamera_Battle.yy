@@ -9,8 +9,8 @@
   "name":"oCamera_Battle",
   "overriddenProperties":[],
   "parent":{
-    "name":"Soul",
-    "path":"folders/Objects/Battle/Soul.yy",
+    "name":"Cameras",
+    "path":"folders/Objects/Battle/Soul/Cameras.yy",
   },
   "parentObjectId":null,
   "persistent":false,

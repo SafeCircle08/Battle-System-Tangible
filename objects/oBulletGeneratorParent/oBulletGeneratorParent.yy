@@ -9,8 +9,8 @@
   "name":"oBulletGeneratorParent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/Objects/Battle/Managers.yy",
+    "name":"BulletsManagers",
+    "path":"folders/Objects/Battle/BULLETS/BulletsManagers.yy",
   },
   "parentObjectId":null,
   "persistent":false,

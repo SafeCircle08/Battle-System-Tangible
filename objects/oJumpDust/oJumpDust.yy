@@ -9,8 +9,8 @@
   "name":"oJumpDust",
   "overriddenProperties":[],
   "parent":{
-    "name":"Soul",
-    "path":"folders/Objects/Battle/Soul.yy",
+    "name":"PlayerMiscellaneous",
+    "path":"folders/Objects/Battle/Soul/PlayerMiscellaneous.yy",
   },
   "parentObjectId":null,
   "persistent":false,

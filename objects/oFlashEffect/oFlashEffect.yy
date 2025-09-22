@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Actions Effects",
-    "path":"folders/Objects/Actions Effects.yy",
+    "path":"folders/Objects/Battle/Actions Effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
