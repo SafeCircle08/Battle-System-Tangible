@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"healPlayer",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"playerHpsSections",
+    "path":"folders/Scripts/PlayerScripts/playerHpsSections.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

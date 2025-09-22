@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"define_book_properties_info",
   "parent":{
-    "name":"ItemsDefines",
-    "path":"folders/Scripts/Defines/ItemsDefines.yy",
+    "name":"ITEM_BOOK",
+    "path":"folders/Scripts/Defines/ItemsDefines/ITEM_BOOK.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

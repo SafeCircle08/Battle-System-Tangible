@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"setToPlayerPoisoned",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"setToPlayerPoisoned",
+  "parent":{
+    "name":"MenagePlayerSegnalini",
+    "path":"folders/Scripts/MenagePlayerSegnalini.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

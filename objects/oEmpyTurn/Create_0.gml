@@ -2,6 +2,7 @@ event_inherited();
 
 oSoul.inUseGravity = global.playerJumpStateMoveInfo.gravityLeft;
 initializeNewTurn(0, false, 99999, 0, 220, 100, room_width / 2, room_height / 2 - 5, oSoul.stateCircuit);
+
 changePlayerOffset(0, -20);
 
 oSoul.image_alpha = 1;
@@ -37,7 +38,21 @@ createElectricLinkPosNeg(_rightDownCorner[0], _rightDownCorner[1], _rightUpCorne
 //createCircuitPiece(_rightUpCorner[0], _rightUpCorner[1],  global.borderHeight - 20, -90);
 createCircuitPiece(global.boxOriginX, global.boxOriginY - (global.borderHeight / 2) + 10, 40, -90);
 createCircuitPiece(global.boxOriginX, global.boxOriginY - 10, 80, 0);
-createCircuitPiece(global.boxOriginX + 80, global.boxOriginY - 10, 70, -90);
+createCircuitPiece(global.boxOriginX + 80, global.boxOriginY - 10, 50, -90);
+
+createCircuitLaserPair(global.boxOriginX, global.boxOriginY, 120, 250, false);
+
+setToDarkVision();
+
+//createCircuitLaserPair(100, 100, 0, 500);
+//createCircuitLaserPair(50, 100, 0, 150, false);
+
+/*createCircuitLaserPair(65, 100, 0, 180);
+
+
+createCircuitLaserPair(180, 100, 0, 120, false);
+createCircuitLaserPair(200, 120, -50, 165, false);
+//createCircuitLaserPair(195, 100, 0, 300, false);
 
 //createCircuitPiece(_leftDownCorner[0], _leftDownCorner[1], sqrt(((global.borderWidth - 20) * (global.borderWidth - 20)) + ((global.borderHeight - 20) * (global.borderHeight - 20))), 21.8);
 

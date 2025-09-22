@@ -6,7 +6,7 @@
   "name":"menageBgs",
   "parent":{
     "name":"BackGrounds",
-    "path":"folders/Scripts/BackGrounds.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/BackGrounds.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

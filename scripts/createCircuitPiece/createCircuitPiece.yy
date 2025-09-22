@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"createCircuitPiece",
   "parent":{
-    "name":"CircuitScripts",
-    "path":"folders/Scripts/CircuitScripts.yy",
+    "name":"createPieces",
+    "path":"folders/Scripts/CircuitScripts/createPieces.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

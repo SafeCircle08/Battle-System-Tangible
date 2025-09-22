@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createHitSlashes",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createHitSlashes",
+  "parent":{
+    "name":"playerHit",
+    "path":"folders/Scripts/PlayerScripts/playerHit.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"setToNightVision",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"setToNightVision",
+  "parent":{
+    "name":"EnchantsFunction",
+    "path":"folders/Scripts/EnchantsFunction.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -8,8 +8,8 @@
   "name":"oCircuitPiece",
   "overriddenProperties":[],
   "parent":{
-    "name":"CircuitStuff",
-    "path":"folders/Objects/CircuitStuff.yy",
+    "name":"Pieces",
+    "path":"folders/Objects/CircuitStuff/Pieces.yy",
   },
   "parentObjectId":{
     "name":"oCircuitPieceParent",

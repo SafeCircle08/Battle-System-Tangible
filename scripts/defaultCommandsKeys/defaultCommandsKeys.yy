@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"defaultCommandsKeys",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"keyFunctions",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/keyFunctions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

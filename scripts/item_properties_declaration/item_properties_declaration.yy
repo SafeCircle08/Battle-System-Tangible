@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"item_properties_declaration",
   "parent":{
-    "name":"ItemsDefines",
-    "path":"folders/Scripts/Defines/ItemsDefines.yy",
+    "name":"ITEM_PROP_MACROS",
+    "path":"folders/Scripts/Defines/ItemsDefines/ITEM_PROP_MACROS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

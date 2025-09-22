@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"setToDarkVision",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"setToDarkVision",
+  "parent":{
+    "name":"MenagePlayerSegnalini",
+    "path":"folders/Scripts/MenagePlayerSegnalini.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

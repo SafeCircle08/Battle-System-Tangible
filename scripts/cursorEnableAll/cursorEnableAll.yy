@@ -6,7 +6,7 @@
   "name":"cursorEnableAll",
   "parent":{
     "name":"Cursor Settings",
-    "path":"folders/Scripts/CursorInfo/Cursor Settings.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo/Cursor Settings.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

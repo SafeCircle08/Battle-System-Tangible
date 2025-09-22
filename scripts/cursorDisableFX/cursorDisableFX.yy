@@ -6,7 +6,7 @@
   "name":"cursorDisableFX",
   "parent":{
     "name":"Effects",
-    "path":"folders/Scripts/CursorInfo/Cursor Settings/Effects.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo/Cursor Settings/Effects.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

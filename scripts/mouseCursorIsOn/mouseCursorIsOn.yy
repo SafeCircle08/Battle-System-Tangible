@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"mouseCursorIsOn",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"CursorInfo",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

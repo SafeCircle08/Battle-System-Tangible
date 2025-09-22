@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"enchantItem",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"ItemFunctions",
+    "path":"folders/Scripts/ItemFunctions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -38,6 +38,8 @@ function stateInit(_sIndex, _sprEffect, _pov, _method = function() {})
 	var _beamValue = BEAM_ANIMATION_TIMER_REF / 2 - 1;
 	if (global.beamAnimationTimer == _beamValue) { setPlayerSpritePov(_sIndex, _pov); }
 	if (global.beamAnimationTimer == 1) { 
-		setPlayerStateEffect(_sprEffect, _method()); 
+		setPlayerStateEffect(_sprEffect, _method());
+		oSoul.startX = oSoul.x;
+		oSoul.startY = oSoul.y;
 	}
 }

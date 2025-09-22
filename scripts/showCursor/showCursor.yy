@@ -6,7 +6,7 @@
   "name":"showCursor",
   "parent":{
     "name":"Activation",
-    "path":"folders/Scripts/CursorInfo/Cursor Settings/Activation.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo/Cursor Settings/Activation.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

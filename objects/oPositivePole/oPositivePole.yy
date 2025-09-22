@@ -8,12 +8,12 @@
   "name":"oPositivePole",
   "overriddenProperties":[],
   "parent":{
-    "name":"CircuitStuff",
-    "path":"folders/Objects/CircuitStuff.yy",
+    "name":"Pieces",
+    "path":"folders/Objects/CircuitStuff/Pieces.yy",
   },
   "parentObjectId":{
-    "name":"oCircuitPieceParent",
-    "path":"objects/oCircuitPieceParent/oCircuitPieceParent.yy",
+    "name":"oPoleParent",
+    "path":"objects/oPoleParent/oPoleParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

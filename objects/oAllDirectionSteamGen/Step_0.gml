@@ -39,10 +39,11 @@ if (timerGetCoord == 0)
 	];
 }
 
-if (global.enemyTimer % 160 == 0)
-{
-	createExclamationMarks();
-	createRandomKnife();
+if (global.enemyTimer > 150) {
+	if (global.enemyTimer % 180 == 0) {
+		createExclamationMarks();
+		createRandomKnife();
+	}
 }
 
 if (global.created == false)

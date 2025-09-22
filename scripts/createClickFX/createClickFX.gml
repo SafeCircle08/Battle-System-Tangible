@@ -3,7 +3,7 @@ function createClickFX(_spr)
 	with (oCustomCursor) {
 		var _fxN = irandom_range(2, 4);
 		for (var i = 0; i < _fxN; i++) {
-			var _clickFX = instance_create_layer(x, y, LAYER_EFFECT_TOP, oChangeAlphaDimObjFX);
+			var _clickFX = instance_create_layer(x, y, LAYER_EFFECT_TOP_2, oChangeAlphaDimObjFX);
 			_clickFX.sprite_index = _spr;
 			_clickFX.image_speed = 0;
 			_clickFX.image_index = irandom_range(0, _clickFX.image_number - 1);

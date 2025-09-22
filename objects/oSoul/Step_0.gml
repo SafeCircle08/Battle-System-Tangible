@@ -23,4 +23,11 @@ if (global.beamAnimationTimer > 0)
 if (global.enemyTimer > global.enemyAttackTime - 60) { exit; }
 
 //When im done animating the beam
-if (global.beamAnimationTimer < BEAM_ANIMATION_TIMER_REF / 2) { state(); }
+if (global.beamAnimationTimer < BEAM_ANIMATION_TIMER_REF / 2) 
+{ 
+	state(); 
+	stepSegnalinoFunc();
+	if (keyboard_check_pressed(ord("I"))) {
+		setToNightVision();	
+	}
+}

@@ -8,8 +8,8 @@
   "name":"oElectricSpark",
   "overriddenProperties":[],
   "parent":{
-    "name":"CircuitStuff",
-    "path":"folders/Objects/CircuitStuff.yy",
+    "name":"Deco",
+    "path":"folders/Objects/CircuitStuff/Deco.yy",
   },
   "parentObjectId":null,
   "persistent":false,

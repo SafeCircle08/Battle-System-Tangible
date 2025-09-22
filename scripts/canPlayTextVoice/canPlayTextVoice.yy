@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"canPlayTextVoice",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"textScripts",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/textScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

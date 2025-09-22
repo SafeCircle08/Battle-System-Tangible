@@ -6,7 +6,7 @@
   "name":"pressEnter",
   "parent":{
     "name":"keyFunctions",
-    "path":"folders/Scripts/keyFunctions.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/keyFunctions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

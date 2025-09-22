@@ -5,6 +5,9 @@ function menageIndicator() {
 	}		
 }
 
+function resistanceDamage(_resistance, _minDmg = 5, _maxDmg = 15) {
+	return irandom_range(_minDmg, _maxDmg) * _resistance.ohmValue;
+}
 
 function stateCircuitLoad(){
 	
@@ -24,7 +27,11 @@ function stateCircuitLoad(){
 		var _actualResistance = instance_place(x, y, oResistanceCircuitPiece);
 		if (_actualResistance) { 
 			if (_actualResistance.hasTension) {
-				hitPlayerOverTime(50, irandom_range(20, 55));
+				var _resistanceDmg = resistanceDamage(_actualResistance);
+				if (!playerIsMoving()) {
+					var _frameCheck = 50;
+					hitPlayerOverTime(_frameCheck, _resistanceDmg);
+				}
 			}
 			_spd = _spd - _actualResistance.ohmValue / 10;
 		}

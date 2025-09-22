@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"battleGUIMacros",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"BattleManagerScripts",
+    "path":"folders/Scripts/BattleScripts/BattleManagerScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

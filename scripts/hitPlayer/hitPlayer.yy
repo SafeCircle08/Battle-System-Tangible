@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"hitPlayer",
   "parent":{
-    "name":"PlayerScripts",
-    "path":"folders/Scripts/PlayerScripts.yy",
+    "name":"playerHit",
+    "path":"folders/Scripts/PlayerScripts/playerHit.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

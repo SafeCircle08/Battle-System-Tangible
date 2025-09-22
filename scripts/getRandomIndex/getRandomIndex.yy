@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"getRandomIndex",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"generalUse",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/generalUse.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

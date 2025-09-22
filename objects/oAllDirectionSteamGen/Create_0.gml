@@ -1,20 +1,17 @@
 event_inherited();
 
-global.bulletsCreated = 0;
-global.created = false;
-global.createTimer = 50;
-global.enemyAttackTime = 800;
-
-playerSetState(oSoul.stateFree);
-
 //NUMERO DI TUBI CHE SI VUOLE NEL TURNO
 numberOfTubesWidth = 12;
 numberOfTubesHeight = 5;
-
-//DIMENSIONI DEL BOX
-global.borderWidth = (sprite_get_width(sTubeSteam) * numberOfTubesWidth);
-global.borderHeight = (sprite_get_width(sTubeSteam) * numberOfTubesHeight);
 width = sprite_get_width(sTubeSteam);
 height = sprite_get_height(sTubeSteam);
 
 timerGetCoord = 50;
+
+initializeNewTurn(
+	50, false, 800, 0, 
+	(sprite_get_width(sTubeSteam) * numberOfTubesWidth), 
+	(sprite_get_width(sTubeSteam) * numberOfTubesHeight), 
+	room_width / 2, room_height / 2 - 10, 
+	oSoul.stateFree
+);

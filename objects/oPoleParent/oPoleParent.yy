@@ -8,10 +8,13 @@
   "name":"oPoleParent",
   "overriddenProperties":[],
   "parent":{
-    "name":"CircuitStuff",
-    "path":"folders/Objects/CircuitStuff.yy",
+    "name":"Pieces",
+    "path":"folders/Objects/CircuitStuff/Pieces.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oExtrasParent",
+    "path":"objects/oExtrasParent/oExtrasParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

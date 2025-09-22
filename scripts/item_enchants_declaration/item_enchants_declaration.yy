@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"item_enchants_declaration",
   "parent":{
-    "name":"ItemsDefines",
-    "path":"folders/Scripts/Defines/ItemsDefines.yy",
+    "name":"ENCHANTS_MACROS",
+    "path":"folders/Scripts/Defines/ItemsDefines/ENCHANTS_MACROS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

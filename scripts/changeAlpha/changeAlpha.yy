@@ -6,7 +6,7 @@
   "name":"changeAlpha",
   "parent":{
     "name":"ObjectProperties",
-    "path":"folders/Scripts/ObjectProperties.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/ObjectProperties.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

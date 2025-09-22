@@ -6,7 +6,7 @@
   "name":"playerChangeState",
   "parent":{
     "name":"In_battle",
-    "path":"folders/Scripts/generalUse/In_battle.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/generalUse/In_battle.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

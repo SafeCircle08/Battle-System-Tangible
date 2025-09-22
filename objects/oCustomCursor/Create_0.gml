@@ -98,5 +98,5 @@ setChooseCursor = function(_selectedCursorSpr)
 {
 	if (instance_exists(oCustomCursor)) { instance_destroy(oCustomCursor); }    
 	global.choosenCursor = _selectedCursorSpr;
-	var _newCursor = instance_create_layer(mouse_x, mouse_y, "Instances", oCustomCursor);	
+	var _newCursor = instance_create_layer(mouse_x, mouse_y, LAYER_CURSOR, oCustomCursor);	
 }

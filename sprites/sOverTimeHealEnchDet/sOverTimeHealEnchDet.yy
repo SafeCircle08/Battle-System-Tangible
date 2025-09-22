@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Enchants",
-    "path":"folders/Sprites/itemSprites/Enchants.yy",
+    "name":"EnchantsDetailed",
+    "path":"folders/Sprites/itemSprites/Enchants/EnchantsDetailed.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

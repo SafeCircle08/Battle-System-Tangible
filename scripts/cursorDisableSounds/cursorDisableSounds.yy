@@ -6,7 +6,7 @@
   "name":"cursorDisableSounds",
   "parent":{
     "name":"Sounds",
-    "path":"folders/Scripts/CursorInfo/Cursor Settings/Sounds.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo/Cursor Settings/Sounds.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

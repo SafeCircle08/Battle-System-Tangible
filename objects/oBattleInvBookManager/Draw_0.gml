@@ -35,13 +35,6 @@ for (var i = 0; i < array_length(global.propertiesKind); i++)
 		
 		for (var k = 1 + 5 * j; k < 6 + 5 * j; k++)
 		{
-			if (_miniPropY > 0 && _miniPropY < 210)
-			{
-				var _actualProp = global.propertiesKind[i][k];
-				if (_actualProp.enchanted == true) { setGlintShader(); }
-				draw_sprite(_actualProp.sprite, 0, _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1)), _miniPropY);
-				shader_reset();
-			}
 			if (
 			    mouse_x > _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1)) &&
 			    mouse_x < _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1)) + 10 &&
@@ -50,12 +43,31 @@ for (var i = 0; i < array_length(global.propertiesKind); i++)
 			)
 			{
 				hoovering = true;
+				
+				//Creates the FX
+				if (!instance_exists(OSQUARETEST)) {
+					var _fx = instance_create_layer(_miniPropX + 5 + (_miniPropW * (z - 1) + 1 * (z - 1)), _miniPropY + 5, LAYER_EFFECT_TOP_2, OSQUARETEST);
+					_fx.sprite_index = global.propertiesKind[i][k].sprite;
+					_fx.duplicateSprite();
+					_fx.setSpriteOffSet();
+				}
+				
 				if (!instance_exists(oBattleInvBookPropDesc)) {
 					var _propDescObj = instance_create_layer(x, y, LAYER_EFFECT_TOP, oBattleInvBookPropDesc);
 					_propDescObj.description = global.propertiesKind[i][k].desc;
 					_propDescObj.detSprite = global.propertiesKind[i][k].detailedSprite;
 				}	
 			}
+				
+			//Drawing the mini prop
+			if (_miniPropY > 0 && _miniPropY < 210)
+			{
+				var _actualProp = global.propertiesKind[i][k];
+				if (_actualProp.enchanted == true) { setGlintShader(); }
+				draw_sprite(_actualProp.sprite, 0, _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1)), _miniPropY);
+				shader_reset();
+			}
+		
 			z += 1;
 			if (k >= array_length(global.propertiesKind[i]) - 1) { break; }
 		}
@@ -64,5 +76,12 @@ for (var i = 0; i < array_length(global.propertiesKind); i++)
 	shader_reset();
 }
 
-if (hoovering == false) && (instance_exists(oBattleInvBookPropDesc)) { instance_destroy(oBattleInvBookPropDesc); }
+if (hoovering == false) {
+	if (instance_exists(oBattleInvBookPropDesc)) {
+		instance_destroy(oBattleInvBookPropDesc);
+	}
+	if (instance_exists(OSQUARETEST)) {
+		OSQUARETEST.changeToFadeOut();
+	}
+}	
 draw_set_alpha(1);

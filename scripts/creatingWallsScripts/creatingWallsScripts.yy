@@ -6,7 +6,7 @@
   "name":"creatingWallsScripts",
   "parent":{
     "name":"CartingScripts",
-    "path":"folders/Scripts/CartingScripts.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/CartingScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

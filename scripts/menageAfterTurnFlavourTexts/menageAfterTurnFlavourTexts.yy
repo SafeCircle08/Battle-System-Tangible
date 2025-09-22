@@ -6,7 +6,7 @@
   "name":"menageAfterTurnFlavourTexts",
   "parent":{
     "name":"FlavourTextScript",
-    "path":"folders/Scripts/textScripts/FlavourTextScript.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/textScripts/FlavourTextScript.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

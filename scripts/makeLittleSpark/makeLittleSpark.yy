@@ -6,7 +6,7 @@
   "name":"makeLittleSpark",
   "parent":{
     "name":"FX",
-    "path":"folders/Scripts/FX.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/FX.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

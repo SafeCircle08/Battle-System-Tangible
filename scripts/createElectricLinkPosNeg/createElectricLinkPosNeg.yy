@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"createElectricLinkPosNeg",
   "parent":{
-    "name":"CircuitScripts",
-    "path":"folders/Scripts/CircuitScripts.yy",
+    "name":"createObstacles",
+    "path":"folders/Scripts/CircuitScripts/createObstacles.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

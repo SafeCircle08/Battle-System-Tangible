@@ -20,7 +20,7 @@ function createCursorFX
 {
 	if (global.choosenCursor.enableFX == false) { return; }
 	if (instance_number(oCursorSplatObj) < MAX_SPLAT_OBJ_NUMBER) {
-		var _splatFX = instance_create_layer(_x, _y, LAYER_EFFECT_TOP, oCursorSplatObj);
+		var _splatFX = instance_create_layer(_x, _y, LAYER_EFFECT_TOP_2, oCursorSplatObj);
 		
 		_splatFX.setScaleVars(
 			startXScale, 

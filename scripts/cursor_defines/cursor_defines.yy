@@ -6,7 +6,7 @@
   "name":"cursor_defines",
   "parent":{
     "name":"CursorInfo",
-    "path":"folders/Scripts/CursorInfo.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,5 +1,5 @@
 event_inherited();
-
+image_speed = 0;
 image_angle = 0;
 
 negativeAttachedPole = undefined; //the negative instance

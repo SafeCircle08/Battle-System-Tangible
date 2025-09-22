@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"createElectricImpule",
   "parent":{
-    "name":"CircuitScripts",
-    "path":"folders/Scripts/CircuitScripts.yy",
+    "name":"createDecos",
+    "path":"folders/Scripts/CircuitScripts/createDecos.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

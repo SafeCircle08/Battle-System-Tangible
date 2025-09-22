@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createCircuitLaserPair",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createCircuitLaserPair",
+  "parent":{
+    "name":"createObstacles",
+    "path":"folders/Scripts/CircuitScripts/createObstacles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

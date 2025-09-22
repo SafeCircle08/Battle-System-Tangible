@@ -6,7 +6,7 @@
   "name":"battleGuiStyles",
   "parent":{
     "name":"Graphics Styles",
-    "path":"folders/Scripts/Graphics Styles.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/Graphics Styles.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

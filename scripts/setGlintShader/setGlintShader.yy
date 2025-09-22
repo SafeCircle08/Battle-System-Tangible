@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"setGlintShader",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"ShadersScripts",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/ShadersScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

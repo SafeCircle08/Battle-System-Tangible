@@ -6,7 +6,7 @@
   "name":"drawTextCharacater",
   "parent":{
     "name":"textScripts",
-    "path":"folders/Scripts/textScripts.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/textScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

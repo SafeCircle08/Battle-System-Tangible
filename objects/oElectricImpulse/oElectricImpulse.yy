@@ -9,8 +9,8 @@
   "name":"oElectricImpulse",
   "overriddenProperties":[],
   "parent":{
-    "name":"CircuitStuff",
-    "path":"folders/Objects/CircuitStuff.yy",
+    "name":"Deco",
+    "path":"folders/Objects/CircuitStuff/Deco.yy",
   },
   "parentObjectId":{
     "name":"oCircuitPieceParent",

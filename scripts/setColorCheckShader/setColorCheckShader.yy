@@ -6,7 +6,7 @@
   "name":"setColorCheckShader",
   "parent":{
     "name":"ShadersScripts",
-    "path":"folders/Scripts/ShadersScripts.yy",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/ShadersScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
