@@ -11,7 +11,8 @@ global.playerAttackTimer = 300; //5 seconds
 global.playerAttackTime = 0;
 	
 //----------------------------VARIABILI GLOBALI---------------------------------------------------
-global.SoulSpeed = 2;
+#macro DEFAULT_SOUL_SPD 2
+global.SoulSpeed = DEFAULT_SOUL_SPD;
 global.defenceValue = undefined;
 global.attackRandom = undefined; //VALORE AGGIUNTIVO A GLOBAL.BULLETATK (RENDERE I DANNI VARIABILI)
 //Variabili per spostare il player 

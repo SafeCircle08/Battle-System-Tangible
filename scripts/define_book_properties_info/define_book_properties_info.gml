@@ -28,13 +28,12 @@ global.propertiesOfBoosts = [
 	setUpPropertyInfos(ITEM_PROPERTY_JUMP_BOOST, "Increases Jump Strength"),
 	setUpPropertyInfos(ITEM_PROPERTY_STRENGTH, "Increases Strength Level", sStrengthPropertyDetailed),
 	setUpPropertyInfos(ITEM_PROPERTY_WATER, "Increases the Water o' Meter's level"),
-	setUpPropertyInfos(ITEM_PROPERTY_HACKER, "Converts Damage to 0, 1, 10 or 100", sHackerPropertyDetailed)
+	setUpPropertyInfos(ITEM_PROPERTY_HACKER, "Converts Damage to 0, 1, 10 or 100", sHackerPropertyDetailed),
 ];
 
 global.propertyOfPains = [
 	sPainsPropertyText,
 	setUpPropertyInfos(ITEM_PROPRTY_BIO_HAAZARD, "Consuming will cause endless pain", sBioHaazardPropertyDetailed),
-	setUpPropertyInfos(ITEM_PROPERTY_POISON, "Deals Damage for a short duration", sBioHaazardPropertyDetailed),
 ];
 
 global.propertyOfEnchantments = [
@@ -44,9 +43,17 @@ global.propertyOfEnchantments = [
 	setUpPropertyInfos(ENCHANT_NIGHT_VISION[ENCHANT_SPRITE], "Makes You able to see in the Dark.", sNightVisionEnchPropertyDetailed, true)
 ];
 
+global.propertyOfSegnalini = [
+	sTagsPropertyText,
+	setUpPropertyInfos(sDarkVisionProperty, "Makes you unable to See..."),
+	setUpPropertyInfos(ITEM_PROPERTY_POISON, "Deals Damage for a short duration", sBioHaazardPropertyDetailed),
+	setUpPropertyInfos(sSlownessProperty, "Makes you go Slower than normal-", sBioHaazardPropertyDetailed),
+];
+
 global.propertiesKind = [
 	global.propertiesOfHealing,
 	global.propertiesOfBoosts,
 	global.propertyOfPains,
-	global.propertyOfEnchantments
+	global.propertyOfEnchantments,
+	global.propertyOfSegnalini
 ];

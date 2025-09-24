@@ -18,12 +18,12 @@ function stateCircuitLoad(){
 		stateInit(sPlayerCircuit, sPlayerCircuit, "Up", function() {
 			image_xscale = 1;
 			image_yscale = 1;
-			var _newX = global.boxOriginX + global.xOffset - 1;
+			var _newX = global.boxOriginX + global.xOffset;
 			var _newY = global.boxOriginY + global.yOffset;
 			setPlayerPos(_newX, _newY);
 		});
 		
-		var _spd = 1;
+		var _spd = global.soulSpeed - 1;
 		var _actualResistance = instance_place(x, y, oResistanceCircuitPiece);
 		if (_actualResistance) { 
 			if (_actualResistance.hasTension) {
@@ -47,7 +47,6 @@ function stateCircuitLoad(){
 				_impulse.distX = abs(_actualPositivePole.x - _actualPositivePole.negativeAttachedPole.x);
 				_impulse.distY = abs(_actualPositivePole.y - _actualPositivePole.negativeAttachedPole.y);
 				state = stateElectrifing;
-				//movePlayerToPos(_actualPositivePole.destinationX, _actualPositivePole.destinationY);
 			}
 		} else {
 			if (instance_exists(oPressIndicator)) {

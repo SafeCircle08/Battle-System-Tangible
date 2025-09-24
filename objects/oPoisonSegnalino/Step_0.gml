@@ -9,5 +9,5 @@ if (poisonTimer > 0) {
 	}
 } else {
 	//Poison segnalino over
-	instance_destroy(self);	
+	destroySegnalino();
 }

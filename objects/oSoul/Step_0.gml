@@ -5,10 +5,8 @@ key_down = keyboard_check(ord("S"));
 
 global.playerHP = clamp(global.playerHP, -666, global.playerMAX_HP);
 
-if (oBattleBox.visible == false) 
-{ 
-	x = room_width / 2;
-	y = -10;
+if (!oBattleManager.isInBulletHellSection()) { 
+	setToDefaultPos(); 
 	exit; 
 }
 
@@ -23,4 +21,4 @@ if (global.beamAnimationTimer > 0)
 if (global.enemyTimer > global.enemyAttackTime - 60) { exit; }
 
 //When im done animating the beam
-if (global.beamAnimationTimer < BEAM_ANIMATION_TIMER_REF / 2) { state(); }
+if (beamAnimationOnEnding()) { state(); }

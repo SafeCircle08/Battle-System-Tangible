@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"startFadeOut",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"startFadeOut",
+  "parent":{
+    "name":"FadeInOutObjectsFunctions",
+    "path":"folders/Scripts/FadeInOutObjectsFunctions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

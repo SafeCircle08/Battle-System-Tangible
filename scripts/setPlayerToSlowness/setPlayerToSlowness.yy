@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"setPlayerToSlowness",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"setPlayerToSlowness",
+  "parent":{
+    "name":"MenagePlayerSegnalini",
+    "path":"folders/Scripts/MenagePlayerSegnalini.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

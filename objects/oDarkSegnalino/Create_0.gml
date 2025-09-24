@@ -4,3 +4,6 @@ event_inherited();
 darkTimer = 0;
 
 image_alpha = 0;
+
+//@OVERRIDE SECTION ------------------------------
+createSegnalino(sDarkVisionProperty);

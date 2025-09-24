@@ -1,6 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
+if (!oSoul.beamAnimationOnEnding()) { exit; }
+
 darkTimer = setTimer(darkTimer);
 
 if (darkTimer > 0) {
@@ -14,7 +16,8 @@ if (darkTimer > 0) {
 		}
 	}
 } else { 
-	//Dark segnalino over
-	oDarkVision.setToFadeOut();
-	instance_destroy(self); 
+	if (instance_exists(oDarkVision)) {
+		oDarkVision.setToFadeOut();
+	}
+	destroySegnalino();
 }

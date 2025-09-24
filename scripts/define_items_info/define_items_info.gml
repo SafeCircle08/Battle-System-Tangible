@@ -131,12 +131,13 @@ global.mint = createNewItem("Dropint", sMintDrop, 75, sndPlayerEatingHeal,
 	method(self, function() { healPlayer(global.mint.hp, global.mint.outSound); }))
 	
 global.cocoMilk = createNewItem("C.Milk", sCocoMilk, 122, sndPlayerDrinkingHeal,
-	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_POISON, ITEM_PROPERTY_NOONE],
+	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_POISON, sSlownessProperty],
 	[hpMessage("Gives a awesome feeling of fresh.", 122)],
 	[fullHpMessage("This Milk refreshed you to the MAX!")],
 	["This milk really gives you that summer feeling!"],
 	method(self, function() { healPlayer(global.cocoMilk.hp, global.cocoMilk.outSound);}), 
-	method(self, function() { setPlayerToPoisoned(500, 100); }));	
+	method(self, function() { setPlayerToPoisoned(4); }),
+	method(self, function() { setPlayerToSlowness(6); }));
 
 function cadAddToInventory() {
 	if (array_length(global.equippedItems) + 1 <= MAX_ITEMS_NUM) { return true; }
