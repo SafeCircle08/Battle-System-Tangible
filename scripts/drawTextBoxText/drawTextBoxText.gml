@@ -161,6 +161,11 @@ function drawTextBoxText(
 					if (oBattleManager.isEnemySpeaking()) {
 						oBattleManager.enemyTextShowed = true;
 						oBattleManager.changeTurn();
+					} else {
+						if (oBattleManager.showingExtraMonologueText) {
+							setToOriginalMonologue();
+							return;
+						}
 					}
 				}
 				

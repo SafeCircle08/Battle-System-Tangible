@@ -6,7 +6,7 @@
   "name":"steam_punk_defines_info",
   "parent":{
     "name":"EnemyDefines",
-    "path":"folders/Scripts/Defines/EnemyDefines.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/ENEMIES/EnemyDefines.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

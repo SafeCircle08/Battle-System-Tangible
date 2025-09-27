@@ -146,6 +146,9 @@ increaseTurn = function() {
 	turnNumber += 1;		
 }
 
+showingExtraMonologueText = false;
+writtenBattleText = global.battleFlavourTexts[flavourTextIndex];
+
 setToStartTurn = function() {
 	selected_option = 0;
 	enemyTextShowed = true;
@@ -161,7 +164,8 @@ setToStartTurn = function() {
 	if (_flavourTextProbs == 6) {
 		menageAfterTurnFlavourTexts(); 
 		flavourTextIndex = getRandomIndex(global.battleFlavourTexts);
-	}		
+	}
+	writtenBattleText = global.battleFlavourTexts[flavourTextIndex];
 }
 
 //The effect
@@ -170,5 +174,5 @@ setToStartTurn = function() {
 initializeAllCreatedFunctions();
 
 //Initialize the functions the player havs
-initializePlayerOptionsinfo();
+initializePlayerSubBattleMenuOptions();
 initializePlayerMainBattleMenuOptions();

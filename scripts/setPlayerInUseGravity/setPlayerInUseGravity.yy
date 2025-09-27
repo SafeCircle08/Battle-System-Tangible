@@ -6,7 +6,7 @@
   "name":"setPlayerInUseGravity",
   "parent":{
     "name":"StatesManagement",
-    "path":"folders/Scripts/PLAYER/Battle/BattleStates/StatesManagement.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/STATES/STATE_FUNCTIONS_&_INFOS/PLAYER_BATTLE_STATES/StatesManagement.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

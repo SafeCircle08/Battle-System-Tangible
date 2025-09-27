@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"SteamPunkOffice",
-    "path":"folders/Objects/OverWorld/SteamPunkOffice.yy",
+    "path":"folders/Objects/OVER_WORLD/AREAS/SteamPunkOffice.yy",
   },
   "parentObjectId":null,
   "persistent":false,

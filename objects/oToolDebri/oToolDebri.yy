@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"ToolBullets",
-    "path":"folders/Objects/Battle/BULLETS/BulletsObjects/ToolBullets.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/BULLETS/BULLETS/BulletsObjects/ToolBullets.yy",
   },
   "parentObjectId":{
     "name":"oBulletParent",

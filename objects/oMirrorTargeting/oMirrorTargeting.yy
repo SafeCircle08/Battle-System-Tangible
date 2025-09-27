@@ -9,8 +9,8 @@
   "name":"oMirrorTargeting",
   "overriddenProperties":[],
   "parent":{
-    "name":"Mirrors",
-    "path":"folders/Objects/Battle/Mirrors.yy",
+    "name":"MIRRORS",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/MIRRORS.yy",
   },
   "parentObjectId":null,
   "persistent":false,

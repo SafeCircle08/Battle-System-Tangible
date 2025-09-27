@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"battle_global_defines",
   "parent":{
-    "name":"Battle",
-    "path":"folders/Scripts/Defines/Battle.yy",
+    "name":"BATTLE",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"beamTimerVars",
   "parent":{
-    "name":"createEvent",
-    "path":"folders/Scripts/PLAYER/createEvent.yy",
+    "name":"BEAM_FUNCTIONS",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/BEAM_FUNCTIONS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"drumPadEffects",
-    "path":"folders/Objects/Battle/DrumPadObjs/drumPadEffects.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/ATTACK/DrumPadObjs/drumPadEffects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

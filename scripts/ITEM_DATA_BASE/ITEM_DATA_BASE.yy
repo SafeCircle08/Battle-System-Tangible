@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ITEM_DATA_BASE",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ITEM_DATA_BASE",
+  "parent":{
+    "name":"ITEMS_DEFINITIONS",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEMS_DEFINITIONS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

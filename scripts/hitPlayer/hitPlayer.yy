@@ -6,7 +6,7 @@
   "name":"hitPlayer",
   "parent":{
     "name":"playerHit",
-    "path":"folders/Scripts/PLAYER/playerHit.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/HEALTH_&_DAMAGE/playerHit.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

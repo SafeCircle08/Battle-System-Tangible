@@ -6,7 +6,7 @@
   "name":"createElectricImpule",
   "parent":{
     "name":"createDecos",
-    "path":"folders/Scripts/CircuitScripts/createDecos.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/INSIDE_BATTLE_BOX/BOX_PATTERNS/CircuitScripts/createDecos.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

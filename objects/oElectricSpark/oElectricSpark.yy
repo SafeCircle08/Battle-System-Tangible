@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Deco",
-    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage)/CircuitStuff/Deco.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/EXTRAS_OBJECTS/CircuitStuff/Deco.yy",
   },
   "parentObjectId":null,
   "persistent":false,

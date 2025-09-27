@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"setMonologueTextToNewString",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"setMonologueTextToNewString",
+  "parent":{
+    "name":"FlavourTextScript",
+    "path":"folders/Scripts/TEXT/FlavourTextScript.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

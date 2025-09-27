@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"setPlayerToSlowness",
   "parent":{
-    "name":"MenagePlayerSegnalini",
-    "path":"folders/Scripts/PLAYER/MenagePlayerSegnalini.yy",
+    "name":"SetSegnaliniFunctions",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/SEGNALINI/SetSegnaliniFunctions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

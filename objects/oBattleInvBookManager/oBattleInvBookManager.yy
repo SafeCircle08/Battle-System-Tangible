@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"BattleBook",
-    "path":"folders/Objects/Battle/Managers/Menu-GUI/BattleBook.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/MANAGERS/Menu-GUI/BattleBook.yy",
   },
   "parentObjectId":null,
   "persistent":false,

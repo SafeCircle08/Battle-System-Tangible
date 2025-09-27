@@ -9,8 +9,8 @@
   "name":"oShieldDebris",
   "overriddenProperties":[],
   "parent":{
-    "name":"PlayerMiscellaneous",
-    "path":"folders/Objects/Battle/Soul/PlayerMiscellaneous.yy",
+    "name":"ShieldShards",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/MISCELLANOUS/FXs/ShieldShards.yy",
   },
   "parentObjectId":{
     "name":"oExtrasParent",

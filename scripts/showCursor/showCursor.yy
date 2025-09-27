@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"showCursor",
   "parent":{
-    "name":"Activation",
-    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo/Cursor Settings/Activation.yy",
+    "name":"Show_Hide",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/CURSOR/CURSOR_SETTINGS/Show_Hide.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

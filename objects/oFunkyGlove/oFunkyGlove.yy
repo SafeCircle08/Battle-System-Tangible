@@ -10,8 +10,8 @@
   "name":"oFunkyGlove",
   "overriddenProperties":[],
   "parent":{
-    "name":"Extras(Object that doesn't deal Damage)",
-    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage).yy",
+    "name":"EXTRAS_OBJECTS",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/EXTRAS_OBJECTS.yy",
   },
   "parentObjectId":{
     "name":"oExtrasParent",

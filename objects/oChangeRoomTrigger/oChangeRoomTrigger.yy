@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"OW_Triggers",
-    "path":"folders/Objects/OverWorld/OW_Triggers.yy",
+    "path":"folders/Objects/OVER_WORLD/OVER_WORLD/OW_Triggers.yy",
   },
   "parentObjectId":null,
   "persistent":false,

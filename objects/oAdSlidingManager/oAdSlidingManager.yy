@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Actions Effects",
-    "path":"folders/Objects/Battle/Actions Effects.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/FXS/Actions Effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

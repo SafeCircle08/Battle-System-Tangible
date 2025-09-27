@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"boxSidesPlatforms",
-    "path":"folders/Objects/Battle/Soul/boxSidesPlatforms.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/MISCELLANOUS/boxSidesPlatforms.yy",
   },
   "parentObjectId":{
     "name":"oPlatformParent",

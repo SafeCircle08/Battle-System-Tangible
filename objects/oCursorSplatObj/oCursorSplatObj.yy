@@ -9,8 +9,8 @@
   "name":"oCursorSplatObj",
   "overriddenProperties":[],
   "parent":{
-    "name":"Cursors",
-    "path":"folders/Objects/Main/Cursors.yy",
+    "name":"CURSORS",
+    "path":"folders/Objects/SETTINGS_&_CUSTOMIZATION/CUSTOMIZATION/CURSORS.yy",
   },
   "parentObjectId":null,
   "persistent":false,

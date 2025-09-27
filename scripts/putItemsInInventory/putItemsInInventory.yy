@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"putItemsInInventory",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"putItemsInInventory",
+  "parent":{
+    "name":"INVENTORY",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/INVENTORY.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

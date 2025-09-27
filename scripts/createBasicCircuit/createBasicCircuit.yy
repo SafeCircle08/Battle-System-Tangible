@@ -6,7 +6,7 @@
   "name":"createBasicCircuit",
   "parent":{
     "name":"circuitFoundamentalShapes",
-    "path":"folders/Scripts/CircuitScripts/circuitFoundamentalShapes.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/INSIDE_BATTLE_BOX/BOX_PATTERNS/CircuitScripts/circuitFoundamentalShapes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

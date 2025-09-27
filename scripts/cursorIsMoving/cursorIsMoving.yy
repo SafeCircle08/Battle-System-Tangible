@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"cursorIsMoving",
   "parent":{
-    "name":"Cursor Settings",
-    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo/Cursor Settings.yy",
+    "name":"CURSOR_SETTINGS",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/CURSOR/CURSOR_SETTINGS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

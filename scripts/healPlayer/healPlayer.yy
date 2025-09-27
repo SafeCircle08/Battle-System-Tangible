@@ -6,7 +6,7 @@
   "name":"healPlayer",
   "parent":{
     "name":"playerHpsSections",
-    "path":"folders/Scripts/PLAYER/playerHpsSections.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/HEALTH_&_DAMAGE/playerHpsSections.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

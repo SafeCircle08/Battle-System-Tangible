@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Shards",
-    "path":"folders/Objects/OverWorld/NIGHT_PETAL_ZONE/nightPuzzles/BellPuzzles/Shards.yy",
+    "path":"folders/Objects/OVER_WORLD/AREAS/NIGHT_PETAL_ZONE/nightPuzzles/BellPuzzles/Shards.yy",
   },
   "parentObjectId":{
     "name":"oGlassShardParent",

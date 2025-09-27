@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"playerInfo",
   "parent":{
-    "name":"createEvent",
-    "path":"folders/Scripts/PLAYER/createEvent.yy",
+    "name":"PLAYER_INFO_INIT",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_INFO_INIT.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

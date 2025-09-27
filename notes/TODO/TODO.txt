@@ -1,19 +1,12 @@
 {
-	quando premi "X" per chiudere l'inventario, la selected option è 3.
-	Se ci sono (es) 1 oggett(i) nell'inventario darà errore (out of range)
-	Sistemare sta cosa.
-}
-
-{
-	quando cambi la gravità del player durante il turno è tutto sballato.
-	fare una funzione che vada a resettare la gravità del player ogni volta che si cambia
-	gravità durante il turno.
+	andare a cambiare il nome delle variabili
+	per quanto riguardo il flavourText nel oBattleManager:
 	
-	ex.
-	function setNewJumpState(_angle, _sprite) {
-		oSoul.image_angle = _angle;
-		//.sprite = _sprite
-		//...
-		...
-	}
+	andare a cambiare il nome dell'argomento isFlavourText nella funzione
+	drawTextTextBox:
+		tutti sono flavour text, ma quelli che sono mostrati quando un'azione è terminata,
+		quando sono state mostrate tutte le pagine, bisogna andare a gestire il turno.
+		
+		---Sbagliato---				  ---Corretto---
+		isBattleFlavourText = true -> isFinishedActionFlavourText = true
 }

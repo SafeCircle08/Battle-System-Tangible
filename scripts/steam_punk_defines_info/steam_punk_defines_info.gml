@@ -139,7 +139,3 @@ function steamPunkEnemyBattleInfo()
 	global.battleFlavourTexts = steamPunkBattleFlavourTexts;
 	global.enemyPortrait = _portraits[global.styleSelection];
 }
-
-
-
-

@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Enchanting",
-    "path":"folders/Objects/Battle/Managers/Enchanting.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/MANAGERS/Enchanting.yy",
   },
   "parentObjectId":null,
   "persistent":false,

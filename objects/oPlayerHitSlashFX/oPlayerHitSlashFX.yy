@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"playerHitFXs",
-    "path":"folders/Objects/Battle/Soul/playerHitFXs.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/MISCELLANOUS/FXs/playerHitFXs.yy",
   },
   "parentObjectId":null,
   "persistent":false,

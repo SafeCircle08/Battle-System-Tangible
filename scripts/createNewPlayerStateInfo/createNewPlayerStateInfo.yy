@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"createNewPlayerStateInfo",
   "parent":{
-    "name":"createEvent",
-    "path":"folders/Scripts/PLAYER/createEvent.yy",
+    "name":"STATES",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/STATES.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

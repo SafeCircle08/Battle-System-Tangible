@@ -6,7 +6,7 @@
   "name":"closeBattleBook",
   "parent":{
     "name":"BattleBookScripts",
-    "path":"folders/Scripts/BattleScripts/BattleBookScripts.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/BattleBookScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

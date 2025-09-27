@@ -6,7 +6,7 @@
   "name":"canPlayTextVoice",
   "parent":{
     "name":"textScripts",
-    "path":"folders/Scripts/SECONDARY_SCRIPTS/textScripts.yy",
+    "path":"folders/Scripts/TEXT/textScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

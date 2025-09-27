@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"GUIobjects",
-    "path":"folders/Objects/PlayerOverWorld/GUIobjects.yy",
+    "path":"folders/Objects/OVER_WORLD/PLAYER_OVER_WORLD/GUIobjects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

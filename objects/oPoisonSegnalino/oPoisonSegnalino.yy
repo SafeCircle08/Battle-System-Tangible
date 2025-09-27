@@ -10,8 +10,8 @@
   "name":"oPoisonSegnalino",
   "overriddenProperties":[],
   "parent":{
-    "name":"PlayerSegnalini",
-    "path":"folders/Objects/Battle/Soul/PlayerSegnalini.yy",
+    "name":"Segnalini",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/SEGNALINI/Segnalini.yy",
   },
   "parentObjectId":{
     "name":"oSegnalinoParent",

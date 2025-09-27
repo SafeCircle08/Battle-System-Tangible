@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"FloatingText-FXs",
-    "path":"folders/Objects/Battle/Soul/FloatingText-FXs.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/MISCELLANOUS/FXs/FloatingText-FXs.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -6,7 +6,7 @@
   "name":"setLineBlasterPos",
   "parent":{
     "name":"bulletScripts",
-    "path":"folders/Scripts/bulletScripts.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/INSIDE_BATTLE_BOX/BULLETS/bulletScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"DarkSegnalino",
-    "path":"folders/Objects/Battle/Soul/PlayerSegnalini/DarkSegnalino.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/SEGNALINI/Segnalini/DarkSegnalino.yy",
   },
   "parentObjectId":{
     "name":"oSegnalinoParent",

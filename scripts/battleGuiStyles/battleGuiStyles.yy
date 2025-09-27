@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"battleGuiStyles",
   "parent":{
-    "name":"Graphics Styles",
-    "path":"folders/Scripts/SECONDARY_SCRIPTS/Graphics Styles.yy",
+    "name":"GRAPHICS_STYLES",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/GRAPHICS_STYLES.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

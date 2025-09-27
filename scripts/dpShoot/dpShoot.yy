@@ -6,7 +6,7 @@
   "name":"dpShoot",
   "parent":{
     "name":"DrumPadScripts",
-    "path":"folders/Scripts/DrumPadScripts.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/ATTACK/DrumPadScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

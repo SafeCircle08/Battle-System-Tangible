@@ -6,7 +6,7 @@
   "name":"createElectricLinkPosNeg",
   "parent":{
     "name":"createObstacles",
-    "path":"folders/Scripts/CircuitScripts/createObstacles.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/INSIDE_BATTLE_BOX/BOX_PATTERNS/CircuitScripts/createObstacles.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

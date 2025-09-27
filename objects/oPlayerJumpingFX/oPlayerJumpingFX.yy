@@ -9,8 +9,8 @@
   "name":"oPlayerJumpingFX",
   "overriddenProperties":[],
   "parent":{
-    "name":"PlayerMiscellaneous",
-    "path":"folders/Objects/Battle/Soul/PlayerMiscellaneous.yy",
+    "name":"JumpFXs",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/MISCELLANOUS/FXs/JumpFXs.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -10,8 +10,8 @@
   "name":"oBattleBox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle",
-    "path":"folders/Objects/Battle.yy",
+    "name":"BATTLE",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE.yy",
   },
   "parentObjectId":null,
   "persistent":false,

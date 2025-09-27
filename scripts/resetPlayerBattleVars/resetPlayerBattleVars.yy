@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"resetPlayerBattleVars",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"resetPlayerBattleVars",
+  "parent":{
+    "name":"STATES",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/STATES.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

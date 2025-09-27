@@ -119,7 +119,7 @@ if (!isInBulletHellSection())
 			//draw_text(textX - (4 * (_nameL - 3)) + 14.5, textY - 0.5, text);
 			draw_sprite(_textSprite, 0, textX, textY);
 		}
-		drawTextBoxText(global.battleFlavourTexts[flavourTextIndex], Mono, false, ord("Z"), true, true, sndBasicTxt5, 0, 0);
+		drawTextBoxText(writtenBattleText, Mono, false, ord("Z"), true, true, sndBasicTxt5, 0, 0);
 	}
 	else { decreaseMainMenuXPos(); }
 	#endregion

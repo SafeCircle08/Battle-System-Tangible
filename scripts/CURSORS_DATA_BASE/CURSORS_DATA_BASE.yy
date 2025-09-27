@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"CURSORS_DATA_BASE",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"CURSORS_DATA_BASE",
+  "parent":{
+    "name":"GENERAL",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/CURSOR/GENERAL.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

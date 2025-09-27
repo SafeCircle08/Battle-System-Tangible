@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Deco",
-    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage)/Deco.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/EXTRAS_OBJECTS/Deco.yy",
   },
   "parentObjectId":{
     "name":"oBulletParent",

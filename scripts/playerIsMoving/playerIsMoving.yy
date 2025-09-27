@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"playerIsMoving",
   "parent":{
-    "name":"Movement",
-    "path":"folders/Scripts/PLAYER/Movement.yy",
+    "name":"MOVEMENT_UTILS",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/MOVEMENT_UTILS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

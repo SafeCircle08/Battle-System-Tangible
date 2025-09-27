@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Cameras",
-    "path":"folders/Objects/Battle/Soul/Cameras.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/MISCELLANOUS/Cameras.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -34,6 +34,7 @@ global.propertiesOfBoosts = [
 global.propertyOfPains = [
 	sPainsPropertyText,
 	setUpPropertyInfos(ITEM_PROPRTY_BIO_HAAZARD, "Consuming will cause endless pain", sBioHaazardPropertyDetailed),
+	setUpPropertyInfos(ITEM_PROPERTY_MIGHT_HURT, "Cosuming MIGHT cause some pain...", sBioHaazardPropertyDetailed)
 ];
 
 global.propertyOfEnchantments = [

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"custom_colors_macro_defines",
   "parent":{
-    "name":"Constants",
-    "path":"folders/Scripts/Defines/Constants.yy",
+    "name":"COSTANTS",
+    "path":"folders/Scripts/HARDWARE_&_COSTANTS_&_SETTING_&_OPTIMIZATION/COSTANTS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

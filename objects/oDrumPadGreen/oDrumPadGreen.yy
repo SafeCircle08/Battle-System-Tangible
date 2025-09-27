@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"actualObjects",
-    "path":"folders/Objects/Battle/DrumPadObjs/actualObjects.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/ATTACK/DrumPadObjs/actualObjects.yy",
   },
   "parentObjectId":{
     "name":"oActualDrumPadParent",

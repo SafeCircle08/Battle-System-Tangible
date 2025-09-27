@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"DrumPadObjs",
-    "path":"folders/Objects/Battle/DrumPadObjs.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/ATTACK/DrumPadObjs.yy",
   },
   "parentObjectId":null,
   "persistent":false,

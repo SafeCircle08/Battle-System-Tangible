@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"playerGravitiesInfo",
   "parent":{
-    "name":"PlayerStatesDefinitions",
-    "path":"folders/Scripts/PLAYER/Battle/BattleStates/PlayerStatesDefinitions.yy",
+    "name":"PlayerStates_&_Gravity_Infos",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/STATES/STATE_FUNCTIONS_&_INFOS/PlayerStates_&_Gravity_Infos.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

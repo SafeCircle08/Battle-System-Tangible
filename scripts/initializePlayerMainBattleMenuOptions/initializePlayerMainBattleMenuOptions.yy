@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"initializePlayerMainBattleMenuOptions",
   "parent":{
-    "name":"PlayerDefines",
-    "path":"folders/Scripts/PLAYER/Battle/PlayerDefines.yy",
+    "name":"MAIN_&_SUB_MENU_FUNCS_INIT",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/MAIN_&_SUB_MENU_FUNCS_INIT.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

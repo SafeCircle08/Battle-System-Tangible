@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"oFadeInOutOptionParent",
-    "path":"folders/Objects/Battle/Managers/oFadeInOutOptionParent.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/MANAGERS/oFadeInOutOptionParent.yy",
   },
   "parentObjectId":null,
   "persistent":false,

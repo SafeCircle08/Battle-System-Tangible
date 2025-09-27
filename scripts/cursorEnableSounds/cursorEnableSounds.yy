@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"cursorEnableSounds",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo/Cursor Settings/Sounds.yy",
+    "name":"EnableSoundsSettings",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/CURSOR/CURSOR_SETTINGS/EnableSoundsSettings.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

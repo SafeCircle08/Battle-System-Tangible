@@ -113,7 +113,10 @@ function initializeInventoryOptionFunctions()
 				playingGuiAnimation = true; 
 			}));
 		}
-		else { resetNavigation(3, sndClosingInventory, method(self, function() { moreStepsAct = true; })); }
+		else { 
+			setMonologueTextToNewString(["*Cannot open the inventory\n right now...", "*You don't have any\n Items."])
+			resetNavigation(3, sndClosingInventory, method(self, function() { moreStepsAct = true; })); 
+		}
 	}
 	
 	navigatingInventoryFunction = function(_getInputs = GET_INPUTS, _canNavigate = CAN_NAVIGATE)

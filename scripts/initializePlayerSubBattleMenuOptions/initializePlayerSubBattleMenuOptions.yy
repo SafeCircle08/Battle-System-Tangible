@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"initializePlayerSubBattleMenuOptions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"initializePlayerSubBattleMenuOptions",
+  "parent":{
+    "name":"MAIN_&_SUB_MENU_FUNCS_INIT",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/MAIN_&_SUB_MENU_FUNCS_INIT.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

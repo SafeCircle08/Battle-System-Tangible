@@ -9,8 +9,8 @@
   "name":"oWindowSettingButton",
   "overriddenProperties":[],
   "parent":{
-    "name":"Settings",
-    "path":"folders/Objects/Main/Settings.yy",
+    "name":"SETTINGS",
+    "path":"folders/Objects/SETTINGS_&_CUSTOMIZATION/SETTINGS.yy",
   },
   "parentObjectId":{
     "name":"oSettingBTNParent",

@@ -35,7 +35,7 @@
   "origin":4,
   "parent":{
     "name":"Deco",
-    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage)/Deco.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/EXTRAS_OBJECTS/Deco.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

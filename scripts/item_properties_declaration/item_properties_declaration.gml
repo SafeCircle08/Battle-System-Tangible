@@ -14,4 +14,5 @@ function itemPropertiesDeclaration() {
 	#macro ITEM_PROPERTY_WIFI sWifiProperty
 	#macro ITEM_PROPERTY_OVER_TIME_HEAL sHealOverTimeProperty
 	#macro ITEM_PROPERTY_POISON sPoisoningProperty
+	#macro ITEM_PROPERTY_MIGHT_HURT sMightHurtProperty
 }

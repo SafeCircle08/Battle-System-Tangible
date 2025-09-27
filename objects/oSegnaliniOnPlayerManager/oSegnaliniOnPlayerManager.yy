@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"SegnaliniManager",
-    "path":"folders/Objects/Battle/Soul/PlayerSegnalini/SegnaliniManager.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/SEGNALINI/SegnaliniManager.yy",
   },
   "parentObjectId":null,
   "persistent":false,

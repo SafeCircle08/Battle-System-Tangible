@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Blasters",
-    "path":"folders/Objects/Battle/BULLETS/BulletsObjects/Blasters.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/BULLETS/BULLETS/BulletsObjects/Blasters.yy",
   },
   "parentObjectId":{
     "name":"oBulletParent",

@@ -10,8 +10,8 @@
   "name":"oGoodJumpEffect",
   "overriddenProperties":[],
   "parent":{
-    "name":"PlayerMiscellaneous",
-    "path":"folders/Objects/Battle/Soul/PlayerMiscellaneous.yy",
+    "name":"JumpFXs",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/MISCELLANOUS/FXs/JumpFXs.yy",
   },
   "parentObjectId":{
     "name":"oExtrasParent",

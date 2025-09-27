@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"droppingAttack",
-    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage)/droppingAttack.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/EXTRAS_OBJECTS/droppingAttack.yy",
   },
   "parentObjectId":{
     "name":"oExtrasParent",

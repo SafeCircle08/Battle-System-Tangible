@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"BULLETS",
-    "path":"folders/Objects/Battle/BULLETS.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/BULLETS/BULLETS.yy",
   },
   "parentObjectId":{
     "name":"oExtrasParent",

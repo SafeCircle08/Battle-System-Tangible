@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"changeItemPropertiesList",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"changeItemPropertiesList",
+  "parent":{
+    "name":"INVENTORY",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/INVENTORY.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

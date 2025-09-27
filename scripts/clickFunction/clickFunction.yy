@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"clickFunction",
   "parent":{
-    "name":"CursorInfo",
-    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo.yy",
+    "name":"GENERAL",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/CURSOR/GENERAL.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

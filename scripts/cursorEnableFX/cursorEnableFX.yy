@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"cursorEnableFX",
   "parent":{
-    "name":"Effects",
-    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo/Cursor Settings/Effects.yy",
+    "name":"EnableFXSettings",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/CURSOR/CURSOR_SETTINGS/EnableFXSettings.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

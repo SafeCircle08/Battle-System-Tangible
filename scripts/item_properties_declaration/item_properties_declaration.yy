@@ -6,7 +6,7 @@
   "name":"item_properties_declaration",
   "parent":{
     "name":"ITEM_PROP_MACROS",
-    "path":"folders/Scripts/ItemFunctions/ItemsDefines/ITEM_PROP_MACROS.yy",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEM_PROP_MACROS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

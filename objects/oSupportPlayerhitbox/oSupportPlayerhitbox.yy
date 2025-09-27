@@ -10,8 +10,8 @@
   "name":"oSupportPlayerhitbox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Soul",
-    "path":"folders/Objects/Battle/Soul.yy",
+    "name":"SOUL",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/SOUL.yy",
   },
   "parentObjectId":null,
   "persistent":true,

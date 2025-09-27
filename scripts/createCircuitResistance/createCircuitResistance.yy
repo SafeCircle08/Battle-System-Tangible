@@ -6,7 +6,7 @@
   "name":"createCircuitResistance",
   "parent":{
     "name":"createPieces",
-    "path":"folders/Scripts/CircuitScripts/createPieces.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/INSIDE_BATTLE_BOX/BOX_PATTERNS/CircuitScripts/createPieces.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

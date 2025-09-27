@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Platforms",
-    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage)/Platforms.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/EXTRAS_OBJECTS/Platforms.yy",
   },
   "parentObjectId":{
     "name":"oExtrasParent",

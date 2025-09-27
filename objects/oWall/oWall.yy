@@ -6,8 +6,8 @@
   "name":"oWall",
   "overriddenProperties":[],
   "parent":{
-    "name":"OverWorld",
-    "path":"folders/Objects/OverWorld.yy",
+    "name":"OVER_WORLD",
+    "path":"folders/Objects/OVER_WORLD/OVER_WORLD.yy",
   },
   "parentObjectId":null,
   "persistent":false,

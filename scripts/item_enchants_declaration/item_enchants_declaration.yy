@@ -6,7 +6,7 @@
   "name":"item_enchants_declaration",
   "parent":{
     "name":"ENCHANTS_MACROS",
-    "path":"folders/Scripts/ItemFunctions/ItemsDefines/ENCHANTS_MACROS.yy",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS/ENCHANTS_MACROS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

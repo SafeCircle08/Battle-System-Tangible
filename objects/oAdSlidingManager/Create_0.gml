@@ -8,8 +8,11 @@ possibleSprites = [
 	sGuitarAd,
 	sTvAd,
 	sCityAd,
-	sCryptoAd
+	sCryptoAd,
+	sLateralusAd,
+	sNeverMindAd
 ];
+
 adNumber = 30;
 index = irandom_range(0, array_length(possibleSprites) - 1);
 adSprite = possibleSprites[index];

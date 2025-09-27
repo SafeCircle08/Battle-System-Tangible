@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"fullHpMessage",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"fullHpMessage",
+  "parent":{
+    "name":"INVENTORY",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/INVENTORY.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

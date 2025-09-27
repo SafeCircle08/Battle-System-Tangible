@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"USER-INDICATORS",
-    "path":"folders/Objects/Main/USER-INDICATORS.yy",
+    "path":"folders/Objects/SETTINGS_&_CUSTOMIZATION/SETTINGS/USER-INDICATORS.yy",
   },
   "parentObjectId":null,
   "persistent":false,

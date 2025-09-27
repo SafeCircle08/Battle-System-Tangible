@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"cursorDisableAll",
   "parent":{
-    "name":"Cursor Settings",
-    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo/Cursor Settings.yy",
+    "name":"EnableAllSettings",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/CURSOR/CURSOR_SETTINGS/EnableAllSettings.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

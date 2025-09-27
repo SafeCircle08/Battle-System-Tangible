@@ -27,7 +27,7 @@ function finishTurn()
 		{
 			backGroundLayersVisible(layers, false);
 			setManagerValuesToStartTurn();
-			resetBattlePlayerVars();
+			resetPlayerBattleVars();
 		}
 	}
 }

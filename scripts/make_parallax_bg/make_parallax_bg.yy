@@ -6,7 +6,7 @@
   "name":"make_parallax_bg",
   "parent":{
     "name":"CameraMenagmentScripts",
-    "path":"folders/Scripts/SECONDARY_SCRIPTS/CameraMenagmentScripts.yy",
+    "path":"folders/Scripts/HARDWARE_&_COSTANTS_&_SETTING_&_OPTIMIZATION/CameraMenagmentScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"createNewSegnalino",
   "parent":{
-    "name":"MenagePlayerSegnalini",
-    "path":"folders/Scripts/PLAYER/MenagePlayerSegnalini.yy",
+    "name":"SEGNALINI",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/SEGNALINI.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -10,8 +10,8 @@
   "name":"oCursorDrop",
   "overriddenProperties":[],
   "parent":{
-    "name":"Main",
-    "path":"folders/Objects/Main.yy",
+    "name":"CURSORS",
+    "path":"folders/Objects/SETTINGS_&_CUSTOMIZATION/CUSTOMIZATION/CURSORS.yy",
   },
   "parentObjectId":null,
   "persistent":false,

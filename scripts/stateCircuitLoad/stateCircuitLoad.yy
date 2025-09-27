@@ -6,7 +6,7 @@
   "name":"stateCircuitLoad",
   "parent":{
     "name":"REWORKED_DONE",
-    "path":"folders/Scripts/PLAYER/Battle/BattleStates/REWORKED_DONE.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/STATES/STATE_FUNCTIONS_&_INFOS/PLAYER_BATTLE_STATES/REWORKED_DONE.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

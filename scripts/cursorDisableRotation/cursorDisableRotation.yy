@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"cursorDisableRotation",
   "parent":{
-    "name":"Rotation",
-    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo/Cursor Settings/Rotation.yy",
+    "name":"EnableRotationSettings",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/CURSOR/CURSOR_SETTINGS/EnableRotationSettings.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

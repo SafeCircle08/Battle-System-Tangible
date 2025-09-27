@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Deco",
-    "path":"folders/Objects/OverWorld/NIGHT_PETAL_ZONE/Deco.yy",
+    "path":"folders/Objects/OVER_WORLD/AREAS/NIGHT_PETAL_ZONE/Deco.yy",
   },
   "parentObjectId":null,
   "persistent":false,

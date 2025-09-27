@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Pieces",
-    "path":"folders/Objects/Battle/Extras(Object that doesn't deal Damage)/CircuitStuff/Pieces.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/EXTRAS_OBJECTS/CircuitStuff/Pieces.yy",
   },
   "parentObjectId":{
     "name":"oPoleParent",

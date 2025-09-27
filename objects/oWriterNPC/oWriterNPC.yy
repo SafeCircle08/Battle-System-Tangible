@@ -9,8 +9,8 @@
   "name":"oWriterNPC",
   "overriddenProperties":[],
   "parent":{
-    "name":"Characters",
-    "path":"folders/Objects/Characters.yy",
+    "name":"CHARACTERS_OVER_WORLD",
+    "path":"folders/Objects/OVER_WORLD/CHARACTERS_OVER_WORLD.yy",
   },
   "parentObjectId":null,
   "persistent":false,

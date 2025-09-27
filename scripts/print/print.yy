@@ -6,7 +6,7 @@
   "name":"print",
   "parent":{
     "name":"MenagementScripts",
-    "path":"folders/Scripts/MenagementScripts.yy",
+    "path":"folders/Scripts/HARDWARE_&_COSTANTS_&_SETTING_&_OPTIMIZATION/MenagementScripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

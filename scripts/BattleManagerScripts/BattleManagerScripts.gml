@@ -113,7 +113,8 @@ function terminateAction(_ds_list = [], _method = function() {})
 		hideCursor();
 		hideMirrors();
 		resetTextVars();
-	
+		setToOriginalMonologue(); //original flavour text
+		
 		if (array_length(_ds_list) != 0)
 		{
 			ds_messages = ds_list_create();

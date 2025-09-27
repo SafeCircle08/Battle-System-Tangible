@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Menu-GUI",
-    "path":"folders/Objects/Battle/Managers/Menu-GUI.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/MANAGERS/Menu-GUI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"mouseCursorIsOn",
   "parent":{
-    "name":"CursorInfo",
-    "path":"folders/Scripts/SECONDARY_SCRIPTS/CursorInfo.yy",
+    "name":"CURSOR_SETTINGS",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/CURSOR/CURSOR_SETTINGS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

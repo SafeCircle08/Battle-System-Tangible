@@ -11,8 +11,8 @@
   "name":"oPlayerOW",
   "overriddenProperties":[],
   "parent":{
-    "name":"PlayerOverWorld",
-    "path":"folders/Objects/PlayerOverWorld.yy",
+    "name":"PLAYER_OVER_WORLD",
+    "path":"folders/Objects/OVER_WORLD/PLAYER_OVER_WORLD.yy",
   },
   "parentObjectId":null,
   "persistent":true,

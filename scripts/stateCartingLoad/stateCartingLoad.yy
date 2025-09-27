@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"stateCartingLoad",
   "parent":{
-    "name":"BattleStates",
-    "path":"folders/Scripts/PLAYER/Battle/BattleStates.yy",
+    "name":"PLAYER_BATTLE_STATES",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/STATES/STATE_FUNCTIONS_&_INFOS/PLAYER_BATTLE_STATES.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
