@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"stateInit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"stateInit",
+  "parent":{
+    "name":"createEvent",
+    "path":"folders/Scripts/PLAYER/createEvent.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

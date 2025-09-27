@@ -23,7 +23,7 @@ if (timer <= 800)
 		boxDimensions(200, 125);
 		createExclamationMarks();
 		createPlatforms(4, 3);
-		playerSetState(oSoul.stateGravity, sEffectGravity, "Front");
+		playerChangeState(global.playerStateFree);
 		if (instance_exists(oCannonFree)) 
 		{ 
 			instance_destroy(oCannonFree); 

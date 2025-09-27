@@ -1,7 +1,2 @@
 event_inherited();
-global.bulletsCreated = 0;
-global.created = false;
-global.createTimer = 80;
-global.enemyAttackTime = 750;
-playerSetState(oSoul.stateFree);
-boxDimensions(230, 80);
+initializeNewTurn(80, false, 750, 0, 230, 80, room_width / 2, room_height / 2, global.playerStateFree);

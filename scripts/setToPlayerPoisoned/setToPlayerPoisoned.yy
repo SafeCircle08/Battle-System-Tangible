@@ -6,7 +6,7 @@
   "name":"setToPlayerPoisoned",
   "parent":{
     "name":"MenagePlayerSegnalini",
-    "path":"folders/Scripts/MenagePlayerSegnalini.yy",
+    "path":"folders/Scripts/PLAYER/MenagePlayerSegnalini.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

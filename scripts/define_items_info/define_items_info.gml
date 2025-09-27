@@ -136,8 +136,15 @@ global.cocoMilk = createNewItem("C.Milk", sCocoMilk, 122, sndPlayerDrinkingHeal,
 	[fullHpMessage("This Milk refreshed you to the MAX!")],
 	["This milk really gives you that summer feeling!"],
 	method(self, function() { healPlayer(global.cocoMilk.hp, global.cocoMilk.outSound);}), 
-	method(self, function() { setPlayerToPoisoned(4); }),
-	method(self, function() { setPlayerToSlowness(6); }));
+	method(self, function() { setPlayerToPoisoned(3); }),
+	method(self, function() { setPlayerToSlowness(2); }));
+
+global.hotDogWater = createNewItem("H.Water", sHGWater, 115, sndPlayerDrinkingHeal, 
+	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE], 
+	[hpMessage("Hot Dog flavoured Water. Yes, it is.", 115)],
+	[fullHpMessage("Overall it wasn't that bad.")],
+	["Ehw, you actually drunk that...?"],
+	method(self, function() { healPlayer(115, sndPlayerDrinkingHeal); }));
 
 function cadAddToInventory() {
 	if (array_length(global.equippedItems) + 1 <= MAX_ITEMS_NUM) { return true; }
@@ -146,7 +153,7 @@ function cadAddToInventory() {
 
 randomize();
 
-fillInventory(global.cocoMilk);
+fillInventory(global.hotDogWater);
 
 function addItemToInventory(_specificItem = undefined) {	
 	if (cadAddToInventory()) {

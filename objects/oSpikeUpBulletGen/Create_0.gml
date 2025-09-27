@@ -3,7 +3,7 @@ event_inherited();
 var _x = room_width / 2;
 var _y = room_height / 2;
 genTimeVars(60, false, 250, 0);
-initializeNewTurn(60, false, 250, 0, 100, 100, _x, _y, oSoul.stateFree);
+initializeNewTurn(60, false, 250, 0, 100, 100, _x, _y, global.playerStateFree);
 
 drawTimer = 50;
 

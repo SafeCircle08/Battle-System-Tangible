@@ -15,7 +15,7 @@ function stateCircuitLoad(){
 	
 	stateCircuit = function() 
 	{
-		stateInit(sPlayerCircuit, sPlayerCircuit, "Up", function() {
+		stateInit(sPlayerCircuit, function() {
 			image_xscale = 1;
 			image_yscale = 1;
 			var _newX = global.boxOriginX + global.xOffset;
@@ -23,7 +23,7 @@ function stateCircuitLoad(){
 			setPlayerPos(_newX, _newY);
 		});
 		
-		var _spd = global.soulSpeed - 1;
+		var _spd = global.SoulSpeed - 0.5;
 		var _actualResistance = instance_place(x, y, oResistanceCircuitPiece);
 		if (_actualResistance) { 
 			if (_actualResistance.hasTension) {

@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"sPlayerEffects",
-    "path":"folders/Sprites/PLAYER_SPRITES/sPlayerEffects.yy",
+    "path":"folders/Sprites/PLAYER_SPRITES/playerStatesSprites/sPlayerEffects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

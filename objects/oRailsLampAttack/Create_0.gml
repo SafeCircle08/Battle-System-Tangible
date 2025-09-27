@@ -3,10 +3,9 @@ var _railBase = instance_create_layer(x, y, LAYER_BULLETS, oRailsAttack);
 _railBase.rails_columns = 11;
 _railBase.rails_lines = 3;
 _railBase.actualPlayerPos = round(_railBase.rails_lines / 2);
-
-boxDimensions(_railBase.rails_columns * _railBase.width, _railBase.rails_lines * _railBase.height)
-genTimeVars(0, false, 9999, 0);
-playerSetState(oSoul.stateSliding);
+var _bW = _railBase.rails_columns * _railBase.width;
+var _bH = _railBase.rails_lines * _railBase.height;
+initializeNewTurn(0, false, 9999, 0, _bW, _bH, room_width / 2, room_height / 2, global.playerStateCart);
 
 darkPosX = [room_width - 20, room_width - 60, room_width - 100];
 darkN = 0;

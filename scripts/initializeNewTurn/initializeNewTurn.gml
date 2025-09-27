@@ -5,7 +5,7 @@ function initializeNewTurn(createT, created, timer, bltCreated, bW, bH, bX, bY, 
 	genTimeVars(createT, created, timer, bltCreated);
 	boxDimensions(bW, bH);
 	setBoxOrigin(bX, bY);
-	playerSetState(_playerState);
+	playerChangeState(_playerState, function() {})
 	backGroundLayersVisible(oBattleManager.layers, true);
 }
 

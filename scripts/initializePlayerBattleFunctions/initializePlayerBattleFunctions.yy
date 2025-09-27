@@ -6,7 +6,7 @@
   "name":"initializePlayerBattleFunctions",
   "parent":{
     "name":"createEvent",
-    "path":"folders/Scripts/PlayerScripts/createEvent.yy",
+    "path":"folders/Scripts/PLAYER/createEvent.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

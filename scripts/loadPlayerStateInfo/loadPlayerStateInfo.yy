@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"loadPlayerStateInfo",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"loadPlayerStateInfo",
+  "parent":{
+    "name":"PlayerStatesDefinitions",
+    "path":"folders/Scripts/PLAYER/Battle/BattleStates/PlayerStatesDefinitions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

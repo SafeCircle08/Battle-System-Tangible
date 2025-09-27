@@ -1,9 +1,5 @@
 event_inherited();
-
-genTimeVars(10, false, 1320, 0);
-boxDimensions(240, 140);
-playerSetState(oSoul.stateFree);
-setBoxOrigin(room_width / 2, 100);
+initializeNewTurn(10, false, 1320, 0, 240, 140, room_width / 2, 100, global.playerStateFree);
 
 timer = 1300;
 platformCreated = false;

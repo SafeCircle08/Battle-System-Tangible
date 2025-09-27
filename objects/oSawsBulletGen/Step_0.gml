@@ -77,9 +77,10 @@ if (changeStateTimer == 0)
 	if (global.generatorPhase == 1) { index = irandom_range(2, 3); }
 	else { index = irandom_range(0, 3) }
 	
-	oSoul.inUseGravity = states[index];
+	setPlayerInUseGravity(states[index]);
 	playerChangeState(global.playerStateGravity, 
 	method(self, function() { additionalGravityStateMethod(0); }));
+	
 	oSoul.umbrelling = false;
 	oSoul.umbrellaJump = false;
 	changeStateTimer = 40;

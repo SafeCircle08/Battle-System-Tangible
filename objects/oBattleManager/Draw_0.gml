@@ -209,6 +209,9 @@ if (!isInBulletHellSection())
 		//Draws the item properties
 		if (!instance_exists(itemOutputMessage))
 		{	
+			var scale = 0.5;
+			var sep = 0.5;
+			var w = 50;
 			draw_set_color(c_white);
 			var _info = itemInfo(selected_option);
 			var _finalMessage;

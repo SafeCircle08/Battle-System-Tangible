@@ -88,28 +88,28 @@ function steamPunkEnemyBattleInfo()
 	#region BULLET PATTERNS
 	var steamPunkBulletGenerator = 
 	[
-		oEmpyTurn,
-		oRailsKnifeAttack,
-		oBallAttack,
-		oSpikeUpBulletGen,
-		oSpikeDownBulletGen,
-		oKnifeBulletGen,
-		oDocumentBulletGen,
-		oCrossSwordsBulletGen, //5
-		oAnswersBulletGen,
-		oAnswersBulletGen,
-		oAnswersBulletGen,
-		oKnifeGenerator,
-		oKnifeGenerator_FAST,
-		oAllDirectionSteamGen,
-		oRobotsToolGen,  //10
-		oEmpyTurn, //--------------------
-		oChemistryGenerator,
-		oSawsBulletGen,
-		oSawsBulletGen,
-		oPressureElectronGen, //15
-		oBlasterFreeGen,
-		oStereoGen,
+		oEmpyTurn, //
+		oRailsKnifeAttack, //
+		oBallAttack, //
+		oSpikeUpBulletGen, //
+		oSpikeDownBulletGen, //
+		oKnifeBulletGen, //
+		oDocumentBulletGen, //
+		oCrossSwordsBulletGen, //5 //
+		oAnswersBulletGen,  //
+		oAnswersBulletGen, //
+		oAnswersBulletGen, //
+		oKnifeGenerator, //
+		oKnifeGenerator_FAST, //
+		oAllDirectionSteamGen,  //
+ 		oRobotsToolGen,  //10 //
+		oEmpyTurn, //-------------------- //
+		oChemistryGenerator, //
+		oSawsBulletGen, //
+		oSawsBulletGen, //
+		oPressureElectronGen, //15 //
+		oBlasterFreeGen, //
+		oStereoGen, //
 		oBgScrolling,
 		oEmpyTurn,
 	];

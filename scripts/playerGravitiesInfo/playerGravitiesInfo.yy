@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"playerGravitiesInfo",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"playerGravitiesInfo",
+  "parent":{
+    "name":"PlayerStatesDefinitions",
+    "path":"folders/Scripts/PLAYER/Battle/BattleStates/PlayerStatesDefinitions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

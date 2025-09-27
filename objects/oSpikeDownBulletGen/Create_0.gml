@@ -1,11 +1,5 @@
 event_inherited(); //global.playerMoveTimer = 65;
-
-genTimeVars(60, false, 600, 0)
-playerSetState(oSoul.stateFree);
-
-//DIMENSIONI BOX 
-global.borderWidth = 100;
-global.borderHeight = 100;
+initializeNewTurn(60, false, 600, 0, 100, 100, room_width / 2, room_width / 2, global.playerStateFree);
 
 drawTimer = 50;
 slowSteamTimer = 75;

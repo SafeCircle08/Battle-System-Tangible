@@ -6,7 +6,7 @@
   "name":"define_book_properties_info",
   "parent":{
     "name":"ITEM_BOOK",
-    "path":"folders/Scripts/Defines/ItemsDefines/ITEM_BOOK.yy",
+    "path":"folders/Scripts/ItemFunctions/ItemsDefines/ITEM_BOOK.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

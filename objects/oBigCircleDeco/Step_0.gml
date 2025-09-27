@@ -1,7 +1,8 @@
+if (!instance_exists(oSegnaliniOnPlayerManager)) { exit; }
+
 x = oSegnaliniOnPlayerManager.x;
 y = oSegnaliniOnPlayerManager.y;
 image_angle += angleAdder;
-
 
 if (oSegnaliniOnPlayerManager.canShowInBoxSegnalini()) {
 	if (fadingIn) {

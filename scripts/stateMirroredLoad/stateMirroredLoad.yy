@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"stateMirroredLoad",
   "parent":{
-    "name":"Create Event",
-    "path":"folders/Scripts/oSoul_scripts/Create Event.yy",
+    "name":"REWORKED_DONE",
+    "path":"folders/Scripts/PLAYER/Battle/BattleStates/REWORKED_DONE.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

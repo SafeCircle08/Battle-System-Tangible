@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"playerYellowPop",
   "parent":{
-    "name":"PlayerScripts",
-    "path":"folders/Scripts/PlayerScripts.yy",
+    "name":"Shaders",
+    "path":"folders/Scripts/PLAYER/Shaders.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,8 +1,5 @@
 event_inherited();
-
-boxDimensions(150, 150);
-genTimeVars(0, false, 850, 0);
-playerSetState(oSoul.stateFree);
+initializeNewTurn(0, false, 850, 0, 150, 150, room_width / 2, room_height / 2, global.playerStateFree);
 
 createNotes = function()
 {

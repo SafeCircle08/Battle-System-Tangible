@@ -1,11 +1,7 @@
 event_inherited();
+initializeNewTurn(50, false, 1300, false, 260, 100, room_width / 2, room_height / 2, global.playerStateFree);
 
-global.generatorPhase = -1;
-genTimeVars(50, false, 1300, false);
-boxDimensions(260, 100);
-playerSetState(oSoul.stateFree);
-
-timer = 100;
+mer = 100;
 
 cannonHorizotal = instance_create_layer(x, y, LAYER_BULLETS, oBlasterLineGenerator);
 setLineBlasterPos

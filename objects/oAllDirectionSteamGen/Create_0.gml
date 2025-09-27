@@ -13,5 +13,5 @@ initializeNewTurn(
 	(sprite_get_width(sTubeSteam) * numberOfTubesWidth), 
 	(sprite_get_width(sTubeSteam) * numberOfTubesHeight), 
 	room_width / 2, room_height / 2 - 10, 
-	oSoul.stateFree
+	global.playerStateFree
 );

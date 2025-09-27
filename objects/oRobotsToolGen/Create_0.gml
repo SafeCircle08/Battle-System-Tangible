@@ -1,10 +1,5 @@
 event_inherited();
-
-//INIT VARIABLES
-genTimeVars(60, false, 850, 0)
-playerSetState(oSoul.stateFree);
-setBoxOrigin(160, (room_width / 2) + 40);
-boxDimensions(270, 35);
+initializeNewTurn(60, false, 850, 0, 270, 35, 160, (room_width / 2) + 40, global.playerStateFree);
 
 // VADO A DESTRA
 robotRight = 

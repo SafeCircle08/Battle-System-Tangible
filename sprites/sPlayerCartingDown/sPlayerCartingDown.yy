@@ -26,7 +26,7 @@
   "origin":9,
   "parent":{
     "name":"sPlayerCart",
-    "path":"folders/Sprites/PLAYER_SPRITES/sPlayerCart.yy",
+    "path":"folders/Sprites/PLAYER_SPRITES/playerStatesSprites/sPlayerCart.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

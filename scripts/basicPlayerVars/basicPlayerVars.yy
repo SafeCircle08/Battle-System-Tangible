@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"basicPlayerVars",
   "parent":{
-    "name":"Create Event",
-    "path":"folders/Scripts/oSoul_scripts/Create Event.yy",
+    "name":"createEvent",
+    "path":"folders/Scripts/PLAYER/createEvent.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

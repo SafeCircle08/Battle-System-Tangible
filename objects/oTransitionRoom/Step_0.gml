@@ -6,7 +6,7 @@ y = oCamera.finalCamY;
 //Fade in
 if (reached1 == false)
 {
-	changeAlpha(self, 1, amount, false);
+	changeAlphaValue(0, 1, amount, false);
 }
 
 //Changes the room
@@ -29,5 +29,5 @@ if (reached1 == true)
 //Fades out and destroy
 if (canFadeOut == true)
 {
-	changeAlpha(self, 0, amount, true);	
+	changeAlphaValue(1, 0, -amount, true);
 }

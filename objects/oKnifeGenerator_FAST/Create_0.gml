@@ -1,8 +1,4 @@
 event_inherited();
-
-setBoxOrigin(room_width / 2, room_width / 2 - 50);
-boxDimensions(170, 100);
-genTimeVars(0, false, 900, 0);
-playerSetState(oSoul.stateFree, sNoEffects);
+initializeNewTurn(0, false, 900, 0, 170, 100, room_width / 2, room_width / 2 - 50, global.playerStateFree);
 frame = 0;
 timeValue = 40;

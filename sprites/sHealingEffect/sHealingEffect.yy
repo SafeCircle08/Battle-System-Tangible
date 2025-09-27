@@ -39,7 +39,7 @@
   "origin":4,
   "parent":{
     "name":"PlayerMiscellaneous",
-    "path":"folders/Sprites/PLAYER_SPRITES/sPlayerEffects/PlayerMiscellaneous.yy",
+    "path":"folders/Sprites/PLAYER_SPRITES/playerStatesSprites/sPlayerEffects/PlayerMiscellaneous.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

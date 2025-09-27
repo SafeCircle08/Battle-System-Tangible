@@ -6,7 +6,7 @@
   "name":"createHitSlashes",
   "parent":{
     "name":"playerHit",
-    "path":"folders/Scripts/PlayerScripts/playerHit.yy",
+    "path":"folders/Scripts/PLAYER/playerHit.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

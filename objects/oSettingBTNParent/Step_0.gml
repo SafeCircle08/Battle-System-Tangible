@@ -15,14 +15,14 @@ if keyboard_check_pressed(secondKey) { performFunction(); }
 //If windowed mode, you see the cursor
 if (mouseHoover(x, y, _w, _h))
 {
-	changeAlpha(self, maxAlphaRef, 0.05, false);
+	changeAlphaValue(0, maxAlphaRef, 0.05, false);
 	if mouse_check_button_pressed(mb_left) { performFunction(); }
 	drawAlpha += 0.05;
 	textX -= 0.5;
 }
 else
 {
-	changeAlpha(self, minAlphaRef, 0.05, false);
+	changeAlphaValue(1, minAlphaRef, -0.05, false);
 	drawAlpha -= 0.05;
 	textX += 0.5;
 }		

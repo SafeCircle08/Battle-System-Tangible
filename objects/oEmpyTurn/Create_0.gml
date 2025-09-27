@@ -1,13 +1,12 @@
 event_inherited();
-
-oSoul.inUseGravity = global.playerJumpStateMoveInfo.gravityLeft;
-initializeNewTurn(0, false, 99999, 0, 220, 100, room_width / 2, room_height / 2 - 5, oSoul.stateCircuit);
-
-changePlayerOffset(0, -20);
-
+setPlayerInUseGravity(global.playerJumpStateMoveInfo.gravityRight);
+initializeNewTurn(0, false, 99999, 0, 220, 100, room_width / 2, room_height / 2 - 5, global.playerStateSpider);
 oSoul.image_alpha = 1;
 oSoul.canMove = true;
 oBattleBox.draw = true;
+
+instance_create_layer(global.boxOriginX, global.boxOriginY, "Instances", oPlatform);
+
 
 var _rightDownCornerX = global.boxOriginX + (global.borderWidth / 2) - 10;
 var _leftDownCornerX = global.boxOriginX - (global.borderWidth / 2) + 10;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"setPlayerInUseGravity",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"setPlayerInUseGravity",
+  "parent":{
+    "name":"StatesManagement",
+    "path":"folders/Scripts/PLAYER/Battle/BattleStates/StatesManagement.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

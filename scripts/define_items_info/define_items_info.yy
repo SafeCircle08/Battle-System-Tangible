@@ -6,7 +6,7 @@
   "name":"define_items_info",
   "parent":{
     "name":"ItemsDefines",
-    "path":"folders/Scripts/Defines/ItemsDefines.yy",
+    "path":"folders/Scripts/ItemFunctions/ItemsDefines.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

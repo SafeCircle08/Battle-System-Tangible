@@ -1,6 +1,6 @@
 event_inherited();
 
-initializeNewTurn(0, false, 750, 0, 170, 100, room_width / 2, room_height / 2, oSoul.stateFree);
+initializeNewTurn(0, false, 750, 0, 170, 100, room_width / 2, room_height / 2, global.playerStateFree);
 
 frame = 0;
 

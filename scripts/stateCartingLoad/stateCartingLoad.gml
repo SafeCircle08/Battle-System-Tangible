@@ -8,7 +8,7 @@ function stateCartingLoad(){
 				instance_create_layer(x, y, LAYER_EXTRAS_OBJECTS, oSlidingSparks);
 			}
 		}
-		stateInit(sPlayerSliding, sPlayerPickaxe, "Front", _createSparks());
+		stateInit(sPlayerPickaxe, _createSparks());
 		sprite_index = oRailsAttack.spriteInput;
 		if (instance_exists(oRailsAttack)) 
 		{ 		

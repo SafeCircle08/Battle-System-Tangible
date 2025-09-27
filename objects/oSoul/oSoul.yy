@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sPlayerFront",
-    "path":"sprites/sPlayerFront/sPlayerFront.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

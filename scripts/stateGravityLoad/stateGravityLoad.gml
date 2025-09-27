@@ -16,13 +16,13 @@ function stateGravityLoad()
 		key_jumpPressed = keyboard_check(_jmpKey);
 	
 		stateInit(
-			global.playerJumpStateMoveInfo.spaceSprite, 
 			sEffectGravity, 
-			"Front", 
 			method(self, function() {
 				image_angle = inUseGravity.angle
 				var _rightBorder = inUseGravity.boxSidePlatformToCreate;
 				gravCreateRightGravityBorder(_rightBorder);
+				hbX = inUseGravity.supportHitBoxX;
+				hbY = inUseGravity.supportHitBoxY;
 			}));
 	
 		gravSetMovements(

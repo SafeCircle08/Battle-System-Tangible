@@ -9,4 +9,4 @@ var _h =  _railBase.rails_lines * _railBase.height;
 var _x = room_width / 2; 
 var _y = room_height / 2;
 
-initializeNewTurn(0, false, 9999, 0, _w, _h, _x, _y, oSoul.stateSliding);
+initializeNewTurn(0, false, 9999, 0, _w, _h, _x, _y, global.playerStateCart);

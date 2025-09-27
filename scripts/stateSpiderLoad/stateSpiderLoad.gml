@@ -1,10 +1,11 @@
 function createSpiderTrail(_angle, _layer = LAYER_EXTRAS_OBJECTS)
 {
-	var _sprHeight = sprite_get_height(sSpiderTrail);
+	/*var _sprHeight = sprite_get_height(sSpiderTrail);
 	image_speed = 0;
 	instance_create_layer(self.x, self.y, _layer, oSpiderTrail,
 	{ image_xscale: 0.5, image_yscale: global.borderHeight / _sprHeight, image_angle: _angle });
 	instance_create_layer(self.x + irandom_range(-2, 2), self.y + irandom_range(-2, 2), _layer, oCirclePop);
+	*/
 	return;
 }
 
@@ -17,30 +18,27 @@ function stateSpiderLoad(){
 	stateSpider = function()
 	{
 		#region STATE INIT + BASIC MOVEMENT
-		stateInit(sPlayerSpiderRight, sSpiderEffect, "SpiderPov");
+		stateInit(sSpiderEffect);
 		if (!instance_exists(oSpiderPointer)) { pointer = instance_create_layer(x, y, LAYER_EXTRAS_OBJECTS, oSpiderPointer); }
 		hsp = (key_right - key_left) * global.SoulSpeed;
 		if (hsp == 0) { image_speed = 0; image_index = 0; }
 		#endregion
 		#region SPIDER MOVEMENT (KEYS AND COLLISIONS)
+		
 		//Quando sono con lo spider a terra
 		if (spiderState == 0)
 		{
 			//La piattaforma di base
 			gravCreateRightGravityBorder(oBoxSidePlaftorm_D);
 		
-			//Basic Movement
-			if (key_left) { sprite_index = sPlayerSpiderLeft; image_speed = 1; }
-			if (key_right) { sprite_index = sPlayerSpiderRight; image_speed = 1; }
-			//y = global.border_d + 1;
 			pointer.y = global.border_u;
 			pointer.image_angle = 0;
 			hbX = 0;
-			hbY = -10;
+			hbY = -7;
 		
 			//Se sono su una piattaforma ma 
 			//"Scivolo" o ci cado:
-			if (!place_meeting(x, y + 1, oPlatformParent)) 
+			if (!place_meeting(x, y + 3, oPlatformParent)) 
 			{ 
 				y = global.border_d + 1; 
 				createSpiderTrail(0);
@@ -52,13 +50,14 @@ function stateSpiderLoad(){
 				//Aggiunge uno fino a quando raggiono il bottomo del box
 				while (y > global.border_u)
 				{
+					y--;
 					//Se collido esco
-					if (place_meeting(x, y - 1, oPlatformParent))
+					if (place_meeting(x, y, oPlatformParent))
 					{
 						createSpiderTrail(180);
+						y -= 3;
 						break; 
 					}
-					y--;
 				}
 			
 				//Setto le condizioni giusto della rotazione del player
@@ -71,14 +70,10 @@ function stateSpiderLoad(){
 		{
 			//La piattaforma di base
 			gravCreateRightGravityBorder(oBoxSidePlaftorm_U);
-		
-			//Basic Movement
-			if (key_left) { sprite_index = sPlayerSpiderRight; image_speed = 1; }
-			if (key_right) { sprite_index = sPlayerSpiderLeft; image_speed = 1; }
 			pointer. y = global.border_d + 1;
 			pointer.image_angle = 180;
 			hbX = 0;
-			hbY = 10;
+			hbY = 7;
 
 			//Se sono su una piattaforma ma 
 			//"Scivolo" o ci cado:
@@ -92,15 +87,15 @@ function stateSpiderLoad(){
 			if (key_down)
 			{
 				//Aggiungo sempre di uno
-				while (y < global.border_d + 1)
+				while (y < global.border_d)
 				{
+					y++;
 					//Se collido esco
-					if (place_meeting(x, y, oPlatformParent))
+					if (place_meeting(x, y + 1, oPlatformParent))
 					{
 						createSpiderTrail(0);
 						break; 
 					}
-					y++;	
 				}
 			
 				//Setto le nuove condizioni di rotazione

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"initializePlayerMainBattleMenuOptions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"initializePlayerMainBattleMenuOptions",
+  "parent":{
+    "name":"PlayerDefines",
+    "path":"folders/Scripts/PLAYER/Battle/PlayerDefines.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

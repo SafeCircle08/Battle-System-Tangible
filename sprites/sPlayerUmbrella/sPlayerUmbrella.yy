@@ -27,7 +27,7 @@
   "origin":9,
   "parent":{
     "name":"sPlayerUmbrella",
-    "path":"folders/Sprites/PLAYER_SPRITES/sPlayerUmbrella.yy",
+    "path":"folders/Sprites/PLAYER_SPRITES/playerStatesSprites/sPlayerUmbrella.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

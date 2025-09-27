@@ -26,5 +26,5 @@ if (!instance_exists(fadeInOutAnimationsParent))
 		xSpd *= -7;
 		moveInTimer = -1;
 	}
-	if (moveInTimer == -1) { changeAlpha(self, 0, 0.05, true); }
+	if (moveInTimer == -1) { changeAlphaValue(1, 0, -0.05, true); }
 }

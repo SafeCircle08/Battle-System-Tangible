@@ -3,7 +3,7 @@ function stateUmbrellaLoad(){
 	t = 0;
 	stateUmbrella = function()
 	{
-		stateInit(sPlayerUmbrella, sUmbrellaEffect, "Front");
+		stateInit(sUmbrellaEffect);
 		hbY = -11;
 		hbX = -2;
 		t += 0.05;

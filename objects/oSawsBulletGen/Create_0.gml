@@ -4,7 +4,7 @@ timers = [70, 55];
 global.generatorPhase++;
 var _x = room_width / 2;
 var _y = room_height / 2;
-initializeNewTurn(timers[global.generatorPhase], false, 800, 0, 100, 100, _x, _y, oSoul.stateGravity);
+initializeNewTurn(timers[global.generatorPhase], false, 800, 0, 100, 100, _x, _y, global.playerStateGravity);
 
 //Mette il cuore al centro
 global.yOffset = 0;

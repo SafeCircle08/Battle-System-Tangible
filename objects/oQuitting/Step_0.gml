@@ -1,4 +1,4 @@
-changeAlpha(self, 1, 0.07, false);
+changeAlphaValue(0, 1, 0.07, false);
 
 if (!keyboard_check(ord("Q")))
 {

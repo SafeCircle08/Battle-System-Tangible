@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"resetBattlePlayerVars",
   "parent":{
-    "name":"PlayerScripts",
-    "path":"folders/Scripts/PlayerScripts.yy",
+    "name":"Battle",
+    "path":"folders/Scripts/PLAYER/Battle.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
