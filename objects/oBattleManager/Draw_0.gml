@@ -228,16 +228,19 @@ if (!isInBulletHellSection())
 		var _bookY = _itemInfoBgY + _border / 2 + 1.5;
 		var _bookSubImg = 0;
 		
-		if (mouse_x > _bookX + inventoryXAdder && mouse_x < _bookX + inventoryXAdder + _bookW) &&
-		   (mouse_y > _bookY && mouse_y < _bookY + _bookH)
-		{
+		var _mX = _bookX + inventoryXAdder;
+		var _mY = _bookY;
+		var _mW = _mX +_bookW;
+		var _mH = _mY + _bookH;
+		
+		if (mouseCursorIsOn(_mX, _mY, _mW, _mH)) {
 			_bookSubImg = 1;
-			if (mouse_check_button_pressed(mb_left))
+			if (mouse_check_button_pressed(mb_left) && (decidingSubAction == true))
 			{
 				if (!instance_exists(oBattleInvBookManager)) { openBattleBook(); }
-				else {
-					oBattleInvBookManager.fadeInDone = true;
-					oBattleInvBookManager.fadingOut = true;	
+				else { 
+					if (oBattleInvBookManager.isFading() == true) { reOpenBattleBook(); }
+					else { closeBattleBook();  }
 				}
 			}
 		}

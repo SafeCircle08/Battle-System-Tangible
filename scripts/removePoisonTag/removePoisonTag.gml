@@ -1,0 +1,3 @@
+function removePoisonTag() {
+	removeSegnalino(oPoisonSegnalino);
+}

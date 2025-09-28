@@ -13,7 +13,7 @@ global.borderHeight = 100;
 
 //PLAYER VARIABLES
 battle = true;
-turnNumber = 13 ;
+turnNumber = 0;
 defended = false;
 playerDeath = false;
 playerTurn = true;

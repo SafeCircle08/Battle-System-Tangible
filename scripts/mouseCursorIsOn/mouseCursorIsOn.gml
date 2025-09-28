@@ -1,5 +1,10 @@
-function mouseCursorIsOn(_xPos, _yPos, _width, _height)
+function mouseCursorIsOn(_xPos, _yPos, _width, _height, _strictCheck = true)
 {
-	return (mouse_x >= _xPos) && (mouse_x <= _width) &&
-		   (mouse_y >= _yPos) && (mouse_y <= _height)
+	if (!_strictCheck) {
+		return (mouse_x >= _xPos) && (mouse_x <= _width) &&
+			   (mouse_y >= _yPos) && (mouse_y <= _height)
+	} else {
+		return (mouse_x > _xPos) && (mouse_x < _width) &&
+			   (mouse_y > _yPos) && (mouse_y < _height)			
+	}
 }

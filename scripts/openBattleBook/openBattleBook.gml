@@ -1,7 +1,4 @@
-function openBattleBook()
-{
-	if (!instance_exists(oBattleInvBookManager)) 
-	{
-		instance_create_layer(x, y, LAYER_EFFECT_TOP, oBattleInvBookManager);	
-	}
+function openBattleBook(_layer = LAYER_EFFECT_TOP) {
+	instance_create_layer(x, y, _layer, oBattleInvBookManager);	
+	playSound(sndSwipe_1, SOUND_CHANNEL_1, false, 0.2);
 }

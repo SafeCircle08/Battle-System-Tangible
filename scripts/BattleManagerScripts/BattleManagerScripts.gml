@@ -81,7 +81,6 @@ function resetNavigation(_lastOption = 0, _sound = sndResetNavigation, _resetMet
 	
 	hideCursor();
 	closeBattleBook();
-	//resetTextVars();
 	easeOutBg();
 	hideMirrors();
 }

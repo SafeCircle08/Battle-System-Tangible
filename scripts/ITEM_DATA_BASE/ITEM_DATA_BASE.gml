@@ -69,8 +69,8 @@ global.cocoMilk = createNewItem("C.Milk", sCocoMilk, 122, sndPlayerDrinkingHeal,
 	[fullHpMessage("This Milk refreshed you to the MAX!")],
 	["This milk really gives you that summer feeling!"],
 	method(self, function() { healPlayer(global.cocoMilk.hp, global.cocoMilk.outSound);}), 
-	method(self, function() { setPlayerToPoisoned(3); }),
-	method(self, function() { setPlayerToSlowness(2); }));
+	method(self, function() { setPlayerToPoisoned(1); }),
+	method(self, function() { setPlayerToSlowness(1); }));
 
 global.hotDogWater = createNewItem("H.Water", sHGWater, 115, sndPlayerDrinkingHeal, 
 	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_MIGHT_HURT, ITEM_PROPERTY_NOONE], 
@@ -80,4 +80,4 @@ global.hotDogWater = createNewItem("H.Water", sHGWater, 115, sndPlayerDrinkingHe
 	method(self, function() { healPlayer(115, sndPlayerDrinkingHeal); }),
 	method(self, function() { mightHurt(3, 3); }));
 
-
+fillInventory();

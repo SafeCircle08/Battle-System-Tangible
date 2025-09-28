@@ -33,15 +33,14 @@ for (var i = 0; i < array_length(global.propertiesKind); i++)
 		var _miniPropY = _propTextY + _miniPropBorder * 2 + (_miniPropH * j + 1 * j) + _yAdder;
 		z = 1;
 		
-		for (var k = 1 + 5 * j; k < 6 + 5 * j; k++)
-		{
-			if (
-			    mouse_x > _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1)) &&
-			    mouse_x < _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1)) + 10 &&
-			    mouse_y > _miniPropY &&
-			    mouse_y < _miniPropY + 10
-			)
-			{
+		for (var k = 1 + 5 * j; k < 6 + 5 * j; k++) {
+			
+			var _mPropX = _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1));
+			var _mPropY = _miniPropY;
+			var _mPropW = _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1)) + 10;
+			var _mPropH = _miniPropY + 10;
+			
+			if (mouseCursorIsOn(_mPropX, _mPropY, _mPropW, _mPropH, true)) {
 				hoovering = true;
 				
 				//Creates the FX
@@ -81,7 +80,8 @@ if (hoovering == false) {
 		instance_destroy(oBattleInvBookPropDesc);
 	}
 	if (instance_exists(oMiniPropCardFX)) {
-		oMiniPropCardFX.changeToFadeOut();
+		if (!isFading()) { oMiniPropCardFX.changeToFadeOut(); } 
+		else { instance_destroy(oMiniPropCardFX); }
 	}
 }	
 draw_set_alpha(1);

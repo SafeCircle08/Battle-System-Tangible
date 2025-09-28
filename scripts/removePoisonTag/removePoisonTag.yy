@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"removePoisonTag",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"removePoisonTag",
+  "parent":{
+    "name":"EnchantsFunction",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS/EnchantsFunction.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

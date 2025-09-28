@@ -1,5 +1,7 @@
 newSpr = 0;
 
+playSound(sndSwipe_1, SOUND_CHANNEL_1, false, 0.2);
+
 changeToFadeOut = function() {
 	var _outFx = instance_create_layer(x, y, LAYER_EFFECT_TOP_2, oMiniPropCardFX_out);
 	_outFx.sprite_index = newSpr;
@@ -13,8 +15,4 @@ duplicateSprite = function() {
 
 setSpriteOffSet = function() {
 	sprite_set_offset(newSpr, 5, 5);
-}	
-
-deleteSprRef = function() {
-	sprite_delete(newSpr);	
 }

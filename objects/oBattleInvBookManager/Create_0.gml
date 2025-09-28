@@ -9,7 +9,6 @@ bookX = bookStartX;
 startXRef = bookStartX;
 finalXRef = bookFinalX;
 
-
 //Y Coords
 bookStartY = 0;
 bookFinalY = bookBgH;
@@ -17,11 +16,32 @@ bookY = bookStartY;
 startYRef = bookStartY;
 finalYRef = bookFinalY;
 
+bookInitYRef = bookStartY;
+
 //Animations
 fadeInDone = false;
 fadingOut = false;
 scrollingAmount = 7;
 hovering = false;
+
+setToFadeOut = function() {
+	fadingOut = true;
+	fadeInDone = true;
+}
+
+setToFadeIn = function() {
+	fadingOut = false;
+	fadeInDone = false;
+}
+
+destroyPropCards = function() {
+	if (instance_exists(oMiniPropCardFX_out)) { instance_destroy(oMiniPropCardFX_out); print("prop_2")}
+	if (instance_exists(oMiniPropCardFX)) { instance_destroy(oMiniPropCardFX); print("prop_1")}
+}
+
+isFading = function() {
+	return (fadingOut);	
+}
 
 fadeInFunc = function(alphaAdd, xAdd) {
 	if (drawAlpha < 1) {
@@ -43,14 +63,27 @@ fadeOutFunc = function(alphaAdd, xAdd) {
 	bookX = clamp(bookX, finalXRef, startXRef);
 }
 
-scrollingBookUp = function(upWheelAmount = scrollingAmount)
-{
+isScrolling = function() {
+	var yRef = bookInitYRef;
+	var _actualBookY = bookY;
+	bookInitYRef = bookY;
+	return (yRef != _actualBookY)
+}
+
+scrollingParentFunc = function() {
+	if (isScrolling()) {
+		destroyPropCards();
+	}
+}
+
+scrollingBookUp = function(upWheelAmount = scrollingAmount) {
+	scrollingParentFunc();
 	bookY += upWheelAmount;
 	bookY = clamp(bookY, -bookBgH, 0);
 }	
 
-scrollingBookDown = function(upWheelAmount = scrollingAmount)
-{
+scrollingBookDown = function(upWheelAmount = scrollingAmount) {
+	scrollingParentFunc();
 	bookY -= upWheelAmount;
 	bookY = clamp(bookY, -bookBgH / 2, bookBgH);
 }

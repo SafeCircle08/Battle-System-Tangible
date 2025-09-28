@@ -41,9 +41,7 @@ createCircuitPiece(global.boxOriginX + 80, global.boxOriginY - 10, 50, -90);
 
 createCircuitLaserPair(global.boxOriginX, global.boxOriginY, 120, 250, false);
 
-setToDarkSegnalino(400);
-
-//setToDarkVision();
+setPlayerToSlowness(5);
 
 //createCircuitLaserPair(100, 100, 0, 500);
 //createCircuitLaserPair(50, 100, 0, 150, false);

@@ -2,6 +2,8 @@ frame++;
 x = lerp(x, oSoul.x - 1, 0.2);
 y = lerp(y, oSoul.y, 0.2);
 
+print(segnaliniOnPlayer);
+
 if (canShowInBoxSegnalini()) {
 	if (fadingIn) {
 		rotationFunc();

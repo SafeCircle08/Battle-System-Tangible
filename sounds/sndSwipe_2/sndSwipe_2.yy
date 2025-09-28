@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"sndBasicTxt5",
+  "%Name":"sndSwipe_2",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":1,
   "conversionMode":0,
-  "duration":0.8620408,
-  "name":"sndBasicTxt5",
+  "duration":1.0187755,
+  "name":"sndSwipe_2",
   "parent":{
-    "name":"Basic Text",
-    "path":"folders/Sounds/TextSounds/Basic Text.yy",
+    "name":"SWIPES",
+    "path":"folders/Sounds/SWIPES.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndBasicTxt5.mp3",
+  "soundFile":"sndSwipe_2.mp3",
   "type":1,
-  "volume":0.5,
+  "volume":0.85,
 }
