@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"propertyOfSegnalini",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"propertyOfSegnalini",
+  "parent":{
+    "name":"Propertyes",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEM_BOOK/PROPERTYES_&_ENCHANTS_DEFINES/Propertyes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

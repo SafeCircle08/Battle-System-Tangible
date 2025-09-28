@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"propertyOfBoosts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"propertyOfBoosts",
+  "parent":{
+    "name":"Propertyes",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEM_BOOK/PROPERTYES_&_ENCHANTS_DEFINES/Propertyes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

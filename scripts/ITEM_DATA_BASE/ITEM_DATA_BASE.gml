@@ -30,7 +30,7 @@ global.cyanide = createNewItem("CN-", sCyanideItem, -237, sndPlayerEatingHeal,
 	[ITEM_PROPRTY_BIO_HAAZARD, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
 	["A pill of cyanide. You would never eat this."],
 	["There is no HP lol"],
-	["Why did you do that like, are you stupid or what like idk..."],
+	["Why did you do that like, are you stupid or what?."],
 	method(self, function() { hitPlayer(233); }));
 
 global.honeyHoneyComb = createNewItem("HHComb", sHHComb, 150, sndPlayerEatingHeal,
@@ -60,7 +60,7 @@ global.mint = createNewItem("Dropint", sMintDrop, 75, sndPlayerEatingHeal,
 	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
 	[hpMessage("Gathered from pine drops.", 75)],
 	[fullHpMessage("Fresh. Winter. Snow. Cold")],
-	["Make sure not to drink fresh water in the next 5 minutes!"],
+	["Make sure not to drink fresh water in the next 5 mins!"],
 	method(self, function() { healPlayer(global.mint.hp, global.mint.outSound); }))
 	
 global.cocoMilk = createNewItem("C.Milk", sCocoMilk, 122, sndPlayerDrinkingHeal,

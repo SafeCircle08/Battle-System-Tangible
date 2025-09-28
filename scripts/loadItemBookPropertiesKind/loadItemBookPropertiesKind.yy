@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"loadItemBookPropertiesKind",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"loadItemBookPropertiesKind",
+  "parent":{
+    "name":"PropertyesLists",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEM_BOOK/PROPERTYES_&_ENCHANTS_DEFINES/PropertyesLists.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
