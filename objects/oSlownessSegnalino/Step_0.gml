@@ -6,6 +6,6 @@ slownessTimer = setTimer(slownessTimer);
 if (slownessTimer > 0) {
 	setPlayerSpd(slownedSpd);
 } else {
-	setPlayerSpd(2);
+	setPlayerSpd(DEFAULT_SOUL_SPD);
 	destroySegnalino();
 }

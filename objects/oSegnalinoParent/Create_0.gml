@@ -45,7 +45,6 @@ destroySegnalino = function(_sprite = segnalinoSprite) {
 		LAYER_EFFECT_TOP_3,
 		oSegnalinoFinishedFX
 	);
-	print("segnalino tolto")
 	instance_destroy(self);
 }
 

@@ -35,8 +35,8 @@ setToFadeIn = function() {
 }
 
 destroyPropCards = function() {
-	if (instance_exists(oMiniPropCardFX_out)) { instance_destroy(oMiniPropCardFX_out); print("prop_2")}
-	if (instance_exists(oMiniPropCardFX)) { instance_destroy(oMiniPropCardFX); print("prop_1")}
+	if (instance_exists(oMiniPropCardFX_out)) { instance_destroy(oMiniPropCardFX_out); }
+	if (instance_exists(oMiniPropCardFX)) { instance_destroy(oMiniPropCardFX); }
 }
 
 isFading = function() {

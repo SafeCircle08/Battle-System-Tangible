@@ -10,7 +10,7 @@ function setPlayerToPoisoned(_poisonTagLV = 1) {
 	//It always initializes it
 	var _defaultMinPoisonDmg = 5;
 	var _defaultMaxPoisonDmg = 15;
-	var _defaultPoisonTimer = 500;
+	var _defaultPoisonTimer = 350;
 	var _dafaultFreq = 150;
 	_poisonSeg.poisonTimer = _defaultPoisonTimer * _poisonTagLV;
 	_poisonSeg.poisonFreq = _dafaultFreq - (_poisonTagLV * 25);

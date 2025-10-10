@@ -4,8 +4,8 @@ function stateFreeLoad(){
 		stateInit(sNoEffects, function() { image_xscale = 1; image_yscale = 1; });
 		if (canMove)
 		{
-			hsp = (key_right - key_left) * 1.5;
-			vsp = (key_down - key_up) * 1.5;
+			hsp = (key_right - key_left) * global.SoulSpeed;
+			vsp = (key_down - key_up) * global.SoulSpeed;
 
 			if (hsp == 0) and (vsp == 0) { image_speed = 0; image_index = 0; }
 			x += hsp;

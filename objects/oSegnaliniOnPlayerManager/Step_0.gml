@@ -1,8 +1,7 @@
 frame++;
-x = lerp(x, oSoul.x - 1, 0.2);
-y = lerp(y, oSoul.y, 0.2);
 
-print(segnaliniOnPlayer);
+x = lerp(x, oSupportPlayerhitbox.x - 1, 0.2);
+y = lerp(y, oSupportPlayerhitbox.y, 0.2);
 
 if (canShowInBoxSegnalini()) {
 	if (fadingIn) {

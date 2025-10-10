@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Segnalini",
-    "path":"folders/Sprites/itemSprites/Segnalini.yy",
+    "name":"BaseSegnalini",
+    "path":"folders/Sprites/itemSprites/Segnalini/BaseSegnalini.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

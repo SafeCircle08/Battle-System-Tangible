@@ -1,10 +1,11 @@
 event_inherited();
 setPlayerInUseGravity(global.playerJumpStateMoveInfo.gravityRight);
-initializeNewTurn(0, false, 99999, 0, 220, 100, room_width / 2, room_height / 2 - 5, global.playerStateSpider);
+initializeNewTurn(0, false, 99999, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateFree);
 oSoul.image_alpha = 1;
 oSoul.canMove = true;
 oBattleBox.draw = true;
 
+/*
 instance_create_layer(global.boxOriginX, global.boxOriginY, "Instances", oPlatform);
 
 
