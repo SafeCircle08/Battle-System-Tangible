@@ -254,9 +254,11 @@ else
 	var _blackBaseW = room_width;
 	var _blackBaseH = 40;
 	
+	/*
 	draw_set_color(c_black);
 	draw_rectangle(_blackBaseX, _blackBaseY - _blackBaseH, _blackBaseW, _blackBaseY, false);
 	draw_set_color(c_white);
+	*/
 	
 	var _barsBorder = 5;
 	var _hpBarW = (room_width / 2) - (_barsBorder * 2);

@@ -1,13 +1,10 @@
 event_inherited();
 
-poisonTimer = setTimer(poisonTimer);
+timer = setTimer(timer);
 
-if (poisonTimer > 0) {
-	if (poisonTimer % poisonFreq == 0) {
-		var _poisonDmg = irandom_range(minPoisonDmg, maxPoisonDmg);
+if (timer > 0) {
+	if (timer % poisonFreq == 0) {
+		var _poisonDmg = irandom_range(minValue, maxValue);
 		hitPlayer(_poisonDmg);	
 	}
-} else {
-	//Poison segnalino over
-	destroySegnalino();
-}
+} else { destroySegnalino(); }

@@ -3,6 +3,7 @@ image_alpha = 0;
 rotations = 3
 targetAngle = image_angle + 360 * rotations;
 
+segnaliniOnPlayerCards = [];
 segnaliniOnPlayer = [];
 segnaliniN = 0
 

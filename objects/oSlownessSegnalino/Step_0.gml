@@ -1,10 +1,10 @@
 // Inherit the parent event
 event_inherited();
 
-slownessTimer = setTimer(slownessTimer);
+timer = setTimer(timer);
 
-if (slownessTimer > 0) {
-	setPlayerSpd(slownedSpd);
+if (timer > 0) {
+	setPlayerSpd(minValue);
 } else {
 	setPlayerSpd(DEFAULT_SOUL_SPD);
 	destroySegnalino();

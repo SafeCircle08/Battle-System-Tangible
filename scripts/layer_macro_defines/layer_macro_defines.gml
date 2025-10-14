@@ -10,3 +10,4 @@
 #macro LAYER_SHELLS "Shells" //drumpad
 #macro LAYER_SCOPE "Scope"
 #macro LAYER_CURSOR "CursorLayer"
+#macro LAYER_SEGNALINI_CARDS "SegnaliniCards"

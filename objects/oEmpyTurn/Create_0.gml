@@ -6,8 +6,6 @@ oSoul.canMove = true;
 oBattleBox.draw = true;
 
 setPlayerToSlowness(1);
-setPlayerToPoisoned(1);
-
 /*
 instance_create_layer(global.boxOriginX, global.boxOriginY, "Instances", oPlatform);
 

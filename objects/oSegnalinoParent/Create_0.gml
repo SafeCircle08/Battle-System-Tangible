@@ -1,4 +1,36 @@
+enum SEGNALINO_TYPE {
+	DAMAGE, 
+	NERF
+}
+
+type = SEGNALINO_TYPE.DAMAGE;
+level = 0;
 segnalinoSprite = sNightVisionEnchProperty; //default
+name = "";
+timer = 0;
+minValue = 0;
+maxValue = 0;
+
+addSegnalinoCard = function() {
+	var _segnalinoCard = instance_create_layer(room_width / 2, room_height / 2, LAYER_SEGNALINI_CARDS, oSegnalinoCard);
+	_segnalinoCard.type = type;
+	_segnalinoCard.name = name;
+	_segnalinoCard.level = level;
+	_segnalinoCard.timer = timer;
+	_segnalinoCard.sprite = segnalinoSprite;
+	_segnalinoCard.minValue = minValue;
+	_segnalinoCard.maxValue = maxValue;
+}
+
+printSegnalinoInfos = function() {
+	print("Type: " + string(type));	
+	print("LV: " + string(level));
+	print("Sprite: " + string(segnalinoSprite));	
+	print("Name: " + string(name));
+	print("Timer: " + string(timer));
+	print("minValue: " + string(minValue));	
+	print("maxValue: " + string(maxValue));	
+}
 
 addSegnalino = function(_segnalino = segnalinoSprite) {
 	if (!instance_exists(oSegnaliniOnPlayerManager)) {
@@ -7,6 +39,12 @@ addSegnalino = function(_segnalino = segnalinoSprite) {
 	if (segnalinoAlreadyOnAction(_segnalino)) { return; }
 	oSegnaliniOnPlayerManager.segnaliniN++;
 	array_push(oSegnaliniOnPlayerManager.segnaliniOnPlayer, _segnalino);
+	
+	//crea la carta
+	
+	//ogni volta che viene aggiunta una carta, andare ad eseguire il ciclo
+	//sulle carte, e assegnare ad ognuna le loro coordinate.
+	//Ogni posizionamento ha un array preimpostato.
 }
 
 segnalinoAlreadyOnAction = function(_segSprite) {

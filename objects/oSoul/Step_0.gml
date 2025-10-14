@@ -22,3 +22,7 @@ if (global.enemyTimer > global.enemyAttackTime - 60) { exit; }
 
 //When im done animating the beam
 if (beamAnimationOnEnding()) { state(); }
+
+if (keyboard_check_pressed(ord("P"))) {
+	setPlayerToSlowness(5);
+}

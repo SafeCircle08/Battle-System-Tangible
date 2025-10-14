@@ -3,8 +3,6 @@ frame++;
 x = lerp(x, oSupportPlayerhitbox.x - 1, 0.2);
 y = lerp(y, oSupportPlayerhitbox.y, 0.2);
 
-print(delta_time);
-
 if (canShowInBoxSegnalini()) {
 	if (fadingIn) {
 		increaseDrawAlpha();
@@ -23,7 +21,14 @@ if (canShowInBoxSegnalini()) {
 			finalAlpha, startAlpha, 
 			-alphaAmount, true);
 	}
-} else {
+	
+	
+	//Where the cards will be managed
+	
+	
+	
+}
+else {
 	if (image_angle != 0) {
 		image_angle = 0;	
 	}

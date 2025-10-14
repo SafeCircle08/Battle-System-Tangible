@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"removeSegnalinoFromList",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"removeSegnalinoFromList",
+  "parent":{
+    "name":"SEGNALINI",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/SEGNALINI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
