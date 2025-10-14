@@ -3,8 +3,11 @@ frame++;
 x = lerp(x, oSupportPlayerhitbox.x - 1, 0.2);
 y = lerp(y, oSupportPlayerhitbox.y, 0.2);
 
+print(delta_time);
+
 if (canShowInBoxSegnalini()) {
 	if (fadingIn) {
+		increaseDrawAlpha();
 		rotationFunc();
 		fade(
 			startXScale, startYScale, 
@@ -12,8 +15,7 @@ if (canShowInBoxSegnalini()) {
 			scaleAmount, scaleAmount,  false, 
 			startAlpha, finalAlpha,
 			alphaAmount, false);
-	}
-	else {
+	} else {
 		fade(
 			finalXScale, finalYScale,
 			startXScale, startYScale,
@@ -25,10 +27,12 @@ if (canShowInBoxSegnalini()) {
 	if (image_angle != 0) {
 		image_angle = 0;	
 	}
+	decreaseDrawAlpha();
 	fade(
 		finalXScale, finalYScale,
 		startXScale, startYScale,
 		-scaleAmount, -scaleAmount, false,
 		finalAlpha, startAlpha, 
 		-alphaAmount, false);
+	if (managerHasNoSegnalini()) { instance_destroy(self); }
 }

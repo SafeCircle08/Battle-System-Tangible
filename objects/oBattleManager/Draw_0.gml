@@ -116,7 +116,6 @@ if (!isInBulletHellSection())
 			var textX = startButtonX;
 			var textY = (_buttonY + 5) + (_buttonH / 2 + 1) * i - 5.5;
 			var _nameL = string_length(text)
-			//draw_text(textX - (4 * (_nameL - 3)) + 14.5, textY - 0.5, text);
 			draw_sprite(_textSprite, 0, textX, textY);
 		}
 		drawTextBoxText(writtenBattleText, Mono, false, ord("Z"), true, true, sndBasicTxt5, 0, 0);
@@ -185,8 +184,7 @@ if (!isInBulletHellSection())
 			var w = 50;
 			
 			//Left Side
-			if (i < 4)
-			{
+			if (i < 4) {
 				draw_text_ext_transformed(_itemNameX + inventoryXAdder, _itemNameY + _border * i, _item.name, sep, w, scale, scale, 0);
 				shader_reset();
 				continue;
@@ -207,8 +205,7 @@ if (!isInBulletHellSection())
 		draw_sprite_stretched(sItemInfoBG, 0, _itemInfoX + inventoryXAdder, _itemInfoY, _bgW - _border, _bgH / 2 + _border / 2 - _border);
 		
 		//Draws the item properties
-		if (!instance_exists(itemOutputMessage))
-		{	
+		if (!instance_exists(itemOutputMessage)) {	
 			var scale = 0.5;
 			var sep = 0.5;
 			var w = 50;
@@ -235,8 +232,7 @@ if (!isInBulletHellSection())
 		
 		if (mouseCursorIsOn(_mX, _mY, _mW, _mH)) {
 			_bookSubImg = 1;
-			if (mouse_check_button_pressed(mb_left) && (decidingSubAction == true))
-			{
+			if (mouse_check_button_pressed(mb_left) && (decidingSubAction == true)) {
 				if (!instance_exists(oBattleInvBookManager)) { openBattleBook(); }
 				else { 
 					if (oBattleInvBookManager.isFading() == true) { reOpenBattleBook(); }
@@ -252,28 +248,44 @@ if (!isInBulletHellSection())
 else
 {
 	#region DRAWING PLAYER INFO DURING TURN
-	//DRAWS THE PLAYER HEALTH AND SHIELD BARS
-	var _bX = 10; 
-	var _bY = room_height - 15;
-	var _bH = 8;
-	var _bW = 145.5;
-	var _xOffSet = 3;
-	var _yOffSet = 2.5;
-	var rectH = 13;
+
+	var _blackBaseX = 0;
+	var _blackBaseY = room_height;
+	var _blackBaseW = room_width;
+	var _blackBaseH = 40;
 	
-	draw_sprite_stretched(sWhiteRectangle, 0, _bX, _bY, 300, rectH);
+	draw_set_color(c_black);
+	draw_rectangle(_blackBaseX, _blackBaseY - _blackBaseH, _blackBaseW, _blackBaseY, false);
+	draw_set_color(c_white);
 	
-	draw_sprite_stretched(sHealthBar, 0, _bX + _xOffSet, _bY + _yOffSet, (global.playerHP/global.playerMAX_HP) * _bW, _bH);
-	draw_sprite_stretched(sShieldBar, 0, _bX + _bW + (_xOffSet * 2), _bY + _yOffSet, (global.playerShield/global.playerMaxShield) * _bW, _bH);
+	var _barsBorder = 5;
+	var _hpBarW = (room_width / 2) - (_barsBorder * 2);
+	var _hpBarH = 7;
+	var _shieldBarW = _hpBarW; 
+	var _shieldBarH = _hpBarH;
+	
+	var _hpBarX = _barsBorder;
+	var _hpBarY = room_height - _barsBorder * 2;
+	var _shieldBarX = _hpBarX + _hpBarW + _barsBorder * 2;
+	var _shieldBarY = _hpBarY;
+	var _segnaliniX = undefined;
+	var _segnaliniY = undefined;
+	
+	draw_sprite_stretched(sWhiteRectangle, 0, _hpBarX - 2, _hpBarY - 2, room_width - (_barsBorder * 2) + 4, _hpBarH + 4);
+	draw_sprite_stretched(sHealthBar, 0, _hpBarX, _hpBarY, (global.playerHP/global.playerMAX_HP) * _hpBarW, _hpBarH);
+	draw_sprite_stretched(sShieldBar, 0, _shieldBarX, _shieldBarY, (global.playerShield/global.playerMaxShield) * _shieldBarW, _shieldBarH);
 	
 	var _font = Mono;
 	draw_set_font(_font);
 	draw_set_halign(fa_center);
-	
 	draw_set_colour(playerHpTextColor);
-	draw_text_ext_transformed(_bX + _xOffSet + (_bW / 2) - 5, _bY - 14, "HP: " + string(global.playerHP) + " / " + string(global.playerMAX_HP) + ";", 3, 9999, 1, 1, 0);
-		
+	
+	var _hpTextX = _hpBarX + (_hpBarW / 2);
+	var _hpTextY = _hpBarY - (_barsBorder * 3);
+	draw_text(_hpTextX, _hpTextY, "HP: " + string(global.playerHP) + " / " + string(global.playerMAX_HP));
+	
 	draw_set_halign(fa_left);
+	
 	#endregion
 }
 

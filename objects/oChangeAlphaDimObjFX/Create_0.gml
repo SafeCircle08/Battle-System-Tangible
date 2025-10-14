@@ -12,18 +12,20 @@ scaleSign = 1;
 scaleAmount = 0;
 
 rotates = false;
+rotationFrame = 0;
+rotationFrameAmount = 0.7;
 rotationAmount = 0;
 frame = 0;
-
-
 
 sprite_index = sBandagesItem;
 image_speed = 0;
 
+isTimed = true;
+
 rotation = function(_rotAmount)
 {
-	frame += 0.5;
-	image_angle += 	_rotAmount * (frame / 3);
+	rotationFrame += 0.5;
+	image_angle += 	_rotAmount * (rotationFrame / 3);
 }
 
 setUpScaleVars = function(_startX, _startY, _finalX, _finalY, _sign, _amount)

@@ -18,8 +18,24 @@ image_yscale = startYScale;
 
 startAlpha = 0;
 finalAlpha = 0.5;
+drawAlpha = 0;
+finalDrawAlpha = 1;
 alphaAmount = 0.01;
 frame = 0;
+
+increaseDrawAlpha = function() {
+	if (drawAlpha < finalDrawAlpha) {
+		drawAlpha += alphaAmount;	
+		drawAlpha = clamp(drawAlpha, 0, 1);
+	}
+}
+
+decreaseDrawAlpha = function() {
+	if (drawAlpha > 0) {
+		drawAlpha -= alphaAmount * 5;	
+		drawAlpha = clamp(drawAlpha, 0, 1);
+	}	
+}
 
 rotationFunc = function() {
 	if (image_angle < targetAngle - 0.1) {
@@ -34,7 +50,7 @@ managerHasNoSegnalini = function() {
 }
 
 canShowInBoxSegnalini = function() {
-	return (oBattleManager.isInBulletHellSection()) && (oSoul.beamAnimationOnEnding());	
+	return (oBattleManager.isInBulletHellSection()) && (oSoul.beamAnimationOnEnding());
 }
 
 createCirclesDeco = function() {

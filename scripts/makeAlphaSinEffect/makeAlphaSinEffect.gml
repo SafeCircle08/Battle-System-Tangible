@@ -7,10 +7,8 @@ function makeAlphaSinEffect(_yAdder, _xAdder, _layer, _amplitude, _FXsprite,_nOf
 	}
 	
 	//Creating the effects
-	for (var i = 0; i < _nOfFXs + _oneNotMoving; i++)
-	{
-		if (_oneNotMoving) && (i == 0)
-		{
+	for (var i = 0; i < _nOfFXs + _oneNotMoving; i++) {
+		if (_oneNotMoving) && (i == 0) {
 			var _stillObj = instance_create_layer(x, y + _yAdder + (_yAdder * i), _layer, oAlphaSinFX);
 			_stillObj.image_xscale = _xScale;
 			_stillObj.image_yscale = _yScale;

@@ -89,6 +89,8 @@ function steamPunkEnemyBattleInfo()
 	var steamPunkBulletGenerator = 
 	[
 		oEmpyTurn, //
+		oEmpyTurn, //
+		oEmpyTurn, //
 		oRailsKnifeAttack, //
 		oBallAttack, //
 		oSpikeUpBulletGen, //

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"getEnchantmentLV",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"getEnchantmentLV",
+  "parent":{
+    "name":"EnchantmentsValues",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS/EnchantsFunction/EnchantmentsValues.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

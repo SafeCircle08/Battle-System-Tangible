@@ -22,9 +22,3 @@ if (global.enemyTimer > global.enemyAttackTime - 60) { exit; }
 
 //When im done animating the beam
 if (beamAnimationOnEnding()) { state(); }
-
-if (keyboard_check_pressed(vk_space)) {
-	setPlayerToSlowness(3);	
-}
-
-if (keyboard_check_pressed(ord("P"))) { oSegnalinoParent.destroySegnalino(sSlownessProperty); setPlayerSpd(DEFAULT_SOUL_SPD); }

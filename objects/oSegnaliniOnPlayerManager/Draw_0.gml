@@ -1,4 +1,7 @@
 draw_self();
+
+draw_set_alpha(drawAlpha);
+
 if (canShowInBoxSegnalini()) {
 	for (var i = 0; i < array_length(segnaliniOnPlayer); i++) {
 		var _angle = 0 - (45 * i);	
@@ -14,3 +17,4 @@ if (canShowInBoxSegnalini()) {
 	//his turn.
 	//Menu a tendina tipo
 }
+draw_set_alpha(1);

@@ -44,8 +44,8 @@ placeItem = function()
 			var _selectedItem = global.equippedItems[oBattleManager.selected_option];
 			closeBattleBook();
 			createBaseFX();
-			var _enchN = array_length(_selectedItem.enchants);
-			goldCost = irandom_range(200, 400) + (100 ^ _enchN * 2)
+			var _enchLV = getEnchantmentLV(_selectedItem.enchants);
+			goldCost = calculateEnchGoldCost(_enchLV);
 			placedItem = _selectedItem;
 			showingInv = false;
 			placeItemTimer = 2;
@@ -57,7 +57,18 @@ removeItem = function() {
 	if (!itemNotPlaced())
 	{
 		var _myFX = instance_create_layer(itemSpriteX + xAdder + 16, itemSpriteY + 16, LAYER_EFFECT_TOP, oChangeAlphaDimObjFX);
-		_myFX.setUpVars(1, 1, 5, 5, 1, -0.02, 1, 0, 1, -0.02);
+		var _sX = 1; 
+		var _fX = 5;
+		var _sY = _sX;
+		var _fY = _fX;
+		var _scaleAmount = 0.07;
+		var _scaleSign = 1;
+		var _sA = 1;
+		var _fA = 0;
+		var _alphaSign = -1;
+		var _aAmount = 0.05;
+		_myFX.setUpScaleVars(_sX, _sY, _fX, _fY, _scaleSign, _scaleAmount);
+		_myFX.setUpAlphaVars(_sA, _fA, _alphaSign, _aAmount);
 		_myFX.rotates = true;
 		_myFX.rotationAmount = 5;
 		_myFX.image_speed = 1;

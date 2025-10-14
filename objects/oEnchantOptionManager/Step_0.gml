@@ -1,8 +1,7 @@
 if (finishedEnchanting == false)
 {
 	if (confirmPressed()) && (placedItem != undefined) { confirmEnchant(); }
-	if (mouse_check_button_pressed(mb_right))
-	{ 
+	if (mouse_check_button_pressed(mb_right)) { 
 		if (mouseCursorIsOn(
 			itemSpriteX + xAdder, 
 			itemSpriteY, 
@@ -12,10 +11,8 @@ if (finishedEnchanting == false)
 	}
 }
 
-if (showingInv)
-{
-	with (oBattleManager)
-	{
+if (showingInv) {
+	with (oBattleManager) {
 		if (other.canFadeInv) { inventoryFadeIn(); }
 		else { inventoryFadeOut(); } 
 		navigatingInventoryFunction(DONT_GET_INPUTS, CAN_NAVIGATE);
