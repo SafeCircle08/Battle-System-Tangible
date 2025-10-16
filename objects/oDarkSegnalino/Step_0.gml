@@ -1,6 +1,4 @@
 // Inherit the parent event
-event_inherited();
-
 if (!oSoul.beamAnimationOnEnding()) { exit; }
 
 darkTimer = setTimer(darkTimer);

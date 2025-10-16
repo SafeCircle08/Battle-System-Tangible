@@ -1,7 +1,5 @@
 event_inherited();
 
-timer = setTimer(timer);
-
 if (timer > 0) {
 	if (timer % poisonFreq == 0) {
 		var _poisonDmg = irandom_range(minValue, maxValue);

@@ -1,6 +1,8 @@
 enum SEGNALINO_TYPE {
 	DAMAGE, 
-	NERF
+	NERF,
+	BOOST,
+	HEAL
 }
 
 type = SEGNALINO_TYPE.DAMAGE;
@@ -29,7 +31,7 @@ printSegnalinoInfos = function() {
 	print("Name: " + string(name));
 	print("Timer: " + string(timer));
 	print("minValue: " + string(minValue));	
-	print("maxValue: " + string(maxValue));	
+	print("maxValue: " + string(maxValue));
 }
 
 addSegnalino = function(_segnalino = segnalinoSprite) {
