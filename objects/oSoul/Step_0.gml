@@ -1,6 +1,3 @@
-
-print(instance_number(oSegnalinoCard))
-
 key_right = keyboard_check(ord("D")); 
 key_left = keyboard_check(ord("A")); 
 key_up = keyboard_check(ord("W"));
@@ -28,12 +25,4 @@ if (beamAnimationOnEnding()) { state(); }
 
 if (keyboard_check_pressed(ord("P"))) {
 	setPlayerToPoisoned(3);
-}
-
-if (keyboard_check_pressed(ord("U"))) {
-	setPlayerToSlowness(2);	
-}
-
-if (keyboard_check_pressed(ord("Y"))) {
-	setPlayerToPoisoned(1);	
 }

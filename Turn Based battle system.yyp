@@ -648,6 +648,7 @@
     {"id":{"name":"initializePlayerBattleFunctions","path":"scripts/initializePlayerBattleFunctions/initializePlayerBattleFunctions.yy",},},
     {"id":{"name":"initializePlayerMainBattleMenuOptions","path":"scripts/initializePlayerMainBattleMenuOptions/initializePlayerMainBattleMenuOptions.yy",},},
     {"id":{"name":"initializePlayerSubBattleMenuOptions","path":"scripts/initializePlayerSubBattleMenuOptions/initializePlayerSubBattleMenuOptions.yy",},},
+    {"id":{"name":"initializeSegnalinoCard","path":"scripts/initializeSegnalinoCard/initializeSegnalinoCard.yy",},},
     {"id":{"name":"ITEM_DATA_BASE","path":"scripts/ITEM_DATA_BASE/ITEM_DATA_BASE.yy",},},
     {"id":{"name":"item_enchants_declaration","path":"scripts/item_enchants_declaration/item_enchants_declaration.yy",},},
     {"id":{"name":"item_properties_declaration","path":"scripts/item_properties_declaration/item_properties_declaration.yy",},},

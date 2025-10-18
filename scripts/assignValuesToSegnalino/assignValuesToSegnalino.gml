@@ -7,9 +7,5 @@ function assignValuesToSegnalino(_segInst, _name, _type, _segnSpr, _minValue, _m
 		maxValue = _maxValue;
 		level = _lv;
 		timer = _timer * _lv;
-		if (createdCard != undefined) { _segInst.removeSegnalinoCard(); }
-		addSegnalinoCard();
-		createdCard.cardSetValues();
-		printSegnalinoInfos();
 	}	
 }
