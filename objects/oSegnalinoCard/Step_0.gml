@@ -1,0 +1,1 @@
+y = lerp(y, room_height - 40, 0.2);

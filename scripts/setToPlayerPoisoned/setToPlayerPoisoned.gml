@@ -1,4 +1,4 @@
-function setPlayerToPoisoned(_poisonTagLV = 1) {
+function setPlayerToPoisoned(_poisonTagLV = SEGNALINO_LEVEL.LEVEL_1) {
 	var _poisonSeg;
 	
 	var _defaultMaxPoisonDmg;
@@ -16,19 +16,17 @@ function setPlayerToPoisoned(_poisonTagLV = 1) {
 	//It always initializes it
 	_defaultMinPoisonDmg = 2;
 	_defaultMaxPoisonDmg = 7;
-	_defaultPoisonTimer = 130;
+	_defaultPoisonTimer = 550;
 	_defaultFreq = 220;
 
-	with (_poisonSeg) {
-		poisonFreq = _defaultFreq - (_poisonTagLV * 25);	
-		type = SEGNALINO_TYPE.DAMAGE;
-		level = _poisonTagLV;
-		segnalinoSprite = sPoisoningProperty;
-		name = "Poison:";
-		timer = _defaultPoisonTimer * _poisonTagLV;
-		minValue = _defaultMinPoisonDmg * 2 * _poisonTagLV;
-		maxValue = _defaultMaxPoisonDmg * 2 * _poisonTagLV;			
-	}
 
-	_poisonSeg.printSegnalinoInfos();
+	assignValuesToSegnalino(_poisonSeg, 
+		"Poison: ",
+		SEGNALINO_TYPE.DAMAGE,
+		sPoisoningProperty,
+		_defaultMinPoisonDmg * 2 * _poisonTagLV, 
+		_defaultMaxPoisonDmg * 2 * _poisonTagLV,
+		_poisonTagLV,
+		_defaultPoisonTimer * _poisonTagLV
+	);
 }

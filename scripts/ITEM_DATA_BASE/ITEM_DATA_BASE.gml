@@ -64,20 +64,19 @@ global.mint = createNewItem("Dropint", sMintDrop, 75, sndPlayerEatingHeal,
 	method(self, function() { healPlayer(global.mint.hp, global.mint.outSound); }))
 	
 global.cocoMilk = createNewItem("C.Milk", sCocoMilk, 122, sndPlayerDrinkingHeal,
-	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_POISON, sSlownessProperty],
+	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
 	[hpMessage("Gives a awesome feeling of fresh.", 122)],
 	[fullHpMessage("This Milk refreshed you to the MAX!")],
 	["This milk really gives you that summer feeling!"],
-	method(self, function() { healPlayer(global.cocoMilk.hp, global.cocoMilk.outSound);}), 
-	method(self, function() { setPlayerToPoisoned(1); }),
-	method(self, function() { setPlayerToSlowness(1); }));
+	method(self, function() { healPlayer(global.cocoMilk.hp, global.cocoMilk.outSound);}));
 
 global.hotDogWater = createNewItem("H.Water", sHGWater, 115, sndPlayerDrinkingHeal, 
-	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_MIGHT_HURT, ITEM_PROPERTY_NOONE], 
+	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_MIGHT_HURT, sSlownessProperty], 
 	[hpMessage("Hot Dog flavoured Water. Yes, it is.", 115)],
 	[fullHpMessage("Overall it wasn't that bad.")],
 	["Ehw, you actually drunk that...?"],
 	method(self, function() { healPlayer(115, sndPlayerDrinkingHeal); }),
-	method(self, function() { mightHurt(3, 3); }));
+	method(self, function() { mightHurt(3, 3); }),
+	method(self, function() { setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_2); }));
 
 fillInventory();

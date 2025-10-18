@@ -1,0 +1,2 @@
+#macro MAX_SEGNALINO_CARD_Y room_height - 40
+#macro MAX_SEGNALINI_CARDS_N 4

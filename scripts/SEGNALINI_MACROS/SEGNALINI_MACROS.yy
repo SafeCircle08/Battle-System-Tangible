@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SEGNALINI_MACROS",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SEGNALINI_MACROS",
+  "parent":{
+    "name":"SegnaliniMacros",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/SEGNALINI/SegnaliniMacros.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

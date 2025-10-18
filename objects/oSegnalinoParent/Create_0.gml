@@ -1,27 +1,55 @@
 enum SEGNALINO_TYPE {
-	DAMAGE, 
-	NERF,
-	BOOST,
-	HEAL
+	DAMAGE = 0, 
+	NERF = 1,
+	BOOST = 2,
+	HEAL = 3
+}
+
+enum SEGNALINO_LEVEL {
+	LEVEL_1 = 1,	
+	LEVEL_2 = 2,	
+	LEVEL_3 = 3,	
+	LEVEL_4 = 4,	
+	LEVEL_5 = 5,	
 }
 
 type = SEGNALINO_TYPE.DAMAGE;
-level = 0;
+level = SEGNALINO_LEVEL.LEVEL_1;
 segnalinoSprite = sNightVisionEnchProperty; //default
 name = "";
 timer = 0;
 minValue = 0;
 maxValue = 0;
 
+createdCard = undefined;
+
 addSegnalinoCard = function() {
-	var _segnalinoCard = instance_create_layer(room_width / 2, room_height / 2, LAYER_SEGNALINI_CARDS, oSegnalinoCard);
-	_segnalinoCard.type = type;
-	_segnalinoCard.name = name;
-	_segnalinoCard.level = level;
-	_segnalinoCard.timer = timer;
-	_segnalinoCard.sprite = segnalinoSprite;
-	_segnalinoCard.minValue = minValue;
-	_segnalinoCard.maxValue = maxValue;
+	var _card = instance_create_layer(0, 0, LAYER_SEGNALINI_CARDS, oSegnalinoCard);
+	createdCard = _card;
+	with (_card) {
+		level = other.level;
+		type = other.type;
+		minValue = other.minValue;
+		maxValue = other.maxValue;
+		segSprite = other.segnalinoSprite;
+		name = other.name;
+		timer = other.timer;	
+	}
+	for (var i = 0; i < instance_number(oSegnalinoCard); i++) {
+		if (instance_number(oSegnalinoCard) == 2) {
+			var _positions = [[144 - 50, 30],[144 + 50, 30]];
+			var _actualCard = instance_find(oSegnalinoCard, i);
+			_actualCard.x = _positions[i][0];
+			_actualCard.y = _positions[i][1];
+		}
+	}
+}
+
+removeSegnalinoCard = function() {
+	if (instance_exists(createdCard)) {
+		instance_destroy(createdCard);
+		createdCard = undefined;
+	}
 }
 
 printSegnalinoInfos = function() {
@@ -41,12 +69,6 @@ addSegnalino = function(_segnalino = segnalinoSprite) {
 	if (segnalinoAlreadyOnAction(_segnalino)) { return; }
 	oSegnaliniOnPlayerManager.segnaliniN++;
 	array_push(oSegnaliniOnPlayerManager.segnaliniOnPlayer, _segnalino);
-	
-	//crea la carta
-	
-	//ogni volta che viene aggiunta una carta, andare ad eseguire il ciclo
-	//sulle carte, e assegnare ad ognuna le loro coordinate.
-	//Ogni posizionamento ha un array preimpostato.
 }
 
 segnalinoAlreadyOnAction = function(_segSprite) {
@@ -79,6 +101,7 @@ destroySegnalino = function(_sprite = segnalinoSprite) {
 		}	
 	}
 	//Destroy the actual segnalino (effect finished)
+	removeSegnalinoCard();
 	instance_create_layer(
 		oSegnaliniOnPlayerManager.x, 
 		oSegnaliniOnPlayerManager.y, 
