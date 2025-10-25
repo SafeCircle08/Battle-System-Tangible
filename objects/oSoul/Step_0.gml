@@ -24,5 +24,5 @@ if (global.enemyTimer > global.enemyAttackTime - 60) { exit; }
 if (beamAnimationOnEnding()) { state(); }
 
 if (keyboard_check_pressed(ord("P"))) {
-	setPlayerToPoisoned(3);
+	createFloatingText(x, y, "FLOATING\nTEXT!", FLOATING_TEXT_TYPES.TXT);
 }

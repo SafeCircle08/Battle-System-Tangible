@@ -117,6 +117,10 @@ isNotPlayerTurn = function()
 		   (showFlavourText == false)
 }
 
+playerIsDefended = function() {
+	return defended;	
+}
+
 goToBulletHellSection = function()
 {
 	resetTextVars();

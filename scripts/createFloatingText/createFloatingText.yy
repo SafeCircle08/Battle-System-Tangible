@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createFloatingText",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createFloatingText",
+  "parent":{
+    "name":"FXs",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/FXs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -13,34 +13,24 @@ if (canCollide == true)
 	if (global.playerShield > 1) { shield_shards(); }
 	
 	//SE E' DIFESO SUBIRA MENO DANNI
-	if (oBattleManager.defended == true)
-	{
-		global.defenceValue = irandom_range(10, 15); //Defence value casuale
-		//DAMAGE POP EFFECT
-		flText = instance_create_layer(x, y, LAYER_EFFECT, oFloatingText);
-		flText.textReference = global.attackRandom - global.defenceValue;
-		if (global.playerShield > 0) 
-		{ 
-			global.playerShield -= global.attackRandom; oFloatingText.damageIndex = 1;
-		}
+	if (playerIsDefended()) {
+		global.defenceValue = irandom_range(10, 15); //random def value
+		var _dmg = global.attackRandom - global.defenceValue;
+		createFloatingText(x, y, _dmg, FLOATING_TEXT_TYPES.SHIELD);
+		if (global.playerShield > 0) { global.playerShield -= global.attackRandom; }
 		else { 
 			oSoul.damageTaken += global.attackRandom * -1;
-			global.playerHP -= global.attackRandom - global.defenceValue; 
-			oFloatingText.damageIndex = 0; 
+			global.playerHP -= _dmg; 
 		};	
 	} 
-	else
-	{
+	else {
 		global.defenceValue = 0;
-		//DAMAGE POP EFFECT
-		flText = instance_create_layer(x, y, LAYER_EFFECT, oFloatingText);
-		flText.textReference = global.attackRandom - global.defenceValue;
-		if (godMode = 0) 
-		{	
-			if (global.playerShield > 0) { global.playerShield -= global.attackRandom; oFloatingText.damageIndex = 1;}
+		var _dmg = global.attackRandom - global.defenceValue;
+		createFloatingText(x, y, _dmg, FLOATING_TEXT_TYPES.DAMAGE);
+		if (godMode == 0)  {	
+			if (global.playerShield > 0) { global.playerShield -= global.attackRandom; }
 			else { 
 				global.playerHP -= global.attackRandom; 
-				oFloatingText.damageIndex = 0;
 				oSoul.damageTaken += global.attackRandom;
 			}
 		}

@@ -1,0 +1,17 @@
+Fare che alcuni su alcuni segnalini, il timer 'scorre' solo quando
+il player è nel box, mentre
+altri su altri segnalini, il timer scorre sempre:
+
+			:::Esempi:::
+Veleno: scorre sempre;
+Dark Vision: scorre sempre;
+
+Slowness: scorre solo nel box;
+Broken Bones: scorre solo nel box;
+
+In questo modo, il player non può camperare.
+
+Scorre sempre: il segnalino ha effetti sia nel box, sia mentre il player sceglie (il veleno ovvio)
+Scorre solo nel box: quando gli effetti possono essere applicati al player solo
+all'interno del box (come il movimento in BrokenBones) (ovviamente il player non si può muovere mentre non è nel
+box e quindi potrebbe camperare):

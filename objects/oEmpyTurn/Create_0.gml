@@ -5,7 +5,7 @@ oSoul.image_alpha = 1;
 oSoul.canMove = true;
 oBattleBox.draw = true;
 
-setPlayerToPoisoned(1);
+setPlayerToPoisoned(2);
 
 /*
 instance_create_layer(global.boxOriginX, global.boxOriginY, "Instances", oPlatform);

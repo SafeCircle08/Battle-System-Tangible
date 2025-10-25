@@ -1,10 +1,7 @@
-function hitPlayer(_dmg)
-{
+function hitPlayer(_dmg, _snd = sndHurt) {
 	global.playerHP -= _dmg;
-	audio_play_sound(sndHurt, 50, false, global.soundGain);
+	playSound(_snd, SOUND_CHANNEL_1);
 	createHitSlashes(2);
-	dmg = instance_create_layer(oSoul.x, oSoul.y, LAYER_BULLETS, oFloatingText);
-	dmg.textReference = _dmg;
-	dmg.damageIndex = 0;
+	createFloatingText(oSoul.x, oSoul.y, _dmg, FLOATING_TEXT_TYPES.DAMAGE);
 	return;
 }

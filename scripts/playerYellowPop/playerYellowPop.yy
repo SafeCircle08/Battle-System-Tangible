@@ -6,7 +6,7 @@
   "name":"playerYellowPop",
   "parent":{
     "name":"SHADERS",
-    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/SHADERS.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/FXs/SHADERS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

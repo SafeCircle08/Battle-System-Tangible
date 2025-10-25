@@ -1,9 +1,7 @@
 x = oSoul.x + oSoul.hbX;
 y = oSoul.y + oSoul.hbY;
 
-if (oBattleBox.visible == false) { 
-	exit; 
-}
+if (oBattleBox.visible == false) { exit; }
 
 image_angle = oSoul.image_angle;
 
