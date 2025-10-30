@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sSegnalinoCardTypes",
   "bboxMode":0,
   "bbox_bottom":6,
@@ -12,10 +12,10 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f5834fcc-aaeb-418f-982e-c974a95e3fd8","name":"f5834fcc-aaeb-418f-982e-c974a95e3fd8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"8389c525-22a1-4a33-9806-9d2971eb5c06","name":"8389c525-22a1-4a33-9806-9d2971eb5c06","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"14e1d703-306d-4302-8d16-63eb27968a16","name":"14e1d703-306d-4302-8d16-63eb27968a16","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"5176e918-5672-4f89-bc6e-66be91e5ee40","name":"5176e918-5672-4f89-bc6e-66be91e5ee40","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f5834fcc-aaeb-418f-982e-c974a95e3fd8","name":"f5834fcc-aaeb-418f-982e-c974a95e3fd8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"8389c525-22a1-4a33-9806-9d2971eb5c06","name":"8389c525-22a1-4a33-9806-9d2971eb5c06","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"14e1d703-306d-4302-8d16-63eb27968a16","name":"14e1d703-306d-4302-8d16-63eb27968a16","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5176e918-5672-4f89-bc6e-66be91e5ee40","name":"5176e918-5672-4f89-bc6e-66be91e5ee40","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

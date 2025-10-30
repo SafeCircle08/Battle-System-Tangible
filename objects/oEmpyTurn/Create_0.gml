@@ -5,8 +5,8 @@ oSoul.image_alpha = 1;
 oSoul.canMove = true;
 oBattleBox.draw = true;
 
-setPlayerToPoisoned(2);
-
+instance_create_layer(room_width / 2 - 50, room_height / 2, layer, oBulletTest);
+setPlayerToPoisoned(SEGNALINO_LEVEL.LEVEL_5);
 /*
 instance_create_layer(global.boxOriginX, global.boxOriginY, "Instances", oPlatform);
 

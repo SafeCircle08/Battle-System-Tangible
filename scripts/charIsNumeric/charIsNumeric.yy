@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"charIsNumeric",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"charIsNumeric",
+  "parent":{
+    "name":"Strings",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/generalUse/Strings.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

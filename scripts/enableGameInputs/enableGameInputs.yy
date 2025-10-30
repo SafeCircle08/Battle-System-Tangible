@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"enableGameInputs",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"enableGameInputs",
+  "parent":{
+    "name":"keyFunctions",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/keyFunctions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

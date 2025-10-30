@@ -18,6 +18,7 @@ direction = irandom_range(85, 95);
 speed = 1.5;
 image_xscale = 2;
 image_yscale = 2;
+hspeed = choose(-0.5, 0.5);
 
 textReference = 0
 typeIndex = 0;

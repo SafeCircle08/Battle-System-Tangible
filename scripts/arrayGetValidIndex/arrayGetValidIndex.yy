@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"arrayGetValidIndex",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"arrayGetValidIndex",
+  "parent":{
+    "name":"generalUse",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/generalUse.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -10,9 +10,9 @@ draw_text(x, y - 2, textReference);
 draw_sprite(sFloatTxtTypes, typeIndex, x + 15, y - 8);
 draw_set_color(c_black);
 
-draw_set_alpha(1.0);
 draw_text(x, y - 1, textReference);
 draw_set_color(c_white);
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 draw_set_font(fHungrySkinny);
+draw_set_alpha(1.0);

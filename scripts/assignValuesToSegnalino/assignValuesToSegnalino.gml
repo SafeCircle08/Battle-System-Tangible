@@ -6,6 +6,6 @@ function assignValuesToSegnalino(_segInst, _name, _type, _segnSpr, _minValue, _m
 		minValue = _minValue;
 		maxValue = _maxValue;
 		level = _lv;
-		timer = _timer * _lv;
+		timer = _timer;
 	}	
 }

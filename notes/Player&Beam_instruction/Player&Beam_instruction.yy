@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"Player&Beam_instruction",
   "name":"Player&Beam_instruction",
   "parent":{

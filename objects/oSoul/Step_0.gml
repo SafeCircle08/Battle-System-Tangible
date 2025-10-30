@@ -5,6 +5,20 @@ key_down = keyboard_check(ord("S"));
 
 global.playerHP = clamp(global.playerHP, -666, global.playerMAX_HP);
 
+if (keyboard_check(vk_alt) && (keyboard_check_pressed(ord("C")))) {
+	if (!instance_exists(oDeveloperCommandsManager)) {
+		instance_create_layer(x, y, LAYER_EFFECT_TOP_4, oDeveloperCommandsManager);
+	} else {
+		if (oDeveloperCommandsManager.activeCMD == true) {
+			oDeveloperCommandsManager.activeCMD = false;
+			instance_deactivate_object(oDeveloperCommandsManager);
+		} else {
+			instance_deactivate_object(oDeveloperCommandsManager);	
+			oDeveloperCommandsManager.activeCMD = true;
+		}
+	}
+}
+
 if (!oBattleManager.isInBulletHellSection()) { 
 	setToDefaultPos(); 
 	exit; 
@@ -23,6 +37,7 @@ if (global.enemyTimer > global.enemyAttackTime - 60) { exit; }
 //When im done animating the beam
 if (beamAnimationOnEnding()) { state(); }
 
+
 if (keyboard_check_pressed(ord("P"))) {
-	createFloatingText(x, y, "FLOATING\nTEXT!", FLOATING_TEXT_TYPES.TXT);
+	print(damageTaken);
 }

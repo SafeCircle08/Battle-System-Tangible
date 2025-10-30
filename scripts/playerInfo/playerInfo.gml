@@ -13,8 +13,7 @@ global.playerAttackTime = 0;
 //----------------------------VARIABILI GLOBALI---------------------------------------------------
 #macro DEFAULT_SOUL_SPD 1.5
 global.SoulSpeed = DEFAULT_SOUL_SPD;
-global.defenceValue = undefined;
-global.attackRandom = undefined; //VALORE AGGIUNTIVO A GLOBAL.BULLETATK (RENDERE I DANNI VARIABILI)
+global.defenceValue = 0;
 //Variabili per spostare il player 
 //(non farlo spawnare sempre al centro del box)
 global.xOffset = 0;

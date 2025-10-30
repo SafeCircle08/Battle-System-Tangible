@@ -64,7 +64,7 @@ printSegnalinoInfos = function() {
 
 addSegnalino = function(_segnalino = segnalinoSprite) {
 	if (!instance_exists(oSegnaliniOnPlayerManager)) {
-		instance_create_layer(0, 0, LAYER_EFFECT_TOP_2, oSegnaliniOnPlayerManager);	
+		instance_create_layer(0, 0, LAYER_EFFECT_TOP, oSegnaliniOnPlayerManager);	
 	}
 	if (segnalinoAlreadyOnAction(_segnalino)) { return; }
 	oSegnaliniOnPlayerManager.segnaliniN++;

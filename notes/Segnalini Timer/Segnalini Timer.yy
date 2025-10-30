@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"Segnalini Timer",
   "name":"Segnalini Timer",
   "parent":{

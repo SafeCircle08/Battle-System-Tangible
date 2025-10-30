@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sShieldBroke",
   "bboxMode":0,
   "bbox_bottom":12,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"09ca0d44-5854-4cc3-b0ee-4bfae8bfaa5e","name":"09ca0d44-5854-4cc3-b0ee-4bfae8bfaa5e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"09ca0d44-5854-4cc3-b0ee-4bfae8bfaa5e","name":"09ca0d44-5854-4cc3-b0ee-4bfae8bfaa5e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

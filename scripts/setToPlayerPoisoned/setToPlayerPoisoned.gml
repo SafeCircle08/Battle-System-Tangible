@@ -16,16 +16,16 @@ function setPlayerToPoisoned(_poisonTagLV = SEGNALINO_LEVEL.LEVEL_1) {
 	_defaultPoisonTimer = 550;
 	_defaultFreq = 220;
 
-	_poisonSeg.poisonFreq = _defaultFreq - (_poisonTagLV * 35);
+	_poisonSeg.poisonFreq = _defaultFreq - (_poisonTagLV * 20);
 	assignValuesToSegnalino(
 		_poisonSeg, 
 		"Poison: ",
 		SEGNALINO_TYPE.DAMAGE,
 		sPoisoningProperty,
-		_defaultMinPoisonDmg * 2 * _poisonTagLV, 
-		_defaultMaxPoisonDmg * 2 * _poisonTagLV,
+		_defaultMinPoisonDmg + (10 * _poisonTagLV), 
+		_defaultMaxPoisonDmg + (20 * _poisonTagLV),
 		_poisonTagLV,
-		_defaultPoisonTimer * _poisonTagLV
+		_defaultPoisonTimer + (200 * _poisonTagLV)
 	);
 	
 	initSegnalinoCard(_poisonSeg);

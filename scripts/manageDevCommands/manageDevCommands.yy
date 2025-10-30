@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"manageDevCommands",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"manageDevCommands",
+  "parent":{
+    "name":"Commands",
+    "path":"folders/Scripts/Commands.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -13,8 +13,7 @@ function changeDim(_obj, finalScaleX, finalScaleY, _amount = 0.02, _sign = 1, _d
 }
 
 
-function reduceDimAlpha(_obj, _ref = oDrumPadObjectsParent, _amount = 0.02)
-{
+function reduceDimAlpha(_obj, _ref = oDrumPadObjectsParent, _amount = 0.02) {
 	_obj.image_xscale -= _amount;
 	_obj.image_yscale -=_amount;
 	_obj.image_alpha -= _amount;
@@ -25,12 +24,10 @@ function reduceDimAlpha(_obj, _ref = oDrumPadObjectsParent, _amount = 0.02)
 function reduceAlpha(_obj, _amount = 0.005, _destroyWhen0 = true, _reachedFinalAlphaMethod = function() {})
 {
 	_obj.image_alpha -= _amount;
-	if (_destroyWhen0)
-	{
+	if (_destroyWhen0) {
 		if (_obj.image_alpha <= 0) { instance_destroy(_obj); }	
 	}
-	else
-	{
+	else {
 		if (_obj.image_alpha <= 0) { _reachedFinalAlphaMethod(); }	
 	}
 	return;

@@ -70,8 +70,7 @@ function drawTextBoxText(
 	_bX = 10, _bY = _bX - 1, _lSep = 15, _maxWidth = sprite_get_width(sTextBoxBg) - _bX,
 	_scale = 1, _textX = undefined, _textY = undefined,
 	_enemySpeech = false
-) 
-{
+) {
 	var _cam = view_camera[view_current];
 	var _camW = camera_get_view_width(_cam);
 	var _camH = camera_get_view_height(_cam);
@@ -150,7 +149,7 @@ function drawTextBoxText(
 		
 	//Managing text
 	if (global.getTextBoxInputs) {
-		if (keyboard_check_pressed(global.confirmTextKey) && (textFinished(_textList))) {
+		if (confirmTextPressed() && (textFinished(_textList))) {
 			if (morePages(_textList)) { 
 				goToNextPage();	
 				return;
@@ -181,7 +180,7 @@ function drawTextBoxText(
 			}  
 		}
 		if (charCount >= 1) { 
-			if (keyboard_check_pressed(global.confirmTextKey) && (textUnfinished(_textList))) { showFullText(_textList); }
+			if (confirmTextPressed() && textUnfinished(_textList)) { showFullText(_textList); }
 		}
 	}
 }

@@ -1,1 +1,2 @@
 increaseWidth();
+attachToPlayerMovement();

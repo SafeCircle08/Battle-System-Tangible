@@ -1,1 +1,0 @@
-outSideWindow(self, sShieldShard);

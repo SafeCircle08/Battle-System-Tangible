@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"createBubbleParticle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createBubbleParticle",
+  "parent":{
+    "name":"SegnaliniFX",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/SEGNALINI/SegnaliniFX.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

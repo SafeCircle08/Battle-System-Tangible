@@ -1,0 +1,6 @@
+global.lastCommand = "";
+
+
+function manageDevCommands() {
+	
+}

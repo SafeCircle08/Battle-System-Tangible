@@ -1,6 +1,5 @@
 draw_self();
 
-
 if (global.beamAnimation) { playerBeamAnimation(); }
 
 if (flashAlpha > 0)
