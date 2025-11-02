@@ -14,6 +14,7 @@ finishedCommand = function() {
 }
 
 healMeCommand = "heal_me";
+chargeShieldCommand = "shield_me";
 
 executeHealCMD = function(_amount) {
 	healPlayer(abs(_amount), sndPlayerBasicHeal);

@@ -21,7 +21,7 @@ function setPlayerToBrokenBones(_brokenBonesLV = SEGNALINO_LEVEL.LEVEL_1) {
 		_minBrokenBonesDmg,
 		_maxBrokenBonesDmg,
 		_brokenBonesLV,
-		_defaultTimer
+		_defaultTimer + _brokenBonesLV * 75
 	);
 	_brokenBonesSeg.bonesFrequency = _brokenBonesFreq;
 	

@@ -2,8 +2,12 @@ x = room_width / 2;
 y = room_height;
 
 baseCardSpr = sSegnalinoCardBase;
-
 initialized = false;
+
+goalX = 0;
+goalY = room_height - 40;
+
+image_alpha = 0;
 
 //Default values
 level = SEGNALINO_LEVEL.LEVEL_1;
@@ -25,6 +29,7 @@ levelSprIndex = undefined;
 typeSpr = sSegnalinoCardTypes;
 typeSprIndex = undefined;
 
+moving = false;
 
 cardSetValues = function() {
 	

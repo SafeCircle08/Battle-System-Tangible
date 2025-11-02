@@ -1,12 +1,12 @@
 //Initializing the turn with the beam animation
-function initializeNewTurn(createT, created, timer, bltCreated, bW, bH, bX, bY, _playerState)
-{
+function initializeNewTurn(createT, created, timer, bltCreated, bW, bH, bX, bY, _playerState) {
 	startBeamAnimation();
 	genTimeVars(createT, created, timer, bltCreated);
 	boxDimensions(bW, bH);
 	setBoxOrigin(bX, bY);
 	playerChangeState(_playerState, function() {})
 	backGroundLayersVisible(oBattleManager.layers, true);
+	startMovingCards();
 }
 
 function destroyBulletsGensExtras()
@@ -29,5 +29,6 @@ function finishTurn()
 			setManagerValuesToStartTurn();
 			resetPlayerBattleVars();
 		}
+		resetCardsPositions();
 	}
 }

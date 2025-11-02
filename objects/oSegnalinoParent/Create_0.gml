@@ -33,15 +33,23 @@ addSegnalinoCard = function() {
 		maxValue = other.maxValue;
 		segSprite = other.segnalinoSprite;
 		name = other.name;
-		timer = other.timer;	
+		timer = other.timer;
+		if (oBattleManager.isInBulletHellSection()) { moving = true; }
+		else { moving = false; }
 	}
 	for (var i = 0; i < instance_number(oSegnalinoCard); i++) {
-		if (instance_number(oSegnalinoCard) == 2) {
-			var _positions = [[144 - 50, 30],[144 + 50, 30]];
-			var _actualCard = instance_find(oSegnalinoCard, i);
-			_actualCard.x = _positions[i][0];
-			_actualCard.y = _positions[i][1];
-		}
+		rearrangeCardPositions();
+	}
+}
+
+rearrangeCardPositions = function() {
+	for (var i = 0; i < instance_number(oSegnalinoCard); i++) {
+		var _cardSprW = sprite_get_width(sSegnalinoCardBase);
+		var _cardN = instance_number(oSegnalinoCard);
+		var _cardXRef = (room_width / 2) - ((_cardSprW / 2) * (_cardN - 1));
+		
+		var _actualCard = instance_find(oSegnalinoCard, i);
+		_actualCard.goalX = _cardXRef + (i * _cardSprW);		
 	}
 }
 
@@ -50,6 +58,7 @@ removeSegnalinoCard = function() {
 		instance_destroy(createdCard);
 		createdCard = undefined;
 	}
+	rearrangeCardPositions();
 }
 
 printSegnalinoInfos = function() {

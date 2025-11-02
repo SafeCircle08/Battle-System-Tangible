@@ -1,5 +1,7 @@
 event_inherited();
 
+print(timer);
+
 if (timer > 0) {
 	createBubbleParticle(sPoisonBubble, oSoul.x, oSoul.y, LAYER_EFFECT_TOP_3, 20, 10, 3);
 	if (timer % poisonFreq == 0) {

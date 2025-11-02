@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"startMovingCards",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"startMovingCards",
+  "parent":{
+    "name":"SEGNALINI_CARDS",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/SEGNALINI_CARDS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

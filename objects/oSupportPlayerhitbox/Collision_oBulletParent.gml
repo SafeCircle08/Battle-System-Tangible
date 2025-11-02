@@ -22,6 +22,7 @@ if (canCollide == true) {
 	if (godMode == 0)  {	
 		if (global.playerShield > 0) { 
 			global.playerShield -= _shieldDmg;
+			global.playerShield = clamp(global.playerShield, 0, global.playerMaxShield);
 			createFloatingText(x, y, _shieldDmg, FLOATING_TEXT_TYPES.SHIELD);
 		}
 		else { 

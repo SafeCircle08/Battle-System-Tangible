@@ -1,3 +1,3 @@
-outSideWindow(self, sprite_index, true, "Bolla distrutta");
+outSideWindow(self, sprite_index);
 frame++;
 x = xstart + cos(frame / 100) * amplitudeX;
