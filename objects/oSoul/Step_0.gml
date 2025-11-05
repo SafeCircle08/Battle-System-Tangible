@@ -39,5 +39,5 @@ if (beamAnimationOnEnding()) { state(); }
 
 
 if (keyboard_check_pressed(ord("P"))) {
-	print(damageTaken);
+	removeSegnalini();
 }

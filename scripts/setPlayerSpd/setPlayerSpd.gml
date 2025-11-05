@@ -1,3 +1,3 @@
-function setPlayerSpd(_newSpd = 1/*Default spd*/) {
+function setPlayerSpd(_newSpd = DEFAULT_SOUL_SPD/*Default spd*/) {
 	global.SoulSpeed = _newSpd;
 }

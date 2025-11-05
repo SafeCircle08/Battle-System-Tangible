@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"resetInventoryOutpusTxt",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"resetInventoryOutpusTxt",
+  "parent":{
+    "name":"BattleManagerScripts",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/BattleManagerScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

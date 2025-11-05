@@ -26,8 +26,7 @@ function createAnimationObject(sprite, _messages, _method = function() {})
 	return;
 }
 
-function initializeNavigatingBattleOptionFunctions()
-{
+function initializeNavigatingBattleOptionFunctions() {
 	selectedBattleOption = function() { 
 		selectAction(true, true, sndSelecting_2, []);
 		if (!instance_exists(oSubMenuManager)) { instance_create_layer(x, y, "Instances", oSubMenuManager); } 
@@ -44,16 +43,14 @@ function initializeNavigatingBattleOptionFunctions()
 		}
 	}
 }
-function initializeDefend_old_OptionFunction()
-{
+function initializeDefend_old_OptionFunction() {
 	selectedDefend_old_Option = function() { selectAction(true, false, sndSelecting_2, ["<>Player defended!", "<>How cool?"]); }	
 }
-function initialiseCryOptionFunction()
-{
+
+function initialiseCryOptionFunction() {
 	selectedCryOption = function() { selectAction(true, false, sndSelecting_2, ["<>Crying won't do nothing\n  but dehydratate you to death.", "\n<>Stop it."]); }		
 }
-function initializeInventoryOptionFunctions()
-{		
+function initializeInventoryOptionFunctions() {		
 	drawStatistics = function(_index, _itemSprX, _itemSprY, _border) {
 		var _item = global.equippedItems[_index];
 		for (var k = 0; k < MAX_PROPERTIES_NUMBER; k++)
@@ -103,10 +100,8 @@ function initializeInventoryOptionFunctions()
 	}
 	
 	//When you select (press enter)
-	selectedInventoryOption = function()
-	{
-		if (array_length(global.equippedItems) > 0)
-		{
+	selectedInventoryOption = function() {
+		if (array_length(global.equippedItems) > 0) {
 			selectAction(true, true, sndOpeningInventory, [], method(self, function() {
 				showCursor();
 				selected_option = 0;
@@ -114,13 +109,12 @@ function initializeInventoryOptionFunctions()
 			}));
 		}
 		else { 
-			setMonologueTextToNewString(["*Cannot open the inventory\n right now...", "*You don't have any\n Items."])
+			setMonologueTextToNewString(["*Cannot open the inventory\n right now...", "*You don't have any\n Items."]);
 			resetNavigation(3, sndClosingInventory, method(self, function() { moreStepsAct = true; })); 
 		}
 	}
 	
-	navigatingInventoryFunction = function(_getInputs = GET_INPUTS, _canNavigate = CAN_NAVIGATE)
-	{
+	navigatingInventoryFunction = function(_getInputs = GET_INPUTS, _canNavigate = CAN_NAVIGATE) {
 		easeInBg();
 		var _itemsNumber = array_length(global.equippedItems); 
 		
@@ -134,13 +128,11 @@ function initializeInventoryOptionFunctions()
 			{
 				if (confirmPressed())
 				{ 
-					if (instance_exists(itemOutputMessage)) 
-					{ 
+					if (instance_exists(itemOutputMessage)) { 
 						instance_destroy(itemOutputMessage);
-						terminateAction(["<>Finished using the \n  Inventory."]);
+						terminateAction(["*Finished Using the\n Inventory!"]);
 					}
-					else 
-					{
+					else {
 						var _border = 10;
 						var _sprBG = sInventoryBG;
 						var _bgH = sprite_get_height(_sprBG) * 2;
@@ -185,13 +177,12 @@ function initializeAttackFunctions()
 		}			
 		
 		//SE IL PLAYER NON SPARA IN TEMPO
-		if (global.playerAttackTime >= global.playerAttackTimer)
-		{
+		if (global.playerAttackTime >= global.playerAttackTimer) {
 			terminateAction(
 				global.playerOptions.attack_function._failedAttackFlavourText,
 				method(self, function() {
-		        oDrumPadObjectsParent.reduceDimensionsAlpha = true;
-		        global.playerAttackTime = 0;	
+			        oDrumPadObjectsParent.reduceDimensionsAlpha = true;
+			        global.playerAttackTime = 0;	
 				})
 			);
 			return;
@@ -210,20 +201,22 @@ function initializeAttackFunctions()
 				*/
 				////////
 				var _dmg = string(global.eqDrumPad.damage);
+				
 				terminateAction(
 					global.playerOptions.attack_function._flavourText,
 					method(self, function() {
-					oDrumPadObjectsParent.reduceDimensionsAlpha = true;
-					global.playerAttackTime = 0;
+						var _dmg = string(global.eqDrumPad.damage);
+						addNewActionFlavourTextPage("Damage dealt: " + _dmg, "!");
+						oDrumPadObjectsParent.reduceDimensionsAlpha = true;
+						global.playerAttackTime = 0;
 					})
 				);
 			}
 			return;
 		}
-	}		
+	}	
 }
-function initializeUnbindFunctions()
-{
+function initializeUnbindFunctions() {
 	selectedUnbindCage = function() { selectAction(false, false, sndSelecting_2, [], method(self, function() { unbinding = true; instance_destroy(oMirrorTargeting); }))}
 	unbindFunction = function() {
 		terminateAction(
@@ -242,10 +235,9 @@ function initializeDefenceFunctions()
 				method(self, function() { defended = true; }));
 	}
 }
-function initializePrayFunctions() 
-{
+function initializePrayFunctions()  {
 	selectedPrayOption = function() { 
-		selectAction(true, true, sndSelecting_2, ["You deciced to pray."]);
+		selectAction(true, true, sndSelecting_2, ["*You deciced to pray."]);
 		if (!instance_exists(oAdSlidingManager)) {
 			var _downAds = instance_create_layer(x, y, layer, oAdSlidingManager);
 			_downAds._sign = 1;
@@ -263,41 +255,54 @@ function initializePrayFunctions()
 				function() { 
 					var _dmg = irandom_range(20, 167);
 					fadeInOutAnimationsParent.messages = 
-					["<>Your pray wasn't accepted...", "<>You lost " + string(_dmg) + " HPs..."]; 
+					["*Your pray wasn't accepted...", "*You lost " + string(_dmg) + " HPs..."]; 
 					hitPlayer(_dmg);
 				},
 				function() { 
 					var _heal = irandom_range(150, 300);
 					fadeInOutAnimationsParent.messages = 
-					["<>You decided to pray!", "<>Gained " + string(_heal) + " HPs!"];
+					["*You decided to pray!", "*Gained " + string(_heal) + " HPs!"];
 					if (global.playerHP + _heal >= global.playerMAX_HP) { 
-						array_push(fadeInOutAnimationsParent.messages, "<>HP MAXED OUT!")
+						array_push(fadeInOutAnimationsParent.messages, "*HP MAXED OUT!")
 					}
 					healPlayer(_heal, sndPlayerBasicHeal);
 				},
 				function() {
 					fadeInOutAnimationsParent.messages = addItemToInventory();
+				}, 
+				function() { 
+					if (playerIsUnderSegnaliniEffects()) {
+						addNewActionFlavourTextPage("You are MISERABLE", "!");
+						addNewActionFlavourTextPage("So we decided to\n remove all bad\n effects applied to you", "!");
+						addNewActionFlavourTextPage("You can Thanks us later", "!");
+						removeSegnalini(false);
+					} else {
+						fadeInOutAnimationsParent.messages = [
+							"*We tried to remove negative\n effects from you.",
+							"*But you are already\n so COOL!",
+							"*So, yeah, you don't\n need our help!",
+							"*At least untill you\n are not bleeding from\n your ears!",
+							"*Bye bye!"
+						];
+					}
 				}
 			];
-			var _index = irandom_range(0, array_length(_possPrayFuncs) - 1);
+			var _index = 3;
 			var _choosedPrayFunc = _possPrayFuncs[_index];
 			_choosedPrayFunc(); 
 		}));
 	}
 }
 
-function initializeEnchantingFunctions()
-{
-	selectedEnchantOption = function() 
-	{ 
-		selectAction(true, true, sndSelecting_2, ["*You enchante an Item.","*You'll be able\n to use it next turn."]);
+function initializeEnchantingFunctions() {
+	selectedEnchantOption = function() { 
+		selectAction(true, true, sndSelecting_2, ["*You enchanted an Item.","*You'll be able\n to use it next turn."]);
 		showCursor();
 		if (!instance_exists(oEnchantOptionManager)) { instance_create_layer(x, y, "Instances", oEnchantOptionManager); } 
 		else { oEnchantOptionManager.setTofadeIn(); }
 	}
 	
-	enchantingOption = function() 
-	{
+	enchantingOption = function() {
 		easeInBg();
 		var _enchantManager = instance_find(oEnchantOptionManager, instance_number(oEnchantOptionManager) - 1);
 		
@@ -315,15 +320,15 @@ function initializeEnchantingFunctions()
 		}
 
 		takenOptionDelay = setTimer(takenOptionDelay);
-		if (takenOptionDelay == 0) 
-		{
-			if (confirmPressed(false)) && (_enchantManager.placedItem == undefined) && (array_length(global.equippedItems) > 0) 
-			{ 
-				setSelectionDelay();
-				if (_enchantManager.showingInv == false) { 
-					selected_option = 0; 
-					_enchantManager.showingInv = true; 
-				}
+		if (takenOptionDelay == 0) {
+			if (confirmPressed(false)) && (_enchantManager.placedItem == undefined) { 
+				if (playerHasItems()) {
+					setSelectionDelay();
+					if (_enchantManager.showingInv == false) { 
+						selected_option = 0; 
+						_enchantManager.showingInv = true; 
+					}
+				} else { setMonologueTextToNewString(["*Can't Enchant any Item.\n*(Inventory Empty)"]); }
 			}
 		}
 	}

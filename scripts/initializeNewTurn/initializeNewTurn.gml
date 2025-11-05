@@ -9,22 +9,18 @@ function initializeNewTurn(createT, created, timer, bltCreated, bW, bH, bX, bY, 
 	startMovingCards();
 }
 
-function destroyBulletsGensExtras()
-{
+function destroyBulletsGensExtras() {
 	if (instance_exists(oBulletParent)) { instance_destroy(oBulletParent); }
 	if (instance_exists(oBulletGeneratorParent)) { instance_destroy(oBulletGeneratorParent); }
 	if (instance_exists(oExtrasParent)) { instance_destroy(oExtrasParent); }		
 }
 
 //used to finish a turn, by creating the beam animation
-function finishTurn()
-{	
+function finishTurn() {	
 	if (instance_exists(oBoxSidePlatformParent)) { instance_destroy(oBoxSidePlatformParent); }
-	if (oBattleManager.playerTurn == false)
-	{
+	if (oBattleManager.playerTurn == false) {
 		destroyBulletsGensExtras();
-		with (oBattleManager)
-		{
+		with (oBattleManager) {
 			backGroundLayersVisible(layers, false);
 			setManagerValuesToStartTurn();
 			resetPlayerBattleVars();

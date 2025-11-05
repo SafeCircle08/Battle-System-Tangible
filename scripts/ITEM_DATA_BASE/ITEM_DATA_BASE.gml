@@ -39,6 +39,9 @@ global.honeyHoneyComb = createNewItem("HHComb", sHHComb, 150, sndPlayerEatingHea
 	[fullHpMessage("That taste... Thank you Glucose for existing!")],
 	["You ate the HHComb so quicly your hands got dirty."],
 	method(self, function() { healPlayer(150, sndPlayerEatingHeal); }));
+	
+global.honeyHoneyComb.enchants = [ENCHANT_POISON_FREE, ENCHANT_SLOWNESS_FREE, ENCHANT_GOLDY];
+global.honeyHoneyComb.enchanted = true;
 
 global.painKiller = createNewItem("P.Kill", sPainKillerItem, 35, sndPlayerEatingHeal,
 	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
@@ -79,4 +82,6 @@ global.hotDogWater = createNewItem("H.Water", sHGWater, 115, sndPlayerDrinkingHe
 	method(self, function() { mightHurt(3, 3); }),
 	method(self, function() { setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_2); }));
 
-fillInventory();
+fillInventory(global.cocoMilk);
+global.cocoMilk.enchants = [ENCHANT_SLOWNESS_FREE, ENCHANT_GOLDY, ENCHANT_GOLDY];
+global.cocoMilk.enchanted = true;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"addNewActionsFlavourTextPage",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"addNewActionsFlavourTextPage",
+  "parent":{
+    "name":"FlavourTextScript",
+    "path":"folders/Scripts/TEXT/FlavourTextScript.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,6 +1,5 @@
 //Utilities--------------------------------
-function resetBeamAnimationVariables()
-{
+function resetBeamAnimationVariables() {
 	global.beamAnimation = false;
 	oSoul.beamTimer = 60; 
 	with (oPlayerBeam)
@@ -10,8 +9,7 @@ function resetBeamAnimationVariables()
 	}
 }
 
-function finishBeamAnimation() 
-{
+function finishBeamAnimation()  {
 	resetBeamAnimationVariables(); 
 }
 
@@ -19,8 +17,7 @@ function startTurn() { return (global.enemyTimer < 100); }
 function endTurn() { return (global.enemyTimer > global.enemyAttackTime - 60); }
 
 
-function beamStartTurnInit()
-{
+function beamStartTurnInit() {
 	x = global.boxOriginX + global.xOffset; 
 	y = global.boxOriginY + global.yOffset;		
 }
@@ -30,16 +27,14 @@ function beamEndTurn() { y = -100; }
 
 //Used to actually start the beam animation.
 //Just calling this function, will menage everything
-function startBeamAnimation(startOfTurn = true) 
-{ 
+function startBeamAnimation(startOfTurn = true)  { 
 	if (startOfTurn == false) { destroyBulletsGensExtras(); }
 	global.beamAnimationTimer = BEAM_ANIMATION_TIMER_REF;
 }
 
 //The actual function, that menage the
 //player state, sprite, etc...
-function playerBeamAnimation(_activatedDuringTurn = false, _newState = noone)
-{
+function playerBeamAnimation(_activatedDuringTurn = false, _newState = noone) {
 	//Creates the objects that manage everything
 	if (!instance_exists(oPlayerBeam))
 	{ 

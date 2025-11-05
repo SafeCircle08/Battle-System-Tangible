@@ -1,5 +1,4 @@
-if (finishedEnchanting == false)
-{
+if (finishedEnchanting == false) {
 	if (confirmPressed()) && (placedItem != undefined) { confirmEnchant(); }
 	if (mouse_check_button_pressed(mb_right)) { 
 		if (mouseCursorIsOn(

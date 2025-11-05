@@ -1,9 +1,12 @@
 event_inherited();
 setPlayerInUseGravity(global.playerJumpStateMoveInfo.gravityRight);
 
-setPlayerToBrokenBones(SEGNALINO_LEVEL.LEVEL_3);
-setPlayerToPoisoned(SEGNALINO_LEVEL.LEVEL_5);
+/*setPlayerToBrokenBones(SEGNALINO_LEVEL.LEVEL_3);
+
 setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_2);
+*/
+
+setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_5);
 
 initializeNewTurn(0, false, 9999999, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateFree);
 oSoul.image_alpha = 1;

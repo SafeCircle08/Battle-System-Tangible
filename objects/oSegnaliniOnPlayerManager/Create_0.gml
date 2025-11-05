@@ -1,5 +1,8 @@
 image_alpha = 0;
 
+x = oSoul.x;
+y = oSoul.y;
+
 rotations = 3
 targetAngle = image_angle + 360 * rotations;
 

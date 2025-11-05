@@ -1,5 +1,4 @@
-if (!isInBulletHellSection())
-{
+if (!isInBulletHellSection()) {
 	#region VARIABLES
 	var guiX = room_width / 2;
 	var guiY = room_height;
@@ -19,8 +18,8 @@ if (!isInBulletHellSection())
 	var _dsY = camera_get_view_height(view_camera[view_current]);
 	var _border = 10;
 	
-	if (showFlavourText) && (!isEnemySpeaking()) { 
-		drawTextBoxText(flavourText, Mono, true, ord("Z"), true, true, sndBasicTxt5, 0, 0); 
+	if (showActionsFlavourText) && (!isEnemySpeaking()) { 
+		drawTextBoxText(actionsFlavourText, Mono, true, ord("Z"), true, true, sndBasicTxt5, 0, 0); 
 	}
 	
 	if (isEnemySpeaking()) { 
@@ -37,7 +36,10 @@ if (!isInBulletHellSection())
 	//Draws the player variables
 	draw_set_font(fHungryBig);
 	var _playerInfoX = BUFFER - 8;
-	var _playerInfoY = guiY - (_textBoxH) - 12;
+	var _playerInfoY = guiY - (_textBoxH) - 13;
+	
+	draw_set_colour(c_black);
+	draw_rectangle(0, _playerInfoY, room_width, _playerInfoY + 15, false);
 	
 	//Hp
 	draw_set_colour(playerHpTextColor);
@@ -87,16 +89,13 @@ if (!isInBulletHellSection())
 	//Mini player portrait
 	draw_sprite_ext(global.selectedGuiStyle.miniPortrait, 0, startButtonX + 40, _buttonY - 2, 1, 1, 0, c_white, 1);
 	
-	if (!showFlavourText)
-	{
+	if (!showActionsFlavourText) {
 		increaseMainMenuXPos();	
-		for (var i = 0; i < array_length(mainOptionsNames); i++)
-		{
+		for (var i = 0; i < array_length(mainOptionsNames); i++) {
 			draw_set_color(c_white);
 			//Draws the button
 			var _index = 0;
-			if (playerMainActionTurn())
-			{
+			if (playerMainActionTurn()) {
 				if (selected_option == i) { 
 					_index = 1;
 					draw_set_color(global.selectedGuiStyle.selectionColor);
@@ -118,7 +117,7 @@ if (!isInBulletHellSection())
 			var _nameL = string_length(text)
 			draw_sprite(_textSprite, 0, textX, textY);
 		}
-		drawTextBoxText(writtenBattleText, Mono, false, ord("Z"), true, true, sndBasicTxt5, 0, 0);
+		drawTextBoxText(battleFlavourText, Mono, false, ord("Z"), true, true, sndBasicTxt5, 0, 0);
 	}
 	else { decreaseMainMenuXPos(); }
 	#endregion

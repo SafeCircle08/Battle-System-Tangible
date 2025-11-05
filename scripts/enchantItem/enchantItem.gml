@@ -24,8 +24,7 @@ function isEnchanted(_item) {
 	return _item.enchanted;	
 }
 
-function enchantItem(_item, enchantsN = undefined)
-{
+function enchantItem(_item, enchantsN = undefined) {
 	var _changedItem = variable_clone(_item);
 	_changedItem.enchanted = true;
 	if (canEnchant(_item.enchants)) {

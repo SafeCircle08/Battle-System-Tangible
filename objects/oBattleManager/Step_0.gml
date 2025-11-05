@@ -4,8 +4,7 @@ randomize();
 if (playerMainActionTurn())
 {
 	navigatingBattle(0, 3);
-	if (confirmPressed())
-	{
+	if (confirmPressed()) {
 		decidingSubAction = true;
 		oBulletGeneratorManager.generatorCreated = false;
 		
@@ -18,9 +17,7 @@ if (playerMainActionTurn())
 	}
 }
 
-if (showFlavourText)
-{
-	//if (!isEnemySpeaking())	{ easeOutBg(); }
+if (showActionsFlavourText) {
 	if (oBlack.image_alpha > 0) { oBlack.image_alpha -= 0.05; } 
 	if (oPinkDetails.image_alpha > 0) { oPinkDetails.image_alpha -= 0.05; }
 }
@@ -37,16 +34,10 @@ if (decidingSubAction == true)
 	if (actionChoosen) { global.playerEquippedOptions[selected_option]._function(); }	
 }
 else { 
-	//To fix:
-	//When the animation of an option is still playing,
-	//if you select another option, his fadeout animation will stop playing.
-	//To fix this, make different object. (like the oEnchantOptionManager).
-	//All the animations are inside the object. You don't draw into the oBattleManager anymore.
 	global.settedMainBattleOptions[mainPressed]._fadeOutFunc();
 }
 
-if (isNotPlayerTurn())
-{
+if (isNotPlayerTurn()) {
 	global.playerHP = clamp(global.playerHP, -666, global.playerMAX_HP);
 	global.enemyTimer++; //0 -> global.enemyAttackTime
 	if (global.enemyTimer == global.enemyAttackTime - 60) { startBeamAnimation(false); }

@@ -10,7 +10,7 @@ function selectAction(main = true, _moreStepsAct = true, _sound = sndSelecting_2
 		var _pages = array_length(_flavourText);
 		ds_messages = ds_list_create();
 		
-		flavourText = _flavourText;
+		actionsFlavourText = _flavourText;
 		
 		if ((_pages >= 0) && (_moreStepsAct == false))
 		{
@@ -90,20 +90,20 @@ function goToPreviousOption(_goToPrevious = function() {}) {
 	_goToPrevious();
 }
 
-function terminateAction(_ds_list = [], _method = function() {})
-{
-	with (oBattleManager)
-	{
-		showFlavourText = true;
+function terminateAction(_ds_list = [], _method = function() {}) {
+	with (oBattleManager) {
+		oAttackBG.fadingOut = true;
+		showActionsFlavourText = true;
 		enemyTextShowed = false;
 		decidingSubAction = false;
 		showingSubWindow = false;
 		actionChoosen = false;
-		oAttackBG.fadingOut = true;
 		setSelectionDelay();
 		battleDelay = 3;
 		
-		flavourText = _ds_list;
+		for (var i = 0; i < array_length(_ds_list); i++) {
+			array_push(actionsFlavourText, _ds_list[i]);	
+		}
 		
 		closeBattleBook();
 		_method();
@@ -112,12 +112,6 @@ function terminateAction(_ds_list = [], _method = function() {})
 		hideCursor();
 		hideMirrors();
 		resetTextVars();
-		setToOriginalMonologue(); //original flavour text
-		
-		if (array_length(_ds_list) != 0)
-		{
-			ds_messages = ds_list_create();
-			for (var i = 0; i < array_length(_ds_list); i++) { ds_messages[| i] = _ds_list[i];	}
-		}
+		setToOriginalBattleFlavourText(); //original battle text
 	}
 }

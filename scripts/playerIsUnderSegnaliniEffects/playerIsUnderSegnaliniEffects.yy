@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"playerIsUnderSegnaliniEffects",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"playerIsUnderSegnaliniEffects",
+  "parent":{
+    "name":"SEGNALINI",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/SEGNALINI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

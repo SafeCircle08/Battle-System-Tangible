@@ -64,7 +64,7 @@ function advanceText(_textList, _advanceSound, _pDel = 10, _cDel = 5) {
 }
 
 function drawTextBoxText(
-	_textList, _font = Mono, isBattleFlavourText = false, 
+	_textList, _font = Mono, isActionsFlavourText = false, 
 	_confirmKey = vk_enter, inBox = true, inBattle = false, 
 	_txtSound = sndBasicTxt1, _pDel = 10, _cDel = 5,
 	_bX = 10, _bY = _bX - 1, _lSep = 15, _maxWidth = sprite_get_width(sTextBoxBg) - _bX,
@@ -101,7 +101,7 @@ function drawTextBoxText(
 		draw_sprite(_sprTextBox, 0, _txtBoxX, _txtBoxY);	
 	}
 	
-	if (isBattleFlavourText) && (oBattleManager.isEnemySpeaking()) { return; }
+	if (isActionsFlavourText) && (oBattleManager.isEnemySpeaking()) { return; }
 	
 	//Text Properties + Coords
 	var _borderX = _bX;
@@ -162,13 +162,13 @@ function drawTextBoxText(
 						oBattleManager.changeTurn();
 					} else {
 						if (oBattleManager.showingExtraMonologueText) {
-							setToOriginalMonologue();
+							setToOriginalBattleFlavourText();
 							return;
 						}
 					}
 				}
 				
-				if (isBattleFlavourText) {
+				if (isActionsFlavourText) {
 					with (oBattleManager) {
 						if (enemyTextShowed == false) { showEnemyText(); }
 						if (enemyTextShowed == true) { changeTurn(); }

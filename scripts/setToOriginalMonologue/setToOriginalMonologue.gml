@@ -1,7 +1,7 @@
-function setToOriginalMonologue(){
+function setToOriginalBattleFlavourText(){
 	with (oBattleManager) {
 		showingExtraMonologueText = false;
-		writtenBattleText = global.battleFlavourTexts[oBattleManager.flavourTextIndex];
+		battleFlavourText = global.battleFlavourTexts[oBattleManager.flavourTextIndex];
 		setToFirstPage();
 	}
 }

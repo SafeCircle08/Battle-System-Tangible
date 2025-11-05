@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"playerHasItems",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"playerHasItems",
+  "parent":{
+    "name":"ITEMS",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

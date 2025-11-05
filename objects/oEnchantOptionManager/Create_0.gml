@@ -34,13 +34,10 @@ removeBaseFX = function() {
 	}
 }
 
-placeItem = function()
-{
+placeItem = function() {
 	placeItemTimer = setTimer(placeItemTimer);
-	if (placeItemTimer == 0)
-	{
-		if (confirmPressed()) && (itemNotPlaced())
-		{
+	if (placeItemTimer == 0) {
+		if (confirmPressed()) && (itemNotPlaced()) {
 			var _selectedItem = global.equippedItems[oBattleManager.selected_option];
 			closeBattleBook();
 			createBaseFX();
@@ -82,8 +79,13 @@ playerHasGold = function() {
 	return global.playerGold >= goldCost;	
 }
 
-confirmEnchant = function()
-{
+confirmEnchant = function() {
+	
+	if (!canEnchant(placedItem.enchants)) {
+		setMonologueTextToNewString(["*Placed Item already\n on Max Enchantments\n level!"]);
+		return;
+	}
+	
 	if (playerHasGold()) && (array_length(placedItem.enchants) + 1 < 4) {
 		
 		finishedEnchanting = true;

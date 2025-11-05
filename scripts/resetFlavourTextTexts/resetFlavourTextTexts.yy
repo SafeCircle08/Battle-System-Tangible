@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"resetFlavourTextTexts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"resetFlavourTextTexts",
+  "parent":{
+    "name":"BattleManagerScripts",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/BattleManagerScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

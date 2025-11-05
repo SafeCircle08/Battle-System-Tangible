@@ -1,5 +1,4 @@
-function callItemFunctions(_itemFuncList)
-{
+function callItemFunctions(_itemFuncList) {
 	for (var i = 0; i < MAX_PROPERTIES_NUMBER; i++) { 
 		_itemFuncList[i](); 
 	}	

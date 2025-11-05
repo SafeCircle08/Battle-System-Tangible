@@ -89,8 +89,6 @@ function steamPunkEnemyBattleInfo()
 	var steamPunkBulletGenerator = 
 	[
 		oEmpyTurn, //
-		oEmpyTurn, //
-		oEmpyTurn, //
 		oRailsKnifeAttack, //
 		oBallAttack, //
 		oSpikeUpBulletGen, //
@@ -118,10 +116,31 @@ function steamPunkEnemyBattleInfo()
 	#endregion
 	#region	FLAVOUR TEXTS 
 	var steamPunkBattleFlavourTexts = [
-		["*The heat in the room is\n starting to become\n impossible to manage...", "*You should end this as\n fast possible...\n*Oh, get some Water too!"],
-		["*Everyone thinks Hell looks\n like this.", "*Hell is prolly less\n warm than this\n f*****g place."],
-		["*It smells like burned brain\n && failed equations...", "*Do equations even have\n a smell?"],
-		["*I can't wait for Winter\n to come.", "*Dark Afternoons,\n\n*(very dark afternoons)", "*Cozy Blankets,\n\n*(cozy, cozy)", "*Hoodies...\n\n*(Nirvana Ones...)", "*How Isn't that the best of\n feelings?"],
+		[
+			"*The heat in the room is\n starting to become\n impossible to manage...", 
+			"*You should end this as\n fast possible...\n*Oh, get some Water too!"
+		],
+		[
+			"*Everyone thinks Hell looks\n like this.", 
+			"*Hell is prolly less\n warm than this\n f*****g place."
+		],
+		[
+			"*It smells like burned brain\n && failed equations...", 
+			"*Do equations even have\n a smell?"
+		],
+		[
+			"*I can't wait for Winter\n to come.",
+			"*Dark Afternoons,\n\n*(very dark afternoons)",
+			"*Cozy Blankets,\n\n*(cozy, cozy)", 
+			"*Hoodies...\n\n*(Nirvana Ones...)", 
+			"*How Isn't that the best of\n feelings?"
+		],
+		[
+			"*SteamPunk is sitting in\n the Distance.",
+			"*He has a confused look on his Face.",
+			"*Or rather...",
+			"*His Mask."
+		]
 	]
 	#endregion
 	#region PORTRAITS

@@ -1,6 +1,6 @@
 function createFloatingText(_x, _y, _txtRef, _type) {
-	var dmg = instance_create_layer(_x, _y, LAYER_EFFECT_TOP_2, oFloatingText);
-	dmg.textReference = _txtRef;
-	dmg.typeIndex = _type;
-	dmg.drawColor = dmg.colors[_type];
+	var floatingText = instance_create_layer(_x, _y, LAYER_EFFECT_TOP_2, oFloatingText);
+	floatingText.textReference = _txtRef;
+	floatingText.typeIndex = _type;
+	floatingText.drawColor = floatingText.colors[_type];
 }

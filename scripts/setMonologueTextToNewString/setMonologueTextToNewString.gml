@@ -1,5 +1,7 @@
 function setMonologueTextToNewString(_newString) {
-	oBattleManager.writtenBattleText = _newString;
-	oBattleManager.showingExtraMonologueText = true;
-	resetTextVars();
+	with (oBattleManager) {
+		battleFlavourText = _newString;
+		showingExtraMonologueText = true;
+		resetTextVars();
+	}
 }

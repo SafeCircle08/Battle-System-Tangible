@@ -3,14 +3,17 @@ enum FLOATING_TEXT_TYPES {
 	SHIELD,
 	HEALTH,
 	TXT,
+	GOLD
 }
 
 colors = [
 	c_custom_red_hit_color, 
 	c_custom_shield_color, 
 	c_custom_light_green,
-	c_white
+	c_white,
+	c_yellow
 ];
+
 drawColor = undefined;
 
 gravity = 0.05;

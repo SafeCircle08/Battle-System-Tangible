@@ -7,4 +7,4 @@ if (timer > 0) {
 		hitPlayer(_brokenBonesDmg);
 		createBonesParticles();
 	}
-} else { destroySegnalino(); }
+} else { removeRealSegnalino(); }

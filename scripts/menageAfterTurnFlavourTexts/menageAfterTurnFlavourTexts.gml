@@ -3,13 +3,13 @@ function menageAfterTurnFlavourTexts() {
 	var _flavourTexts = [flavourPlayerHurt, shieldDestroyed];
 	
 	var _l = array_length(_flavourTexts);
-	var _stringsToAdd = _flavourTexts[irandom_range(0, _l - 1)]();
-	var _refString = flavourText;
+	var _index = arrayGetValidIndex(_flavourTexts);
+	var _stringsToAdd = _flavourTexts[_index]();
+	var _refString = actionsFlavourText;
 	with (oBattleManager) {
 		for (var i = 0; i < array_length(_stringsToAdd); i++) {
 			var _actualString = _stringsToAdd[i];
 			_refString = addStringToArray(_refString, _actualString);
 		}
 	}
-	return _refString;
 }

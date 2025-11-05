@@ -5,10 +5,12 @@ event_inherited();
 segnalinoSprite = sBrokenBonesProperty;
 createSegnalino(segnalinoSprite);
 bonesFrequency = 0;
-printSegnalinoInfos();
+
+removeRealSegnalino = function() {
+	destroySegnalino();	
+}
 
 bonesSprs = [sBrokenBone_1, sBrokenBone_2, sBrokenBone_3, sBrokenBone_4];
-
 
 createBonesParticles = function() {
 	var _boneN = irandom_range(2, 4) * level;

@@ -6,7 +6,10 @@ layers = ["LoopBg_1", "LoopBg_2"];
 textFinishedTimer = TEXT_FINISHED_TIMER;
 
 flavourTextIndex = 0;
-flavourText = [];
+actionsFlavourText = []; //text about a specific action
+
+showingExtraMonologueText = false;
+battleFlavourText = global.battleFlavourTexts[flavourTextIndex]; //texts specific to the battle 
 
 global.borderWidth = 100;
 global.borderHeight = 100;
@@ -32,7 +35,7 @@ page = 0;
 speechSpeed = 0.5;
 ds_messages = ds_list_create();
 messageCounter = 0;
-showFlavourText = false;
+showActionsFlavourText = false;
 messageTimer = 0;
 timeBeforePressed = 15;
 enemyTextShowed = false;
@@ -107,40 +110,43 @@ isEnemySpeaking = function()
 playerMainActionTurn = function()
 {
 	return (playerTurn == true) &&
-		   (showFlavourText == false) && 
+		   (showActionsFlavourText == false) && 
 		   (decidingSubAction == false)	
 }
 
 isNotPlayerTurn = function()
 {
 	return (playerTurn == false) &&
-		   (showFlavourText == false)
+		   (showActionsFlavourText == false)
 }
 
 playerIsDefended = function() {
 	return defended;	
 }
 
-goToBulletHellSection = function()
-{
+goToBulletHellSection = function() {
 	resetTextVars();
 	enemyTextShowed = true;
-	showFlavourText = false;
+	showActionsFlavourText = false;
 	playerTurn = false; 
 	messageCounter = 0;
 }
 
-changeTurn = function()
-{
+changeTurn = function() {
 	resetTextVars();
-	showFlavourText = false;
+	showActionsFlavourText = false;
 	playerTurn = !playerTurn; 
 	buttonFrame = 0;
 	messageCounter = 0;
+	
+	//GUI->battleBox
 	if (playerTurn == false) {
 		oBulletGeneratorManager.createGenerator();
 		oBattleBox.visible = true;
 		enemyCanShowText = false;
+	} else {
+		//battleBox->GUI
+		enemyTextShowed = false;
 	}
 }
 
@@ -150,26 +156,21 @@ increaseTurn = function() {
 	turnNumber += 1;		
 }
 
-showingExtraMonologueText = false;
-writtenBattleText = global.battleFlavourTexts[flavourTextIndex];
-
 setToStartTurn = function() {
+	flavourTextIndex = 0;
 	selected_option = 0;
-	enemyTextShowed = true;
-	showFlavourText = true;
+	showActionsFlavourText = true;
 	actualDrawAlpha = 0;
 	oBattleBox.visible = false;
 	global.enemyTimer = 0;
 	global.getTextBoxInputs = true;
 	
-	flavourText = ["*Turn Finished."];
-	flavourTextIndex = 0;
+	actionsFlavourText = ["*Turn Finished."];
+	
 	var _flavourTextProbs = irandom_range(0, 7);
-	if (_flavourTextProbs == 6) {
-		menageAfterTurnFlavourTexts(); 
-		flavourTextIndex = getRandomIndex(global.battleFlavourTexts);
-	}
-	writtenBattleText = global.battleFlavourTexts[flavourTextIndex];
+	if (_flavourTextProbs == 6) { menageAfterTurnFlavourTexts(); }
+	flavourTextIndex = getRandomIndex(global.battleFlavourTexts);
+	battleFlavourText = global.battleFlavourTexts[flavourTextIndex];
 }
 
 //The effect

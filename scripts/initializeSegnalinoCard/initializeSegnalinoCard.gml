@@ -3,6 +3,6 @@ function initSegnalinoCard(_segInst) {
 		if (createdCard != undefined) { removeSegnalinoCard(); }
 		addSegnalinoCard();
 		createdCard.cardSetValues();
-		printSegnalinoInfos();	
+		//printSegnalinoInfos();	
 	}
 }

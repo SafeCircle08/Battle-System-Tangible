@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"floatingTextSpecificTypeExists",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"floatingTextSpecificTypeExists",
+  "parent":{
+    "name":"FloatingText",
+    "path":"folders/Scripts/TEXT/FloatingText.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

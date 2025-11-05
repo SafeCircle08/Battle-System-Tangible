@@ -124,3 +124,5 @@ createSegnalino = function(_segnalinoSpr) {
 	segnalinoSprite = _segnalinoSpr;
 	addSegnalino();
 }
+	
+removeRealSegnalino = function() {}
