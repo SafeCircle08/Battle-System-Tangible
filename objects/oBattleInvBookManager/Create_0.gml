@@ -87,25 +87,3 @@ scrollingBookDown = function(upWheelAmount = scrollingAmount) {
 	bookY -= upWheelAmount;
 	bookY = clamp(bookY, -bookBgH / 2, bookBgH);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

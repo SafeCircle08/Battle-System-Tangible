@@ -28,8 +28,7 @@ setUpCursorVars = function(_angle = global.choosenCursor.angle, _spd = global.ch
 	}
 }
 
-cursorCursing = function()
-{
+cursorCursing = function() {
 	with (oCustomCursor) {
 		x = mouse_x;
 		y = mouse_y;
@@ -47,8 +46,7 @@ cursorCursing = function()
 	if (mouse_check_button_released(mb_left)) { resetCursor(_cursor); }
 }
 
-cursorOnClick = function(_cursor)
-{
+cursorOnClick = function(_cursor) {
 	if (_cursor.clickSound != undefined) {
 		if (_cursor.enableSounds) { playCursorClickSounds(_cursor, _cursor.playSoundType); }
 	}
@@ -62,10 +60,8 @@ resetCursor = function(_cursor) {
 	sprite_index = _cursor.sprite;
 }
 
-playCursorClickSounds = function(_cursor, _playWhenSilence = CURSOR_PLAY_SOUND_WHEN_SILENCE)
-{
-	if (is_array(_cursor.clickSound))
-	{
+playCursorClickSounds = function(_cursor, _playWhenSilence = CURSOR_PLAY_SOUND_WHEN_SILENCE) {
+	if (is_array(_cursor.clickSound)) {
 		var _sndList = _cursor.clickSound;
 		var _soundsN = array_length(_sndList);
 		var _index = irandom_range(0, _soundsN - 1);
@@ -94,8 +90,7 @@ playCursorClickSounds = function(_cursor, _playWhenSilence = CURSOR_PLAY_SOUND_W
 	}
 }
 
-setChooseCursor = function(_selectedCursorSpr)
-{
+setChooseCursor = function(_selectedCursorSpr) {
 	if (instance_exists(oCustomCursor)) { instance_destroy(oCustomCursor); }    
 	global.choosenCursor = _selectedCursorSpr;
 	var _newCursor = instance_create_layer(mouse_x, mouse_y, LAYER_CURSOR, oCustomCursor);	

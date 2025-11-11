@@ -88,17 +88,15 @@ function steamPunkEnemyBattleInfo()
 	#region BULLET PATTERNS
 	var steamPunkBulletGenerator = 
 	[
-		oEmpyTurn, //
-		oRailsKnifeAttack, //
+		oEmpyTurn,
+		oSteamPunkMaskIdle, //
+		oSteamPunkMaskIdle, //
+		oSteamPunkMaskIdle, //
 		oBallAttack, //
 		oSpikeUpBulletGen, //
-		oSpikeDownBulletGen, //
 		oKnifeBulletGen, //
 		oDocumentBulletGen, //
 		oCrossSwordsBulletGen, //5 //
-		oAnswersBulletGen,  //
-		oAnswersBulletGen, //
-		oAnswersBulletGen, //
 		oKnifeGenerator, //
 		oKnifeGenerator_FAST, //
 		oAllDirectionSteamGen,  //
@@ -137,7 +135,7 @@ function steamPunkEnemyBattleInfo()
 		],
 		[
 			"*SteamPunk is sitting in\n the Distance.",
-			"*He has a confused look on his Face.",
+			"*He has a confused look\n on his Face.",
 			"*Or rather...",
 			"*His Mask."
 		]

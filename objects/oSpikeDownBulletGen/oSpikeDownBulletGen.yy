@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Turns: 1-5",
-    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/BULLETS/BULLETS/BulletsGenerators/Turns: 1-5.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/BULLETS_PATTERNS/BULLETS/BulletsGenerators/Turns: 1-5.yy",
   },
   "parentObjectId":{
     "name":"oBulletGeneratorParent",

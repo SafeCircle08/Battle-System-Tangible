@@ -14,5 +14,7 @@ draw_set_alpha(drawAlpha);
 draw_set_font(fHungrySkinny);
 draw_sprite_stretched(_propBgSpr, 0, _propDescBgX, descBgY + _propDescBgY, _propDescW * 2, _propDescH);
 draw_text_ext_transformed(_propDescBgX + _borderX, descBgY + _propDescBgY + _borderY, description, 20, _propDescW + 30, 0.5, 0.5, 0);
+if (enchFx) { setGlintShader(); }
 draw_sprite(detSprite, 0, _propDescBgX + _propDescW - _detSprW - _borderX / 2, descBgY + _propDescBgY + _borderY);
+shader_reset();
 draw_set_alpha(1);

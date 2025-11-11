@@ -14,7 +14,7 @@ function finishBeamAnimation()  {
 }
 
 function startTurn() { return (global.enemyTimer < 100); }
-function endTurn() { return (global.enemyTimer > global.enemyAttackTime - 60); }
+//function endTurn() { return (global.enemyTimer > global.enemyAttackTime - 60); }
 
 
 function beamStartTurnInit() {
@@ -36,19 +36,15 @@ function startBeamAnimation(startOfTurn = true)  {
 //player state, sprite, etc...
 function playerBeamAnimation(_activatedDuringTurn = false, _newState = noone) {
 	//Creates the objects that manage everything
-	if (!instance_exists(oPlayerBeam))
-	{ 
+	if (!instance_exists(oPlayerBeam)) { 
 		instance_create_layer(x, y, LAYER_EXTRAS_OBJECTS, oPlayerBeam); 
 	}
 	
 	//oSoul Variables set up
-	with (oSoul)
-	{
+	with (oSoul) {
 		beamTimer = setTimer(beamTimer);
-		if (beamTimer == 30)
-		{		
-			if (_activatedDuringTurn == false)
-			{
+		if (beamTimer == 30) {		
+			if (_activatedDuringTurn == false) {
 				if (startTurn()) { beamStartTurnInit(); }
 				else { beamEndTurn(); }
 			}

@@ -7,7 +7,11 @@ function callItemFunctions(_itemFuncList) {
 function callItemEnchantments(_itemEnchList) {
 	var _enchantsN = array_length(_itemEnchList);
 	for (var i = 0; i < _enchantsN; i++) {
-		_itemEnchList[i][ENCHANT_FUNCTION]();	
+		_itemEnchList[i][ENCHANT_FUNCTION]();
+		var _enchFx = instance_create_layer(mouse_x + 7 * i, mouse_y - 8 * i, LAYER_EFFECT_TOP_3, oEnchFxTest);
+		_enchFx.frame = irandom_range(10, 90);
+		_enchFx.spriteRef = _itemEnchList[i][ENCHANT_SPRITE];
+		_enchFx.setNewSprite();
 	}
 }
 

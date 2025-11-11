@@ -8,6 +8,7 @@ drawAlpha = 0;
 
 fadingDone = false;
 fadingOut = false;
+enchFx = false;
 
 fadeInFunc = function(alphaAdd, xAdd) {
 	if (drawAlpha < 1) {

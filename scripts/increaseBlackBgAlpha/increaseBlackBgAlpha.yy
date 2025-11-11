@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"increaseBlackBgAlpha",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"increaseBlackBgAlpha",
+  "parent":{
+    "name":"BlackBg",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/INSIDE_BATTLE_BOX/BlackBg.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

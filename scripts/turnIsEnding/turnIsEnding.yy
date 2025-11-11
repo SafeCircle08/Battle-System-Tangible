@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"turnIsEnding",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"turnIsEnding",
+  "parent":{
+    "name":"In_battle",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/generalUse/In_battle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

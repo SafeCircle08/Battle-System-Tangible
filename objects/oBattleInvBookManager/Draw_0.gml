@@ -11,8 +11,7 @@ var _yAdder = 0;
 var hoovering = false;
 
 //Draws the text
-for (var i = 0; i < array_length(global.propertiesKind); i++)
-{
+for (var i = 0; i < array_length(global.propertiesKind); i++) {
 	var _miniPropBorder = 7;
 	var _miniPropW = sprite_get_width(sHealProperty);
 	var _miniPropH = sprite_get_height(sHealProperty);
@@ -27,14 +26,12 @@ for (var i = 0; i < array_length(global.propertiesKind); i++)
 	draw_sprite(_propText, 0, _propTextX, _propTextY + _yAdder);
 	
 	//Draws the actual mini props 
-	for (var j = 0; j < _rowsOfProps; j++)
-	{
+	for (var j = 0; j < _rowsOfProps; j++) {
 		var _miniPropX = bookX + _miniPropBorder;
 		var _miniPropY = _propTextY + _miniPropBorder * 2 + (_miniPropH * j + 1 * j) + _yAdder;
 		z = 1;
 		
-		for (var k = 1 + 5 * j; k < 6 + 5 * j; k++) {
-			
+		for (var k = 1 + 5 * j; k < 6 + 5 * j; k++) {	
 			var _mPropX = _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1));
 			var _mPropY = _miniPropY;
 			var _mPropW = _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1)) + 10;
@@ -42,19 +39,21 @@ for (var i = 0; i < array_length(global.propertiesKind); i++)
 			
 			if (mouseCursorIsOn(_mPropX, _mPropY, _mPropW, _mPropH, true)) {
 				hoovering = true;
+				var _actualProp = global.propertiesKind[i][k];
 				
 				//Creates the FX
 				if (!instance_exists(oMiniPropCardFX)) {
 					var _fx = instance_create_layer(_miniPropX + 5 + (_miniPropW * (z - 1) + 1 * (z - 1)), _miniPropY + 5, LAYER_EFFECT_TOP_2, oMiniPropCardFX);
-					_fx.sprite_index = global.propertiesKind[i][k].sprite;
+					_fx.sprite_index = _actualProp.sprite;
 					_fx.duplicateSprite();
 					_fx.setSpriteOffSet();
 				}
 				
 				if (!instance_exists(oBattleInvBookPropDesc)) {
 					var _propDescObj = instance_create_layer(x, y, LAYER_EFFECT_TOP, oBattleInvBookPropDesc);
-					_propDescObj.description = global.propertiesKind[i][k].desc;
-					_propDescObj.detSprite = global.propertiesKind[i][k].detailedSprite;
+					_propDescObj.description = _actualProp.desc;
+					_propDescObj.detSprite = _actualProp.detailedSprite;
+					_propDescObj.enchFx = _actualProp.enchanted;
 				}	
 			}
 				

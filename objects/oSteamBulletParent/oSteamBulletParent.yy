@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Steam Bullets",
-    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/BULLETS/BULLETS/BulletsObjects/Steam Bullets.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/BULLETS_PATTERNS/BULLETS/BulletsObjects/Steam Bullets.yy",
   },
   "parentObjectId":{
     "name":"oBulletParent",

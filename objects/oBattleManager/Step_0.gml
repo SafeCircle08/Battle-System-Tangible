@@ -1,8 +1,7 @@
 //feather disable all
 randomize();
 
-if (playerMainActionTurn())
-{
+if (playerMainActionTurn()) {
 	navigatingBattle(0, 3);
 	if (confirmPressed()) {
 		decidingSubAction = true;
@@ -23,10 +22,8 @@ if (showActionsFlavourText) {
 }
 
 //Navigating sub actions windows (ex. inventory menu or battle sub menu)
-if (decidingSubAction == true)
-{	
-	if (playingGuiAnimation) 
-	{ 
+if (decidingSubAction == true) {	
+	if (playingGuiAnimation) { 
 		global.settedMainBattleOptions[mainPressed]._fadeInFunc(); 
 	} else { global.settedMainBattleOptions[mainPressed]._fadeOutFunc(); }
 	

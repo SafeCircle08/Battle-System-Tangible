@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"battleBoxMacros",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"battleBoxMacros",
+  "parent":{
+    "name":"BattleBox",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/INSIDE_BATTLE_BOX/BattleBox.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

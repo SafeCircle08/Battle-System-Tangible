@@ -11,8 +11,8 @@
   "name":"oBattleManager",
   "overriddenProperties":[],
   "parent":{
-    "name":"MANAGERS",
-    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/MANAGERS.yy",
+    "name":"BattleBook",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/MANAGERS/Menu-GUI/BattleBook.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -82,6 +82,12 @@ global.hotDogWater = createNewItem("H.Water", sHGWater, 115, sndPlayerDrinkingHe
 	method(self, function() { mightHurt(3, 3); }),
 	method(self, function() { setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_2); }));
 
-fillInventory(global.cocoMilk);
-global.cocoMilk.enchants = [ENCHANT_SLOWNESS_FREE, ENCHANT_GOLDY, ENCHANT_GOLDY];
-global.cocoMilk.enchanted = true;
+global.cheeseCake = createNewItem("Ch.Cake", sCheeseCakeItem, 300, sndPlayerEatingHeal,
+	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
+	[hpMessage("Traditional Sunday Dessert.", 300)],
+	[fullHpMessage("That was so fucking good TwT")],
+	["The Dessert of Desserts."],
+	method(self, function() { healPlayer(300, sndPlayerEatingHeal); }))
+
+fillInventory(global.cheeseCake);
+global.playerHP = 500;

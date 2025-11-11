@@ -6,6 +6,7 @@ function initializeNewTurn(createT, created, timer, bltCreated, bW, bH, bX, bY, 
 	setBoxOrigin(bX, bY);
 	playerChangeState(_playerState, function() {})
 	backGroundLayersVisible(oBattleManager.layers, true);
+	resetBlackBattleBgAlpha();
 	startMovingCards();
 }
 

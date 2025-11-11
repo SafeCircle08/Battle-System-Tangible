@@ -87,13 +87,12 @@ confirmEnchant = function() {
 	}
 	
 	if (playerHasGold()) && (array_length(placedItem.enchants) + 1 < 4) {
-		
 		finishedEnchanting = true;
 		placedItem = enchantItem(placedItem, 3);
 		global.playerGold -= goldCost;
 		removeBaseFX();
 		fadingOut = true;
-		terminateAction(["<>You enchanted an Item.\n<>You'll be able to use it\n  next turn."]);
+		terminateAction();
 	}
 }
 
