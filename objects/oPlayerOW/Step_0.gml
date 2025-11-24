@@ -17,12 +17,11 @@ if (hsp == 0) and (vsp == 0) { image_speed = 0; image_index = 0; }
 
 if (keyboard_check_pressed(vk_space)) { shading = true }
 
-if (canMove == true)
-{
-	if (key_upPr) { sprite_index = sPlayerOwBehind; }
-	if (key_downPr) { sprite_index = sPlayerOwFront; }
-	if (key_rightPr) { sprite_index = sPlayerOwRight; }
-	if (key_leftPr) { sprite_index = sPlayerOwLeft; }
+if (canMove == true) {
+	if (key_upPr) { sprite_index = sPlayerOwBehind; playerFacing = PLAYER_FACING_CHECK.FACING_UP; }
+	if (key_downPr) { sprite_index = sPlayerOwFront; playerFacing = PLAYER_FACING_CHECK.FACING_DOWN; }
+	if (key_rightPr) { sprite_index = sPlayerOwRight; playerFacing = PLAYER_FACING_CHECK.FACING_RIGHT; }
+	if (key_leftPr) { sprite_index = sPlayerOwLeft; playerFacing = PLAYER_FACING_CHECK.FACING_LEFT;}
 	
 	if (key_down) { sprite_index = sPlayerOwFront; image_speed = 1; }
 	if (key_left) { sprite_index = sPlayerOwLeft; image_speed = 1; }
@@ -31,71 +30,25 @@ if (canMove == true)
 
 	if (place_meeting(x + hsp, y, oWall)) { hsp = 0; image_speed = 0; image_index = 0; } 
 	if (place_meeting(x, y + vsp, oWall)) { vsp = 0; image_speed = 0; image_index = 0; } 
-	
+		
 	x += hsp;
 	y += vsp;
 }
 
 //Change Room trigger
 var _roomTrigger = instance_place(x, y, oChangeRoomTrigger);
-if (_roomTrigger) && (!instance_exists(oTransitionRoom))
-{
+if (_roomTrigger) && (!instance_exists(oTransitionRoom)) {
 	var _destRoom = _roomTrigger.rm_destination; 
 	var _playerX = _roomTrigger.destPlayerX;
 	var _playerY = _roomTrigger.destPlayerY;
 	startChangeRoom(_destRoom, _playerX, _playerY);
 }
 
-if (instance_exists(oBasicTextHolder) || instance_exists(oInstanceCharText))  
-{ 
-	image_speed = 0;
-	canMove = false; 
+if (playerOWReadingText()) { 
+	stopMovement();
 	exit; 
 } 
 
 //---------- TEXT MENAGEMENT----------
 
-var _actualTrigger = instance_place(x, y, oTextTrigger);
-var _actualTxtCharTrigger = instance_place(x, y, oTextCharacterTrigger);
-
-//If the player is colliding with the normal
-//text trigger (no character face)
-if (_actualTrigger) && (keyboard_check_pressed(vk_enter)) 
-{
-	//checkingText(_actualTrigger, oBasicTextHolder);	
-	if (_actualTrigger.playerShouldFace == "All")
-	{
-		var _myText = instance_create_layer(x, y, "Text", oBasicTextHolder);
-		_myText.text = _actualTrigger.textList;
-	}
-	else
-	{
-		if (sprite_index == _actualTrigger.playerShouldFace)
-		{
-			var _myText = instance_create_layer(x, y, "Text", oBasicTextHolder);
-			_myText.text = _actualTrigger.textList;	
-			_myText.refObj = _actualTrigger.npcReference;
-		}
-	}
-}
-
-//If the player is collding with a character text box
-//(adds all the different faces, sounds, etc...)
-if (_actualTxtCharTrigger) && (keyboard_check_pressed(vk_enter))
-{
-	if (_actualTxtCharTrigger.playerShouldFace == "All")
-	{
-		var _myText = instance_create_layer(x, y, "Text", oInstanceCharText);
-		_myText.character = _actualTxtCharTrigger.refChar;
-		_myText.text = _actualTxtCharTrigger.textList;
-	}
-	else
-	{
-		if (sprite_index == _actualTxtCharTrigger.playerShouldFace)
-		{
-			var _myText = instance_create_layer(x, y, "Text", oInstanceCharText);
-			_myText.character = _actualTxtCharTrigger.refChar;
-			_myText.text = _actualTxtCharTrigger.textList;		
-		}
-	}				
-}
+checkingText();

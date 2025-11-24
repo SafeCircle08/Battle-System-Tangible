@@ -54,8 +54,7 @@ function initializeSubBattleMenuAnimations()
 	}	
 }
 
-function buildNewMainMenuOptions(_name, _decoSprite, _textSprite, selectFunc, func, fadeInFunc, fadeOutFunc)
-{
+function buildNewMainMenuOptions(_name, _decoSprite, _textSprite, selectFunc, func, fadeInFunc, fadeOutFunc) {
 	return {
 		name: _name,
 		decoSprite: _decoSprite,
@@ -67,11 +66,10 @@ function buildNewMainMenuOptions(_name, _decoSprite, _textSprite, selectFunc, fu
 	}
 }
 
-function initializePlayerMainBattleMenuOptions()
-{	
+function initializePlayerMainBattleMenuOptions() {	
 	choosing_battle_option = buildNewMainMenuOptions("(SUB)", sAttackDeco, sSubTextSprite, selectedBattleOption, navigatingSubMenuFunction,
 			method(self, function() { with (oBattleManager) { subMenuFadeIn(); }}),
-			method(self, function() { with (oBattleManager) { subMenuFadeOut(); }}))
+			method(self, function() { with (oBattleManager) { subMenuFadeOut();}}));
 
 	choosing_inventory_option = buildNewMainMenuOptions("(ITEM)", sInvDeco, sInventoryTextSprite, selectedInventoryOption, navigatingInventoryFunction,
 			method(self, function() { with (oBattleManager) { inventoryFadeIn();}}),
@@ -110,5 +108,5 @@ function initializePlayerMainBattleMenuOptions()
 	
 	for (var i = 0; i < array_length(global.settedMainBattleOptions); i++) {
 		mainOptionsNames[i] = global.settedMainBattleOptions[i].name;
-	};
+	}
 }

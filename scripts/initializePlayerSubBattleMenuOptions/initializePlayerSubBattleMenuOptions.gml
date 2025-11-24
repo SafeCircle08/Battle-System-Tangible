@@ -3,8 +3,7 @@
 #macro SUB_MENU_UNBIND 1
 #macro SUB_MENU_SPECIAL_OPTION 2
 
-function buildNewSubOption(_name, _textSprite, selectFunc, func, actionsFlavourText, specialFlavourText)
-{
+function buildNewSubOption(_name, _textSprite, selectFunc, func, actionsFlavourText, specialFlavourText) {
 	return {
 		name: _name,
 		textSprite: _textSprite,
@@ -14,8 +13,7 @@ function buildNewSubOption(_name, _textSprite, selectFunc, func, actionsFlavourT
 		_failedAttackFlavourText: specialFlavourText //gonna changw this to -> special flavour text (for special occasions)
 	}
 }
-function initializePlayerSubBattleMenuOptions()
-{	
+function initializePlayerSubBattleMenuOptions() {	
 	attack_function = buildNewSubOption("(ATK)", sAttackTextSprite, selectedAttackFunction, attackFunction,
 				 ["*The player decided\n to attack!"], 
 				 ["*The player has tried\n to ATTACK..."]);
@@ -30,7 +28,7 @@ function initializePlayerSubBattleMenuOptions()
 	global.playerOptions = {
 		attack_function,
 		unbind_function,
-		defence_function,
+		defence_function
 	}
 
 	//The options the player can actually use into the game

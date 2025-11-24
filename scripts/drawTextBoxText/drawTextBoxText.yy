@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"drawTextBoxText",
   "parent":{
-    "name":"textScripts",
-    "path":"folders/Scripts/TEXT/textScripts.yy",
+    "name":"MAIN_TEXT",
+    "path":"folders/Scripts/TEXT/textScripts/MAIN_TEXT.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

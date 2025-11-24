@@ -3,5 +3,5 @@ function shield_shards() {
 	audio_play_sound(sndShieldBroke, 50, false, global.soundGain);
 	var _x = oSoul.x;
 	var _y = oSoul.y;
-	createGravityParticles(sShieldShard, LAYER_BULLETS, 5, _x, _y);
+	createGravityParticles(sShieldShard, LAYER_BULLETS, 5, _x, _y, 1);
 }

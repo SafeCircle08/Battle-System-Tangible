@@ -37,7 +37,7 @@ removeBaseFX = function() {
 placeItem = function() {
 	placeItemTimer = setTimer(placeItemTimer);
 	if (placeItemTimer == 0) {
-		if (confirmPressed()) && (itemNotPlaced()) {
+		if (confirmPressed(false)) && (itemNotPlaced()) {
 			var _selectedItem = global.equippedItems[oBattleManager.selected_option];
 			closeBattleBook();
 			createBaseFX();
@@ -51,8 +51,7 @@ placeItem = function() {
 }
 
 removeItem = function() {
-	if (!itemNotPlaced())
-	{
+	if (!itemNotPlaced()) {
 		var _myFX = instance_create_layer(itemSpriteX + xAdder + 16, itemSpriteY + 16, LAYER_EFFECT_TOP, oChangeAlphaDimObjFX);
 		var _sX = 1; 
 		var _fX = 5;
@@ -80,7 +79,6 @@ playerHasGold = function() {
 }
 
 confirmEnchant = function() {
-	
 	if (!canEnchant(placedItem.enchants)) {
 		setMonologueTextToNewString(["*Placed Item already\n on Max Enchantments\n level!"]);
 		return;
@@ -88,7 +86,7 @@ confirmEnchant = function() {
 	
 	if (playerHasGold()) && (array_length(placedItem.enchants) + 1 < 4) {
 		finishedEnchanting = true;
-		placedItem = enchantItem(placedItem, 3);
+		placedItem = enchantItem(placedItem);
 		global.playerGold -= goldCost;
 		removeBaseFX();
 		fadingOut = true;
@@ -96,8 +94,7 @@ confirmEnchant = function() {
 	}
 }
 
-setToStartStateItemVars = function()
-{
+setToStartStateItemVars = function() {
 	if (!itemNotPlaced()) { removeItem(); }
 	removeBaseFX();
 	placeItemTimer = 2;

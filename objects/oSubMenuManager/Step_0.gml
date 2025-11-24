@@ -13,14 +13,9 @@ for (var i = 0; i < _optionNumber; i++)
 }
 
 battleDelay = setTimer(battleDelay);
-if (battleDelay == 0)
-{
-	if (oBattleManager.showingSubSubWindow == false)
-	{
-		navigatingBattle(0, _optionNumber - 1);
-		if (confirmPressed())
-		{
-			_optionList[oBattleManager.selected_option]._selectFunction();
-		}
+if (battleDelay == 0) {
+	navigatingBattle(0, _optionNumber - 1);
+	if (confirmPressed()) {
+		_optionList[oBattleManager.selected_option]._selectFunction();
 	}
 }

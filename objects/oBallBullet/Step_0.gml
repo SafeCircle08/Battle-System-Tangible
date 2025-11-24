@@ -10,8 +10,7 @@ var _yU = global.border_u;
 var _yD = global.border_d;
 var _h = sprite_get_height(sprite_index) / 4;
 
-if (y + _h >= _yD) && (collided == false)
-{  
+if (y + _h >= _yD) && (collided == false) {  
 	collided = true;
 	hspeed = 0;
 	vspeed = 0;

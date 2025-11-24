@@ -16,13 +16,13 @@ if (playerMainActionTurn()) {
 	}
 }
 
-if (showActionsFlavourText) {
+if (showActionsFlavourText) { 
 	if (oBlack.image_alpha > 0) { oBlack.image_alpha -= 0.05; } 
 	if (oPinkDetails.image_alpha > 0) { oPinkDetails.image_alpha -= 0.05; }
 }
 
 //Navigating sub actions windows (ex. inventory menu or battle sub menu)
-if (decidingSubAction == true) {	
+if (decidingSubAction == true) {
 	if (playingGuiAnimation) { 
 		global.settedMainBattleOptions[mainPressed]._fadeInFunc(); 
 	} else { global.settedMainBattleOptions[mainPressed]._fadeOutFunc(); }

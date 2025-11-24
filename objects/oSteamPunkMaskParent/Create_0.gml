@@ -49,6 +49,7 @@ maskEnterIn = function() {
 maskSetFadingOut = function() {
 	maskSetBaseState();
 	maskOnFadingOut = true;	
+	image_speed = 1;
 }
 
 maskFadingOut = function() {

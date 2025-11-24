@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"playerFillShield",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"playerFillShield",
+  "parent":{
+    "name":"playerShield",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/HEALTH_&_DAMAGE/playerShield.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

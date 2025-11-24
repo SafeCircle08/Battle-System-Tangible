@@ -1,6 +1,5 @@
 //Initialize function
-function steamPunkEnemyBattleInfo()
-{
+function steamPunkEnemyBattleInfo() {
 	#region DIALOGUE
 	//Dialogue list
 	var steamEnemyText =
@@ -86,8 +85,7 @@ function steamPunkEnemyBattleInfo()
 	];
 	#endregion
 	#region BULLET PATTERNS
-	var steamPunkBulletGenerator = 
-	[
+	var steamPunkBulletGenerator = [
 		oEmpyTurn,
 		oSteamPunkMaskIdle, //
 		oSteamPunkMaskIdle, //

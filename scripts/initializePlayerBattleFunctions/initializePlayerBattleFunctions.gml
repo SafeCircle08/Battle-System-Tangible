@@ -149,14 +149,12 @@ function initializeHealCheatFunction()
 {
 	selectedHealCheatOption = function() { terminateAction(["Player healed himself!!!"], method(self, function() { global.playerHP += 1; })) }	
 }
-function initializeAttackFunctions()
-{
+function initializeAttackFunctions() {
 	selectedAttackFunction = function() { 
 		selectAction(false, false, sndSelecting_2, []); 
 	}
 	
-	attackFunction = function()
-	{
+	attackFunction = function() {
 		hideMirrors();
 		easeInBg(1);
 		
@@ -169,8 +167,7 @@ function initializeAttackFunctions()
 		var eqDrumP = global.eqDrumPad;
 		var eqSc = global.eqScope;
 		//CREO GLI OGGETTI 
-		if (global.playerAttackTime == 1)
-		{
+		if (global.playerAttackTime == 1) {
 			instance_create_layer(_padX, _padY, "Instances", oDrumPadBase);
 			instance_create_layer(_padX, _padY, LAYER_BULLETS, eqDrumP);
 			instance_create_layer(_padX, _padY, LAYER_SCOPE, eqSc);
@@ -187,10 +184,8 @@ function initializeAttackFunctions()
 			);
 			return;
 		}
-		else
-		{
-			if (instance_number(oShell) == 0)
-			{
+		else {
+			if (instance_number(oShell) == 0) {
 				//TODO:
 				/*	
 					Da fare che alla fine dei colpi,
@@ -237,7 +232,7 @@ function initializeDefenceFunctions()
 }
 function initializePrayFunctions()  {
 	selectedPrayOption = function() { 
-		selectAction(true, true, sndSelecting_2, ["*You deciced to pray."]);
+		selectAction(true, true, sndSelecting_2, ["*You decided to pray."]);
 		if (!instance_exists(oAdSlidingManager)) {
 			var _downAds = instance_create_layer(x, y, layer, oAdSlidingManager);
 			_downAds._sign = 1;
@@ -261,7 +256,7 @@ function initializePrayFunctions()  {
 				function() { 
 					var _heal = irandom_range(150, 300);
 					fadeInOutAnimationsParent.messages = 
-					["*You decided to pray!", "*Gained " + string(_heal) + " HPs!"];
+					["*Gained " + string(_heal) + " HPs!"];
 					if (global.playerHP + _heal >= global.playerMAX_HP) { 
 						array_push(fadeInOutAnimationsParent.messages, "*HP MAXED OUT!")
 					}
@@ -287,7 +282,7 @@ function initializePrayFunctions()  {
 					}
 				}
 			];
-			var _index = 3;
+			var _index = arrayGetValidIndex(_possPrayFuncs);
 			var _choosedPrayFunc = _possPrayFuncs[_index];
 			_choosedPrayFunc(); 
 		}));
@@ -332,10 +327,10 @@ function initializeEnchantingFunctions() {
 			}
 		}
 	}
+	
 }
 
-function initializeAllCreatedFunctions()
-{
+function initializeAllCreatedFunctions() {
 	initializeNavigatingBattleOptionFunctions();
 	initializeDefend_old_OptionFunction();
 	initialiseCryOptionFunction();

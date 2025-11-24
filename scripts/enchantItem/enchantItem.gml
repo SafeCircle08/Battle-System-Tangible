@@ -31,7 +31,7 @@ function enchantItem(_item, enchantsN = undefined) {
 		if (enchantsN == undefined) {
 			addEnchant(_changedItem.enchants);	
 		} else {
-			for (var i = 0; i < enchantsN; i++) {
+			for (var i = array_length(_item.enchants); i < enchantsN; i++) {
 				addEnchant(_changedItem.enchants);
 			}
 		}

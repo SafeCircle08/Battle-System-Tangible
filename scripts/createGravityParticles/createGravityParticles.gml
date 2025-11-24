@@ -1,10 +1,9 @@
 function createGravityParticles(
-	_spr, _layer, _num, _x, _y, 
+	_spr, _layer, _num, _x, _y, _imageSpd = 0,
 	_maxhspd = 2, _minhspd = -2, 
 	_maxvspd = -1, _minvspd = -2, _grv = 0.07,
 	_rotation = false, _rotSpd = 0,
-	_reduceAlpha = false, _alphaValue = 0,
-	_imageSpd = 0, _imageIndex = 0
+	_reduceAlpha = false, _alphaValue = 0, _imageIndex = 0
 	) {
 	for (var i = 0; i < _num; i++) {
 		var _part = instance_create_layer(_x, _y, _layer, oGravityParticle);

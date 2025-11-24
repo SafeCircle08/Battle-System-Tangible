@@ -1,9 +1,12 @@
 function resetPlayerBattleVars(){
 	
-	global.playerShield = global.playerMaxShield;
+	playerFillShield();
 	
 	with (oSoul) {
 		damageTaken = 0;
+		//speed = 0;
+		//boost = 0;
+		//...
 	}
 	
 	with (oBattleManager) {

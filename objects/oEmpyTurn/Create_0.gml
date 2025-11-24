@@ -11,12 +11,17 @@ setPlayerToBrokenBones(SEGNALINO_LEVEL.LEVEL_5);
 setPlayerToPoisoned(SEGNALINO_LEVEL.LEVEL_5);
 */
 
-initializeNewTurn(0, false, 300, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateFree);
+initializeNewTurn(0, false, 2000, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateFree);
 oSoul.image_alpha = 1;
 oSoul.canMove = true;
 oBattleBox.draw = true;
 
-instance_create_layer(room_width / 2 - 50, room_height / 2, layer, oBulletTest);
+instance_create_layer(room_width / 2 - 50, room_height / 2, LAYER_BULLETS, oBulletTest);
+
+var _x = getBattleBoxVertexX(BOX_VERTEXES.TOP_LEFT);
+var _y = getBattleBoxVertexY(BOX_VERTEXES.TOP_LEFT);
+
+instance_create_layer(_x + 20, _y + 20, LAYER_BULLETS, oHealTouch);
 
 /*
 instance_create_layer(global.boxOriginX, global.boxOriginY, "Instances", oPlatform);

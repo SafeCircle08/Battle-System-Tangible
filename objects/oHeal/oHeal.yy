@@ -12,7 +12,10 @@
     "name":"Miscellaneous",
     "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/EXTRAS_OBJECTS/Miscellaneous.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oExtrasParent",
+    "path":"objects/oExtrasParent/oExtrasParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

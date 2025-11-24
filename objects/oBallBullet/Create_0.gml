@@ -11,8 +11,7 @@ instance_create_layer(x, y, LAYER_BULLETS, oShake);
 timer = 0;
 collided = false;
 
-touchedWall = function()
-{
+touchedWall = function() {
 	var _w = sprite_get_width(sprite_index) / 4; 
 	var _h = sprite_get_height(sprite_index) / 4;
 
@@ -25,8 +24,7 @@ touchedWall = function()
 
 //Methods that determine the actual 
 //movement the "balls" have to follow
-moveElectron = function()
-{	
+moveElectron = function() {	
 	x += xspd;
 	y += yspd;
 	
@@ -42,24 +40,19 @@ moveElectron = function()
 		ballEffect.image_yscale = image_yscale;
 	}
 	
-	if (touchedWall()) 
-	{
+	if (touchedWall()) {
 		var soundGain = 0.4;
 		playSound(sndBallBounce, SOUND_CHANNEL_2, false, soundGain);
 	}
 	
-	if (xspd > 0)
-	{
-		if (x + _w >= global.border_r) 
-		{ 
+	if (xspd > 0) {
+		if (x + _w >= global.border_r) { 
 			xspd *= -1; 
 			oShake.shake = true;
 		}
 	} 
-	else
-	{
-		if (x - _w <= global.border_l) 
-		{ 
+	else {
+		if (x - _w <= global.border_l) { 
 			xspd *= -1;  
 			oShake.shake = true;
 		}

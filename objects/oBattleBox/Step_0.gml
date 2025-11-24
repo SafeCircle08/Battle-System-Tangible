@@ -25,5 +25,3 @@ if (animateBoxTimer == 0) {
 		increaseBorders(_divideTo);
 	} else { decreaseBorders(_divideTo); }
 }
-
-print(drawAlpha);

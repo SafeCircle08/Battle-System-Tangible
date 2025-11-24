@@ -19,12 +19,12 @@ if (!isInBulletHellSection()) {
 	var _border = 10;
 	
 	if (showActionsFlavourText) && (!isEnemySpeaking()) { 
-		drawTextBoxText(actionsFlavourText, Mono, true, ord("Z"), true, true, sndBasicTxt5, 0, 0); 
+		drawTextBoxText(actionsFlavourText,Mono, false, true, ord("Z"), true, true, sndBasicTxt5, 0, 0); 
 	}
 	
 	if (isEnemySpeaking()) { 
 		drawTextBoxText(
-			global.textList[turnNumber], fHungrySkinny, false, global.confirmTextKey, 
+			global.textList[turnNumber], fHungrySkinny, false, false, global.confirmTextKey, 
 			true, true, sndSteamPunkTalk, 10, 5, 10, 8, 20, 
 			sprite_get_width(sTextBoxBg) - 10, 0.5, 
 			183, 35, true
@@ -117,7 +117,7 @@ if (!isInBulletHellSection()) {
 			var _nameL = string_length(text)
 			draw_sprite(_textSprite, 0, textX, textY);
 		}
-		drawTextBoxText(battleFlavourText, Mono, false, ord("Z"), true, true, sndBasicTxt5, 0, 0);
+		drawTextBoxText(battleFlavourText, Mono, false, false, ord("Z"), true, true, sndBasicTxt5, 0, 0);
 	}
 	else { decreaseMainMenuXPos(); }
 	#endregion

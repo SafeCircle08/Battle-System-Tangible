@@ -2,7 +2,7 @@ function changeDimension(startXScale, startYScale, finalXScale, finalYScale, _sc
 {
 	//Checking if the scale has reached the wanted goal
 	if (image_xscale == finalXScale) && (image_yscale == finalYScale) { 
-		if (_destroyWhen0) { instance_destroy(); } 	
+		if (_destroyWhen0) { instance_destroy(); print("distrutto ora!"); } 	
 		return true; 
 	}
 	

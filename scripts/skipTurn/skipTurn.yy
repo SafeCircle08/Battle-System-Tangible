@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"skipTurn",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"skipTurn",
+  "parent":{
+    "name":"BATTLE",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

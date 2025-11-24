@@ -79,7 +79,6 @@ showingSubSubWindow = false;
 
 actionChoosen = false;
 showingSubWindow = false;
-subSubDelay = 3;
 
 increaseMainMenuXPos = function()
 {

@@ -1,8 +1,7 @@
 function makeAlphaSinEffect(_yAdder, _xAdder, _layer, _amplitude, _FXsprite,_nOfFXs, _oneNotMoving = 0, _xScale = 1, _yScale = 1, attached = false, _frequence = 0.006)
 {
 	//Error catch
-	if (!layer_exists(_layer)) 
-	{
+	if (!layer_exists(_layer)) {
 		show_error("Layer of Alpha Sin not found", true);
 	}
 	

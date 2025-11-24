@@ -21,7 +21,7 @@ if (draw == true) {
 	draw_sprite_ext(sCenter, 0, _originX + global.xOffset, _originY + global.yOffset, 1, 1, 0, _col, drawAlpha);
 	draw_set_color(c_white);
 	
-	if (animateBoxTimer == 0) && global.pov == "Up" {
+	if (global.pov == "Up") {
 		draw_sprite_stretched_ext (
 			sOutSideBox, 
 			0, 

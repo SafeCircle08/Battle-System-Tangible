@@ -63,14 +63,21 @@ function advanceText(_textList, _advanceSound, _pDel = 10, _cDel = 5) {
 	checkForPauses(_textList, _pDel, _cDel);
 }
 
+function drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scale, _angle, _offset = 0.5, _col = c_dkgray) {
+	draw_set_color(_col);
+	draw_text_ext_transformed(_txtX + _offset, _txtY + _offset, _textPart, _lineSep, _maxW, _scale, _scale, 0);		
+}
+
 function drawTextBoxText(
-	_textList, _font = Mono, isActionsFlavourText = false, 
+	_textList, _font = Mono, _character = false, isActionsFlavourText = false, 
 	_confirmKey = vk_enter, inBox = true, inBattle = false, 
 	_txtSound = sndBasicTxt1, _pDel = 10, _cDel = 5,
 	_bX = 10, _bY = _bX - 1, _lSep = 15, _maxWidth = sprite_get_width(sTextBoxBg) - _bX,
 	_scale = 1, _textX = undefined, _textY = undefined,
 	_enemySpeech = false
 ) {
+	
+	#region INITIALIZATION SECTION
 	var _cam = view_camera[view_current];
 	var _camW = camera_get_view_width(_cam);
 	var _camH = camera_get_view_height(_cam);
@@ -85,25 +92,25 @@ function drawTextBoxText(
 	var _txtBoxX = _camX + (_camW / 2) - 1;
 	var _txtBoxY = _camY + _camH - 3;
 	
-	if (inBattle) { 
-		_confirmKey = ord("Z"); 
-	}
+	if (inBattle) { _confirmKey = ord("Z"); }
 	
-	if (inBattle == false)
-	{
+	if (inBattle == false) {
 		var _tollerance = 20;
 		if (oPlayerOW.y > _camH / 2) {
 			_txtBoxY = _camY + _boxH + 2; //up to the screen
 		}
 	}
 	
-	if (inBox) { 
-		draw_sprite(_sprTextBox, 0, _txtBoxX, _txtBoxY);	
-	}
+	if (inBox) { draw_sprite(_sprTextBox, 0, _txtBoxX, _txtBoxY); }
 	
+	//When the enemy is talking, we don't want the text
+	//to be drawn or interacted with, so we simply
+	//stop the func here
 	if (isActionsFlavourText) && (oBattleManager.isEnemySpeaking()) { return; }
 	
-	//Text Properties + Coords
+	#endregion
+	
+	#region TEXT PROPERTIES + COORDINATES, ARROW DECO, 
 	var _borderX = _bX;
 	var _borderY = _bY;
 	var _lineSep = _lSep;
@@ -119,6 +126,9 @@ function drawTextBoxText(
 	static arrowIndex = 0.1;
 	arrowIndex += 0.1;
 	
+	#endregion
+	
+	#region ENEMY SPEECH SECTION
 	if (_enemySpeech) {
 		var _bgSpr = sTextBG;
 		draw_sprite(sTextBG, 0, _textX, _textY);
@@ -129,16 +139,65 @@ function drawTextBoxText(
 		}
 	}
 	
+	#endregion
+	
+	#region THE TEXTBOX DRAWN TEXT (OW NPCs, Battle Flavour Texts, Actions Texts...)
+	
 	if (inBox) { draw_sprite(_sprTextBox, 0,  _txtBoxX, _txtBoxY); }
 	dialogueDelay = setTimer(dialogueDelay);
 	if (canAdvanceText(_textList)) { advanceText(_textList, _txtSound, _pDel, _cDel); }
 	
+	//The drawn text
 	var _textPart = string_copy(_textList[page], 1, charCount);
+	var _offset = 0.5;
 	draw_set_font(_font);
-	draw_set_color(c_dkgray);
-	draw_text_ext_transformed(_txtX + 0.5, _txtY + 0.5, _textPart, _lineSep, _maxW, _scale, _scale, 0);
-	draw_set_color(c_white);
-	draw_text_ext_transformed(_txtX, _txtY, _textPart, _lineSep, _maxW, _scale, _scale, 0);
+	
+	if (_character == true && characterFaces[page] != FACIAL_EXPRESSIONS.FACIAL_HIDDEN_FACE) {
+		var _face = characterFaces[page];
+		draw_sprite(faceSpriteRef, _face, _txtX - 2, _txtY - 1);
+		_txtX = 60;
+	}
+	
+	var _scaleX = _scale;
+	var _scaleY = _scale;
+	
+	try {
+		var _amplitude = 5;
+		var _freq = 30;		
+		switch (pagesWithFXs[page]) {
+
+			case TEXT_ANIMATIONS_FXS.TEXT_AN_SHAKE:
+				var _shakeAmpli = 1;
+				_txtX += irandom_range(-_shakeAmpli, _shakeAmpli);
+				_txtY += irandom_range(-_shakeAmpli, _shakeAmpli);
+				_txtX = clamp(_txtX, _txtX -_shakeAmpli, _txtX + _shakeAmpli);
+				_txtY = clamp(_txtY, _txtY -_shakeAmpli, _txtY + _shakeAmpli);				
+			break;
+			case TEXT_ANIMATIONS_FXS.TEXT_AN_COS:
+				_txtX += cos(existanceTextTime / _freq) * _amplitude;
+			break;
+			case TEXT_ANIMATIONS_FXS.TEXT_AN_SIN:
+				_txtY += sin(existanceTextTime / _freq) * _amplitude;
+			break;
+			case TEXT_ANIMATIONS_FXS.TEXT_AN_CIRCLE:
+				_txtX += cos(existanceTextTime / _freq) * _amplitude;
+				_txtY += sin(existanceTextTime / _freq) * _amplitude;
+			break;
+			case TEXT_ANIMATIONS_FXS.TEXT_AN_W_H_CHANGE:
+				_scaleX += (cos(existanceTextTime) / _freq * 50) / 70;
+				_scaleY += (sin(existanceTextTime) / _freq * 50) / 70;
+				_scaleX = clamp(_scaleX, -1, 1.3);
+				_scaleY = clamp(_scaleY, -1, 1.3);
+			break;
+		}
+	} catch (_exception)
+	
+	drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scale, 0);
+	
+	var _col = c_white;
+	if (_character == true) { _col = colors[page]; }
+	draw_set_color(_col);
+	draw_text_ext_transformed(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, _scaleY, 0);		
 	
 	if (textFinished(_textList)) {
 		if (_enemySpeech == false) {
@@ -146,8 +205,10 @@ function drawTextBoxText(
 			draw_sprite(sNextPageArrow, arrowIndex, _txtBoxX + 108, _txtBoxY - 7); 
 		}
 	}
+	
+	#endregion
 		
-	//Managing text
+	#region MANAGING TEXT PLAYER INTERACTIONS (Finishing page, next page etc...)
 	if (global.getTextBoxInputs) {
 		if (confirmTextPressed() && (textFinished(_textList))) {
 			if (morePages(_textList)) { 
@@ -174,13 +235,16 @@ function drawTextBoxText(
 						if (enemyTextShowed == true) { changeTurn(); }
 					}
 				}
+				
 				speechSpeed = 0.5;
 				setToFirstPage();
 				return;
 			}  
 		}
+		
 		if (charCount >= 1) { 
 			if (confirmTextPressed() && textUnfinished(_textList)) { showFullText(_textList); }
 		}
 	}
+	#endregion
 }

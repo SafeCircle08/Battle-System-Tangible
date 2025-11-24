@@ -5,6 +5,7 @@
 
 */
 
+
 global.otherMonsterText = [
 	[
 		"Hello!",
@@ -26,8 +27,7 @@ global.otherEnemyBulletGenerator =
 	
 //FUNCTIONS THAT INITIALIZES THE VARIABLES
 
-function enemyInfo()
-{
+function enemyInfo() {
 	global.monsterHP = 500;
 	global.maxMonsterHp = 500;
 	global.monsterDamage = 1;

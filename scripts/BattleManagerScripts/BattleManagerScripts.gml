@@ -1,9 +1,7 @@
 //When you choose an action in the submenu
-function selectAction(main = true, _moreStepsAct = true, _sound = sndSelecting_2, _flavourText = [], _method = function() {})
-{
+function selectAction(main = true, _moreStepsAct = true, _sound = sndSelecting_2, _flavourText = [], _method = function() {}) {
 	dontGetTextInputs();
-	if (main)
-	{
+	if (main) {
 		_method();
 		moreStepsAct = _moreStepsAct;
 		if (moreStepsAct) { showingSubWindow = true; }
@@ -12,16 +10,13 @@ function selectAction(main = true, _moreStepsAct = true, _sound = sndSelecting_2
 		
 		actionsFlavourText = _flavourText;
 		
-		if ((_pages >= 0) && (_moreStepsAct == false))
-		{
-			for (var i = 0; i < _pages; i++)
-			{
+		if ((_pages >= 0) && (_moreStepsAct == false)) {
+			for (var i = 0; i < _pages; i++) {
 				ds_messages[| i] = _flavourText[i];	
 			}
 		}
 	}
-	else
-	{
+	else {
 		_method();
 		actionChoosen = true; 
 		playingGuiAnimation = false;
@@ -63,8 +58,7 @@ function easeOutBg(_finalAlpha = 0, _bgObj = oAttackBG)
 }
 
 //When you are in the sub menu and you press "X"
-function resetNavigation(_lastOption = 0, _sound = sndResetNavigation, _resetMethod = function() {})
-{
+function resetNavigation(_lastOption = 0, _sound = sndResetNavigation, _resetMethod = function() {}) {
 	getTextInputs();
 	actualDrawAlpha = 0;
 	selected_option = _lastOption;
@@ -101,6 +95,7 @@ function terminateAction(_ds_list = [], _method = function() {}) {
 		setSelectionDelay();
 		battleDelay = 3;
 		
+		//Adds the next text line to the actionsFlavourText
 		for (var i = 0; i < array_length(_ds_list); i++) {
 			array_push(actionsFlavourText, _ds_list[i]);	
 		}
