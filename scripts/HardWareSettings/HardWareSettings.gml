@@ -1,4 +1,5 @@
 #macro WANTED_FPS 60
+#macro GAME_FPS 60
 
 function setOptimalHardwareSettings()
 {

@@ -3,6 +3,8 @@ frame++;
 x = lerp(x, oSupportPlayerhitbox.x - 1, 0.2);
 y = lerp(y, oSupportPlayerhitbox.y, 0.2);
 
+print("esisto: " + string(delta_time));
+
 if (canShowInBoxSegnalini()) {
 	if (fadingIn) {
 		increaseDrawAlpha();
@@ -21,12 +23,6 @@ if (canShowInBoxSegnalini()) {
 			finalAlpha, startAlpha, 
 			-alphaAmount, true);
 	}
-	
-	
-	//Where the cards will be managed
-	
-	
-	
 }
 else {
 	if (image_angle != 0) {
@@ -39,5 +35,5 @@ else {
 		-scaleAmount, -scaleAmount, false,
 		finalAlpha, startAlpha, 
 		-alphaAmount, false);
-	if (managerHasNoSegnalini()) { instance_destroy(self); }
+	if (managerHasNoSegnalini()) { instance_destroy(oBigCircleDeco); instance_destroy(self); }
 }

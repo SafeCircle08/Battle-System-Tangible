@@ -23,8 +23,7 @@ function playerFullHP(_addedHps) {
 	return 	(global.playerHP + _addedHps >= global.playerMAX_HP) 
 }
 
-function usingItem(_index)
-{
+function usingItem(_index) {
 	var _actualItem = global.equippedItems[_index];
 	var _itemFunctions = _actualItem._itemFuncs;
 	var _itemEnchants = _actualItem.enchants;
@@ -39,8 +38,7 @@ function usingItem(_index)
 	return _message;
 }
 
-function itemInfo(_index)
-{
+function itemInfo(_index) {
 	if (_index >= array_length(global.equippedItems)) { return "There is nothing to show here.\nHave a good day!"; }
 	var _actualItem = global.equippedItems[_index];
 	var _itemInfo = _actualItem.info;

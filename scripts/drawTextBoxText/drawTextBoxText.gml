@@ -1,4 +1,4 @@
-#macro TEXT_FINISHED_TIMER 30
+#macro TEXT_FINISHED_TIMER 5
 
 global.getTextBoxInputs = true;
 
@@ -66,6 +66,15 @@ function advanceText(_textList, _advanceSound, _pDel = 10, _cDel = 5) {
 function drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scale, _angle, _offset = 0.5, _col = c_dkgray) {
 	draw_set_color(_col);
 	draw_text_ext_transformed(_txtX + _offset, _txtY + _offset, _textPart, _lineSep, _maxW, _scale, _scale, 0);		
+}
+
+function manageEnemySpeechAutoSkip(_textList, _inBattle) {
+	if (textFinished(_textList) && (_inBattle) && (!morePages(_textList))) {
+		if (oBattleManager.isEnemySpeaking()) {
+			autoSkipTimer = setTimer(autoSkipTimer);
+			if (autoSkipTimer == 0) { oBattleManager.changeTurnAfterEnemySpeech(); }
+		}
+	}		
 }
 
 function drawTextBoxText(
@@ -210,18 +219,23 @@ function drawTextBoxText(
 		
 	#region MANAGING TEXT PLAYER INTERACTIONS (Finishing page, next page etc...)
 	if (global.getTextBoxInputs) {
+		
+		//Auto Skip in Battle 
+		manageEnemySpeechAutoSkip(_textList, inBattle);
+		
 		if (confirmTextPressed() && (textFinished(_textList))) {
 			if (morePages(_textList)) { 
 				goToNextPage();	
 				return;
 			}
 			else {
-				if (inBattle == false) { destroyTextBoxOW(); }
+				if (inBattle == false) { 
+					destroyTextBoxOW(); 
+					instance_create_layer(_txtBoxX, _txtBoxY, "Instances", oFadingOutTxtBoxFX);
+				}
 				else {
-					if (oBattleManager.isEnemySpeaking()) {
-						oBattleManager.enemyTextShowed = true;
-						oBattleManager.changeTurn();
-					} else {
+					if (oBattleManager.isEnemySpeaking()) { oBattleManager.changeTurnAfterEnemySpeech(); } 
+					else {
 						if (oBattleManager.showingExtraMonologueText) {
 							setToOriginalBattleFlavourText();
 							return;

@@ -6,3 +6,5 @@ textList = [
 	"*You know, I come from\n a place where time\n seems to not pass.",
 	"*It's very upsetting..."
 ];
+
+setPlayerPositionCheck(PLAYER_FACING_CHECK.FACING_UP);

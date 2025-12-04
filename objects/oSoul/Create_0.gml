@@ -23,12 +23,22 @@ beamAnimationOnEnding = function() {
 	return (global.beamAnimationTimer < BEAM_ANIMATION_TIMER_REF / 2);
 }
 
+setToSlide = function(_iceFrictionValue) { 
+	iceFriction = _iceFrictionValue;
+	isSliding = true;
+}
+removeSlide = function() { 
+	iceFriction = DEFAULT_FRIC;
+	isSliding = false; 
+}
+
 basicPlayerVars();
+
 beamTimerVars();
 shaderVars();
 
-stateFreeLoad();
-stateMirroredLoad();
+stateFreeLoad(); //
+stateMirroredLoad(); //
 stateUmbrellaLoad();
 stateUsingUmbrella();
 stateGravityLoad();

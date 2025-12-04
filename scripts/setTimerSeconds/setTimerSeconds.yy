@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"setTimerSeconds",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"setTimerSeconds",
+  "parent":{
+    "name":"SECONDARY_SCRIPTS",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

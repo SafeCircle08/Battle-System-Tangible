@@ -37,6 +37,7 @@ addSegnalinoCard = function() {
 		if (oBattleManager.isInBulletHellSection()) { moving = true; }
 		else { moving = false; }
 	}
+	_card.refSegnalinoInst = self;
 	for (var i = 0; i < instance_number(oSegnalinoCard); i++) {
 		rearrangeCardPositions();
 	}

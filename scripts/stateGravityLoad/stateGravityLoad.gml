@@ -10,8 +10,7 @@ function stateGravityLoad()
 	notGroundedDelay = notGroundedDelayRef;
 	inUseGravity = global.playerJumpStateMoveInfo.gravityBasic;
 	
-	stateGravity = function()
-	{
+	stateGravity = function() {
 		var _jmpKey = inUseGravity.jmpKey;
 		key_jumpPressed = keyboard_check(_jmpKey);
 	

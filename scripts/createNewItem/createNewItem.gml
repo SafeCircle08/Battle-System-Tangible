@@ -1,3 +1,4 @@
+global.itemsNumber = 0;
 global.itemsInGame = [];
 global.equippedItems = [];
 
@@ -18,8 +19,10 @@ _method_1 = function() {}, _method_2 = function() {}, _method_3 = function() {})
 			_method_3
 		],
 		enchants: [],
-		enchanted: false
+		enchanted: false,
+		id_number: global.itemsNumber
 	}
 	array_push(global.itemsInGame, item);
+	global.itemsNumber++;
 	return item;
 }

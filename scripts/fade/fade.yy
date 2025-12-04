@@ -6,7 +6,7 @@
   "name":"fade",
   "parent":{
     "name":"FadeInOutObjectsFunctions",
-    "path":"folders/Scripts/FadeInOutObjectsFunctions.yy",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/FadeInOutObjectsFunctions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

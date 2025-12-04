@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"setPlayerToIceSlide",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"setPlayerToIceSlide",
+  "parent":{
+    "name":"SetSegnaliniFunctions",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX/SEGNALINI/SetSegnaliniFunctions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

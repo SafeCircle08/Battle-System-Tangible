@@ -1,17 +1,3 @@
-global.pizza = createNewItem("Pizza", sPizza, 200, sndPlayerEatingHeal,
-	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
-	[hpMessage("A slice of pepperoni pizza.", 200)],
-	[fullHpMessage("That pizza was incredible!")],
-	["You ate a slice of pizza! It was mid tho..."],
-	method(self, function() { healPlayer(200, sndPlayerEatingHeal); }));
-
-global.kfc = createNewItem("KFC", sKfc, 150, sndPlayerEatingHeal,
-	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
-	[hpMessage("Made in Kentucky with LOVE!", 150)],
-	[fullHpMessage("Fried the right way!")],
-	["You became a black ninja! How awesome isnt it"],
-	method(self, function() { healPlayer(150, sndPlayerEatingHeal); }));
-
 global.candy = createNewItem("8Bit_C.", s8BitCandy, 200, sndPlayerEatingHeal,
 	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_SPD, ITEM_PROPERTY_HACKER],
 	[hpMessage("Great to fix code readability!", 200)],
@@ -39,9 +25,6 @@ global.honeyHoneyComb = createNewItem("HHComb", sHHComb, 150, sndPlayerEatingHea
 	[fullHpMessage("That taste... Thank you Glucose for existing!")],
 	["You ate the HHComb so quicly your hands got dirty."],
 	method(self, function() { healPlayer(150, sndPlayerEatingHeal); }));
-	
-global.honeyHoneyComb.enchants = [ENCHANT_POISON_FREE, ENCHANT_SLOWNESS_FREE, ENCHANT_GOLDY];
-global.honeyHoneyComb.enchanted = true;
 
 global.painKiller = createNewItem("P.Kill", sPainKillerItem, 35, sndPlayerEatingHeal,
 	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
@@ -89,5 +72,13 @@ global.cheeseCake = createNewItem("Ch.Cake", sCheeseCakeItem, 300, sndPlayerEati
 	["The Dessert of Desserts."],
 	method(self, function() { healPlayer(300, sndPlayerEatingHeal); }))
 
-fillInventory(global.cheeseCake);
+global.soup = createNewItem("Soup", sSoup, 450, sndPlayerEatingHeal,
+	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
+	[hpMessage("Warmed you up in the inside", 450)],
+	[fullHpMessage("real")],
+	["How can it still be that hot???"],
+	method(self, function() { healPlayer(300, sndPlayerEatingHeal); }),
+	method(self, function() { warmUpPlayer(); }));
+
+
 global.playerHP = 500;

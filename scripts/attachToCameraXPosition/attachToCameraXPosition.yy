@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"attachToCameraXPosition",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"attachToCameraXPosition",
+  "parent":{
+    "name":"CameraMenagmentScripts",
+    "path":"folders/Scripts/HARDWARE_&_COSTANTS_&_SETTING_&_OPTIMIZATION/CameraMenagmentScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -21,7 +21,8 @@ if (keyboard_check_pressed(vk_enter)) {
 	if (input_text == healMeCommand) { executeHealCMD(100); exit; }
 	if (input_text == chargeShieldCommand) { playerGainShield(); finishedCommand(); exit; }
 	
-	if (input_text == "give_posion") { setPlayerToPoisoned(SEGNALINO_LEVEL.LEVEL_3); }
+	if (string_starts_with(input_text, saveInvCommand)) { saveItems(); finishedCommand(); exit; }
+	if (string_starts_with(input_text, loadInvCommand)) { loadItemsSimple(); finishedCommand(); exit; }
 	
 	if (string_starts_with(input_text, healMeCommand)) {
 		var _hpAmount = 0;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"warmUpPlayer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"warmUpPlayer",
+  "parent":{
+    "name":"ITEM_PROPERTY_FUNCTIONS",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEM_PROPERTY_FUNCTIONS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

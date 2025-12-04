@@ -22,8 +22,7 @@ image_speed = 0;
 
 isTimed = true;
 
-rotation = function(_rotAmount)
-{
+rotation = function(_rotAmount) {
 	rotationFrame += 0.5;
 	image_angle += 	_rotAmount * (rotationFrame / 3);
 }

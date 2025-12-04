@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"saveInventory",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"saveInventory",
+  "parent":{
+    "name":"Save&Load",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/INVENTORY/Save&Load.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -15,6 +15,9 @@ finishedCommand = function() {
 
 healMeCommand = "heal_me";
 chargeShieldCommand = "shield_me";
+saveInvCommand = "inv_save";
+loadInvCommand = "inv_load";
+deleteInvSaveFile = "inv_savefdel";
 
 executeHealCMD = function(_amount) {
 	healPlayer(abs(_amount), sndPlayerBasicHeal);
@@ -22,5 +25,5 @@ executeHealCMD = function(_amount) {
 }
 
 returnToLastExecutedCommand = function() {
-		
+	
 }

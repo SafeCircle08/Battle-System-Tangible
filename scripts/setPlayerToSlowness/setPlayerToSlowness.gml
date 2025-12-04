@@ -8,7 +8,7 @@ function setPlayerToSlowness(_slownessTagLV = SEGNALINO_LEVEL.LEVEL_1) {
 	}
 	
 	_slowSeg = instance_find(oSlownessSegnalino, 0);
-	_defaultSlownessValue = 0.20;
+	_defaultSlownessValue = 0.2;
 	_defaultSlownessTimer = 500;
 	_slowSeg.slownessAmount = _defaultSlownessValue * _slownessTagLV;
 	

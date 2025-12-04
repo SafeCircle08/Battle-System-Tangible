@@ -1,3 +1,0 @@
-function removeSlownessTag() {
-	removeSegnalino(oSlownessSegnalino);
-}

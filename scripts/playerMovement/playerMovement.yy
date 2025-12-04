@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"playerMovement",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"playerMovement",
+  "parent":{
+    "name":"BasicMovementFuncs",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/MOVEMENT_UTILS/BasicMovementFuncs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

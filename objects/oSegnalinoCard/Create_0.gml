@@ -29,13 +29,15 @@ levelSprIndex = undefined;
 typeSpr = sSegnalinoCardTypes;
 typeSprIndex = undefined;
 
+refSegnalinoInst = undefined;
+
 moving = false;
 
 cardSetValues = function() {
 	
 	minValueTxt = string(minValue);
 	maxValueTxt = string(maxValue);	
-		
+	
 	switch (level) {
 		case SEGNALINO_LEVEL.LEVEL_1: levelSprIndex = 0; break;	
 		case SEGNALINO_LEVEL.LEVEL_2: levelSprIndex = 1; break;	

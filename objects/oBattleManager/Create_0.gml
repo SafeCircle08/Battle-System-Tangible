@@ -3,6 +3,9 @@ mainOptionsNames = [];
 
 layers = ["LoopBg_1", "LoopBg_2"];
 
+autoSkipTimerRef = 150;
+autoSkipTimer = autoSkipTimerRef;
+
 textFinishedTimer = TEXT_FINISHED_TIMER;
 
 flavourTextIndex = 0;
@@ -170,6 +173,12 @@ setToStartTurn = function() {
 	if (_flavourTextProbs == 6) { menageAfterTurnFlavourTexts(); }
 	flavourTextIndex = getRandomIndex(global.battleFlavourTexts);
 	battleFlavourText = global.battleFlavourTexts[flavourTextIndex];
+}
+	
+changeTurnAfterEnemySpeech = function() {
+	enemyTextShowed = true;
+	changeTurn();
+	autoSkipTimer = autoSkipTimerRef;
 }
 
 //The effect
