@@ -3,8 +3,6 @@ frame++;
 x = lerp(x, oSupportPlayerhitbox.x - 1, 0.2);
 y = lerp(y, oSupportPlayerhitbox.y, 0.2);
 
-print("esisto: " + string(delta_time));
-
 if (canShowInBoxSegnalini()) {
 	if (fadingIn) {
 		increaseDrawAlpha();

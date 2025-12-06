@@ -3,8 +3,6 @@ function playerMovement(_reverse = false) {
 		var mx = (key_right - key_left) * global.SoulSpeed;
 		var my = (key_down - key_up) * global.SoulSpeed;
 		
-		print("SoulSpd: " + string(global.SoulSpeed)); 
-		
 		if (_reverse) {
 			mx = -mx;
 			my = -my;

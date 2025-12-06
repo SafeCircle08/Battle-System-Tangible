@@ -43,21 +43,32 @@ function initializeNavigatingBattleOptionFunctions() {
 		}
 	}
 }
-function initializeDefend_old_OptionFunction() {
-	selectedDefend_old_Option = function() { selectAction(true, false, sndSelecting_2, ["<>Player defended!", "<>How cool?"]); }	
-}
 
 function initialiseCryOptionFunction() {
 	selectedCryOption = function() { selectAction(true, false, sndSelecting_2, ["<>Crying won't do nothing\n  but dehydratate you to death.", "\n<>Stop it."]); }		
 }
-function initializeInventoryOptionFunctions() {		
+function initializeInventoryOptionFunctions() {
+	#region	 drawStatistics()
+	
+	/*
+		Draw the statistics for each item
+		[property, property, property]
+	*/
+	
 	drawStatistics = function(_index, _itemSprX, _itemSprY, _border) {
 		var _item = global.equippedItems[_index];
-		for (var k = 0; k < MAX_PROPERTIES_NUMBER; k++)
-		{	
+		for (var k = 0; k < MAX_PROPERTIES_NUMBER; k++) {	
 			draw_sprite(_item.propertiesList[k], 0, _itemSprX - _border - 1 + inventoryXAdder, _itemSprY + (10 * k + (1 * k)));	
 		}	
 	}
+	#endregion
+	
+	#region drawEnchants()	
+	
+	/*
+		Draws the enchants that are actually
+		applied to the item
+	*/
 	
 	drawEnchants = function(_index, _itemSprX, _itemSprY, _border) {
 		var _item = global.equippedItems[_index];
@@ -80,28 +91,52 @@ function initializeInventoryOptionFunctions() {
 		}
 	}
 	
+	#endregion
+	
+	#region setEnchantText()
 	setEnchantText = function(_index, _col = c_purple) {
 		if (selected_option != _index) { draw_set_color(_col); }
 		setGlintShader();
 	}
+	#endregion
 	
+	#region thisItemIsSelected()
 	thisItemIsSelected = function(_index) {
 		return (selected_option == _index) && (!instance_exists(itemOutputMessage)) 	
 	}
+	#endregion
 	
-	//Create OutPut Message
-	createOutPutMessage = function(_x, _y)
-	{
-		//Creating the text element that will hold the item output message
+	#region createOutPutMessage
+	
+	/*
+		Creates the output message when 
+		an item is consumes
+	*/
+	
+	createOutPutMessage = function() {
+		var _border = 10;
+		var _sprBG = sInventoryBG;
+		var _bgH = sprite_get_height(_sprBG) * 2;
+		
+		var _x = INVENTORY_X + _border + inventoryXAdder;
+		var _y = INVENTORY_Y + (_bgH / 2) + _border / 2;
+		
 		itemOutputMessage = instance_create_depth(_x, _y, 0, oInventoryText);
 		itemOutputMessage.actualArray = usingItem(selected_option);
 		itemOutputMessage.visible = true;
-		itemOutputMessage.textDelay = 30;		
+		itemOutputMessage.textDelay = 30;
 	}
+	#endregion
 	
-	//When you select (press enter)
+	#region selectedInventoryOption()
+	
+	/*
+		When you select the option
+		from the main battle menu
+	*/
+	
 	selectedInventoryOption = function() {
-		if (array_length(global.equippedItems) > 0) {
+		if (playerHasItems()) {
 			selectAction(true, true, sndOpeningInventory, [], method(self, function() {
 				showCursor();
 				selected_option = 0;
@@ -113,37 +148,46 @@ function initializeInventoryOptionFunctions() {
 			resetNavigation(3, sndClosingInventory, method(self, function() { moreStepsAct = true; })); 
 		}
 	}
+	#endregion
 	
-	navigatingInventoryFunction = function(_getInputs = GET_INPUTS, _canNavigate = CAN_NAVIGATE) {
-		easeInBg();
-		var _itemsNumber = array_length(global.equippedItems); 
-		
-		if (!instance_exists(itemOutputMessage)) { if (_canNavigate) { navigatingBattle(0, _itemsNumber - 1); }}	
+	#region invHandleNavigation()
+	invHandleNavigation = function(_canNavigate) {
+		if (!instance_exists(itemOutputMessage) && (_canNavigate)) { 
+			var _itemsNumber = array_length(global.equippedItems); 
+			navigatingBattle(0, _itemsNumber - 1); 
+		}		
+	}
+	#endregion
 	
+	#region invHandleConfirmation()
+	invHandleConfirmation = function(_getInputs) {
 		if (_getInputs) { 
 			if (cancelPressed()) && (!instance_exists(itemOutputMessage)) { resetNavigation(3, sndClosingInventory); } 
 			
 			takenOptionDelay = setTimer(takenOptionDelay);
-			if (takenOptionDelay == 0)
-			{
-				if (confirmPressed())
-				{ 
+			if (takenOptionDelay == 0) {
+				if (confirmPressed()) { 
 					if (instance_exists(itemOutputMessage)) { 
 						instance_destroy(itemOutputMessage);
 						terminateAction(["*Finished Using the\n Inventory!"]);
-					}
-					else {
-						var _border = 10;
-						var _sprBG = sInventoryBG;
-						var _bgH = sprite_get_height(_sprBG) * 2;
-						createOutPutMessage(INVENTORY_X + _border + inventoryXAdder, INVENTORY_Y + (_bgH / 2) + _border / 2);
-					}
+					} else { createOutPutMessage(); }
 				}
 			}
-		}
+		}		
+	}
+	#endregion
+	
+	#region MAIN INVENTORY FUNCTION
+	navigatingInventoryFunction = function(_getInputs = GET_INPUTS, _canNavigate = CAN_NAVIGATE) {
+		easeInBg();
+		invHandleNavigation(_canNavigate);
+		invHandleConfirmation(_getInputs);
+		
+		//Only for debugging
 		if (keyboard_check_pressed(ord("V"))) { enchantItem(global.equippedItems[selected_option]); }
 		if (keyboard_check_pressed(ord("O"))) { disenchantItem(global.equippedItems[selected_option]); }
 	}
+	#endregion
 }
 function initializeHealCheatFunction()
 {
@@ -243,6 +287,7 @@ function initializePrayFunctions()  {
 			_upAds.createVerticalAds();
 		}	
 	}
+	
 	prayOption = function() { 
 		createAnimationObject(sSendYourPrayAnimation_good, [],
 		method(self, function() {
@@ -332,7 +377,6 @@ function initializeEnchantingFunctions() {
 
 function initializeAllCreatedFunctions() {
 	initializeNavigatingBattleOptionFunctions();
-	initializeDefend_old_OptionFunction();
 	initialiseCryOptionFunction();
 	initializeInventoryOptionFunctions();
 	initializeHealCheatFunction();

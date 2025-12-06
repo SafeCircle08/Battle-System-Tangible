@@ -8,7 +8,7 @@ function setPlayerToIceSlide(_iceSlideLV = SEGNALINO_LEVEL.LEVEL_1) {
 	}
 	
 	_slideSeg = instance_find(oIceSlideSegnalino, 0);
-	_defaultSlideTimer = 350;
+	_defaultSlideTimer = 600;
 	
 	var _frics = [0.1, 0.05, 0.02, 0.01, 0.005];
 	_fricValue = _frics[_iceSlideLV - 1];

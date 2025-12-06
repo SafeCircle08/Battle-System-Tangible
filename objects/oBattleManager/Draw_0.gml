@@ -123,8 +123,7 @@ if (!isInBulletHellSection()) {
 	#endregion
 	
 	#region	DRAWING THE INVENTORY
-	if (inventoryAlpha > 0 )
-	{
+	if (inventoryAlpha > 0 ) {
 		draw_set_alpha(inventoryAlpha);
 		
 		var _itemWidth = sprite_get_width(sItemSprite);
@@ -157,30 +156,30 @@ if (!isInBulletHellSection()) {
 		var _itemNameY = _inventoryY + _spriteBorder;
 		var j = 0;
 		
-		for (var i = 0; i < array_length(global.equippedItems); i++)
-		{
+		for (var i = 0; i < array_length(global.equippedItems); i++) {
 			var _item = global.equippedItems[i];
-			if (thisItemIsSelected(i)) 
-			{
+			if (thisItemIsSelected(i)) {
 				//Sprite Coords
 				var _itemSprX = _inventoryX + _bgW - _itemWidth - _border - 7;
 				var _itemSprY = _inventoryY + _border + _border / 2 - 2;
 				var _itemSprW = sprite_get_width(sCocoMilk);
+				
 				//Drawing the sprite with enchant effect if needed
 				if (_item.enchanted == true) { setGlintShader(); }
-				draw_sprite(_item.sprite, 0, _itemSprX + inventoryXAdder, _itemSprY);
+				draw_sprite(_item.sprite, 0, _itemSprX + inventoryXAdder, _itemSprY); //item sprite
 				shader_reset();
-				drawStatistics(i, _itemSprX, _itemSprY, _border);
-				drawEnchants(i, _itemSprX, _itemSprY, _border);
-				draw_set_color(global.selectedGuiStyle.selectionColor); 
+				drawStatistics(i, _itemSprX, _itemSprY, _border); //item properties
+				drawEnchants(i, _itemSprX, _itemSprY, _border); //item enchants
+				draw_set_color(global.selectedGuiStyle.selectionColor);  
 			}
 			else { draw_set_color(c_white); }
 			
 			if (_item.enchanted == true) { setEnchantText(i); }
 			
+			//Drawing the Item Name
 			var scale = 0.5;
 			var sep = 0.5;
-			var w = 50;
+			var w = 50;	
 			
 			//Left Side
 			if (i < 4) {
@@ -203,19 +202,17 @@ if (!isInBulletHellSection()) {
 		
 		draw_sprite_stretched(sItemInfoBG, 0, _itemInfoX + inventoryXAdder, _itemInfoY, _bgW - _border, _bgH / 2 + _border / 2 - _border);
 		
-		//Draws the item properties
+		//Drawing the Item Information
 		if (!instance_exists(itemOutputMessage)) {	
 			var scale = 0.5;
 			var sep = 0.5;
 			var w = 50;
 			draw_set_color(c_white);
 			var _info = itemInfo(selected_option);
-			var _finalMessage;
-			if (is_array(_info)) { _finalMessage = _info[0]; }
-			else { _finalMessage = _info; }
-			draw_text_ext_transformed(_itemInfoX + _infoBorder * 2 + inventoryXAdder,  _itemInfoBgY + _border / 2, _finalMessage, 20, 200, scale, scale, 0);
+			draw_text_ext_transformed(_itemInfoX + _infoBorder * 2 + inventoryXAdder,  _itemInfoBgY + _border / 2, _info, 20, 200, scale, scale, 0);
 		}
-
+		
+		//Drawing the Battle Book related things
 		var _itemInfoBgY = _inventoryY + (_bgH / 2);
 		var _bookSpr = global.selectedGuiStyle.itemStatsBook;
 		var _bookW = sprite_get_width(_bookSpr);
@@ -244,9 +241,8 @@ if (!isInBulletHellSection()) {
 	}
 	#endregion
 }
-else
-{
-	#region DRAWING PLAYER INFO DURING TURN
+else {
+	#region DRAWING PLAYER WHILE IN BULLET HELL SECTION
 
 	var _blackBaseX = 0;
 	var _blackBaseY = room_height;

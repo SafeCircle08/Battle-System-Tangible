@@ -12,7 +12,7 @@ setPlayerToPoisoned(SEGNALINO_LEVEL.LEVEL_5);
 */
 
 setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_5);
-setPlayerToIceSlide(SEGNALINO_LEVEL.LEVEL_5);
+setPlayerToIceSlide(SEGNALINO_LEVEL.LEVEL_1);
 
 initializeNewTurn(0, false, 2000, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateFree);
 oSoul.image_alpha = 1;

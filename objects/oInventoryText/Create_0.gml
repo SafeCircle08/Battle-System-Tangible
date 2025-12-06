@@ -10,3 +10,25 @@ itemOutputMessageText = false;
 
 image_xscale = 1;
 image_yscale = 1;
+
+
+drawItemOutPutText = function() {
+	var _bgW = sprite_get_width(sInventoryBG) * 3;
+	var _w = _bgW + 40;
+	var _sep = 20;
+	var _scale = 0.5;
+	var _angle = 0;
+	
+	var _itemOutPutTxt = actualArray;
+	var _itemOutPutTxtX = x;
+	var _itemOutPutTxtY = y;
+	
+	if (string_length(actualArray) >= 50) {
+		_itemOutPutTxtY = y - 4;
+	}
+	
+	draw_text_ext_transformed(
+		_itemOutPutTxtX + 1,  _itemOutPutTxtY, _itemOutPutTxt, 
+		_sep, _w, _scale, _scale, _angle
+	);		
+}

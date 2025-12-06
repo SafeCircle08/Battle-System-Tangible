@@ -1,5 +1,11 @@
 if (oBattleManager.isInBulletHellSection()) {
 	timer = setTimer(timer);
-} else { exit; }	
+} else { 
+	//SEGNALINO INACTIVE HERE!
+	exit; 
+}	
 
-//SEGNALINO INACTIVE HERE!
+/* SEGNALINO CHILDREN CODE HERE
+//...
+//...
+//
