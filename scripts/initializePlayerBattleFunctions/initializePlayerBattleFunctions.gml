@@ -28,7 +28,7 @@ function createAnimationObject(sprite, _messages, _method = function() {})
 
 function initializeNavigatingBattleOptionFunctions() {
 	selectedBattleOption = function() { 
-		selectAction(true, true, sndSelecting_2, []);
+		selectAction(true, true);
 		if (!instance_exists(oSubMenuManager)) { instance_create_layer(x, y, "Instances", oSubMenuManager); } 
 		else { oSubMenuManager.setTofadeIn(); }
 	}
@@ -47,6 +47,7 @@ function initializeNavigatingBattleOptionFunctions() {
 function initialiseCryOptionFunction() {
 	selectedCryOption = function() { selectAction(true, false, sndSelecting_2, ["<>Crying won't do nothing\n  but dehydratate you to death.", "\n<>Stop it."]); }		
 }
+
 function initializeInventoryOptionFunctions() {
 	#region	 drawStatistics()
 	
@@ -145,7 +146,7 @@ function initializeInventoryOptionFunctions() {
 		}
 		else { 
 			setMonologueTextToNewString(["*Cannot open the inventory\n right now...", "*You don't have any\n Items."]);
-			resetNavigation(3, sndClosingInventory, method(self, function() { moreStepsAct = true; })); 
+			resetNavigation(3, undefined, method(self, function() { moreStepsAct = true; })); 
 		}
 	}
 	#endregion
@@ -162,7 +163,9 @@ function initializeInventoryOptionFunctions() {
 	#region invHandleConfirmation()
 	invHandleConfirmation = function(_getInputs) {
 		if (_getInputs) { 
-			if (cancelPressed()) && (!instance_exists(itemOutputMessage)) { resetNavigation(3, sndClosingInventory); } 
+			if (cancelPressed()) && (!instance_exists(itemOutputMessage)) { 
+				resetNavigation(3, sndClosingInventory); 
+			} 
 			
 			takenOptionDelay = setTimer(takenOptionDelay);
 			if (takenOptionDelay == 0) {
@@ -195,7 +198,7 @@ function initializeHealCheatFunction()
 }
 function initializeAttackFunctions() {
 	selectedAttackFunction = function() { 
-		selectAction(false, false, sndSelecting_2, []); 
+		selectAction(false, false); 
 	}
 	
 	attackFunction = function() {
@@ -256,7 +259,7 @@ function initializeAttackFunctions() {
 	}	
 }
 function initializeUnbindFunctions() {
-	selectedUnbindCage = function() { selectAction(false, false, sndSelecting_2, [], method(self, function() { unbinding = true; instance_destroy(oMirrorTargeting); }))}
+	selectedUnbindCage = function() { selectAction(false, false, undefined, [], method(self, function() { unbinding = true; instance_destroy(oMirrorTargeting); }))}
 	unbindFunction = function() {
 		terminateAction(
 			global.playerOptions.unbind_function._flavourText,
@@ -268,7 +271,7 @@ function initializeUnbindFunctions() {
 }
 function initializeDefenceFunctions()
 {
-	selectedDefenceFunction = function() { selectAction(false, false, sndSelecting_2, [], method(self, function() { hideMirrors(); }))}
+	selectedDefenceFunction = function() { selectAction(false, false, undefined, [], method(self, function() { hideMirrors(); }))}
 	defenceFunction = function() {
 		createAnimationObject(sUmbrellaEffectGUI, ["<>You decided to defend!"],
 				method(self, function() { defended = true; }));
@@ -276,7 +279,7 @@ function initializeDefenceFunctions()
 }
 function initializePrayFunctions()  {
 	selectedPrayOption = function() { 
-		selectAction(true, true, sndSelecting_2, ["*You decided to pray."]);
+		selectAction(true, true, undefined, ["*You decided to pray."]);
 		if (!instance_exists(oAdSlidingManager)) {
 			var _downAds = instance_create_layer(x, y, layer, oAdSlidingManager);
 			_downAds._sign = 1;
@@ -288,47 +291,54 @@ function initializePrayFunctions()  {
 		}	
 	}
 	
+	#region	PRAY FUNCTIONS
+	notAcceptedPrayFunc = function() {
+		var _dmg = irandom_range(20, 167);
+		fadeInOutAnimationsParent.messages = 
+		["*Your pray wasn't accepted...", "*You lost " + string(_dmg) + " HPs..."]; 
+		hitPlayer(_dmg);	
+	}
+	acceptedPrayFunc = function() {
+		var _heal = irandom_range(150, 300);
+		fadeInOutAnimationsParent.messages = 
+		["*Gained " + string(_heal) + " HPs!"];
+		if (global.playerHP + _heal >= global.playerMAX_HP) { 
+			array_push(fadeInOutAnimationsParent.messages, "*HP MAXED OUT!")
+		}
+		healPlayer(_heal, sndPlayerBasicHeal);		
+	}
+	addToInvPrayFunc = function() {
+		fadeInOutAnimationsParent.messages = addItemToInventory();
+	}
+	removeAllSegnaliniPrayFunc = function() {
+		if (playerIsUnderSegnaliniEffects()) {
+			addNewActionFlavourTextPage("You are MISERABLE", "!");
+			addNewActionFlavourTextPage("So we decided to\n remove all bad\n effects applied to you", "!");
+			addNewActionFlavourTextPage("You can Thanks us later", "!");
+			removeSegnalini(false);
+		} else {
+			fadeInOutAnimationsParent.messages = [
+				"*We tried to remove negative\n effects from you.",
+				"*But you are already\n so COOL!",
+				"*So, yeah, you don't\n need our help!",
+				"*At least untill you\n are not bleeding from\n your ears!",
+				"*Bye bye!"
+			];
+		}
+	}
+	#endregion
+	
 	prayOption = function() { 
 		createAnimationObject(sSendYourPrayAnimation_good, [],
 		method(self, function() {
 			var _possPrayFuncs = [
-				function() { 
-					var _dmg = irandom_range(20, 167);
-					fadeInOutAnimationsParent.messages = 
-					["*Your pray wasn't accepted...", "*You lost " + string(_dmg) + " HPs..."]; 
-					hitPlayer(_dmg);
-				},
-				function() { 
-					var _heal = irandom_range(150, 300);
-					fadeInOutAnimationsParent.messages = 
-					["*Gained " + string(_heal) + " HPs!"];
-					if (global.playerHP + _heal >= global.playerMAX_HP) { 
-						array_push(fadeInOutAnimationsParent.messages, "*HP MAXED OUT!")
-					}
-					healPlayer(_heal, sndPlayerBasicHeal);
-				},
-				function() {
-					fadeInOutAnimationsParent.messages = addItemToInventory();
-				}, 
-				function() { 
-					if (playerIsUnderSegnaliniEffects()) {
-						addNewActionFlavourTextPage("You are MISERABLE", "!");
-						addNewActionFlavourTextPage("So we decided to\n remove all bad\n effects applied to you", "!");
-						addNewActionFlavourTextPage("You can Thanks us later", "!");
-						removeSegnalini(false);
-					} else {
-						fadeInOutAnimationsParent.messages = [
-							"*We tried to remove negative\n effects from you.",
-							"*But you are already\n so COOL!",
-							"*So, yeah, you don't\n need our help!",
-							"*At least untill you\n are not bleeding from\n your ears!",
-							"*Bye bye!"
-						];
-					}
-				}
+				notAcceptedPrayFunc, 
+				acceptedPrayFunc, 
+				addToInvPrayFunc,
+				removeAllSegnaliniPrayFunc
 			];
 			var _index = arrayGetValidIndex(_possPrayFuncs);
-			var _choosedPrayFunc = _possPrayFuncs[_index];
+			var _choosedPrayFunc = _possPrayFuncs[2];
 			_choosedPrayFunc(); 
 		}));
 	}
@@ -336,7 +346,7 @@ function initializePrayFunctions()  {
 
 function initializeEnchantingFunctions() {
 	selectedEnchantOption = function() { 
-		selectAction(true, true, sndSelecting_2, ["*You enchanted an Item.","*You'll be able\n to use it next turn."]);
+		selectAction(true, true, undefined, ["*You enchanted an Item.","*You'll be able\n to use it next turn."]);
 		showCursor();
 		if (!instance_exists(oEnchantOptionManager)) { instance_create_layer(x, y, "Instances", oEnchantOptionManager); } 
 		else { oEnchantOptionManager.setTofadeIn(); }

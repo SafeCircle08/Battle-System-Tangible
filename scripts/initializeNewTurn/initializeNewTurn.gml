@@ -22,8 +22,8 @@ function finishTurn() {
 	with (oBattleManager) {
 		backGroundLayersVisible(layers, false);
 		setManagerValuesToStartTurn();
-		resetPlayerBattleVars();
 	}
+	resetPlayerBattleVars();
 	destroyBulletsGensExtras();
 	resetCardsPositions();
 }

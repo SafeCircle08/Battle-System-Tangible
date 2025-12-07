@@ -6,6 +6,11 @@ enum FLOATING_TEXT_TYPES {
 	GOLD
 }
 
+enum FLOATING_TEXT_DIR {
+	LEFT, 
+	RIGHT
+}
+
 colors = [
 	c_custom_red_hit_color, 
 	c_custom_shield_color, 
@@ -21,7 +26,19 @@ direction = irandom_range(85, 95);
 speed = 1.5;
 image_xscale = 2;
 image_yscale = 2;
-hspeed = choose(-0.5, 0.5);
+hspeed = 0;
+
+setDirection = function(_dir) {
+	var _maxDirSpd = 0.5;
+	switch (_dir) {
+		case FLOATING_TEXT_DIR.LEFT:
+			hspeed = -_maxDirSpd;
+		break;
+		case FLOATING_TEXT_DIR.RIGHT:
+			hspeed = _maxDirSpd;
+		break;
+	}
+}
 
 textReference = 0
 typeIndex = 0;

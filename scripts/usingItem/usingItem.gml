@@ -4,14 +4,27 @@ function callItemFunctions(_itemFuncList) {
 	}	
 }
 
+function createEnchantMiniCardFx(_itemEnchList, i) {
+	var _adder = 8;
+	var _enchCardFxX = mouse_x + (_adder * i);
+	var _enchCardFxY = mouse_y - (_adder * i);
+	
+	if (mouseIsTooFarWindow()) {
+		_enchCardFxX = room_width / 2 + (_adder * i);
+		_enchCardFxY = room_height / 2 - (_adder * i);
+	}
+	
+	var _enchFx = instance_create_layer(_enchCardFxX, _enchCardFxY, LAYER_EFFECT_TOP_3, oEnchFxTest);
+	_enchFx.frame = irandom_range(10, 90);
+	_enchFx.spriteRef = _itemEnchList[i][ENCHANT_SPRITE];
+	_enchFx.setNewSprite();		
+}
+
 function callItemEnchantments(_itemEnchList) {
 	var _enchantsN = array_length(_itemEnchList);
 	for (var i = 0; i < _enchantsN; i++) {
 		_itemEnchList[i][ENCHANT_FUNCTION]();
-		var _enchFx = instance_create_layer(mouse_x + 7 * i, mouse_y - 8 * i, LAYER_EFFECT_TOP_3, oEnchFxTest);
-		_enchFx.frame = irandom_range(10, 90);
-		_enchFx.spriteRef = _itemEnchList[i][ENCHANT_SPRITE];
-		_enchFx.setNewSprite();
+		createEnchantMiniCardFx(_itemEnchList, i);
 	}
 }
 

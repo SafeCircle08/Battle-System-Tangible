@@ -1,6 +1,7 @@
 //When you choose an action in the submenu
-function selectAction(main = true, _moreStepsAct = true, _sound = sndSelecting_2, _flavourText = [], _method = function() {}) {
+function selectAction(main = true, _moreStepsAct = true, _sound = undefined, _flavourText = [], _method = function() {}) {
 	dontGetTextInputs();
+	if (_sound != undefined) { playSound(_sound, SOUND_CHANNEL_2); }
 	if (main) {
 		_method();
 		moreStepsAct = _moreStepsAct;
@@ -11,9 +12,7 @@ function selectAction(main = true, _moreStepsAct = true, _sound = sndSelecting_2
 		actionsFlavourText = _flavourText;
 		
 		if ((_pages >= 0) && (_moreStepsAct == false)) {
-			for (var i = 0; i < _pages; i++) {
-				ds_messages[| i] = _flavourText[i];	
-			}
+			for (var i = 0; i < _pages; i++) { ds_messages[| i] = _flavourText[i]; }
 		}
 	}
 	else {
@@ -58,7 +57,7 @@ function easeOutBg(_finalAlpha = 0, _bgObj = oAttackBG)
 }
 
 //When you are in the sub menu and you press "X"
-function resetNavigation(_lastOption = 0, _sound = sndResetNavigation, _resetMethod = function() {}) {
+function resetNavigation(_lastOption = 0, _sound = undefined, _resetMethod = function() {}) {
 	getTextInputs();
 	actualDrawAlpha = 0;
 	selected_option = _lastOption;
@@ -67,6 +66,8 @@ function resetNavigation(_lastOption = 0, _sound = sndResetNavigation, _resetMet
 	moreStepsAct = false;
 	actualDrawAlpha = 0;
 	battleDelay = 3;
+	
+	if (_sound != undefined) { playSound(_sound, SOUND_CHANNEL_3); }
 	
 	oAttackBG.fadingOut = true;
 	setSelectionDelay();

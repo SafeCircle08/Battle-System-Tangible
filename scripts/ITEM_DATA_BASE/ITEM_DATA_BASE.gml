@@ -1,3 +1,11 @@
+function DEBUG_addCustomEnchList(_item, _enchList) {
+	for (var i = 0; i < array_length(_enchList); i++) {
+		_item.enchants[i] = _enchList[i];	
+	}
+	_item.enchanted = true;
+}
+
+
 global.candy = createNewItem("8Bit_C.", s8BitCandy, 200, sndPlayerEatingHeal,
 	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_SPD, ITEM_PROPERTY_HACKER],
 	hpMessage("Great to fix code readability!", 200),
@@ -73,12 +81,14 @@ global.cheeseCake = createNewItem("Ch.Cake", sCheeseCakeItem, 300, sndPlayerEati
 	method(self, function() { healPlayer(300, sndPlayerEatingHeal); }))
 
 global.soup = createNewItem("Soup", sSoup, 450, sndPlayerEatingHeal,
-	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
+	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_WARM_HEAL, ITEM_PROPERTY_NOONE],
 	hpMessage("Warmed you up in the inside", 450),
 	fullHpMessage("real"),
 	"How can it still be that hot???",
-	method(self, function() { healPlayer(300, sndPlayerEatingHeal); }),
+	method(self, function() { healPlayer(450, sndPlayerEatingHeal); }),
 	method(self, function() { warmUpPlayer(); }));
+
+DEBUG_addCustomEnchList(global.soup, [ENCHANT_GOLDY, ENCHANT_GOLDY, ENCHANT_GOLDY]);
 
 fillInventory(global.soup);
 global.playerHP = 500;

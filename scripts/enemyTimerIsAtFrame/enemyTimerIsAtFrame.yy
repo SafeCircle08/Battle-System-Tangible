@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"enemyTimerIsAtFrame",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"enemyTimerIsAtFrame",
+  "parent":{
+    "name":"In_battle",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/generalUse/In_battle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -28,7 +28,10 @@ function beamEndTurn() { y = -100; }
 //Used to actually start the beam animation.
 //Just calling this function, will menage everything
 function startBeamAnimation(startOfTurn = true)  { 
-	if (startOfTurn == false) { destroyBulletsGensExtras(); }
+	if (startOfTurn == false) { 
+		playerFillShield();
+		destroyBulletsGensExtras(); 
+	}
 	global.beamAnimationTimer = BEAM_ANIMATION_TIMER_REF;
 }
 
@@ -53,8 +56,7 @@ function playerBeamAnimation(_activatedDuringTurn = false, _newState = noone) {
 	}
 	
 	//Draws the beam
-	with (oPlayerBeam)
-	{
+	with (oPlayerBeam) {
 		beamHeight = clamp(beamHeight, 1, room_height + 1);
 		indexMax += 0.28 * (delta_time / 1_000_000) * WANTED_FPS;
 		draw_sprite_stretched(sBeam, indexMax, oSoul.x - 16 , 0, sprite_get_width(sBeam), beamHeight);

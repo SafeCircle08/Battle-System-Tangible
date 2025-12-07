@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"mouseIsTooFar",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mouseIsTooFar",
+  "parent":{
+    "name":"CUSTOMIZATION__CURSORS_&_BATTLE_STYLES",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
