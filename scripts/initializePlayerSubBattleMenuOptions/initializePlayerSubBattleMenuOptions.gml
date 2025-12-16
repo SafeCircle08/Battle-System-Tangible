@@ -3,9 +3,8 @@
 #macro SUB_MENU_UNBIND 1
 #macro SUB_MENU_SPECIAL_OPTION 2
 
-function buildNewSubOption(_name, _textSprite, selectFunc, func, actionsFlavourText, specialFlavourText) {
+function buildNewSubOption(_textSprite, selectFunc, func, actionsFlavourText, specialFlavourText = []) {
 	return {
-		name: _name,
 		textSprite: _textSprite,
 		_selectFunction: selectFunc,
 		_function: func,
@@ -14,21 +13,21 @@ function buildNewSubOption(_name, _textSprite, selectFunc, func, actionsFlavourT
 	}
 }
 function initializePlayerSubBattleMenuOptions() {	
-	attack_function = buildNewSubOption("(ATK)", sAttackTextSprite, selectedAttackFunction, attackFunction,
+	attack_function = buildNewSubOption(sAttackTextSprite, selectedAttackFunction, attackFunction,
 				 ["*The player decided\n to attack!"], 
 				 ["*The player has tried\n to ATTACK..."]);
 
-	unbind_function = buildNewSubOption("<REFY>", sUnbindTextSprite, selectedUnbindCage, unbindFunction,
-				["*The player decided to\n UNBIND the cage!"], []);
+	unbind_function = buildNewSubOption(sUnbindTextSprite, selectedUnbindCage, unbindFunction,
+				["*The player decided to\n UNBIND the cage!"]);
 	
-	defence_function = buildNewSubOption("[DEF]", sDefendTextSprite, selectedDefenceFunction, defenceFunction,
-				["*Player decided to DEFEND!", "*Damage DECREASED!"], []);
+	defence_function = buildNewSubOption(sDefendTextSprite, selectedDefenceFunction, defenceFunction,
+				["*Player decided to DEFEND!", "*Damage DECREASED!"]);
 	
 	//The sub battle menu options that are coded in the game
 	global.playerOptions = {
 		attack_function,
 		unbind_function,
-		defence_function
+		defence_function,
 	}
 
 	//The options the player can actually use into the game

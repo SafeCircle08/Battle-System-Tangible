@@ -1,13 +1,18 @@
+#macro FILE_NAME_ITEMS "items.ini"
+#macro FILE_ITEM_ID_KEY "Item_Id"
+#macro FILE_ITEM_SECTION "Id for equipped Item N. "
+
 function saveItems() {
-    var fileName = "items.ini";
-    ini_open(fileName);
+	if (file_exists(FILE_NAME_ITEMS)) { file_delete(FILE_NAME_ITEMS); }
+	
+    ini_open(FILE_NAME_ITEMS);
     
     for (var i = 0; i < array_length(global.equippedItems); i++) {
-		var section = "Id for item: " + string(i);
+		var section = FILE_ITEM_SECTION + string(i);
 		var item = global.equippedItems[i];
-		var _id = item.id_number;
+		var _id = item.id_item;
 	
-        ini_write_real(section, "Id", _id);
+		ini_write_string(section, FILE_ITEM_ID_KEY, _id);
 		
 		for (var j = 0; j < array_length(item.enchants); j++) {
 			var rawSpr  = string(item.enchants[j][ENCHANT_SPRITE]); //reference of the sprite asset
@@ -23,6 +28,5 @@ function saveItems() {
 			ini_write_string(section, "Enchant " + string(j) + " func", cleanFunc);	
 		}
     }
-    
     ini_close();
 }

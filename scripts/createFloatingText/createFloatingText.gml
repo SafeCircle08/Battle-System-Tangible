@@ -5,7 +5,11 @@ function manageFlTextDir(_fTextN = instance_number(oFloatingText)) {
 }
 
 function flTextIsSpecial(_type) {
-	return (_type == FLOATING_TEXT_TYPES.HEALTH || _type == FLOATING_TEXT_TYPES.SHIELD);	
+	return (
+		(_type == FLOATING_TEXT_TYPES.HEALTH) || 
+		(_type == FLOATING_TEXT_TYPES.SHIELD) ||
+		(_type == FLOATING_TEXT_TYPES.DAMAGE)
+	);	
 }
 
 

@@ -23,17 +23,12 @@ var _bgSpr = global.selectedGuiStyle.bg;
 drawFadeInSprite(sSelectArrow, subMenuX - 49, subMenuY + (_bgH * _optionNumber) / 2, subMenuAlpha, subMenuXAdder);
 drawFadeInSpriteStretched(_bgSpr, subMenuX - 49, subMenuY, subMenuAlpha, subMenuXAdder, _bgW, _bgH * _optionNumber);
 drawFadeInSprite(global.enemyPortrait, subMenuX - 49 + _bgW / 2, subMenuY + 3, subMenuAlpha, subMenuXAdder);	
-var _options = [];
 	
 draw_set_alpha(subMenuAlpha);
 draw_set_font(fMonoNotMono);
 
 //Draws the secondary options (BUTTONS)
-for (var i = 0; i < _optionNumber; i++)
-{
-	//Pushing the right names
-	array_push(_options, global.playerEquippedOptions[i].name);
-	//Draws the buttons and the text
+for (var i = 0; i < _optionNumber; i++) {
 	var _btnSpr = global.selectedGuiStyle.buttons;
 	var _btnX = subMenuX + _xBorder - 58;
 	var _btnY = subMenuY + (_h * i + 1 * i) + _yBorder + 2;
@@ -46,6 +41,5 @@ for (var i = 0; i < _optionNumber; i++)
 	var _textSprite = global.playerEquippedOptions[i].textSprite;
 	draw_sprite_ext(_btnSpr, _index, _btnX + subMenuXAdder, _btnY, 1, 1, 0, c_white, subMenuAlpha);
 	draw_sprite(_textSprite, 0, _btnX + subMenuXAdder, _btnY);
-	//draw_text(_btnX + _w / 4 - 7 + subMenuXAdder, _btnY + _yBorder - 1.5, _options[i]);
 }
 draw_set_alpha(1);

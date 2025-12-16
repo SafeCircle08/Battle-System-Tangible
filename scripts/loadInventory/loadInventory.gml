@@ -1,30 +1,31 @@
 function loadItemsSimple() {
-    var fileName = "items.ini";
-    if (!file_exists(fileName)) return;
+    if (!file_exists(FILE_NAME_ITEMS)) { return; }
     
     global.equippedItems = [];
-    
-    ini_open(fileName);
+    ini_open(FILE_NAME_ITEMS);
     
 	var i = 0;
 	while (true) {
-	    var section = "Id for item: " + string(i);
-	    if (!ini_key_exists(section, "Id")) { break; }
+	    var section = FILE_ITEM_SECTION + string(i);
+	    if (!ini_key_exists(section, FILE_ITEM_ID_KEY) || !ini_section_exists(section)) { break; }
 		
-	    var idStr = ini_read_string(section, "Id", "0"); //the id of the current item
-		global.equippedItems[i] = variable_clone(global.itemsInGame[idStr]); //duplicate it to have unique references
+		var item;
+		var idStr = ini_read_string(section, FILE_ITEM_ID_KEY, "0");
+		var toLoadItem = global.itemsById[? idStr];
+		item = variable_clone(toLoadItem);
+		global.equippedItems[i] = item;
 		
 		//Saving the enchants the player put into the items
-		for (var j = 0; j < 3; j++) {
+		for (var j = 0; j < MAX_ENCHANTS_PER_ITEM_NUM; j++) {
 			if (!ini_key_exists(section, "Enchant " + string(j) + " spr")) { break; }
-			global.equippedItems[i].enchanted = true;
-			//gets the reference of the sprite asset
-			global.equippedItems[i].enchants[j][ENCHANT_SPRITE] = asset_get_index(ini_read_string(section, "Enchant " + string(j) + " spr", "0")); 
-			 //gets the reference of the function asset
-			global.equippedItems[i].enchants[j][ENCHANT_FUNCTION] = asset_get_index(ini_read_string(section, "Enchant " + string(j) + " func", "0"));
+			setItemToEnchantedState(item);
+			var _enchantSprAssetIndex = ini_read_string(section, "Enchant " + string(j) + " spr", "0");
+			var _enchantFuncAssetIndex = ini_read_string(section, "Enchant " + string(j) + " func", "0");
+			
+			item.enchants[j][ENCHANT_SPRITE] = asset_get_index(_enchantSprAssetIndex); 
+			item.enchants[j][ENCHANT_FUNCTION] = asset_get_index(_enchantFuncAssetIndex);
 		}
 	    i += 1;
 	}
-	
     ini_close();
 }

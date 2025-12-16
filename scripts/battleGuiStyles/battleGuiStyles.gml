@@ -93,24 +93,3 @@ createNewGuiStyleSet(
 */
 
 global.selectedGuiStyle = global.guiStyles[global.styleSelection];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

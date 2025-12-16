@@ -7,8 +7,6 @@ if (playerMainActionTurn()) {
 		decidingSubAction = true;
 		oBulletGeneratorManager.generatorCreated = false;
 		
-		if (!ds_exists(ds_messages, ds_type_list)) { ds_messages = ds_list_create() }
-		
 		mainPressed = selected_option;
 		global.settedMainBattleOptions[selected_option]._selectFunction();
 	

@@ -3,14 +3,6 @@ if (fadingOut == true) { fadeOut(); exit; }
 
 var _optionList = global.playerEquippedOptions;
 var _optionNumber = array_length(_optionList);
-var _options = [];
-	
-//Draws the secondary options (BUTTONS)
-for (var i = 0; i < _optionNumber; i++)
-{
-	//Pushing the right names
-	array_push(_options, global.playerEquippedOptions[i].name);
-}
 
 battleDelay = setTimer(battleDelay);
 if (battleDelay == 0) {

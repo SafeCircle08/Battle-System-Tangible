@@ -1,4 +1,3 @@
-
 function putItemsInInventory(n) {
 	for (var i = 0; i < n; i++) {
 		var _index = irandom_range(0, array_length(global.itemsInGame) - 1);

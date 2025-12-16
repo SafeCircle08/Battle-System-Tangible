@@ -2,6 +2,22 @@
 function steamPunkEnemyBattleInfo() {
 	#region DIALOGUE
 	//Dialogue list
+	
+	/*
+	
+	steamPunkText = 
+	[
+		[
+			["Text", "Text", ..., "Text"],
+			[face1, face2, ..., faceN]
+		],
+		[
+			["Text", "Text", ..., "Text"],
+			[face1, face2, ..., faceN]
+		],
+	]
+	*/
+	
 	var steamEnemyText =
 	[
 		[
