@@ -1,1 +1,1 @@
-sprite_index = sTextBox_GOTHIC;
+sprite_index = global.selectedGuiTheme.textBox;

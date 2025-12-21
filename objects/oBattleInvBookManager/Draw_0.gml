@@ -1,7 +1,7 @@
 var bookBgX = bookX;
 var bookBgY = bookY;
 
-var bookBgSpr = global.selectedGuiStyle.bg;
+var bookBgSpr = global.selectedGuiTheme.bg;
 
 draw_set_alpha(drawAlpha);
 

@@ -1,33 +1,28 @@
-function dpShoot(_damageAdder)
-{
-	if (confirmPressed())
-	{
+function dpShoot(_damageAdder) {
+	if (confirmPressed()) {
 		pressed = true;
 		canShoot = false;
 		
-		with (oDrumPadScope)
-		{
+		with (oDrumPadScope) {
 			var collidingShell = instance_place(x, y, oShell);
 			var collidingWrongShell = instance_place(x, y, oBadShell);
 			if (collidingWrongShell != noone) { game_end();	}
 		
 			//Se non collido con le schells giuste:
-			if (collidingShell == noone)
-			{ 
-				audio_play_sound(sndEmptyChamber, 50, false);
+			if (collidingShell == noone) {
+				playSound(sndEmptyChamber, SOUND_CHANNEL_2);
 				exit; 
 			}
 			
 			//Animazione dell'ombrello
 			if (other.animating == false) { other.animating = true; }
-			else 
-			{
+			else {
 				other.animating = false;
 				other.animating = true;
 			}
 			
 			//Danni, suoni ed effetti
-			actualDamage = 100;
+			actualDamage = other.shellDamage;
 			other.damage += actualDamage + _damageAdder;
 			if (_damageAdder != 0) { audio_play_sound(sndDing_1, 50, false); }
 			audio_play_sound(sndShot, 60, false, global.soundGain);

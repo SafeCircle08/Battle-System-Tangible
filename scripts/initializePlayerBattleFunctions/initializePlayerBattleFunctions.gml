@@ -116,7 +116,7 @@ function initializeInventoryOptionFunctions() {
 	
 	createOutPutMessage = function() {
 		var _border = 10;
-		var _sprBG = sInventoryBG;
+		var _sprBG = sGUI_BackGround_ORANGE;
 		var _bgH = sprite_get_height(_sprBG) * 2;
 		
 		var _x = INVENTORY_X + _border + inventoryXAdder;

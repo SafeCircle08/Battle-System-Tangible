@@ -25,6 +25,7 @@ animating = false;
 canShoot = false;
 actualDamage = 0;
 damage = 0;
+shellDamage = 100;
 
 fact = 3;
 leftBarW = -155;

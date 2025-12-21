@@ -6,3 +6,5 @@
 #macro c_custom_light_green make_color_rgb(0, 255, 0)
 #macro c_custom_shield_color make_color_rgb(117, 48, 255)
 #macro c_custom_red_hit_color make_color_rgb(238, 28, 36)
+
+#macro c_custom_night_red make_colour_rgb(254, 75, 94)

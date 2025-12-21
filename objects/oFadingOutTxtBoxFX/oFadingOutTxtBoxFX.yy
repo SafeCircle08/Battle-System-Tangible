@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sTextBox_GOTHIC",
-    "path":"sprites/sTextBox_GOTHIC/sTextBox_GOTHIC.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

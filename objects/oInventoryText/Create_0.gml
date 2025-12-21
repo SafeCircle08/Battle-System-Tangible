@@ -13,7 +13,7 @@ image_yscale = 1;
 
 
 drawItemOutPutText = function() {
-	var _bgW = sprite_get_width(sInventoryBG) * 3;
+	var _bgW = sprite_get_width(sGUI_BackGround_ORANGE) * 3;
 	var _w = _bgW + 40;
 	var _sep = 20;
 	var _scale = 0.5;

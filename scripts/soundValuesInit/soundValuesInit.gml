@@ -17,8 +17,13 @@
 global.soundGain = 1;
 global.musicGain = 1;
 
+
 function playSound(sndIndex, sndChannel, loop = false, gainValue = 1) {
 	audio_play_sound(sndIndex, sndChannel, loop, global.soundGain * gainValue);
+}
+
+function playSoundNotPlaying(_snd, _sndCh, _loop = false, _gainValue = 1) {
+	if (!audio_is_playing(_snd)) { playSound(_snd, _sndCh, _loop, _gainValue); }
 }
 
 function playSoundPitch(sndIndex, sndChannel, loop = false, gainValue = 1, _minPitch = 0, _maxPitch = 1) {

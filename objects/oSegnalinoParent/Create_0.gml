@@ -13,7 +13,7 @@ enum SEGNALINO_LEVEL {
 	LEVEL_5 = 5,	
 }
 
-playSound(sndSettedSegnalino, SOUND_CHANNEL_2);
+playSoundNotPlaying(sndSettedSegnalino, SOUND_CHANNEL_2);
 
 type = SEGNALINO_TYPE.DAMAGE;
 level = SEGNALINO_LEVEL.LEVEL_1;

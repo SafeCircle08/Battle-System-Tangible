@@ -74,47 +74,42 @@ if (!isInBulletHellSection()) {
 	
 	#region DRAWING MAIN MENU
 	draw_set_font(fMonoNotMono);
-	var _bgH = 25;
-	var _xBorder = 17;
-	var _yBorder = 4;
 	var _bgW = 80;
+	var _buttonX = startButtonX;
 	var _buttonY = room_height / 4 - 12;
 	var _goalButtonX = 0;
-	var _sprButton = sLittleRectangle;
+	var _sprButton = global.selectedGuiTheme.buttons;
 	var _buttonW = sprite_get_width(_sprButton);
 	var _buttonH = sprite_get_height(_sprButton);
 	
 	//Button BG
-	draw_sprite_stretched(global.selectedGuiStyle.bg, 0, startButtonX - 50, _buttonY - 5, _buttonW / 2 + 71.5, _buttonH * 2 + 15);
+	var _mainBgW = (_buttonW * 2) + 7;
+	var _mainBgHeightScale = 4;
+	var _mainBgH = (_buttonH * _mainBgHeightScale) + 15;
+	draw_sprite_stretched(global.selectedGuiTheme.bg, 0, _buttonX - 50, _buttonY - 5, _mainBgW, _mainBgH);
 	//Mini player portrait
-	draw_sprite_ext(global.selectedGuiStyle.miniPortrait, 0, startButtonX + 40, _buttonY - 2, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(global.selectedGuiTheme.miniPortrait, 0, _buttonX + 40, _buttonY - 2, 1, 1, 0, c_white, 1);
 	
 	if (!showActionsFlavourText) {
 		increaseMainMenuXPos();	
 		for (var i = 0; i < array_length(mainOptionsNames); i++) {
-			draw_set_color(c_white);
-			//Draws the button
-			var _index = 0;
-			if (playerMainActionTurn()) {
-				if (selected_option == i) { 
-					_index = 1;
-					draw_set_color(global.selectedGuiStyle.selectionColor);
-				};
-			}
 			var _y = _buttonY + 21 * i;
-			var _x = startButtonX;
+			var _x = _buttonX;
 			
 			//Actual button
-			draw_sprite(global.selectedGuiStyle.buttons, _index, _x, _y);
+			draw_sprite(global.selectedGuiTheme.buttons, ((selected_option == i) && (playerMainActionTurn())), _x, _y);
 			
-			//Button Properties (name, deco, ecc...)		
-			var text = global.settedMainBattleOptions[i].name;
+			var _xOffset = 66;
+			var _yOffset = 2;
+			var _decoSprBg = global.selectedGuiTheme.decoBg;
+			var _decoSpr = global.settedMainBattleOptions[i].decoSprite;
+			
+			draw_sprite(_decoSprBg, ((selected_option == i) && (playerMainActionTurn())), _x + _xOffset, _y + _yOffset);
+			draw_sprite(_decoSpr, ((selected_option == i) && (playerMainActionTurn())), _x + _xOffset, _y + _yOffset);
+			
+			var textX = _buttonX;
+			var textY = (_buttonY + 5) + (_buttonH + 1) * i - 5;
 			var _textSprite = global.settedMainBattleOptions[i].textSprite;
-			draw_sprite(global.selectedGuiStyle.decoBg, _index, _x + 66, _y + 2); //deco bg
-			draw_sprite(global.settedMainBattleOptions[i].decoSprite, _index, _x + 66, _y + 2); //actual deco
-			var textX = startButtonX;
-			var textY = (_buttonY + 5) + (_buttonH / 2 + 1) * i - 5.5;
-			var _nameL = string_length(text)
 			draw_sprite(_textSprite, 0, textX, textY);
 		}
 		drawTextBoxText(battleFlavourText, Mono, false, false, ord("Z"), true, true, sndBasicTxt5, 0, 0);
@@ -127,19 +122,18 @@ if (!isInBulletHellSection()) {
 		draw_set_alpha(inventoryAlpha);
 		
 		var _itemWidth = sprite_get_width(sItemSprite);
-		var _border = 10;
 		var _inventoryX = INVENTORY_X;
 		var _inventoryY =  INVENTORY_Y;
 		
-		var _sprBG = global.selectedGuiStyle.bg;
-		var _bgW = sprite_get_width(_sprBG) * 3;
-		var _bgH = sprite_get_height(_sprBG) * 2;
+		var _sprBG = global.selectedGuiTheme.bg;
+		_bgW = sprite_get_width(_sprBG) * 3;
+		_bgH = sprite_get_height(_sprBG) * 2;
 
 		//Draws the inventory BackGround
 		draw_sprite_stretched(_sprBG, 0, _inventoryX + inventoryXAdder, _inventoryY, _bgW, _bgH);
 		
 		//Draws the Inventory Mini Portrait (can an inventory have a portrait?, Idk lol)
-		draw_sprite(global.selectedGuiStyle.inventoryPortrait, 0, _inventoryX + _bgW - 30 + inventoryXAdder, _inventoryY + 3)
+		draw_sprite(global.selectedGuiTheme.inventoryPortrait, 0, _inventoryX + _bgW - 30 + inventoryXAdder, _inventoryY + 3)
 		
 		//Draws the inventory space (useless but cool)
 		draw_set_font(fHungryBig);
@@ -170,7 +164,7 @@ if (!isInBulletHellSection()) {
 				shader_reset();
 				drawStatistics(i, _itemSprX, _itemSprY, _border); //item properties
 				drawEnchants(i, _itemSprX, _itemSprY, _border); //item enchants
-				draw_set_color(global.selectedGuiStyle.selectionColor);  
+				draw_set_color(global.selectedGuiTheme.selectionColor);  
 			}
 			else { draw_set_color(c_white); }
 			
@@ -213,8 +207,7 @@ if (!isInBulletHellSection()) {
 		}
 		
 		//Drawing the Battle Book related things
-		var _itemInfoBgY = _inventoryY + (_bgH / 2);
-		var _bookSpr = global.selectedGuiStyle.itemStatsBook;
+		var _bookSpr = global.selectedGuiTheme.itemStatsBook;
 		var _bookW = sprite_get_width(_bookSpr);
 		var _bookH = sprite_get_height(_bookSpr);
 		var _bookX = _inventoryX + _bgW - _bookW - _border;

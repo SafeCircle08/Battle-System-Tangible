@@ -182,7 +182,7 @@ changeTurnAfterEnemySpeech = function() {
 }
 
 //The effect
-//makeAlphaSinEffect(15, 0, LAYER_UNDER_EFFECT, 5, global.selectedGuiStyle.bg, 3, false, 2, 1.8, true);
+//makeAlphaSinEffect(15, 0, LAYER_UNDER_EFFECT, 5, global.selectedGuiTheme.bg, 3, false, 2, 1.8, true);
 //Initialize the "coded" functions
 initializeAllCreatedFunctions();
 

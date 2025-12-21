@@ -86,6 +86,8 @@ function drawTextBoxText(
 	_enemySpeech = false
 ) {
 	
+	if (isActionsFlavourText) && (oBattleManager.isEnemySpeaking()) { return; }
+	
 	#region INITIALIZATION SECTION
 	var _cam = view_camera[view_current];
 	var _camW = camera_get_view_width(_cam);
@@ -94,28 +96,21 @@ function drawTextBoxText(
 	var _camY = camera_get_view_y(_cam);
 	
 	//Sprite properties
-	var _sprTextBox = global.selectedGuiStyle.textBox;
+	var _sprTextBox = global.selectedGuiTheme.textBox;
 	var _boxW = sprite_get_width(_sprTextBox); 
 	var _boxH = sprite_get_height(_sprTextBox);
 	
 	var _txtBoxX = _camX + (_camW / 2) - 1;
 	var _txtBoxY = _camY + _camH - 3;
 	
-	if (inBattle) { _confirmKey = ord("Z"); }
-	
 	if (inBattle == false) {
 		var _tollerance = 20;
 		if (oPlayerOW.y > _camH / 2) {
-			_txtBoxY = _camY + _boxH + 2; //up to the screen
+			_txtBoxY = _camY + _boxH + 2; 
 		}
 	}
 	
 	if (inBox) { draw_sprite(_sprTextBox, 0, _txtBoxX, _txtBoxY); }
-	
-	//When the enemy is talking, we don't want the text
-	//to be drawn or interacted with, so we simply
-	//stop the func here
-	if (isActionsFlavourText) && (oBattleManager.isEnemySpeaking()) { return; }
 	
 	#endregion
 	
@@ -150,7 +145,7 @@ function drawTextBoxText(
 	
 	#endregion
 	
-	#region THE TEXTBOX DRAWN TEXT (OW NPCs, Battle Flavour Texts, Actions Texts...)
+	#region THE TEXTBOX DRAWN TEXT
 	
 	if (inBox) { draw_sprite(_sprTextBox, 0,  _txtBoxX, _txtBoxY); }
 	dialogueDelay = setTimer(dialogueDelay);
@@ -174,7 +169,6 @@ function drawTextBoxText(
 		var _amplitude = 5;
 		var _freq = 30;		
 		switch (pagesWithFXs[page]) {
-
 			case TEXT_ANIMATIONS_FXS.TEXT_AN_SHAKE:
 				var _shakeAmpli = 1;
 				_txtX += irandom_range(-_shakeAmpli, _shakeAmpli);
@@ -199,7 +193,7 @@ function drawTextBoxText(
 				_scaleY = clamp(_scaleY, -1, 1.3);
 			break;
 		}
-	} catch (_exception)
+	} catch (_exception) {}
 	
 	drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scale, 0);
 	
@@ -219,46 +213,41 @@ function drawTextBoxText(
 		
 	#region MANAGING TEXT PLAYER INTERACTIONS (Finishing page, next page etc...)
 	if (global.getTextBoxInputs) {
-		
-		//Auto Skip in Battle 
 		manageEnemySpeechAutoSkip(_textList, inBattle);
 		
 		if (confirmTextPressed() && (textFinished(_textList))) {
 			if (morePages(_textList)) { 
 				goToNextPage();	
 				return;
+			} else {
+				if (!inBattle) { 
+					destroyTextBoxOW(_txtBoxX, _txtBoxY); 
+				} else {
+					if (oBattleManager.isEnemySpeaking()) { 
+						oBattleManager.changeTurnAfterEnemySpeech(); 
+					} else if (oBattleManager.showingExtraMonologueText) {
+						setToOriginalBattleFlavourText();
+						return;
+					}
+				}
 			}
-			else {
-				if (inBattle == false) { 
-					destroyTextBoxOW(); 
-					instance_create_layer(_txtBoxX, _txtBoxY, "Instances", oFadingOutTxtBoxFX);
-				}
-				else {
-					if (oBattleManager.isEnemySpeaking()) { oBattleManager.changeTurnAfterEnemySpeech(); } 
-					else {
-						if (oBattleManager.showingExtraMonologueText) {
-							setToOriginalBattleFlavourText();
-							return;
-						}
-					}
-				}
 				
-				if (isActionsFlavourText) {
-					with (oBattleManager) {
-						if (enemyTextShowed == false) { showEnemyText(); }
-						if (enemyTextShowed == true) { changeTurn(); }
-					}
+			if (isActionsFlavourText) {
+				with (oBattleManager) {
+					if (enemyTextShowed == false) { showEnemyText(); }
+					if (enemyTextShowed == true) { changeTurn(); }
 				}
-				
-				speechSpeed = 0.5;
-				setToFirstPage();
-				return;
-			}  
+			}
+			
+			speechSpeed = 0.5;
+			setToFirstPage();
+			return; 
 		}
 		
-		if (charCount >= 1) { 
+		var _minCharsToShow = 1;
+		if (charCount >= _minCharsToShow) { 
 			if (confirmTextPressed() && textUnfinished(_textList)) { showFullText(_textList); }
 		}
 	}
-	#endregion
 }
+	#endregion

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"battleGuiThemes",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"battleGuiThemes",
+  "parent":{
+    "name":"THEMES_SETTINGS",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/THEMES_SETTINGS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

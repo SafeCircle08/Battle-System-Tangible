@@ -19,7 +19,7 @@ var _sprButton = sLittleRectangle;
 var _buttonW = sprite_get_width(_sprButton);
 var _buttonH = sprite_get_height(_sprButton);
 
-var _bgSpr = global.selectedGuiStyle.bg;
+var _bgSpr = global.selectedGuiTheme.bg;
 drawFadeInSprite(sSelectArrow, subMenuX - 49, subMenuY + (_bgH * _optionNumber) / 2, subMenuAlpha, subMenuXAdder);
 drawFadeInSpriteStretched(_bgSpr, subMenuX - 49, subMenuY, subMenuAlpha, subMenuXAdder, _bgW, _bgH * _optionNumber);
 drawFadeInSprite(global.enemyPortrait, subMenuX - 49 + _bgW / 2, subMenuY + 3, subMenuAlpha, subMenuXAdder);	
@@ -29,14 +29,14 @@ draw_set_font(fMonoNotMono);
 
 //Draws the secondary options (BUTTONS)
 for (var i = 0; i < _optionNumber; i++) {
-	var _btnSpr = global.selectedGuiStyle.buttons;
+	var _btnSpr = global.selectedGuiTheme.buttons;
 	var _btnX = subMenuX + _xBorder - 58;
 	var _btnY = subMenuY + (_h * i + 1 * i) + _yBorder + 2;
 	var _index = 0;
 	draw_set_color(c_white);
 	if (i == oBattleManager.selected_option) { 
 		_index = 1; 
-		draw_set_color(global.selectedGuiStyle.selectionColor);
+		draw_set_color(global.selectedGuiTheme.selectionColor);
 	} 
 	var _textSprite = global.playerEquippedOptions[i].textSprite;
 	draw_sprite_ext(_btnSpr, _index, _btnX + subMenuXAdder, _btnY, 1, 1, 0, c_white, subMenuAlpha);
