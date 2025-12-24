@@ -116,7 +116,7 @@ function initializeInventoryOptionFunctions() {
 	
 	createOutPutMessage = function() {
 		var _border = 10;
-		var _sprBG = sGUI_BackGround_ORANGE;
+		var _sprBG = setToGuiBgSelectedTheme();
 		var _bgH = sprite_get_height(_sprBG) * 2;
 		
 		var _x = INVENTORY_X + _border + inventoryXAdder;
@@ -192,8 +192,7 @@ function initializeInventoryOptionFunctions() {
 	}
 	#endregion
 }
-function initializeHealCheatFunction()
-{
+function initializeHealCheatFunction(){
 	selectedHealCheatOption = function() { terminateAction(["Player healed himself!!!"], method(self, function() { global.playerHP += 1; })) }	
 }
 function initializeAttackFunctions() {

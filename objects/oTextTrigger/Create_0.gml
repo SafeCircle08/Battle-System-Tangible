@@ -53,3 +53,5 @@ addCharacterPage = function(_text, _faceSprRef, _moods, _fxWanted = TEXT_ANIMATI
 	array_push(colors, _color);
 	array_push(pagesWithFXs, _fxWanted);
 }
+
+function addCharPage(_text, _faceSprRef, _mood, _fxWanted = TEXT_ANIMATIONS_FXS.TEXT_NO_FXS, _color = c_white) { addCharacterPage(_text, _faceSprRef, _mood, _fxWanted, _color); }

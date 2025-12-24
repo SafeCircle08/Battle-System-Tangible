@@ -1,0 +1,1 @@
+function setToSelectionColorSelectedTheme() { return global.selectedGuiTheme.selectionColor; }

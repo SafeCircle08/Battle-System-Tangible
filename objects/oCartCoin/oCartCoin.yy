@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sCartCoin",
-    "path":"sprites/sCartCoin/sCartCoin.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -1,5 +1,4 @@
-if (drawAlpha > 0)
-{
+if (drawAlpha > 0) {
 	draw_self();
 	var _cameraW = camera_get_view_width(view_camera[view_current]);
 	var _cameraH = camera_get_view_height(view_camera[view_current]);

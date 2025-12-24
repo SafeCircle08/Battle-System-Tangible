@@ -1,5 +1,5 @@
 var _border = 5;
-var _enchantSysBg = global.selectedGuiTheme.systemEnchBg;
+var _enchantSysBg = setToGuiEnchSysBgSelectedTheme();
 var _enchBGX = MAIN_BATTLE_MENU_X + _border - xAdderRef; 
 var _enchBGY = MAIN_BATTLE_MENU_Y;
 var _enchBGH = sprite_get_width(_enchantSysBg);

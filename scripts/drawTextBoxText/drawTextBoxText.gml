@@ -96,11 +96,11 @@ function drawTextBoxText(
 	var _camY = camera_get_view_y(_cam);
 	
 	//Sprite properties
-	var _sprTextBox = global.selectedGuiTheme.textBox;
+	var _sprTextBox = setToGuiTxtBoxSelectedTheme();
 	var _boxW = sprite_get_width(_sprTextBox); 
 	var _boxH = sprite_get_height(_sprTextBox);
 	
-	var _txtBoxX = _camX + (_camW / 2) - 1;
+	var _txtBoxX = _camX + (_camW / 2);
 	var _txtBoxY = _camY + _camH - 3;
 	
 	if (inBattle == false) {
@@ -146,8 +146,6 @@ function drawTextBoxText(
 	#endregion
 	
 	#region THE TEXTBOX DRAWN TEXT
-	
-	if (inBox) { draw_sprite(_sprTextBox, 0,  _txtBoxX, _txtBoxY); }
 	dialogueDelay = setTimer(dialogueDelay);
 	if (canAdvanceText(_textList)) { advanceText(_textList, _txtSound, _pDel, _cDel); }
 	
@@ -220,9 +218,8 @@ function drawTextBoxText(
 				goToNextPage();	
 				return;
 			} else {
-				if (!inBattle) { 
-					destroyTextBoxOW(_txtBoxX, _txtBoxY); 
-				} else {
+				if (!inBattle) { destroyTextBoxOW(_txtBoxX, _txtBoxY); } 
+				else {
 					if (oBattleManager.isEnemySpeaking()) { 
 						oBattleManager.changeTurnAfterEnemySpeech(); 
 					} else if (oBattleManager.showingExtraMonologueText) {

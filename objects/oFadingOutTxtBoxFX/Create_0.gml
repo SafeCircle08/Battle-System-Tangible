@@ -1,1 +1,1 @@
-sprite_index = global.selectedGuiTheme.textBox;
+sprite_index = setToGuiTxtBoxSelectedTheme();

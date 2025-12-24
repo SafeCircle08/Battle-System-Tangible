@@ -109,5 +109,5 @@ global.soapCursor = createNewMouseCursor(sSoapCursor, sSoapCursor, undefined,
 					function() { createCursorFX(oCustomCursor.x, oCustomCursor.y, choose(sSoapSpark, sBubbleFX), void, 1, false, 0.5, 0.5, 0, 0, -1, -0.003, 1, 0, 1, 0); });
 
 chooseRandomCursor();
-selectCursor(global.jazzyBeingCursor);
+selectCursor(global.lemonSliceCursor);
 cursorEnableAll();

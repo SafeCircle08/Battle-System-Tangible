@@ -2,9 +2,9 @@ if (!isInBulletHellSection()) {
 	#region VARIABLES
 	var guiX = room_width / 2;
 	var guiY = room_height;
-	var _sprTextBox = sNewBox;
+	var _sprTextBox = setToGuiTxtBoxSelectedTheme();
 	var _textBoxW = sprite_get_width(_sprTextBox);
-	var _textBoxH = sprite_get_height(_sprTextBox);
+	var _textBoxH = sprite_get_height(_sprTextBox) + 5;
 	var _battleFont = Mono;
 	var fontSize = font_get_size(_battleFont);
 	var	BUFFER = 12;
@@ -78,7 +78,7 @@ if (!isInBulletHellSection()) {
 	var _buttonX = startButtonX;
 	var _buttonY = room_height / 4 - 12;
 	var _goalButtonX = 0;
-	var _sprButton = global.selectedGuiTheme.buttons;
+	var _sprButton = setToGuiButtonsSelectedTheme();
 	var _buttonW = sprite_get_width(_sprButton);
 	var _buttonH = sprite_get_height(_sprButton);
 	
@@ -86,7 +86,8 @@ if (!isInBulletHellSection()) {
 	var _mainBgW = (_buttonW * 2) + 7;
 	var _mainBgHeightScale = 4;
 	var _mainBgH = (_buttonH * _mainBgHeightScale) + 15;
-	draw_sprite_stretched(global.selectedGuiTheme.bg, 0, _buttonX - 50, _buttonY - 5, _mainBgW, _mainBgH);
+	var _bg = setToGuiBgSelectedTheme();
+	draw_sprite_stretched(_bg, 0, _buttonX - 50, _buttonY - 5, _mainBgW, _mainBgH);
 	//Mini player portrait
 	draw_sprite_ext(global.selectedGuiTheme.miniPortrait, 0, _buttonX + 40, _buttonY - 2, 1, 1, 0, c_white, 1);
 	
@@ -97,7 +98,7 @@ if (!isInBulletHellSection()) {
 			var _x = _buttonX;
 			
 			//Actual button
-			draw_sprite(global.selectedGuiTheme.buttons, ((selected_option == i) && (playerMainActionTurn())), _x, _y);
+			draw_sprite(_sprButton, ((selected_option == i) && (playerMainActionTurn())), _x, _y);
 			
 			var _xOffset = 66;
 			var _yOffset = 2;
@@ -125,7 +126,7 @@ if (!isInBulletHellSection()) {
 		var _inventoryX = INVENTORY_X;
 		var _inventoryY =  INVENTORY_Y;
 		
-		var _sprBG = global.selectedGuiTheme.bg;
+		var _sprBG = setToGuiBgSelectedTheme();
 		_bgW = sprite_get_width(_sprBG) * 3;
 		_bgH = sprite_get_height(_sprBG) * 2;
 
@@ -142,7 +143,6 @@ if (!isInBulletHellSection()) {
 		draw_text(_inventoryX + _border * 3 + inventoryXAdder + 1, _inventoryY - _border + 1, _invCapacity);
 		draw_set_color(c_white);
 		draw_text(_inventoryX + _border * 3 + inventoryXAdder, _inventoryY - _border, _invCapacity);
-		draw_set_font(fHungrySkinny);
 		
 		//Draws the Item name, properties, info ecc...
 		var _spriteBorder = _border - 2;
@@ -164,13 +164,15 @@ if (!isInBulletHellSection()) {
 				shader_reset();
 				drawStatistics(i, _itemSprX, _itemSprY, _border); //item properties
 				drawEnchants(i, _itemSprX, _itemSprY, _border); //item enchants
-				draw_set_color(global.selectedGuiTheme.selectionColor);  
+				var _col = setToSelectionColorSelectedTheme();
+				draw_set_color(_col);  
 			}
 			else { draw_set_color(c_white); }
 			
 			if (_item.enchanted == true) { setEnchantText(i); }
 			
 			//Drawing the Item Name
+			draw_set_font(fHungrySkinny);
 			var scale = 0.5;
 			var sep = 0.5;
 			var w = 50;	
@@ -207,7 +209,7 @@ if (!isInBulletHellSection()) {
 		}
 		
 		//Drawing the Battle Book related things
-		var _bookSpr = global.selectedGuiTheme.itemStatsBook;
+		var _bookSpr = setToGuiItemBookSelectedTheme();
 		var _bookW = sprite_get_width(_bookSpr);
 		var _bookH = sprite_get_height(_bookSpr);
 		var _bookX = _inventoryX + _bgW - _bookW - _border;

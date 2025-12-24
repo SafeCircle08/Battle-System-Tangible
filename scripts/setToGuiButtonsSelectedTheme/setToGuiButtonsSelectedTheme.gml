@@ -1,0 +1,1 @@
+function setToGuiButtonsSelectedTheme() { return global.selectedGuiTheme.buttons; }

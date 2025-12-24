@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"setToSelectionColorSelectedTheme",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"setToSelectionColorSelectedTheme",
+  "parent":{
+    "name":"THEMES_SETTINGS",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/THEMES_SETTINGS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -42,8 +42,7 @@ function make_parallax_bg(side = "x", _amountList = [], _sign = [], _l1 = "", _l
 	
 	menage_layer_not_existing(_l1, _l2, _l3, _l4, _l5, _l6, _l7);
 	
-	if (side == "x")
-	{
+	if (side == "x") {
 		//Where the x axis parallax movement is menaged	
 		if (_l1 != "") { layer_x(_l1, (oCamera.finalCamX * _sign[0]) / _amountList[0]); }
 		if (_l2 != "") { layer_x(_l2, (oCamera.finalCamX * _sign[1]) / _amountList[1]); }
@@ -53,8 +52,7 @@ function make_parallax_bg(side = "x", _amountList = [], _sign = [], _l1 = "", _l
 		if (_l6 != "") { layer_x(_l6, (oCamera.finalCamX * _sign[5]) / _amountList[5]); }
 		if (_l7 != "") { layer_x(_l7, (oCamera.finalCamX * _sign[6]) / _amountList[6]); }
 	}
-	else
-	{
+	else {
 		//Where the y axis parallax movement is menaged
 		if (_l1 != "") { layer_y(_l1, (oCamera.finalCamY * _sign[0]) / _amountList[0]); }
 		if (_l2 != "") { layer_y(_l2, (oCamera.finalCamY * _sign[1]) / _amountList[1]); }

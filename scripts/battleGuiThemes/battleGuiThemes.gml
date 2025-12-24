@@ -51,12 +51,12 @@ global.theme_ORANGE = createNewGuiTheme(
 	GUI_THEMES.ORANGE,
 	sGUI_BackGround_ORANGE,
 	sGUI_BattleButton_ORANGE,
-	sTextBox_GOTHIC,
+	sGUI_TextBox_lights_ORANGE,
 	sGUI_PlayerMiniPortrait_ORANGE,
 	sGUI_InventoryMiniPortrait_ORANGE,
 	sGUI_ItemStatisticsBook_ORANGE,
 	sGUI_DecoBg_ORANGE,
-	sEnchantSystemBG,
+	sGUI_EnchantSystemBg_ORANGE,
 	c_custom_yellow
 );
 

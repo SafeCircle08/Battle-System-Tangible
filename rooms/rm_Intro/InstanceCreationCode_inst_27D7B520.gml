@@ -1,1 +1,0 @@
-setChangeRoom(rmSteamPunkOffice, 160, 910);

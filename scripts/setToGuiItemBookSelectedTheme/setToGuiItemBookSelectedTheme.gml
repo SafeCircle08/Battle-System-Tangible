@@ -1,0 +1,1 @@
+function setToGuiItemBookSelectedTheme() { return global.selectedGuiTheme.itemStatsBook; }

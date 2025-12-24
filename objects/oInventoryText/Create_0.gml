@@ -13,7 +13,9 @@ image_yscale = 1;
 
 
 drawItemOutPutText = function() {
-	var _bgW = sprite_get_width(sGUI_BackGround_ORANGE) * 3;
+	draw_set_font(fHungrySkinny);
+	var _bg = setToGuiBgSelectedTheme();
+	var _bgW = sprite_get_width(_bg) * 3;
 	var _w = _bgW + 40;
 	var _sep = 20;
 	var _scale = 0.5;
@@ -23,9 +25,7 @@ drawItemOutPutText = function() {
 	var _itemOutPutTxtX = x;
 	var _itemOutPutTxtY = y;
 	
-	if (string_length(actualArray) >= 50) {
-		_itemOutPutTxtY = y - 4;
-	}
+	if (string_length(actualArray) >= 50) { _itemOutPutTxtY = y - 4; }
 	
 	draw_text_ext_transformed(
 		_itemOutPutTxtX + 1,  _itemOutPutTxtY, _itemOutPutTxt, 

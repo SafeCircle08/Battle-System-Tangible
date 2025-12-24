@@ -1,0 +1,1 @@
+function setToGuiBgSelectedTheme() { return global.selectedGuiTheme.bg; }
