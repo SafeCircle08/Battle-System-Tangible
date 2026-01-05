@@ -7,6 +7,7 @@ yPos = 0;
 charCount = 0;
 charCountBuffer = 0;
 spriteFace = 0;
+sound = sndBasicTxt1;
 
 existanceTextTime = 0;
 
@@ -20,3 +21,8 @@ faceSpriteRef = undefined;
 characterFaces = [];
 colors = [];
 pagesWithFXs = [];
+inBattle = false;
+isActionsFlavourText = false;
+
+txtX = 0;
+txtY = 0;

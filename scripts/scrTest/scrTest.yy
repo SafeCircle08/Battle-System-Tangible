@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scrTest",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"TEXT",
+    "path":"folders/Scripts/TEXT.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

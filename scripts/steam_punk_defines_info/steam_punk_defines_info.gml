@@ -18,87 +18,21 @@ function steamPunkEnemyBattleInfo() {
 	]
 	*/
 	
-	var steamEnemyText =
-	[
-		[
-		// "AAAnnnnd, I have\nchanged my Font\nagain...",
-		 //"Is this better???\nPLEASE!\nYou have to\ntell me!",
-		 //"#Loading\n packages...",
-		 //"std::cout <<\n 'FINALLY' \n<< std::endl;",
-		 //"I've finally\nobtained a\nvoice!",
-		// "You can't\nunderstand for\nhow long I've\nbeen waiting!",
-		// "I should\nprobably call\nmy BOSS, my\nRobots, my-",
-		// "...",
-		// "You know what?",
-		// "Let's not tell\nanything to BOSS",
-		// "He'd probably\nstart some\nkind of\nbusiness on ts",
-		// "&&",
-		 "I hate\n my boss!\n  => (LOL)",
-		],
-		[
-			"This is very\nannoying\nnot gonna lie.",   
-			"Like, can you\nbelieve it?",
-			"I have to do all\nof this just\nbecause text can't\nbe scaled."
-		],
-		[
-			"The BOSS will\nfinally\nunderstand my\nimportance!",
-			"I'll finally be\nconsidered as\nan INNOVATOR!",
-			"FOREVER."
-		],
-		[
-			"And, please...",
-			"Don't think\nthat I like\ndoing this to you.",
-		],
-		["My will is\nagainst what\nI HAVE to do."],
-		[
-			"So now i have a new font\nuh?\nWell, if this is so,\ni'll make the\ncreator very very HAPPY!",
-			"You are just..."
-		],
-		["Victim of your own fate."],
-		["Damn this is starting to get dramatic, isn't it?"],
-		[
-			"Now let me think of a way in wich i could cheer you up...",
-			"...",
-			"...",
-			"Oh yeah!",
-		],
-		["I've finally understood PHOTOSINTESIS."],
-		[
-			"Uh?",
-			"You really don't know what it is about?",
-		],
-		[
-			"Ill write that down later...",
-			"maybe."
-		],
-		[
-			"Oh my God why are you still fighting?",
-			"Won't you just...",
-			"... give up...?",
-		],
-		[
-			"I'm starting to get very paranoid,,,,",
-			"but at least im not an Android!",
-		],
-		[
-			"sigh...",
-			"I think it's time for my final attack.",
-			"In which i've worked very hard!",
-			"And i'am sure this is going to finally Defeat YOU!"
-		],
-		["text"],
-		["text"],
-		["text"],
-		["text"],
-		["text"],
-		["text"],
-		["text"],
-		["text"],
-		["text"],
-		["text"],
-		["text"],
-		["text"],
+	var steamEnemyText = [
+		setEnemyBattlePage(
+			[ "This new text\nsystem is\nawesome!", "Now, I can\neven have\nfaces!" ]
+		),
+		setEnemyBattlePage(
+			["This is so cool!"]
+		),
+		setEnemyBattlePage(
+			["Really, I'm not\njoking actually."]
+		),
+		setEnemyBattlePage(
+			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
+		),
 	];
+	
 	#endregion
 	#region BULLET PATTERNS
 	var steamPunkBulletGenerator = [

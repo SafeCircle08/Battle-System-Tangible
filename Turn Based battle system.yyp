@@ -731,6 +731,7 @@
     {"id":{"name":"makeParticleGoUp","path":"scripts/makeParticleGoUp/makeParticleGoUp.yy",},},
     {"id":{"name":"MakeRandom","path":"scripts/MakeRandom/MakeRandom.yy",},},
     {"id":{"name":"manageDevCommands","path":"scripts/manageDevCommands/manageDevCommands.yy",},},
+    {"id":{"name":"manageTextInputs","path":"scripts/manageTextInputs/manageTextInputs.yy",},},
     {"id":{"name":"menageAfterTurnFlavourTexts","path":"scripts/menageAfterTurnFlavourTexts/menageAfterTurnFlavourTexts.yy",},},
     {"id":{"name":"menageBgs","path":"scripts/menageBgs/menageBgs.yy",},},
     {"id":{"name":"mightHurt","path":"scripts/mightHurt/mightHurt.yy",},},

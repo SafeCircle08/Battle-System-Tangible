@@ -1,6 +1,3 @@
-//The manager of the battle battling
-mainOptionsNames = [];
-
 layers = ["LoopBg_1", "LoopBg_2"];
 
 autoSkipTimerRef = 150;
@@ -36,7 +33,6 @@ hpbarW = 121;
 charCount = 0;
 page = 0;
 speechSpeed = 0.5;
-ds_messages = ds_list_create();
 messageCounter = 0;
 showActionsFlavourText = false;
 messageTimer = 0;
@@ -72,9 +68,8 @@ playingGuiAnimation = false;
 
 setSelectionDelay = function() { takenOptionDelay = 3; }
 
-//Method
-setSubMenuPositions = function(_x, _y)
-{
+//Methods
+setSubMenuPositions = function(_x, _y){
 	subMenuX = _x;
 	subMenuY = _y;
 }
@@ -83,8 +78,7 @@ showingSubSubWindow = false;
 actionChoosen = false;
 showingSubWindow = false;
 
-increaseMainMenuXPos = function()
-{
+increaseMainMenuXPos = function(){
 	var _goalButtonX = 2;
 	if (startButtonX < _goalButtonX)
 	{
@@ -94,30 +88,25 @@ increaseMainMenuXPos = function()
 	startButtonX = clamp(startButtonX, -200, _goalButtonX);		
 }
 
-decreaseMainMenuXPos = function()
-{
-	if (startButtonX > startButtonXRef)
-	{
+decreaseMainMenuXPos = function(){
+	if (startButtonX > startButtonXRef){
 		startButtonX -= 5;
 		startButtonX = clamp(startButtonX, -200, 100);
 	}		
 }	
 
-isEnemySpeaking = function()
-{
+isEnemySpeaking = function(){
 	return (enemyCanShowText) &&
 		   (enemyTextShowed == false)	
 }
 
-playerMainActionTurn = function()
-{
+playerMainActionTurn = function(){
 	return (playerTurn == true) &&
 		   (showActionsFlavourText == false) && 
 		   (decidingSubAction == false)	
 }
 
-isNotPlayerTurn = function()
-{
+isNotPlayerTurn = function(){
 	return (playerTurn == false) &&
 		   (showActionsFlavourText == false)
 }
@@ -179,6 +168,64 @@ changeTurnAfterEnemySpeech = function() {
 	enemyTextShowed = true;
 	changeTurn();
 	autoSkipTimer = autoSkipTimerRef;
+}
+
+drawMenuButtons = function(_sprButton, _buttonX, _buttonY) {
+	for (var i = 0; i < array_length(global.settedMainBattleOptions); i++) {
+		var _y = _buttonY + 21 * i;
+		var _x = _buttonX;
+		var _buttonH = sprite_get_height(_sprButton);
+			
+		draw_sprite(_sprButton, ((selected_option == i) && (playerMainActionTurn())), _x, _y);
+			
+		var _xOffset = 66;
+		var _yOffset = 2;
+		var _decoSprBg = global.selectedGuiTheme.decoBg;
+		var _decoSpr = global.settedMainBattleOptions[i].decoSprite;
+			
+		draw_sprite(_decoSprBg, ((selected_option == i) && (playerMainActionTurn())), _x + _xOffset, _y + _yOffset);
+		draw_sprite(_decoSpr, ((selected_option == i) && (playerMainActionTurn())), _x + _xOffset, _y + _yOffset);
+			
+		var textX = _buttonX;
+		var textY = (_buttonY + 5) + (_buttonH + 1) * i - 5;
+		var _textSprite = global.settedMainBattleOptions[i].textSprite;
+		draw_sprite(_textSprite, 0, textX, textY);
+	}	
+}
+
+drawActionFlavourText = function() {
+	drawTextBoxText(
+		actionsFlavourText, 
+		Mono, 
+		false, 
+		true,
+		true, 
+		true, 
+	);	
+}
+drawBattleFlavourText = function() {
+	drawTextBoxText(
+		battleFlavourText, 
+		Mono, 
+		false,
+		false,
+		true, 
+		true
+	);	
+}
+drawEnemyText = function() {
+	var _page = global.textList[turnNumber];
+	drawTextBoxText(
+		_page.text,
+		fHungrySkinny,
+		false,
+		false,
+		true,
+		true,
+		sndSteamPunkTalk,
+		true,
+		183, 35
+	);		
 }
 
 //The effect

@@ -18,18 +18,10 @@ if (!isInBulletHellSection()) {
 	var _dsY = camera_get_view_height(view_camera[view_current]);
 	var _border = 10;
 	
-	if (showActionsFlavourText) && (!isEnemySpeaking()) { 
-		drawTextBoxText(actionsFlavourText,Mono, false, true, ord("Z"), true, true, sndBasicTxt5, 0, 0); 
-	}
+	if (showActionsFlavourText) && (!isEnemySpeaking()) { drawActionFlavourText(); }
 	
-	if (isEnemySpeaking()) { 
-		drawTextBoxText(
-			global.textList[turnNumber], fHungrySkinny, false, false, global.confirmTextKey, 
-			true, true, sndSteamPunkTalk, 10, 5, 10, 8, 20, 
-			sprite_get_width(sTextBoxBg) - 10, 0.5, 
-			183, 35, true
-		); 
-	}
+	if (isEnemySpeaking()) { drawEnemyText(); }
+	
 	#endregion
 	
 	#region DRAWING PLAYER HP, CAGE STATE
@@ -93,29 +85,11 @@ if (!isInBulletHellSection()) {
 	
 	if (!showActionsFlavourText) {
 		increaseMainMenuXPos();	
-		for (var i = 0; i < array_length(mainOptionsNames); i++) {
-			var _y = _buttonY + 21 * i;
-			var _x = _buttonX;
-			
-			//Actual button
-			draw_sprite(_sprButton, ((selected_option == i) && (playerMainActionTurn())), _x, _y);
-			
-			var _xOffset = 66;
-			var _yOffset = 2;
-			var _decoSprBg = global.selectedGuiTheme.decoBg;
-			var _decoSpr = global.settedMainBattleOptions[i].decoSprite;
-			
-			draw_sprite(_decoSprBg, ((selected_option == i) && (playerMainActionTurn())), _x + _xOffset, _y + _yOffset);
-			draw_sprite(_decoSpr, ((selected_option == i) && (playerMainActionTurn())), _x + _xOffset, _y + _yOffset);
-			
-			var textX = _buttonX;
-			var textY = (_buttonY + 5) + (_buttonH + 1) * i - 5;
-			var _textSprite = global.settedMainBattleOptions[i].textSprite;
-			draw_sprite(_textSprite, 0, textX, textY);
-		}
-		drawTextBoxText(battleFlavourText, Mono, false, false, ord("Z"), true, true, sndBasicTxt5, 0, 0);
+		drawMenuButtons(_sprButton, _buttonX, _buttonY);
+		drawBattleFlavourText();
 	}
 	else { decreaseMainMenuXPos(); }
+	
 	#endregion
 	
 	#region	DRAWING THE INVENTORY
@@ -243,12 +217,6 @@ else {
 	var _blackBaseY = room_height;
 	var _blackBaseW = room_width;
 	var _blackBaseH = 40;
-	
-	/*
-	draw_set_color(c_black);
-	draw_rectangle(_blackBaseX, _blackBaseY - _blackBaseH, _blackBaseW, _blackBaseY, false);
-	draw_set_color(c_white);
-	*/
 	
 	var _barsBorder = 5;
 	var _hpBarW = (room_width / 2) - (_barsBorder * 2);

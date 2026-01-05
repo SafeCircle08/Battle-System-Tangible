@@ -1,4 +1,4 @@
-#macro TEXT_FINISHED_TIMER 5
+#macro TEXT_FINISHED_TIMER 10
 
 global.getTextBoxInputs = true;
 
@@ -77,13 +77,21 @@ function manageEnemySpeechAutoSkip(_textList, _inBattle) {
 	}		
 }
 
+function drawEnemySpeech(_textList, _x, _y, arrowIndex) {
+	var _bgSpr = sTextBG;
+	draw_sprite(_bgSpr, 0, _x, _y);
+	var _bgW = sprite_get_width(_bgSpr);
+	var _bgH = sprite_get_height(_bgSpr);
+	var _borderX = 30;
+	var _borderY = 12;
+	if (textFinished(_textList)) { 
+		draw_sprite(sNextPageArrow, arrowIndex, _x + _bgW - _borderX, _y + _bgH - _borderY); 
+	}		
+}
+
 function drawTextBoxText(
 	_textList, _font = Mono, _character = false, isActionsFlavourText = false, 
-	_confirmKey = vk_enter, inBox = true, inBattle = false, 
-	_txtSound = sndBasicTxt1, _pDel = 10, _cDel = 5,
-	_bX = 10, _bY = _bX - 1, _lSep = 15, _maxWidth = sprite_get_width(sTextBoxBg) - _bX,
-	_scale = 1, _textX = undefined, _textY = undefined,
-	_enemySpeech = false
+	inBox = true, inBattle = false, _sound = sndBasicTxt5, _enemySpeech = false, _textX = undefined, _textY = undefined,
 ) {
 	
 	if (isActionsFlavourText) && (oBattleManager.isEnemySpeaking()) { return; }
@@ -100,6 +108,14 @@ function drawTextBoxText(
 	var _boxW = sprite_get_width(_sprTextBox); 
 	var _boxH = sprite_get_height(_sprTextBox);
 	
+	var _scale = 1;
+	var _bX = 10;
+	var _bY = _bX - 1;
+	var _lSep = 15;
+	var _maxWidth = sprite_get_width(setToGuiTxtBoxSelectedTheme()) - _bX;
+	
+	var _scaleX = _scale;
+	var _scaleY = _scale;
 	var _txtBoxX = _camX + (_camW / 2);
 	var _txtBoxY = _camY + _camH - 3;
 	
@@ -122,8 +138,9 @@ function drawTextBoxText(
 	var _txtScale = _scale;
 	var _txtX = _txtBoxX - (_boxW / 2) + _borderX;
 	var _txtY = _txtBoxY - _boxH + _borderY;
+	print(_textX);
 	if (_textX != undefined) && (_textY != undefined) {
-		_txtX = _textX + 3;
+		_txtX = _textX + 5;
 		_txtY = _textY;
 	}	
 	
@@ -134,20 +151,18 @@ function drawTextBoxText(
 	
 	#region ENEMY SPEECH SECTION
 	if (_enemySpeech) {
-		var _bgSpr = sTextBG;
-		draw_sprite(sTextBG, 0, _textX, _textY);
-		var _bgW = sprite_get_width(_bgSpr);
-		var _bgH = sprite_get_height(_bgSpr);
-		if (textFinished(_textList)) { 
-			draw_sprite(sNextPageArrow, arrowIndex, _textX + _bgW - _borderX * 3, _textY + _boxH - _borderY - 3); 
-		}
+		_scaleX = 0.5;
+		_scaleY = 0.5;
+		drawEnemySpeech(_textList, _textX, _textY, arrowIndex);
 	}
 	
 	#endregion
 	
 	#region THE TEXTBOX DRAWN TEXT
+	var _pDel = 10;
+	var _cDel = 5;
 	dialogueDelay = setTimer(dialogueDelay);
-	if (canAdvanceText(_textList)) { advanceText(_textList, _txtSound, _pDel, _cDel); }
+	if (canAdvanceText(_textList)) { advanceText(_textList, _sound, _pDel, _cDel); }
 	
 	//The drawn text
 	var _textPart = string_copy(_textList[page], 1, charCount);
@@ -160,8 +175,19 @@ function drawTextBoxText(
 		_txtX = 60;
 	}
 	
-	var _scaleX = _scale;
-	var _scaleY = _scale;
+	drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, 0);
+	
+	var _col = c_white;
+	if (_character == true) { _col = colors[page]; }
+	draw_set_color(_col);
+	draw_text_ext_transformed(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, _scaleY, 0);		
+	
+	if (textFinished(_textList)) {
+		if (_enemySpeech == false) {
+			if (!morePages(_textList)) { draw_sprite(sPagesAllWritten_NowRestart, 0, _txtBoxX + 118, _txtBoxY - 7); }
+			draw_sprite(sNextPageArrow, arrowIndex, _txtBoxX + 108, _txtBoxY - 7); 
+		}
+	}
 	
 	try {
 		var _amplitude = 5;
@@ -193,58 +219,7 @@ function drawTextBoxText(
 		}
 	} catch (_exception) {}
 	
-	drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scale, 0);
-	
-	var _col = c_white;
-	if (_character == true) { _col = colors[page]; }
-	draw_set_color(_col);
-	draw_text_ext_transformed(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, _scaleY, 0);		
-	
-	if (textFinished(_textList)) {
-		if (_enemySpeech == false) {
-			if (!morePages(_textList)) { draw_sprite(sPagesAllWritten_NowRestart, 0, _txtBoxX + 118, _txtBoxY - 7); }
-			draw_sprite(sNextPageArrow, arrowIndex, _txtBoxX + 108, _txtBoxY - 7); 
-		}
-	}
-	
 	#endregion
-		
-	#region MANAGING TEXT PLAYER INTERACTIONS (Finishing page, next page etc...)
-	if (global.getTextBoxInputs) {
-		manageEnemySpeechAutoSkip(_textList, inBattle);
-		
-		if (confirmTextPressed() && (textFinished(_textList))) {
-			if (morePages(_textList)) { 
-				goToNextPage();	
-				return;
-			} else {
-				if (!inBattle) { destroyTextBoxOW(_txtBoxX, _txtBoxY); } 
-				else {
-					if (oBattleManager.isEnemySpeaking()) { 
-						oBattleManager.changeTurnAfterEnemySpeech(); 
-					} else if (oBattleManager.showingExtraMonologueText) {
-						setToOriginalBattleFlavourText();
-						return;
-					}
-				}
-			}
-				
-			if (isActionsFlavourText) {
-				with (oBattleManager) {
-					if (enemyTextShowed == false) { showEnemyText(); }
-					if (enemyTextShowed == true) { changeTurn(); }
-				}
-			}
-			
-			speechSpeed = 0.5;
-			setToFirstPage();
-			return; 
-		}
-		
-		var _minCharsToShow = 1;
-		if (charCount >= _minCharsToShow) { 
-			if (confirmTextPressed() && textUnfinished(_textList)) { showFullText(_textList); }
-		}
-	}
+	
+	manageTextInputs(_textList, _txtBoxX, _txtBoxY, inBattle, isActionsFlavourText);
 }
-	#endregion

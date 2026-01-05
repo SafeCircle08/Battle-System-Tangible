@@ -1,5 +1,5 @@
 
-function setEnemyBattlePage(_txt, _facialExpr) {
+function setEnemyBattlePage(_txt, _facialExpr = FACIAL_EXPRESSIONS.FACIAL_HIDDEN_FACE) {
 	var _page = {
 		text:  _txt,
 		sprite: _facialExpr

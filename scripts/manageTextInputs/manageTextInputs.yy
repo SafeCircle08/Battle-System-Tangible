@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"manageTextInputs",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"manageTextInputs",
+  "parent":{
+    "name":"MAIN_TEXT",
+    "path":"folders/Scripts/TEXT/textScripts/MAIN_TEXT.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

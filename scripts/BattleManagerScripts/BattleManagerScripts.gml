@@ -7,13 +7,8 @@ function selectAction(main = true, _moreStepsAct = true, _sound = undefined, _fl
 		moreStepsAct = _moreStepsAct;
 		if (moreStepsAct) { showingSubWindow = true; }
 		var _pages = array_length(_flavourText);
-		ds_messages = ds_list_create();
 		
 		actionsFlavourText = _flavourText;
-		
-		if ((_pages >= 0) && (_moreStepsAct == false)) {
-			for (var i = 0; i < _pages; i++) { ds_messages[| i] = _flavourText[i]; }
-		}
 	}
 	else {
 		_method();

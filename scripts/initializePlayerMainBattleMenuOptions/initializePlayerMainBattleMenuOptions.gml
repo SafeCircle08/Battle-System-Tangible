@@ -105,8 +105,4 @@ function initializePlayerMainBattleMenuOptions() {
 	global.settedMainBattleOptions[MAIN_MENU_DEFEND_old] = global.mainMenuOptions.choosing_enchant_option;
 	global.settedMainBattleOptions[MAIN_MENU_SPECIAL] = global.mainMenuOptions.choosing_pray_option;
 	global.settedMainBattleOptions[MAIN_MENU_INVENTORY] = global.mainMenuOptions.choosing_inventory_option;
-	
-	for (var i = 0; i < array_length(global.settedMainBattleOptions); i++) {
-		mainOptionsNames[i] = global.settedMainBattleOptions[i].name;
-	}
 }
