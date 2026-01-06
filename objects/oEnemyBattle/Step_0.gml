@@ -9,7 +9,7 @@ if (oBattleManager.isEnemySpeaking() && (myTextInstance == undefined)) {
 	myTextInstance.font = fHungrySkinny;
 	myTextInstance.character = false;
 	myTextInstance.isActionsFlavourText = false;
-	myTextInstance.inBox = true;
+	myTextInstance.inBox = false;
 	myTextInstance.inBattle = true;
 	myTextInstance.sound = enemyVoiceSound;
 	myTextInstance.enemySpeech = true;

@@ -1,23 +1,14 @@
-text = undefined;
+// Inherit the parent event
+event_inherited();
+
+text = oBattleManager.battleFlavourText;
 font = Mono;
 character = false;
-inBox = true;
+inBox = false;
 inBattle = true;
-isBattleFlavourText = true;
-
-myTextInstance = undefined;
+isActionFlavourText = false;
+sound = sndBasicTxt5;
 
 canCreateText = function() {
-	return (!oBattleManager.showActionsFlavourText)
-}
-
-drawBattleFlavourText = function() {
-	drawTextBoxText(
-		text, 
-		Mono, 
-		false,
-		false,
-		true, 
-		true
-	);	
+	return (!oBattleManager.showActionsFlavourText)	
 }

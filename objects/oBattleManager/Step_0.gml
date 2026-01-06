@@ -1,4 +1,3 @@
-//feather disable all
 randomize();
 
 if (playerMainActionTurn()) {
@@ -17,6 +16,9 @@ if (playerMainActionTurn()) {
 if (showActionsFlavourText) { 
 	if (oBlack.image_alpha > 0) { oBlack.image_alpha -= 0.05; } 
 	if (oPinkDetails.image_alpha > 0) { oPinkDetails.image_alpha -= 0.05; }
+	 decreaseMainMenuXPos();
+} else {
+	increaseMainMenuXPos();		
 }
 
 //Navigating sub actions windows (ex. inventory menu or battle sub menu)
@@ -27,10 +29,7 @@ if (decidingSubAction == true) {
 	
 	if (showingSubWindow) { global.settedMainBattleOptions[mainPressed]._function(); }
 	if (actionChoosen) { global.playerEquippedOptions[selected_option]._function(); }	
-}
-else { 
-	global.settedMainBattleOptions[mainPressed]._fadeOutFunc();
-}
+} else { global.settedMainBattleOptions[mainPressed]._fadeOutFunc(); }
 
 if (isNotPlayerTurn()) {
 	global.playerHP = clamp(global.playerHP, -666, global.playerMAX_HP);

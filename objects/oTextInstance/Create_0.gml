@@ -10,7 +10,7 @@ txtX = undefined;
 txtY = undefined;
 
 page = 0;
-dialogueDelay = 10;
+dialogueDelay = 5;
 speechSpeed = 0.5;
 xPos = 0;
 yPos = 0;
@@ -32,3 +32,9 @@ pagesWithFXs = [];
 
 autoSkipTimerRef = 150;
 autoSkipTimer = autoSkipTimerRef;
+
+drawBattleBox = function() {
+	var guiX = room_width / 2;
+	var guiY = room_height;
+	draw_sprite(setToGuiTxtBoxSelectedTheme(), 0, guiX, guiY - 3);			
+}

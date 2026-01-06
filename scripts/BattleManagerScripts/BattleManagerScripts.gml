@@ -1,3 +1,9 @@
+function createBattleManagerObjects(_layer = LAYER_EFFECT) {
+	instance_create_layer(x, y, _layer, oEnemyBattle);
+	instance_create_layer(x, y, _layer, oBattleFlavourTextManager);
+	instance_create_layer(x, y, _layer, oActionFlavourTextManager);
+}
+
 //When you choose an action in the submenu
 function selectAction(main = true, _moreStepsAct = true, _sound = undefined, _flavourText = [], _method = function() {}) {
 	dontGetTextInputs();
@@ -5,10 +11,8 @@ function selectAction(main = true, _moreStepsAct = true, _sound = undefined, _fl
 	if (main) {
 		_method();
 		moreStepsAct = _moreStepsAct;
-		if (moreStepsAct) { showingSubWindow = true; }
-		var _pages = array_length(_flavourText);
-		
 		actionsFlavourText = _flavourText;
+		if (moreStepsAct) { showingSubWindow = true; }
 	}
 	else {
 		_method();

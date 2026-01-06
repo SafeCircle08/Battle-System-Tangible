@@ -2,22 +2,6 @@
 function steamPunkEnemyBattleInfo() {
 	#region DIALOGUE
 	//Dialogue list
-	
-	/*
-	
-	steamPunkText = 
-	[
-		[
-			["Text", "Text", ..., "Text"],
-			[face1, face2, ..., faceN]
-		],
-		[
-			["Text", "Text", ..., "Text"],
-			[face1, face2, ..., faceN]
-		],
-	]
-	*/
-	
 	var steamEnemyText = [
 		setEnemyBattlePage(
 			[ "This new text\nsystem is\nawesome!", "Now, I can\neven have\nfaces!" ]
@@ -31,6 +15,39 @@ function steamPunkEnemyBattleInfo() {
 		setEnemyBattlePage(
 			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
 		),
+		setEnemyBattlePage(
+			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
+		),
+		setEnemyBattlePage(
+			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
+		),
+		setEnemyBattlePage(
+			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
+		),
+		setEnemyBattlePage(
+			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
+		),
+		setEnemyBattlePage(
+			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
+		),
+		setEnemyBattlePage(
+			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
+		),
+		setEnemyBattlePage(
+			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
+		),
+		setEnemyBattlePage(
+			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
+		),
+		setEnemyBattlePage(
+			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
+		),
+		setEnemyBattlePage(
+			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
+		),
+		setEnemyBattlePage(
+			["If only I\nhad other\ndifferent faces...", "It is going\nto happen soon!"]
+		),	
 	];
 	
 	#endregion

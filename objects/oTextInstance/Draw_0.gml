@@ -1,7 +1,9 @@
 draw_self();
 
 if (inBattle) {
-	if (oBattleManager.isInBulletHellSection()) { exit; }
+	if (oBattleManager.isInBulletHellSection()) { 
+		exit;
+	} else { drawBattleBox(); }
 }
 
 var _xx = camera_get_view_x(view_camera[view_current]);

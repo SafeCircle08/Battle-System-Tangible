@@ -1,6 +1,7 @@
-#macro TEXT_FINISHED_TIMER 10
-
+#macro TEXT_FINISHED_TIMER 20
 global.getTextBoxInputs = true;
+
+#region TEXT FUNCTIONS UTILS
 
 function dontGetTextInputs() { 
 	global.getTextBoxInputs = false;
@@ -89,13 +90,12 @@ function drawEnemySpeech(_textList, _x, _y, arrowIndex) {
 	}		
 }
 
+#endregion
+
 function drawTextBoxText(
 	_textList, _font = Mono, _character = false, isActionsFlavourText = false, 
 	inBox = true, inBattle = false, _sound = sndBasicTxt5, _enemySpeech = false, _textX = undefined, _textY = undefined,
 ) {
-	
-	if (isActionsFlavourText) && (oBattleManager.isEnemySpeaking()) { return; }
-	
 	#region INITIALIZATION SECTION
 	var _cam = view_camera[view_current];
 	var _camW = camera_get_view_width(_cam);
@@ -122,7 +122,7 @@ function drawTextBoxText(
 	if (inBattle == false) {
 		var _tollerance = 20;
 		if (oPlayerOW.y > _camH / 2) {
-			_txtBoxY = _camY + _boxH + 2; 
+			_txtBoxY = _camY + _boxH; 
 		}
 	}
 	
@@ -176,18 +176,6 @@ function drawTextBoxText(
 	
 	drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, 0);
 	
-	var _col = c_white;
-	if (_character == true) { _col = colors[page]; }
-	draw_set_color(_col);
-	draw_text_ext_transformed(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, _scaleY, 0);		
-	
-	if (textFinished(_textList)) {
-		if (_enemySpeech == false) {
-			if (!morePages(_textList)) { draw_sprite(sPagesAllWritten_NowRestart, 0, _txtBoxX + 118, _txtBoxY - 7); }
-			draw_sprite(sNextPageArrow, arrowIndex, _txtBoxX + 108, _txtBoxY - 7); 
-		}
-	}
-	
 	try {
 		var _amplitude = 5;
 		var _freq = 30;		
@@ -218,7 +206,16 @@ function drawTextBoxText(
 		}
 	} catch (_exception) {}
 	
-	#endregion
+	var _col = c_white;
+	if (_character == true) { _col = colors[page]; }
+	draw_set_color(_col);
+	draw_text_ext_transformed(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, _scaleY, 0);		
 	
-	//manageTextInputs(_textList, _txtBoxX, _txtBoxY, inBattle, isActionsFlavourText);
+	if (textFinished(_textList)) {
+		if (_enemySpeech == false) {
+			if (!morePages(_textList)) { draw_sprite(sPagesAllWritten_NowRestart, 0, _txtBoxX + 118, _txtBoxY - 7); }
+			draw_sprite(sNextPageArrow, arrowIndex, _txtBoxX + 108, _txtBoxY - 7); 
+		}
+	}
+	#endregion
 }

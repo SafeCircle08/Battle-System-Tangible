@@ -1,7 +1,10 @@
 function setMonologueTextToNewString(_newString) {
-	with (oBattleManager) {
-		battleFlavourText = _newString;
-		showingExtraMonologueText = true;
+	with (oBattleFlavourTextManager.myTextInstance) {
+		text = _newString;
 		resetTextVars();
+	}
+	
+	with (oBattleManager) {
+		showingExtraMonologueText = true;
 	}
 }

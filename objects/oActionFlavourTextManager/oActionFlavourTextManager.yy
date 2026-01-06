@@ -9,10 +9,13 @@
   "name":"oActionFlavourTextManager",
   "overriddenProperties":[],
   "parent":{
-    "name":"BATTLE",
-    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE.yy",
+    "name":"FlavourTexts",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/MANAGERS/Battle/FlavourTexts.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oFlavourTextManagerParent",
+    "path":"objects/oFlavourTextManagerParent/oFlavourTextManagerParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

@@ -1,17 +1,7 @@
-instance_create_layer(room_width / 2, room_height / 2, "Instances", oEnemyBattle);
-instance_create_layer(x, y, "Instances", oBattleFlavourTextManager);
-instance_create_layer(x, y, "Instances", oActionFlavourTextManager);
-
 layers = ["LoopBg_1", "LoopBg_2"];
-
-autoSkipTimerRef = 150;
-autoSkipTimer = autoSkipTimerRef;
-
-textFinishedTimer = TEXT_FINISHED_TIMER;
 
 flavourTextIndex = 0;
 actionsFlavourText = []; //text about a specific action
-
 showingExtraMonologueText = false;
 battleFlavourText = global.battleFlavourTexts[flavourTextIndex]; //texts specific to the battle 
 
@@ -19,7 +9,6 @@ global.borderWidth = 100;
 global.borderHeight = 100;
 
 //PLAYER VARIABLES
-battle = true;
 turnNumber = 0;
 defended = false;
 playerDeath = false;
@@ -34,16 +23,9 @@ shieldBarW = 121;
 hpbarW = 121;
 
 //BOX VARIABLES and TEXTS
-charCount = 0;
-page = 0;
-speechSpeed = 0.5;
-messageCounter = 0;
 showActionsFlavourText = false;
-messageTimer = 0;
-timeBeforePressed = 15;
 enemyTextShowed = false;
 enemyCanShowText = 0;
-dialogueDelay = 10;
 playerHpTextColor = c_white;
 
 //BUTTONS VARIABLES
@@ -69,18 +51,20 @@ mainPressed = 0;
 lastPressed = 0;
 
 playingGuiAnimation = false;
+showingSubSubWindow = false;
+actionChoosen = false;
+showingSubWindow = false;
 
-setSelectionDelay = function() { takenOptionDelay = 3; }
+#region HELPFUL METHODS
 
-//Methods
+setSelectionDelay = function() { 
+	takenOptionDelay = 3; 
+}
+	
 setSubMenuPositions = function(_x, _y){
 	subMenuX = _x;
 	subMenuY = _y;
 }
-showingSubSubWindow = false;
-
-actionChoosen = false;
-showingSubWindow = false;
 
 increaseMainMenuXPos = function(){
 	var _goalButtonX = 2;
@@ -124,7 +108,6 @@ goToBulletHellSection = function() {
 	enemyTextShowed = true;
 	showActionsFlavourText = false;
 	playerTurn = false; 
-	messageCounter = 0;
 }
 
 changeTurn = function() {
@@ -132,7 +115,6 @@ changeTurn = function() {
 	showActionsFlavourText = false;
 	playerTurn = !playerTurn; 
 	buttonFrame = 0;
-	messageCounter = 0;
 	
 	//GUI->battleBox
 	if (playerTurn == false) {
@@ -145,7 +127,9 @@ changeTurn = function() {
 	}
 }
 
-isInBulletHellSection = function() { return (oBattleBox.visible); }
+isInBulletHellSection = function() { 
+	return (oBattleBox.visible); 
+}
 
 increaseTurn = function() {
 	turnNumber += 1;		
@@ -171,7 +155,6 @@ setToStartTurn = function() {
 changeTurnAfterEnemySpeech = function() {
 	enemyTextShowed = true;
 	changeTurn();
-	autoSkipTimer = autoSkipTimerRef;
 }
 
 drawMenuButtons = function(_sprButton, _buttonX, _buttonY) {
@@ -197,43 +180,10 @@ drawMenuButtons = function(_sprButton, _buttonX, _buttonY) {
 	}	
 }
 
-drawActionFlavourText = function() {
-	drawTextBoxText(
-		actionsFlavourText, 
-		Mono, 
-		false, 
-		true,
-		true, 
-		true, 
-	);	
-}
-drawBattleFlavourText = function() {
-	drawTextBoxText(
-		battleFlavourText, 
-		Mono, 
-		false,
-		false,
-		true, 
-		true
-	);	
-}
-drawEnemyText = function() {
-	var _page = global.textList[turnNumber];
-	drawTextBoxText(
-		_page.text,
-		fHungrySkinny,
-		false,
-		false,
-		true,
-		true,
-		sndSteamPunkTalk,
-		true,
-		183, 35
-	);		
-}
+#endregion
 
-//The effect
-//makeAlphaSinEffect(15, 0, LAYER_UNDER_EFFECT, 5, global.selectedGuiTheme.bg, 3, false, 2, 1.8, true);
+createBattleManagerObjects();
+
 //Initialize the "coded" functions
 initializeAllCreatedFunctions();
 

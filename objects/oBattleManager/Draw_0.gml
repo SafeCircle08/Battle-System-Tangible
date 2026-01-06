@@ -9,25 +9,16 @@ if (!isInBulletHellSection()) {
 	var fontSize = font_get_size(_battleFont);
 	var	BUFFER = 12;
 	draw_set_font(_battleFont);
-	#endregion
-	
-	#region DRAWING FLAVOUR TEXT && ENEMY SPEECH
+
 	var _dsBgW = sprite_get_width(_sprTextBox);
 	var _dsBgH = sprite_get_height(_sprTextBox);
 	var _dsX = camera_get_view_x(view_camera[view_current]);
 	var _dsY = camera_get_view_height(view_camera[view_current]);
 	var _border = 10;
 	
-	/*if (showActionsFlavourText) && (!isEnemySpeaking()) {
-		drawActionFlavourText(); 
-	}
-	*/
-	
-	//if (isEnemySpeaking()) { drawEnemyText(); }
-	
 	#endregion
 	
-	#region DRAWING PLAYER HP, CAGE STATE
+	#region DRAWING PLAYER HP & CAGE STATE
 	//Draws the player variables
 	draw_set_font(fHungryBig);
 	var _playerInfoX = BUFFER - 8;
@@ -86,13 +77,7 @@ if (!isInBulletHellSection()) {
 	//Mini player portrait
 	draw_sprite_ext(global.selectedGuiTheme.miniPortrait, 0, _buttonX + 40, _buttonY - 2, 1, 1, 0, c_white, 1);
 	
-	if (!showActionsFlavourText) {
-		increaseMainMenuXPos();	
-		drawMenuButtons(_sprButton, _buttonX, _buttonY);
-		
-		//drawBattleFlavourText();
-	}
-	else { decreaseMainMenuXPos(); }
+	if (!showActionsFlavourText) { drawMenuButtons(_sprButton, _buttonX, _buttonY); }
 	
 	#endregion
 	
