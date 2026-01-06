@@ -49,7 +49,6 @@ if (playerOWReadingText()) {
 	exit; 
 } 
 
-print(instance_number(oPlayerOW));
 
 //---------- TEXT MENAGEMENT----------
 

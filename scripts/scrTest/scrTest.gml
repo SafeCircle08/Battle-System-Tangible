@@ -33,5 +33,3 @@ var _block = global.textTest[_turn];
 for (var i = 0; i < array_length(_block); i++) {
 	array_push(global.rightText, _block[i].text);	
 }
-
-print(global.rightText)

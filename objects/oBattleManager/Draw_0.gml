@@ -18,9 +18,12 @@ if (!isInBulletHellSection()) {
 	var _dsY = camera_get_view_height(view_camera[view_current]);
 	var _border = 10;
 	
-	if (showActionsFlavourText) && (!isEnemySpeaking()) { drawActionFlavourText(); }
+	/*if (showActionsFlavourText) && (!isEnemySpeaking()) {
+		drawActionFlavourText(); 
+	}
+	*/
 	
-	if (isEnemySpeaking()) { drawEnemyText(); }
+	//if (isEnemySpeaking()) { drawEnemyText(); }
 	
 	#endregion
 	
@@ -86,7 +89,8 @@ if (!isInBulletHellSection()) {
 	if (!showActionsFlavourText) {
 		increaseMainMenuXPos();	
 		drawMenuButtons(_sprButton, _buttonX, _buttonY);
-		drawBattleFlavourText();
+		
+		//drawBattleFlavourText();
 	}
 	else { decreaseMainMenuXPos(); }
 	

@@ -1,7 +1,5 @@
 event_inherited();
 
-print(global.enemyTimer);
-
 if (global.created == false) {
 	var _xx = global.bulletKind[5][1][global.bulletsCreated];
 	var _yy = global.bulletKind[5][2][global.bulletsCreated];

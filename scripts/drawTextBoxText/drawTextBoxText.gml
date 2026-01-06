@@ -138,7 +138,6 @@ function drawTextBoxText(
 	var _txtScale = _scale;
 	var _txtX = _txtBoxX - (_boxW / 2) + _borderX;
 	var _txtY = _txtBoxY - _boxH + _borderY;
-	print(_textX);
 	if (_textX != undefined) && (_textY != undefined) {
 		_txtX = _textX + 5;
 		_txtY = _textY;
@@ -221,5 +220,5 @@ function drawTextBoxText(
 	
 	#endregion
 	
-	manageTextInputs(_textList, _txtBoxX, _txtBoxY, inBattle, isActionsFlavourText);
+	//manageTextInputs(_textList, _txtBoxX, _txtBoxY, inBattle, isActionsFlavourText);
 }

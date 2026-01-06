@@ -1,3 +1,7 @@
+instance_create_layer(room_width / 2, room_height / 2, "Instances", oEnemyBattle);
+instance_create_layer(x, y, "Instances", oBattleFlavourTextManager);
+instance_create_layer(x, y, "Instances", oActionFlavourTextManager);
+
 layers = ["LoopBg_1", "LoopBg_2"];
 
 autoSkipTimerRef = 150;
