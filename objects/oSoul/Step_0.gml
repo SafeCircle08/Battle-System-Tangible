@@ -3,6 +3,8 @@ key_left = keyboard_check(ord("A"));
 key_up = keyboard_check(ord("W"));
 key_down = keyboard_check(ord("S"));
 
+print(global.SoulSpeed);
+
 global.playerHP = clamp(global.playerHP, -666, global.playerMAX_HP);
 
 if (keyboard_check(vk_alt) && (keyboard_check_pressed(ord("C")))) {

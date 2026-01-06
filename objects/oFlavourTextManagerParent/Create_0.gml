@@ -6,6 +6,9 @@ inBattle = undefined;
 isActionFlavourText = undefined;
 sound = undefined;
 
+poinDelay = 0;
+commaDelay = 0;
+
 textLayer = "Instances";
 
 myTextInstance = undefined;

@@ -9,6 +9,9 @@ enemySpeech = false;
 txtX = undefined;
 txtY = undefined;
 
+commaDelay = 7;
+pointDelay = 10;
+
 page = 0;
 dialogueDelay = 5;
 speechSpeed = 0.5;

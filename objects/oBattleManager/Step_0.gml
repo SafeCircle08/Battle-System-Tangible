@@ -17,9 +17,7 @@ if (showActionsFlavourText) {
 	if (oBlack.image_alpha > 0) { oBlack.image_alpha -= 0.05; } 
 	if (oPinkDetails.image_alpha > 0) { oPinkDetails.image_alpha -= 0.05; }
 	 decreaseMainMenuXPos();
-} else {
-	increaseMainMenuXPos();		
-}
+} else { increaseMainMenuXPos(); }
 
 //Navigating sub actions windows (ex. inventory menu or battle sub menu)
 if (decidingSubAction == true) {
@@ -33,7 +31,7 @@ if (decidingSubAction == true) {
 
 if (isNotPlayerTurn()) {
 	global.playerHP = clamp(global.playerHP, -666, global.playerMAX_HP);
-	global.enemyTimer++; //0 -> global.enemyAttackTime
-	if (global.enemyTimer == global.enemyAttackTime - 60) { startBeamAnimation(false); }
-	if (global.enemyTimer >= global.enemyAttackTime) { finishTurn(); }
+	increaseEnemyTurnTimer();
+	if (turnIsEndingFrame()) { startBeamAnimation(false); }
+	if (enemyTimerEnded()) { finishTurn(); }
 }

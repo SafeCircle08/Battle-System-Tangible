@@ -67,6 +67,9 @@ setSubMenuPositions = function(_x, _y){
 }
 
 increaseMainMenuXPos = function(){
+	
+	if (isInBulletHellSection()) return;
+	
 	var _goalButtonX = 2;
 	if (startButtonX < _goalButtonX)
 	{
@@ -136,6 +139,7 @@ increaseTurn = function() {
 }
 
 setToStartTurn = function() {
+	print("settoato start turn");
 	flavourTextIndex = 0;
 	selected_option = 0;
 	showActionsFlavourText = true;
@@ -155,6 +159,14 @@ setToStartTurn = function() {
 changeTurnAfterEnemySpeech = function() {
 	enemyTextShowed = true;
 	changeTurn();
+}
+
+increaseEnemyTurnTimer = function() {
+	global.enemyTimer++;	
+}
+
+enemyTimerEnded = function() {
+	return (global.enemyTimer >= global.enemyAttackTime);	
 }
 
 drawMenuButtons = function(_sprButton, _buttonX, _buttonY) {

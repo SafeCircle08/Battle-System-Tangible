@@ -277,17 +277,21 @@ function initializeDefenceFunctions()
 	}
 }
 function initializePrayFunctions()  {
+	
+	createAdDeco = function() {
+		var _downAds = instance_create_layer(x, y, layer, oAdSlidingManager);
+		_downAds._sign = 1;
+		_downAds.createVerticalAds();
+		var _upAds = instance_create_layer(x, y, layer, oAdSlidingManager);
+		_upAds._sign = -1;
+		_upAds.xPos = room_width - (sprite_get_width(sPizzaAd));
+		_upAds.createVerticalAds();			
+	}
+	
 	selectedPrayOption = function() { 
-		selectAction(true, true, undefined, ["*You decided to pray."]);
-		if (!instance_exists(oAdSlidingManager)) {
-			var _downAds = instance_create_layer(x, y, layer, oAdSlidingManager);
-			_downAds._sign = 1;
-			_downAds.createVerticalAds();
-			var _upAds = instance_create_layer(x, y, layer, oAdSlidingManager);
-			_upAds._sign = -1;
-			_upAds.xPos = room_width - (sprite_get_width(sPizzaAd));
-			_upAds.createVerticalAds();
-		}	
+		selectAction(true, true, undefined, ["*You decided to pray."], method(self, function() { inventoryAlpha = 0; }));
+		
+		if (!instance_exists(oAdSlidingManager)) { createAdDeco(); }	
 	}
 	
 	#region	PRAY FUNCTIONS
@@ -337,7 +341,7 @@ function initializePrayFunctions()  {
 				removeAllSegnaliniPrayFunc
 			];
 			var _index = arrayGetValidIndex(_possPrayFuncs);
-			var _choosedPrayFunc = _possPrayFuncs[2];
+			var _choosedPrayFunc = _possPrayFuncs[_index];
 			_choosedPrayFunc(); 
 		}));
 	}
@@ -377,7 +381,7 @@ function initializeEnchantingFunctions() {
 						selected_option = 0; 
 						_enchantManager.showingInv = true; 
 					}
-				} else { setMonologueTextToNewString(["*Can't Enchant any Item.\n*(Inventory Empty)"]); }
+				} else { setMonologueTextToNewString(["*Can't Enchant any Item.\n*(Inventory Empty)\n *So [___] angry!"]); }
 			}
 		}
 	}

@@ -43,11 +43,11 @@ function showFullText(_textList) {
 	charCount = string_length(_textList[page]);	
 }	
 
-function checkForPauses(_textList, _pointDelay = 10, commaDelay = 5) {
+function checkForPauses(_textList, _pointDelay = poinDelay, _commaDelay = commaDelay) {
 	if (string_char_at(_textList[page], charCount) == "." || 
 		string_char_at(_textList[page], charCount) == "?" || 
-		string_char_at(_textList[page], charCount) == "!" ) { dialogueDelay = _pointDelay; }
-	if (string_char_at(_textList[page], charCount) == ",") { dialogueDelay = commaDelay; }		
+		string_char_at(_textList[page], charCount) == "!" ) { dialogueDelay = commaDelay; }
+	if (string_char_at(_textList[page], charCount) == ",") { dialogueDelay = commaDelay; }	
 }
 
 function canAdvanceText(_textList) {
