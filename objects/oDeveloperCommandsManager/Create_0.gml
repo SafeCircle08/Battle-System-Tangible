@@ -11,6 +11,7 @@ finishedCommand = function() {
 	input_text = "";
 	keyboard_string = "";
 	instance_deactivate_object(self);
+	show_debug_message("Command executed!");
 }
 
 healMeCommand = "heal_me";

@@ -34,6 +34,7 @@ function manageTextInputs(text, inBattle, isActionFlavourText) {
 			return;
 		}
 		
+		//if the pages are over
 		if (!inBattle) { destroyTextBoxOW(_txtBoxX, _txtBoxY); }
 		else {
 			if (oBattleManager.isEnemySpeaking()) {
@@ -47,9 +48,10 @@ function manageTextInputs(text, inBattle, isActionFlavourText) {
 		if (isActionFlavourText) {
 			with (oBattleManager) {
 				if (!enemyTextShowed) showEnemyText();
-				else changeTurn();
+				else { changeTurn(); }
 			}
 		}
+		
 		speechSpeed = 0.5;
 		setToFirstPage();
 		return;	

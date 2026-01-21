@@ -139,7 +139,6 @@ increaseTurn = function() {
 }
 
 setToStartTurn = function() {
-	print("settoato start turn");
 	flavourTextIndex = 0;
 	selected_option = 0;
 	showActionsFlavourText = true;
@@ -148,7 +147,7 @@ setToStartTurn = function() {
 	global.enemyTimer = 0;
 	global.getTextBoxInputs = true;
 	
-	actionsFlavourText = ["*Turn Finished."];
+	actionsFlavourText = ["*Turn Finished."]; //special actions text meaning the turn is over
 	
 	var _flavourTextProbs = irandom_range(0, 7);
 	if (_flavourTextProbs == 6) { menageAfterTurnFlavourTexts(); }

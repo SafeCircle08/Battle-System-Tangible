@@ -1,5 +1,5 @@
-#macro ENCHANT_SPRITE 0
-#macro ENCHANT_FUNCTION 1
+global.enchantsById = ds_map_create();
+global.enchantsInGame = [];
 
 function goldifier(){
 	var _goldAmount = irandom_range(52, 204);
@@ -28,18 +28,20 @@ function removeSegnalini(_showRemovedSegNames = true) {
 	}
 }
 
-removeSegnalini()
-
-function itemEnchantsDeclaration() {
-	#macro ENCHANT_GOLDY [sGoldyEnchProperty, goldifier]
-	#macro ENCHANT_POISON_FREE [sPoisonFreeEnchProperty, removePoisonTag]
-	#macro ENCHANT_SLOWNESS_FREE [sRemoveSlownessEnchProperty, removeSlownessTag]
-	#macro ENCHANT_REMOVE_SEGNALINI [sRemoveSegEnchProperty, removeSegnalini]
+function createEnchant(_enchName, _spr, _func, _desc = "") {
+	var _newEnch = {
+		name: _enchName,
+		sprite: _spr,
+		func: _func,
+		desc: _desc,
+		ench_id: _enchName
+	}
+	ds_map_add(global.enchantsById, _newEnch.ench_id, _newEnch);
+	array_push(global.enchantsInGame, _newEnch);
+	return _newEnch;
 }
 
-global.enchantsInGame = [
-	ENCHANT_GOLDY,
-	ENCHANT_POISON_FREE,
-	ENCHANT_SLOWNESS_FREE,
-	ENCHANT_REMOVE_SEGNALINI
-];
+global.enchGoldy = createEnchant("Goldifier", sGoldyEnchProperty, goldifier);
+global.enchPoisonFree = createEnchant("Posion Free", sPoisonFreeEnchProperty, removePoisonTag);
+global.enchSlownessFree = createEnchant("Slowness Free", sRemoveSlownessEnchProperty, removeSlownessTag);
+global.enchRemoveSegnalini = createEnchant("Remove Segnalini", sRemoveSegEnchProperty, removeSegnalini);

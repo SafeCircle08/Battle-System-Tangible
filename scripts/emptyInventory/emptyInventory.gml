@@ -1,0 +1,3 @@
+function emptyInventory(){
+	global.equippedItems = [];
+}

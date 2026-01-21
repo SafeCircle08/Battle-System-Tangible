@@ -1,14 +1,17 @@
 #macro MAX_ENCHANTS_PER_ITEM_NUM 3
 
-function addEnchant(_enchantsList) {
+#region OTHER_FUNCTIONS
+
+function addEnchant(_item, _specificEnch = undefined) {
 	var _index = irandom_range(0, array_length(global.enchantsInGame) - 1);
 	var _choosenEnchant = global.enchantsInGame[_index];
-	array_push(_enchantsList,_choosenEnchant);	
-	return _enchantsList;
+	array_push(_item.enchants,_choosenEnchant);	
+	setItemToEnchantedState(_item);
+	return _item;
 }
 
-function canEnchant(_enchantsList) {
-	if (array_length(_enchantsList) < MAX_ENCHANTS_PER_ITEM_NUM) {
+function canEnchant(_item) {
+	if (array_length(_item.enchants) < MAX_ENCHANTS_PER_ITEM_NUM) {
 		return true;
 	}
 	return false;
@@ -24,15 +27,16 @@ function isEnchanted(_item) {
 	return _item.enchanted;	
 }
 
-function enchantItem(_item, enchantsN = undefined) {
+#endregion
+
+function enchantItem(_item, enchantsN = undefined, specificEnch = undefined) {
 	var _changedItem = variable_clone(_item);
-	_changedItem.enchanted = true;
-	if (canEnchant(_item.enchants)) {
+	if (canEnchant(_item)) {
 		if (enchantsN == undefined) {
-			addEnchant(_changedItem.enchants);	
+			_changedItem = addEnchant(_changedItem);
 		} else {
 			for (var i = array_length(_item.enchants); i < enchantsN; i++) {
-				addEnchant(_changedItem.enchants);
+				addEnchant(_item);
 			}
 		}
 		changeToNewEnchants(_changedItem);
@@ -42,8 +46,7 @@ function enchantItem(_item, enchantsN = undefined) {
 }
 
 function disenchantItem(_item) {
-	if (isEnchanted(_item))
-	{
+	if (isEnchanted(_item)) {
 		var _disenchantedItem = variable_clone(_item);
 		_disenchantedItem.enchanted = false;
 		_disenchantedItem.enchants = [];

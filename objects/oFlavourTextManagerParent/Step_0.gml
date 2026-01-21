@@ -3,16 +3,4 @@ if (canCreateText() == false) {
 	myTextInstance = undefined;
 }
 
-if (canCreateText() && myTextInstance == undefined) {
-	print("Testo creato!");
-	myTextInstance = instance_create_layer(x, y, textLayer, oTextInstance);
-	myTextInstance.text = text;
-	myTextInstance.font = font;
-	myTextInstance.character = character;
-	myTextInstance.inBox = inBox;
-	myTextInstance.inBattle = inBattle;
-	myTextInstance.isActionsFlavourText = isActionFlavourText;
-	myTextInstance.sound = sound;
-	myTextInstance.commaDelay = commaDelay;
-	myTextInstance.pointDelay = poinDelay;
-}
+if (canCreateText() && myTextInstance == undefined) { createText(); }

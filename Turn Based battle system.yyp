@@ -685,6 +685,7 @@
     {"id":{"name":"dpShoot","path":"scripts/dpShoot/dpShoot.yy",},},
     {"id":{"name":"drawMovingFadeInOutSprite","path":"scripts/drawMovingFadeInOutSprite/drawMovingFadeInOutSprite.yy",},},
     {"id":{"name":"drawTextBoxText","path":"scripts/drawTextBoxText/drawTextBoxText.yy",},},
+    {"id":{"name":"emptyInventory","path":"scripts/emptyInventory/emptyInventory.yy",},},
     {"id":{"name":"enableGameInputs","path":"scripts/enableGameInputs/enableGameInputs.yy",},},
     {"id":{"name":"enchantItem","path":"scripts/enchantItem/enchantItem.yy",},},
     {"id":{"name":"enemyTimerIsAtFrame","path":"scripts/enemyTimerIsAtFrame/enemyTimerIsAtFrame.yy",},},

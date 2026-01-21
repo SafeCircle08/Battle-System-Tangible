@@ -78,7 +78,8 @@ function initializeInventoryOptionFunctions() {
 		for (var k = 0; k < MAX_ENCHANTS_PER_ITEM_NUM; k++) {
 			if (k < _enchantsN) {
 				setGlintShader();
-				draw_sprite(_item.enchants[k][ENCHANT_SPRITE], 0, _itemSprX + _itemSprW + 1 + inventoryXAdder, _itemSprY + (10 * k + (1 * k)));
+				var _enchSpr = _item.enchants[k].sprite;
+				draw_sprite(_enchSpr, 0, _itemSprX + _itemSprW + 1 + inventoryXAdder, _itemSprY + (10 * k + (1 * k)));
 				shader_reset();
 				continue;
 			}

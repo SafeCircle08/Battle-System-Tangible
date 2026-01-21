@@ -5,7 +5,6 @@ function DEBUG_addCustomEnchList(_item, _enchList) {
 	_item.enchanted = true;
 }
 
-
 global.candy = createNewItem("8Bit_C.", s8BitCandy, 200, sndPlayerEatingHeal,
 	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_SPD, ITEM_PROPERTY_HACKER],
 	hpMessage("Great to fix code readability!", 200),
@@ -90,6 +89,6 @@ global.soup = createNewItem("Soup", sSoup, 450, sndPlayerEatingHeal,
 
 //DEBUG_addCustomEnchList(global.soup, [ENCHANT_GOLDY, ENCHANT_GOLDY, sNoEnchants]);
 
-putItemsInInventory(2);
+putItemsInInventory(MAX_ITEMS_NUM);
 
 //fillInventory();
