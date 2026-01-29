@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"beamAnimationOnEnding",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"beamAnimationOnEnding",
+  "parent":{
+    "name":"BEAM_ANIMATION",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/BEAM_ANIMATION.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

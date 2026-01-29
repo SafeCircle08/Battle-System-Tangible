@@ -1,5 +1,6 @@
 function resetPlayerBattleVars(){
-
+	resetPlayerOffsets();
+	
 	with (oSoul) {
 		damageTaken = 0;
 		//speed = 0;

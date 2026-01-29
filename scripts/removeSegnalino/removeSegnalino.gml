@@ -4,7 +4,6 @@ function removeSegnalino(_segnalinoObj, _writeRemovedSegNames = true) {
 			removeRealSegnalino();
 			var _segName = string_copy(name, 0, string_length(name) - 2);
 			if (_writeRemovedSegNames) { addNewActionFlavourTextPage(_segName + " effects\n cleared");  }
-			instance_destroy();
 		}
 	}
 }

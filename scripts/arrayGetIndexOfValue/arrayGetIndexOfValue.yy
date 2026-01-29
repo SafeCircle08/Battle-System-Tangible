@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"arrayGetIndexOfValue",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"arrayGetIndexOfValue",
+  "parent":{
+    "name":"generalUse",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/generalUse.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

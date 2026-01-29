@@ -1,7 +1,5 @@
-function navigatingBattle(_minClam, _maxClamp)
-{
-	with (oBattleManager)
-	{
+function navigatingBattle(_minClam, _maxClamp) {
+	with (oBattleManager) {
 		var _firstValue = selected_option;
 		if keyboard_check_pressed(ord("S")) { selected_option++; }
 		if keyboard_check_pressed(ord("W")) { selected_option--; }

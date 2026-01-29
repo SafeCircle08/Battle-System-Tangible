@@ -3,8 +3,6 @@ key_left = keyboard_check(ord("A"));
 key_up = keyboard_check(ord("W"));
 key_down = keyboard_check(ord("S"));
 
-print(global.SoulSpeed);
-
 global.playerHP = clamp(global.playerHP, -666, global.playerMAX_HP);
 
 if (keyboard_check(vk_alt) && (keyboard_check_pressed(ord("C")))) {
@@ -21,25 +19,28 @@ if (keyboard_check(vk_alt) && (keyboard_check_pressed(ord("C")))) {
 	}
 }
 
-if (!oBattleManager.isInBulletHellSection()) { 
-	setToDefaultPos(); 
-	exit; 
-}
+if (!oBattleManager.isInBulletHellSection()) { exit; }
 
 //I am animating the beam
-if (global.beamAnimationTimer > 0)
-{
+if (beamAnimationIsActive()) {
 	global.beamAnimationTimer--;
 	global.beamAnimation = true; //-> playerBeamAnimation();
 }
 
-//The turn is finishing (playing beam animation) so we dont call the state
-if (global.enemyTimer > global.enemyAttackTime - 60) { exit; }
+if (beamAnimationFinalAnimationIsActive()) { 
+	if (global.enemyTimer == global.enemyAttackTime - BEAM_ANIMATION_TIMER_REF + 1) { setToDefaultPos(); }
+	exit; 
+}
 
-//When im done animating the beam
+if (beamAnimationTimerIsEqualTo(5)) { setPlayerPos(global.boxOriginX, global.boxOriginY); }
+
+if (beamAnimationLastFrame()) { 
+	createPlayerStateEffect(selectedState.effectSpr);
+}
+
 if (beamAnimationOnEnding()) { state(); }
 
-
-if (keyboard_check_pressed(ord("P"))) {
+/*
+if (keyboard_check_pressed(ord("M"))) {
 	removeSegnalini();
 }

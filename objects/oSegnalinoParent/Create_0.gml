@@ -25,6 +25,8 @@ maxValue = 0;
 
 createdCard = undefined;
 
+#region UTILS
+
 addSegnalinoCard = function() {
 	var _card = instance_create_layer(0, 0, LAYER_SEGNALINI_CARDS, oSegnalinoCard);
 	createdCard = _card;
@@ -40,15 +42,13 @@ addSegnalinoCard = function() {
 		else { moving = false; }
 	}
 	_card.refSegnalinoInst = self;
-	for (var i = 0; i < instance_number(oSegnalinoCard); i++) {
-		rearrangeCardPositions();
-	}
+	rearrangeCardPositions();
 }
 
 rearrangeCardPositions = function() {
-	for (var i = 0; i < instance_number(oSegnalinoCard); i++) {
+	var _cardN = instance_number(oSegnalinoCard);
+	for (var i = 0; i < _cardN; i++) {
 		var _cardSprW = sprite_get_width(sSegnalinoCardBase);
-		var _cardN = instance_number(oSegnalinoCard);
 		var _cardXRef = (room_width / 2) - ((_cardSprW / 2) * (_cardN - 1));
 		
 		var _actualCard = instance_find(oSegnalinoCard, i);
@@ -74,15 +74,6 @@ printSegnalinoInfos = function() {
 	print("maxValue: " + string(maxValue));
 }
 
-addSegnalino = function(_segnalino = segnalinoSprite) {
-	if (!instance_exists(oSegnaliniOnPlayerManager)) {
-		instance_create_layer(0, 0, LAYER_EFFECT_TOP, oSegnaliniOnPlayerManager);	
-	}
-	if (segnalinoAlreadyOnAction(_segnalino)) { return; }
-	oSegnaliniOnPlayerManager.segnaliniN++;
-	array_push(oSegnaliniOnPlayerManager.segnaliniOnPlayer, _segnalino);
-}
-
 segnalinoAlreadyOnAction = function(_segSprite) {
 	if (arrayContains(oSegnaliniOnPlayerManager.segnaliniOnPlayer, _segSprite)) {
 		return true;	
@@ -90,20 +81,7 @@ segnalinoAlreadyOnAction = function(_segSprite) {
 	return false;
 }
 
-destroySegnalino = function(_sprite = segnalinoSprite) {
-	//Manages the manager segnalini list
-	var _index;
-	var _found = false;
-	for (var i = 0; i < array_length(oSegnaliniOnPlayerManager.segnaliniOnPlayer); i++) {
-		if (oSegnaliniOnPlayerManager.segnaliniOnPlayer[i] == segnalinoSprite) {
-			_index = i;
-			_found = true;
-			break;
-		}
-	}
-	if (_found == false) { return; }
-	
-	//See if the segnalini manager can be destroyed
+manageSegnaliniOnSegnaliniManager = function(_index) {
 	with (oSegnaliniOnPlayerManager) {
 		array_delete(segnaliniOnPlayer, _index, 1);
 		segnaliniN--;
@@ -111,21 +89,58 @@ destroySegnalino = function(_sprite = segnalinoSprite) {
 			startFadeOut();
 			with (oBigCircleDeco) { startFadeOut(); }
 		}	
-	}
-	//Destroy the actual segnalino (effect finished)
-	removeSegnalinoCard();
+	}		
+}
+
+segManagerList = function() { return (oSegnaliniOnPlayerManager.segnaliniOnPlayer);  }
+
+createSegnalinoFinishedFX = function() {
+	if (instance_exists(oSegnalinoFinishedFX)) return;
 	instance_create_layer(
 		oSegnaliniOnPlayerManager.x, 
 		oSegnaliniOnPlayerManager.y, 
 		LAYER_EFFECT_TOP_3,
 		oSegnalinoFinishedFX
-	);
-	instance_destroy(self);
+	);		
+}
+
+getSegnalinoIndex = function(_sprite) { 
+	return arrayGetIndexOfValue(segManagerList(), _sprite); 
+}
+
+#endregion
+
+#region MAIN FUNCTIONS
+
+destroySegnalino = function(_sprite = segnalinoSprite) {
+	var _index = getSegnalinoIndex(_sprite);
+	var _found = segnalinoAlreadyOnAction(_sprite);
+	if (_found == false) { return; }
+	
+	manageSegnaliniOnSegnaliniManager(_index);
+	removeSegnalinoCard();
+	createSegnalinoFinishedFX();
+	instance_destroy();
+}
+
+addSegnalino = function(_segnalino = segnalinoSprite) {
+	if (!instance_exists(oSegnaliniOnPlayerManager)) {
+		instance_create_layer(0, 0, LAYER_EFFECT_TOP, oSegnaliniOnPlayerManager);	
+	} else {
+		with (oSegnaliniOnPlayerManager) { startFadeIn(); } //bug fixato, fixa solo il fatto che deve fare un giro e gestisci il bigCircleDeco
+	}
+	if (segnalinoAlreadyOnAction(_segnalino)) { return; }
+	oSegnaliniOnPlayerManager.segnaliniN++;
+	array_push(oSegnaliniOnPlayerManager.segnaliniOnPlayer, _segnalino);
 }
 
 createSegnalino = function(_segnalinoSpr) {
 	segnalinoSprite = _segnalinoSpr;
 	addSegnalino();
 }
-	
+
+//A function that removes the segnalino
+//and can perform additional events
 removeRealSegnalino = function() {}
+
+#endregion

@@ -27,6 +27,8 @@ finalDrawAlpha = 1;
 alphaAmount = 0.01;
 frame = 0;
 
+delayForDestroying = 20;
+
 increaseDrawAlpha = function() {
 	if (drawAlpha < finalDrawAlpha) {
 		drawAlpha += alphaAmount;	
@@ -54,7 +56,7 @@ managerHasNoSegnalini = function() {
 }
 
 canShowInBoxSegnalini = function() {
-	return (oBattleManager.isInBulletHellSection()) && (oSoul.beamAnimationOnEnding());
+	return (oBattleManager.isInBulletHellSection()) && (beamAnimationEnded());
 }
 
 createCirclesDeco = function() {

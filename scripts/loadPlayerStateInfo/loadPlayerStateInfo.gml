@@ -1,5 +1,4 @@
-function loadPlayerStateInfo()
-{	
+function loadPlayerStateInfo() {	
 	global.playerStateFree     = createNewPlayerStateInfo(oSoul.stateFree,
 					             sPlayerFreeState, sNoEffects, 0, "Up", 0, 0, 0, 0);
 	

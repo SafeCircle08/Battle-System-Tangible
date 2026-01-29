@@ -1,5 +1,12 @@
-function stateGravityLoad()
-{
+function gravStateInit() {
+	image_angle = inUseGravity.angle
+	var _rightBorder = inUseGravity.boxSidePlatformToCreate;
+	gravCreateRightGravityBorder(_rightBorder);
+	hbX = inUseGravity.supportHitBoxX;
+	hbY = inUseGravity.supportHitBoxY;			
+}
+
+function stateGravityLoad(){
 	grounded = 0;
 	jumpSpd = -10;
 	umbrelling = false;
@@ -13,23 +20,17 @@ function stateGravityLoad()
 	stateGravity = function() {
 		var _jmpKey = inUseGravity.jmpKey;
 		key_jumpPressed = keyboard_check(_jmpKey);
-	
-		stateInit(
-			sEffectGravity, 
-			method(self, function() {
-				image_angle = inUseGravity.angle
-				var _rightBorder = inUseGravity.boxSidePlatformToCreate;
-				gravCreateRightGravityBorder(_rightBorder);
-				hbX = inUseGravity.supportHitBoxX;
-				hbY = inUseGravity.supportHitBoxY;
-			}));
+		
+		if (beamAnimationTimerIsEqualTo(4)) { 
+			gravStateInit();
+		}
 	
 		gravSetMovements(
 			inUseGravity.gravitySign, 
 			inUseGravity.canUseUmbrella,
 			inUseGravity.horizontal
 		);
-	
+		
 		vsp += grav * inUseGravity._sign;
 	
 		if (inUseGravity.horizontal) {
@@ -75,7 +76,7 @@ function stateGravityLoad()
 		else {
 			x += vsp;
 			y += hsp;
-			var _possY = clamp(oSoul.y, -100, global.border_d + 2);
+			var _possY = clamp(oSoul.y, global.border_u - 2, global.border_d + 2);
 			oSoul.y = _possY;
 		}
 	}

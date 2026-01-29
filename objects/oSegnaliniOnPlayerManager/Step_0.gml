@@ -33,5 +33,7 @@ else {
 		-scaleAmount, -scaleAmount, false,
 		finalAlpha, startAlpha, 
 		-alphaAmount, false);
-	if (managerHasNoSegnalini()) { instance_destroy(oBigCircleDeco); instance_destroy(self); }
+	if (managerHasNoSegnalini()) { 
+		instance_destroy(oBigCircleDeco); instance_destroy(self);
+	}
 }

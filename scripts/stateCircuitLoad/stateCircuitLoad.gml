@@ -9,19 +9,15 @@ function resistanceDamage(_resistance, _minDmg = 5, _maxDmg = 15) {
 	return irandom_range(_minDmg, _maxDmg) * _resistance.ohmValue;
 }
 
+function circuitStateInit() {
+	image_xscale = 1;
+	image_yscale = 1;
+}
+
 function stateCircuitLoad(){
-	
 	stateElectrifing = function() { visible = false; };
-	
-	stateCircuit = function() 
-	{
-		stateInit(sPlayerCircuit, function() {
-			image_xscale = 1;
-			image_yscale = 1;
-			var _newX = global.boxOriginX + global.xOffset;
-			var _newY = global.boxOriginY + global.yOffset;
-			setPlayerPos(_newX, _newY);
-		});
+	stateCircuit = function() {
+		if (beamAnimationLastFrame()) { circuitStateInit(); }
 		
 		var _spd = global.SoulSpeed - 0.5;
 		var _actualResistance = instance_place(x, y, oResistanceCircuitPiece);

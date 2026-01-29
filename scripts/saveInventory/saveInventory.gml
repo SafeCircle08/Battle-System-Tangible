@@ -7,8 +7,6 @@ function saveItems() {
 	if (file_exists(FILE_NAME_ITEMS)) { file_delete(FILE_NAME_ITEMS); }
 	
     ini_open(FILE_NAME_ITEMS);
-    
-	show_debug_message(global.equippedItems);
 	
     for (var i = 0; i < array_length(global.equippedItems); i++) {
 		

@@ -23,6 +23,7 @@ function finishTurn() {
 		backGroundLayersVisible(layers, false);
 		setManagerValuesToStartTurn();
 	}
+	
 	resetPlayerBattleVars();
 	destroyBulletsGensExtras();
 	resetCardsPositions();

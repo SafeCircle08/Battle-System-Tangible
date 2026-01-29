@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"resetPlayerOffsets",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"resetPlayerOffsets",
+  "parent":{
+    "name":"PLAYER_IN_BATTLE_BOX",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BATTLE_BOX.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

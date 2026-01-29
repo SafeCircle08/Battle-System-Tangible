@@ -1,6 +1,3 @@
-//Prova a rendere più compatto
-#macro JUMP_SPRITE sPlayerSPACE
-
 global.playerJumpStateMoveInfo = {
 	spaceSprite: sPlayerJump, //constant
 	
@@ -109,11 +106,9 @@ function gravCheckingBaseBorder(_sign, xComponent, yComponent, horizontal = true
 */
 
 //Basic collisions with platforms
-function gravCheckingBase(_sign, xComponent, yComponent, canUseUmbrella = false, horizontal = true)
-{
+function gravCheckingBase(_sign, xComponent, yComponent, canUseUmbrella = false, horizontal = true) {
 	var _subPixel = 0.5;
-	if (place_meeting( x + xComponent, y + yComponent, oPlatformParent))
-	{
+	if (place_meeting( x + xComponent, y + yComponent, oPlatformParent)) {
 		var _pixelCheck = _subPixel;
 		var xCoeff, yCoeff;
 		
@@ -128,15 +123,13 @@ function gravCheckingBase(_sign, xComponent, yComponent, canUseUmbrella = false,
 			yCoeff = 0;				
 		}
 		
-		while !place_meeting( x + ((_pixelCheck * sign(_sign))) * xCoeff , y + ((_pixelCheck * sign(_sign))) * yCoeff, oPlatformParent )
-		{
+		while !place_meeting( x + ((_pixelCheck * sign(_sign))) * xCoeff , y + ((_pixelCheck * sign(_sign))) * yCoeff, oPlatformParent ) {
 			if (horizontal) { y += _pixelCheck * sign(_sign); }
 			else { x += _pixelCheck * sign(_sign); }
 		}
 		
 		//Umbrella function
-		if (umbrelling == true) && (canUseUmbrella)
-		{
+		if (umbrelling == true) && (canUseUmbrella) {
 			instance_create_layer(x, y, LAYER_EXTRAS_OBJECTS, oMiniUmbrella);
 			playerChangeState(global.playerStateGravity, 
 			method(self, function() { additionalGravityStateMethod(0); }))
@@ -148,12 +141,10 @@ function gravCheckingBase(_sign, xComponent, yComponent, canUseUmbrella = false,
 		grounded = true;
 		return;
 	} 
-	else 
-	{ 
+	else { 
 		vsp = sign(_sign) * max(vsp * sign(_sign), jumpSpd / 10);
 		notGroundedDelay = setTimer(notGroundedDelay);
-		if (notGroundedDelay == 0)
-		{
+		if (notGroundedDelay == 0) {
 			grounded = false;
 			notGroundedDelay = notGroundedDelayRef;
 			return;
@@ -161,46 +152,38 @@ function gravCheckingBase(_sign, xComponent, yComponent, canUseUmbrella = false,
 	}
 }
 
-function gravPlayerIsGrounded()
-{
+function gravPlayerIsGrounded() {
 	jumpTimer = 0;
 	sprite_index = global.playerJumpStateMoveInfo.spaceSprite;	
 	if (hsp == 0) && (vsp == 0) { image_speed = 0; image_index = 0; }
 	return;
 }
 
-function gravPlayerNotGrounded(canUseUmbrella = false)
-{
+function gravPlayerNotGrounded(canUseUmbrella = false) {
 	image_speed = 1;
-	if (umbrelling == false)
-	{
+	if (umbrelling == false) {
 		sprite_index = global.playerJumpStateMoveInfo.spaceSprite;
 		return;
 	}
-	else 
-	{
-		if (canUseUmbrella)
-		{
+	else {
+		if (canUseUmbrella) {
 			sprite_index = sPlayerUmbrella; 
 			return;
 		}
 	}
 }
 
-function calculateMovement(key1, key2)
-{
+function calculateMovement(key1, key2) {
 	return ((key1 - key2) * global.SoulSpeed);
 }
 
-function goodJumpEffect(_sparkNum)
-{
+function goodJumpEffect(_sparkNum) {
 	instance_create_layer(x, y, LAYER_EXTRAS_OBJECTS, oGoodJumpEffect); 
 	
 	var _grv = 0.1;
 	var _xScale = 0.5;
 	var _yScale = 0.5;
-	for (var i = 0; i < _sparkNum; i++)
-	{
+	for (var i = 0; i < _sparkNum; i++) {
 		var _vsp = irandom_range(-1, -2);
 		var _hsp = irandom_range(-1, 1);
 		var _xOffset = irandom_range(-5, 5);
@@ -212,33 +195,24 @@ function goodJumpEffect(_sparkNum)
 }
 
 /* gSign: the direction the gravity is acting to */
-function gravSetMovements(gSign, canUseUmbrella = false, horizontal = true)
-{
-	if (canUseUmbrella)
-	{
-		if (grounded == false)
-		{
+function gravSetMovements(gSign, canUseUmbrella = false, horizontal = true) {
+	if (canUseUmbrella) {
+		if (grounded == false) {
 			if (keyboard_check_pressed(vk_space)) {
 				umbrelling = true; 
 				playerChangeState(global.playerUsingUmbrella);
 			}
-			if (umbrelling == true) 
-			{ 
-				usingUmbrella(); 
-			}
-		
+			if (umbrelling == true) { usingUmbrella(); }
 			if (umbrelling == false) { image_speed = 1; }
 		}		
 	}
 	var key1, key2;
 	//Movements
-	if (horizontal)
-	{
+	if (horizontal) {
 		key1 = key_left;
 		key2 = key_right;
 	}
-	else
-	{
+	else {
 		key1 = key_down;
 		key2 = key_up;			
 	}
@@ -248,13 +222,11 @@ function gravSetMovements(gSign, canUseUmbrella = false, horizontal = true)
 	
 	if (!key1 && !key2) { basicRotation(); }
 
-	if (key_jumpPressed) && (grounded == true) 
-	{ 
+	if (key_jumpPressed) && (grounded == true) { 
 		yellowPopping = true;
 		vsp = jumpSpd * gSign;
 		instance_create_layer(x, y, LAYER_EFFECT, oJumpDust);
-		if ((notGroundedDelay < notGroundedDelayRef) && (notGroundedDelay > 0)) 
-		{ 
+		if ((notGroundedDelay < notGroundedDelayRef) && (notGroundedDelay > 0)) { 
 			goodJumpEffect(4);
 		}
 	}
@@ -264,26 +236,22 @@ function gravSetMovements(gSign, canUseUmbrella = false, horizontal = true)
 }
 
 //Left rotation lol
-function rotatingLeft()
-{
+function rotatingLeft() {
 	image_angle += 0.5 * inUseGravity._sign;
 	if (inUseGravity._sign > 0) { image_angle = clamp(image_angle, inUseGravity.angle, inUseGravity.angle + 10); }
 	else { image_angle = clamp(image_angle, inUseGravity.angle - 10, inUseGravity.angle); }
 }
 
 //Right rotation lol
-function rotatingRight()
-{
+function rotatingRight() {
 	image_angle -= 0.5 * inUseGravity._sign;
 	if (inUseGravity._sign > 0) { image_angle = clamp(image_angle, inUseGravity.angle - 10, inUseGravity.angle); }
 	else { image_angle = clamp(image_angle, inUseGravity.angle, inUseGravity.angle + 10); }	
 }
 
 //basic rotation lmao
-function basicRotation()
-{
-	if (image_angle != inUseGravity.angle)
-	{
+function basicRotation() {
+	if (image_angle != inUseGravity.angle) {
 		if (image_angle > inUseGravity.angle) { image_angle -= 0.5; }
 		if (image_angle < inUseGravity.angle) { image_angle += 0.5; }
 	}

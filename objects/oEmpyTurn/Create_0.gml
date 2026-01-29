@@ -1,5 +1,5 @@
 event_inherited();
-setPlayerInUseGravity(global.playerJumpStateMoveInfo.gravityRight);
+setPlayerInUseGravity(global.playerJumpStateMoveInfo.gravityBasic);
 
 /*setPlayerToBrokenBones(SEGNALINO_LEVEL.LEVEL_3);
 
@@ -14,7 +14,8 @@ setPlayerToPoisoned(SEGNALINO_LEVEL.LEVEL_5);
 setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_5);
 setPlayerToIceSlide(SEGNALINO_LEVEL.LEVEL_1);
 
-initializeNewTurn(0, false, 200, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateFree);
+
+initializeNewTurn(0, false, 300, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateGravity);
 oSoul.image_alpha = 1;
 oSoul.canMove = true;
 oBattleBox.draw = true;

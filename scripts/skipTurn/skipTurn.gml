@@ -1,5 +1,6 @@
 function skipTurn() {
 	if (oBattleManager.isInBulletHellSection()) {
-		finishTurn();	
+		finishTurn();
+		oSoul.setToDefaultPos();
 	}
 }

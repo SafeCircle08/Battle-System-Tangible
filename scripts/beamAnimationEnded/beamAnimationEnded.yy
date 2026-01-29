@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"beamAnimationEnded",
   "parent":{
-    "name":"BATTLE",
-    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE.yy",
+    "name":"BEAM_ANIMATION",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/BEAM_ANIMATION.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

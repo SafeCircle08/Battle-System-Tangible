@@ -1,6 +1,3 @@
 function stateMirroredLoad(){
-	stateMirrored = function() {
-		stateInit(sInvertedEffect);
-		playerMovement(true);
-	}
+	stateMirrored = function() { playerMovement(true); }
 }
