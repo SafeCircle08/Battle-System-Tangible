@@ -1,4 +1,7 @@
 function playerMovement(_reverse = false) {
+	
+	if (!gettingGameInputs()) return;
+	
 	if (canMove) {
 		var mx = (key_right - key_left) * global.SoulSpeed;
 		var my = (key_down - key_up) * global.SoulSpeed;

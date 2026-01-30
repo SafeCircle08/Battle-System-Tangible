@@ -1,3 +1,3 @@
 function beamAnimationFinalAnimationIsActive(){
-	return (global.enemyTimer > global.enemyAttackTime - BEAM_ANIMATION_TIMER_REF);
+	return (global.enemyTimer >= global.enemyAttackTime - BEAM_ANIMATION_TIMER_REF);
 }

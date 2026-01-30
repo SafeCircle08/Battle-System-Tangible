@@ -14,8 +14,10 @@ setPlayerToPoisoned(SEGNALINO_LEVEL.LEVEL_5);
 setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_5);
 setPlayerToIceSlide(SEGNALINO_LEVEL.LEVEL_1);
 
+global.xOffset = 60;
+global.yOffset = (global.borderHeight / 2) - 10;
 
-initializeNewTurn(0, false, 300, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateGravity);
+initializeNewTurn(0, false, 99999, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateFree);
 oSoul.image_alpha = 1;
 oSoul.canMove = true;
 oBattleBox.draw = true;

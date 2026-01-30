@@ -14,11 +14,6 @@ function playerChangeState(_globalStateInfo, _additionlVarsMethod = function() {
 	with (oSoul) {
 		setUpPlayerStateVars(_globalStateInfo);	
 		_additionlVarsMethod();
-		
-		if (global.beamAnimation == 0) {
-			createPlayerStateEffect(_globalStateInfo.effectSpr);
-			return;
-		}	
 	}
 }
 

@@ -1,2 +1,2 @@
 x = global.boxOriginX;
-y = global.boxOriginY + (global.borderHeight / 2) + 1;
+y = global.boxOriginY + (oBattleBox.currentHeight / 2) + 2;

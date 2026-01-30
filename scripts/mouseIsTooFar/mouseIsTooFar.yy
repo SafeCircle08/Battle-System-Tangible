@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"mouseIsTooFar",
   "parent":{
-    "name":"CUSTOMIZATION__CURSORS_&_BATTLE_STYLES",
-    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES.yy",
+    "name":"CURSOR",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/CURSOR.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

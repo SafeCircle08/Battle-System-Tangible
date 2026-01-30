@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"beamAnimationResetTimer",
+  "%Name":"beamAnimationFirstFrameFinalAnimation",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"beamAnimationResetTimer",
+  "name":"beamAnimationFirstFrameFinalAnimation",
   "parent":{
     "name":"BEAM_ANIMATION",
     "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/BEAM_FUNCTIONS/BEAM_ANIMATION.yy",

@@ -16,15 +16,13 @@ function destroyBulletsGensExtras() {
 	if (instance_exists(oExtrasParent)) { instance_destroy(oExtrasParent); }		
 }
 
-//used to finish a turn, by creating the beam animation
 function finishTurn() {	
 	if (instance_exists(oBoxSidePlatformParent)) { instance_destroy(oBoxSidePlatformParent); }
 	with (oBattleManager) {
 		backGroundLayersVisible(layers, false);
 		setManagerValuesToStartTurn();
 	}
-	
 	resetPlayerBattleVars();
-	destroyBulletsGensExtras();
+	destroyBulletsGensExtras(); //[DEBUG] (useless) 
 	resetCardsPositions();
 }

@@ -1,13 +1,14 @@
-key_right = keyboard_check(ord("D")); 
-key_left = keyboard_check(ord("A")); 
-key_up = keyboard_check(ord("W"));
-key_down = keyboard_check(ord("S"));
+key_right = keyboard_check(ord(global.keyBinds.right)); 
+key_left = keyboard_check(ord(global.keyBinds.left)); 
+key_up = keyboard_check(ord(global.keyBinds.up));
+key_down = keyboard_check(ord(global.keyBinds.down));
 
 global.playerHP = clamp(global.playerHP, -666, global.playerMAX_HP);
 
 if (keyboard_check(vk_alt) && (keyboard_check_pressed(ord("C")))) {
 	if (!instance_exists(oDeveloperCommandsManager)) {
 		instance_create_layer(x, y, LAYER_EFFECT_TOP_4, oDeveloperCommandsManager);
+		disableGameInputs();
 	} else {
 		if (oDeveloperCommandsManager.activeCMD == true) {
 			oDeveloperCommandsManager.activeCMD = false;
@@ -19,26 +20,22 @@ if (keyboard_check(vk_alt) && (keyboard_check_pressed(ord("C")))) {
 	}
 }
 
-if (!oBattleManager.isInBulletHellSection()) { exit; }
+if (!inBulletHell()) exit;
 
-//I am animating the beam
 if (beamAnimationIsActive()) {
+	if (beamAnimationFirstFrame() && !beamAnimationFinalAnimationIsActive()) setToStartTurnX();
 	global.beamAnimationTimer--;
-	global.beamAnimation = true; //-> playerBeamAnimation();
+	if (beamAnimationFinalAnimationIsActive()) { 
+		if (beamAnimationFirstFrameFinalAnimation()) setToDefaultPos();
+		exit; 
+	} else {
+		if (beamAnimationTimerIsEqualTo(15)) setToActualTurnPosition();
+		if (beamAnimationOnEnding()) canState = true; 
+		if (beamAnimationLastFrame()) createPlayerStateEffect(selectedState.effectSpr);
+	}
 }
 
-if (beamAnimationFinalAnimationIsActive()) { 
-	if (global.enemyTimer == global.enemyAttackTime - BEAM_ANIMATION_TIMER_REF + 1) { setToDefaultPos(); }
-	exit; 
-}
-
-if (beamAnimationTimerIsEqualTo(5)) { setPlayerPos(global.boxOriginX, global.boxOriginY); }
-
-if (beamAnimationLastFrame()) { 
-	createPlayerStateEffect(selectedState.effectSpr);
-}
-
-if (beamAnimationOnEnding()) { state(); }
+if (canState == true) state();
 
 /*
 if (keyboard_check_pressed(ord("M"))) {

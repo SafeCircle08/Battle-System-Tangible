@@ -1,9 +1,8 @@
-function openSettings()
-{
+function openSettings() {
 	
 }
+
 global.windowButtons = {
-	
 	closeGame: {
 		btnSprite: sQuitButton,
 		text: "Quit",		

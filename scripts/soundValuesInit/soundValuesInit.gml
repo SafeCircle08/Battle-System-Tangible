@@ -17,7 +17,6 @@
 global.soundGain = 1;
 global.musicGain = 1;
 
-
 function playSound(sndIndex, sndChannel, loop = false, gainValue = 1) {
 	audio_play_sound(sndIndex, sndChannel, loop, global.soundGain * gainValue);
 }

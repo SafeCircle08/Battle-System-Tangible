@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"defaultCommandsKeys",
+  "%Name":"defaultMovementKeys",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"defaultCommandsKeys",
+  "name":"defaultMovementKeys",
   "parent":{
     "name":"BindingsValues",
     "path":"folders/Scripts/HARDWARE_&_COSTANTS_&_SETTING_&_OPTIMIZATION/keyFunctions/BindingsValues.yy",

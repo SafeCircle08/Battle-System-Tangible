@@ -1,4 +1,6 @@
 function mouseIsTooFarWindow() {
+	if (instance_exists(oSoul)) { if (oSoul.inBulletHell()) return false; }
+	
 	var _xToll = 45;
 	var _yToll = 40;
 	

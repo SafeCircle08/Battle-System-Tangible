@@ -6,7 +6,7 @@
   "name":"beamAnimationEnded",
   "parent":{
     "name":"BEAM_ANIMATION",
-    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/BEAM_ANIMATION.yy",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/PLAYER/BEAM_FUNCTIONS/BEAM_ANIMATION.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

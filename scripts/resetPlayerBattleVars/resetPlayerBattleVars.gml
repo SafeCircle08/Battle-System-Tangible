@@ -3,6 +3,7 @@ function resetPlayerBattleVars(){
 	
 	with (oSoul) {
 		damageTaken = 0;
+		resetSpeeds();
 		//speed = 0;
 		//boost = 0;
 		//...

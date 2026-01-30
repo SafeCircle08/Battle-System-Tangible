@@ -143,7 +143,7 @@ setToStartTurn = function() {
 	selected_option = 0;
 	showActionsFlavourText = true;
 	actualDrawAlpha = 0;
-	oBattleBox.visible = false;
+	oBattleBox.setToStartTurn();
 	global.enemyTimer = 0;
 	global.getTextBoxInputs = true;
 	

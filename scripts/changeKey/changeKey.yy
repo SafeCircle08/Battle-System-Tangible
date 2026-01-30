@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"changeKey",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"changeKey",
+  "parent":{
+    "name":"BindingUnbinding",
+    "path":"folders/Scripts/HARDWARE_&_COSTANTS_&_SETTING_&_OPTIMIZATION/keyFunctions/BindingUnbinding.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

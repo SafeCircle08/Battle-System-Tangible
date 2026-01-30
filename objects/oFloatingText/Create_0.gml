@@ -28,6 +28,13 @@ image_xscale = 2;
 image_yscale = 2;
 hspeed = 0;
 
+initVars = function(_txtRef, _type) {
+	textReference = _txtRef;
+	typeIndex = _type;
+	drawColor = colors[_type];
+	setDirection(manageFlTextDir());		
+}
+
 setDirection = function(_dir) {
 	var _maxDirSpd = 0.5;
 	switch (_dir) {

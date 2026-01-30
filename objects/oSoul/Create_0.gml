@@ -1,3 +1,5 @@
+#region CREATION INIT
+
 key_right = keyboard_check(ord("D")) 
 key_left = keyboard_check(ord("A")) 
 key_up = keyboard_check(ord("W")) 
@@ -8,18 +10,37 @@ key_jumpPressed = keyboard_check(vk_space);
 damageTaken = 0;
 startX = x;
 startY = y;
+canState = false;
 
 image_xscale = 1;
 image_yscale = 1;
 
 segnalini = [];
 
-setToDefaultPos = function(_defPosX = room_width / 2, _defPosY = -20) {
+#endregion
+
+#region	POSITIONs
+
+setToStartTurnX = function() {
+	setPlayerPos(global.boxOriginX + global.xOffset, y);	
+}
+
+setToDefaultPos = function(_defPosX = x, _defPosY = -20) {
 	x = _defPosX;
 	y = _defPosY;
 }
 
+setToActualTurnPosition = function() {
+	setPlayerPos(global.boxOriginX + global.xOffset, global.boxOriginY + global.yOffset);		
+}
+
 setToDefaultPos();
+
+#endregion
+
+#region OTHERs
+
+
 
 setToSlide = function(_iceFrictionValue) { 
 	iceFriction = _iceFrictionValue;
@@ -39,6 +60,21 @@ drawBeamAnimation = function() {
 		draw_sprite_stretched(sBeam, indexMax, oSoul.x - _xOffset , 0, sprite_get_width(sBeam), beamHeight);
 	}	
 }
+
+inBulletHell = function() {
+	return oBattleManager.isInBulletHellSection();	
+}
+
+#endregion
+
+#region	RESETS
+
+resetSpeeds = function() {
+	vsp = 0;
+	hsp = 0;
+}
+
+#endregion
 
 basicPlayerVars();
 

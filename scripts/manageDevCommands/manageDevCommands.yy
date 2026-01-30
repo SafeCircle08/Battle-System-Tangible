@@ -6,7 +6,7 @@
   "name":"manageDevCommands",
   "parent":{
     "name":"Commands",
-    "path":"folders/Scripts/Commands.yy",
+    "path":"folders/Scripts/HARDWARE_&_COSTANTS_&_SETTING_&_OPTIMIZATION/Commands.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

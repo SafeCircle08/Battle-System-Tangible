@@ -12,5 +12,6 @@ function startBeamAnimation(startOfTurn = true)  {
 		playerFillShield();
 		destroyBulletsGensExtras();
 	}
+	oSoul.canState = false;
 	beamAnimationSetToStart();
 }

@@ -71,10 +71,8 @@ global.playerJumpStateMoveInfo = {
 	},
 }
 
-function gravCreateRightGravityBorder(_inputgravityBorder)
-{
-	if (!instance_exists(_inputgravityBorder))
-	{ 
+function gravCreateRightGravityBorder(_inputgravityBorder) {
+	if (!instance_exists(_inputgravityBorder)) { 
 		instance_destroy(oBoxSidePlatformParent);
 		instance_create_layer(x,-500, LAYER_EXTRAS_OBJECTS, _inputgravityBorder); 
 		return;
@@ -82,10 +80,8 @@ function gravCreateRightGravityBorder(_inputgravityBorder)
 }
 
 //If you are under a platform (you make a little jump)
-function gravCheckingBaseBorder(_sign, xComponent, yComponent, horizontal = true)
-{
-	if (place_meeting(x + xComponent, y + yComponent, oPlatformParent))
-	{
+function gravCheckingBaseBorder(_sign, xComponent, yComponent, horizontal = true) {
+	if (place_meeting(x + xComponent, y + yComponent, oPlatformParent)) {
 		if (horizontal) { y += (lerp(0, 5, 0.4) * 2) * _sign; }
 		else { x += (lerp(0, 5, 0.4) * 2) * _sign; }
 	}

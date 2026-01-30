@@ -29,8 +29,7 @@ function createNewGuiTheme (
 		Ogni volta che si crea una nuova "meccanica" GUI,
 		bisognera inserire la sua "blueprint" qui
 	*/
-) 
-{
+) {
 	var _newGuiSet = {
 		enumRef: _enumRef, 
 		bg: _basicBG,

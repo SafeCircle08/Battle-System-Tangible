@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"ignoreCodeWhenPlayerIsFar",
+  "%Name":"isDistant",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ignoreCodeWhenPlayerIsFar",
+  "name":"isDistant",
   "parent":{
     "name":"MenagementScripts",
     "path":"folders/Scripts/HARDWARE_&_COSTANTS_&_SETTING_&_OPTIMIZATION/MenagementScripts.yy",

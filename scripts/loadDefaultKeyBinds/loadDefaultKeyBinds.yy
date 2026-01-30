@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"loadDefaultKeyBinds",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"loadDefaultKeyBinds",
+  "parent":{
+    "name":"BindingUnbinding",
+    "path":"folders/Scripts/HARDWARE_&_COSTANTS_&_SETTING_&_OPTIMIZATION/keyFunctions/BindingUnbinding.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

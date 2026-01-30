@@ -1,4 +1,4 @@
 function beamAnimationOnEnding() {
-	var _interval = 5;
-	return (global.beamAnimationTimer < _interval);
+	var _interval = 11;
+	return (global.beamAnimationTimer == _interval);
 }

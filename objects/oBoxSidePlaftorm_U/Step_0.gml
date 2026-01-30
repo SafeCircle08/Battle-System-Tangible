@@ -1,2 +1,2 @@
 x = global.boxOriginX;
-y = global.boxOriginY - (global.borderHeight / 2) - 10;
+y = global.boxOriginY - (global.borderHeight / 2) - 9;

@@ -1,8 +1,7 @@
 #macro WANTED_FPS 60
 #macro GAME_FPS 60
 
-function setOptimalHardwareSettings()
-{
+function setOptimalHardwareSettings() {
 	setOptimalDisplaySettings(WANTED_FPS);
 	game_set_speed(WANTED_FPS, gamespeed_fps);
 	display_reset(8, true);

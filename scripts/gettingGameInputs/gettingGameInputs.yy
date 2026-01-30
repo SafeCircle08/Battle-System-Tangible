@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"gettingGameInputs",
   "parent":{
-    "name":"keyFunctions",
-    "path":"folders/Scripts/SECONDARY_SCRIPTS/keyFunctions.yy",
+    "name":"ManagingInputs",
+    "path":"folders/Scripts/HARDWARE_&_COSTANTS_&_SETTING_&_OPTIMIZATION/keyFunctions/ManagingInputs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

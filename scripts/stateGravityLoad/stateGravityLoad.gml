@@ -21,7 +21,7 @@ function stateGravityLoad(){
 		var _jmpKey = inUseGravity.jmpKey;
 		key_jumpPressed = keyboard_check(_jmpKey);
 		
-		if (beamAnimationTimerIsEqualTo(4)) { 
+		if (beamAnimationTimerIsEqualTo(10)) { 
 			gravStateInit();
 		}
 	
@@ -70,14 +70,12 @@ function stateGravityLoad(){
 		if (inUseGravity.horizontal) {
 			x += hsp;
 			y += vsp;
-			var _possX = clamp(oSoul.x, global.border_l + 5, global.border_r - 4);
-			oSoul.x = _possX;
+			playerMovClampX();
 		}
 		else {
 			x += vsp;
 			y += hsp;
-			var _possY = clamp(oSoul.y, global.border_u - 2, global.border_d + 2);
-			oSoul.y = _possY;
+			playerMovClampY();
 		}
 	}
 }
