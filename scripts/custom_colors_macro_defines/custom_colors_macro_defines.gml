@@ -8,3 +8,10 @@
 #macro c_custom_red_hit_color make_color_rgb(238, 28, 36)
 
 #macro c_custom_night_red make_colour_rgb(254, 75, 94)
+
+
+#macro c_vintage_cookie_txt_color make_colour_rgb(164, 131, 116)
+#macro c_vintage_cookie_bg_txt_color make_colour_rgb(35, 27, 34)
+#macro c_vintage_cookie_selection_color make_colour_rgb(58, 45, 40)
+
+#macro c_summer_selection_color make_colour_rgb(140, 255, 250)

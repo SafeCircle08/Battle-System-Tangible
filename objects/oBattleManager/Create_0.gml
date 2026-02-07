@@ -191,6 +191,81 @@ drawMenuButtons = function(_sprButton, _buttonX, _buttonY) {
 	}	
 }
 
+drawItemSprite = function(_item, _sprX, _sprY) {
+	if (_item.enchanted == true) { setGlintShader(); }
+	draw_sprite(_item.sprite, 0, _sprX + inventoryXAdder, _sprY); //item sprite
+	shader_reset();		
+}
+
+drawItemTextBox = function(_itemInfoX, _itemInfoY, _bgW, _bgH, _border, _infoBorder) {
+	draw_sprite_stretched(sItemInfoBG, 0, _itemInfoX + inventoryXAdder, _itemInfoY, _bgW - _border, _bgH / 2 + _border / 2 - _border);
+	if (!instance_exists(itemOutputMessage)) { drawItemDesc(_itemInfoX, _itemInfoY, _infoBorder, _border); }		
+}
+
+drawItemName = function(_item, _x, _y, _border) {
+	var scale = 0.5;
+	var sep = 0.5;
+	var w = 50;
+	
+	draw_text_ext_transformed(_x, _y, _item.name, sep, w, scale, scale, 0);
+	shader_reset();
+}
+
+drawItemsNames = function(_item, _itemNameX, _inventoryX, _itemNameY, _border, i, j) {
+	if (i < 4) {
+		drawItemName(_item, _itemNameX, _itemNameY + _border * i, _border);
+	} else {
+		_itemNameX = _inventoryX + _border + string_width("PNE") + 5;
+		drawItemName(_item, _itemNameX + inventoryXAdder, _itemNameY + _border * j, _border);
+		j++;
+	}
+	return j;
+}	
+
+drawAndManageBattleBook = function(_x, _y, _bgW, _border) {
+	var _bookSpr = setToGuiItemBookSelectedTheme();
+	var _bookW = sprite_get_width(_bookSpr);
+	var _bookH = sprite_get_height(_bookSpr);
+	var _bookX = _x + _bgW - _bookW - _border;
+	var _bookY = _y + _border / 2 + 1.5;
+	var _bookSubImg = 0;
+		
+	var _mX = _bookX + inventoryXAdder;
+	var _mY = _bookY;
+	var _mW = _mX +_bookW;
+	var _mH = _mY + _bookH;
+		
+	if (mouseCursorIsOn(_mX, _mY, _mW, _mH)) {
+		_bookSubImg = 1;
+		if (mouse_check_button_pressed(mb_left) && (decidingSubAction == true)) {
+			if (!instance_exists(oBattleInvBookManager)) { openBattleBook(); }
+			else { 
+				if (oBattleInvBookManager.isFading() == true) { reOpenBattleBook(); }
+				else { closeBattleBook();  }
+			}
+		}
+	}
+	draw_sprite(_bookSpr, _bookSubImg, _bookX + inventoryXAdder, _bookY - 2);		
+}
+
+drawItemDesc = function(_infoX, _infoY, _infoBorder, _border) {
+	var scale = 0.5;
+	var sep = 0.5;
+	var w = 50;
+	draw_set_color(c_white);
+	var _info = itemInfo(selected_option);
+	draw_text_ext_transformed(_infoX + _infoBorder * 2 + inventoryXAdder,  _infoY + _border / 2, _info, 20, 200, scale, scale, 0);		
+}
+
+drawInventoryCapacity = function(_inventoryX, _inventoryY, _border) {
+	draw_set_font(fHungryBig);
+	var _invCapacity = string(array_length(global.equippedItems)) + "/" + string(MAX_ITEMS_NUM);
+	draw_set_color(c_black);
+	draw_text(_inventoryX + _border * 3 + inventoryXAdder + 1, _inventoryY - _border + 1, _invCapacity);
+	draw_set_color(c_white);
+	draw_text(_inventoryX + _border * 3 + inventoryXAdder, _inventoryY - _border, _invCapacity);
+}
+
 #endregion
 
 createBattleManagerObjects();

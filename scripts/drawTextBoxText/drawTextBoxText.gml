@@ -64,7 +64,7 @@ function advanceText(_textList, _advanceSound, _pDel = 10, _cDel = 5) {
 	checkForPauses(_textList, _pDel, _cDel);
 }
 
-function drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scale, _angle, _offset = 0.5, _col = c_dkgray) {
+function drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scale, _angle, _offset = 0.5, _col = setToGuiTextBgColorSelectedTheme()) {
 	draw_set_color(_col);
 	draw_text_ext_transformed(_txtX + _offset, _txtY + _offset, _textPart, _lineSep, _maxW, _scale, _scale, 0);		
 }
@@ -131,6 +131,8 @@ function drawTextBoxText(
 	#endregion
 	
 	#region TEXT PROPERTIES + COORDINATES, ARROW DECO, 
+	var _textCol = setToGuiTextColorSelectedTheme();
+	var _textBgCol = setToGuiTextBgColorSelectedTheme();
 	var _borderX = _bX;
 	var _borderY = _bY;
 	var _lineSep = _lSep;
@@ -171,7 +173,7 @@ function drawTextBoxText(
 	if (_character == true && characterFaces[page] != FACIAL_EXPRESSIONS.FACIAL_HIDDEN_FACE) {
 		var _face = characterFaces[page];
 		draw_sprite(faceSpriteRef, _face, _txtX - 2, _txtY - 1);
-		_txtX = 60;
+		_txtX = 65;
 	}
 	
 	drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, 0);
@@ -206,9 +208,8 @@ function drawTextBoxText(
 		}
 	} catch (_exception) {}
 	
-	var _col = c_white;
-	if (_character == true) { _col = colors[page]; }
-	draw_set_color(_col);
+	if (_character == true) { _textCol = colors[page]; }
+	draw_set_color(_textCol);
 	draw_text_ext_transformed(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, _scaleY, 0);		
 	
 	if (textFinished(_textList)) {

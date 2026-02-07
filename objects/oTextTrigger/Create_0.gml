@@ -45,7 +45,7 @@ createTextInst = function() {
 	_textInst.pagesWithFXs = pagesWithFXs;
 }
 
-addCharPage = function(_text, _faceSprRef, _moods, _fxWanted = TEXT_ANIMATIONS_FXS.TEXT_NO_FXS, _color = c_white) {
+addCharPage = function(_text, _faceSprRef, _moods, _fxWanted = TEXT_ANIMATIONS_FXS.TEXT_NO_FXS, _color = setToGuiTextColorSelectedTheme()) {
 	hasCharacter = true;
 	faceSpriteRef = _faceSprRef;
 	array_push(textList, _text);

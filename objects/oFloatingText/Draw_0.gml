@@ -7,7 +7,13 @@ draw_text(x + 1, y, textReference);
 draw_text(x - 1, y, textReference);
 draw_text(x, y + 2, textReference);
 draw_text(x, y - 2, textReference);
-draw_sprite(sFloatTxtTypes, typeIndex, x + 15, y - 8);
+
+var _xOffset = 2;
+var _yOffset = 8;
+var _sprX = x + (string_width(textReference) / 2) + _xOffset;
+var _sprY = y - _yOffset;
+
+draw_sprite(sFloatTxtTypes, typeIndex, _sprX, _sprY);
 draw_set_color(c_black);
 
 draw_text(x, y - 1, textReference);

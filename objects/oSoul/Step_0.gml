@@ -31,7 +31,6 @@ if (beamAnimationIsActive()) {
 	} else {
 		if (beamAnimationTimerIsEqualTo(15)) setToActualTurnPosition();
 		if (beamAnimationOnEnding()) canState = true; 
-		if (beamAnimationLastFrame()) createPlayerStateEffect(selectedState.effectSpr);
 	}
 }
 

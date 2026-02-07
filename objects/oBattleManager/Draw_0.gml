@@ -100,57 +100,33 @@ if (!isInBulletHellSection()) {
 		draw_sprite(global.selectedGuiTheme.inventoryPortrait, 0, _inventoryX + _bgW - 30 + inventoryXAdder, _inventoryY + 3)
 		
 		//Draws the inventory space (useless but cool)
-		draw_set_font(fHungryBig);
-		var _invCapacity = string(array_length(global.equippedItems)) + "/" + string(MAX_ITEMS_NUM);
-		draw_set_color(c_black);
-		draw_text(_inventoryX + _border * 3 + inventoryXAdder + 1, _inventoryY - _border + 1, _invCapacity);
-		draw_set_color(c_white);
-		draw_text(_inventoryX + _border * 3 + inventoryXAdder, _inventoryY - _border, _invCapacity);
+		drawInventoryCapacity(_inventoryX, _inventoryY, _border);
 		
 		//Draws the Item name, properties, info ecc...
 		var _spriteBorder = _border - 2;
 		var _itemNameX = _inventoryX + _spriteBorder;
 		var _itemNameY = _inventoryY + _spriteBorder;
+		var _col;
 		var j = 0;
 		
 		for (var i = 0; i < array_length(global.equippedItems); i++) {
 			var _item = global.equippedItems[i];
 			if (thisItemIsSelected(i)) {
-				//Sprite Coords
 				var _itemSprX = _inventoryX + _bgW - _itemWidth - _border - 7;
 				var _itemSprY = _inventoryY + _border + _border / 2 - 2;
 				var _itemSprW = sprite_get_width(sCocoMilk);
 				
-				//Drawing the sprite with enchant effect if needed
-				if (_item.enchanted == true) { setGlintShader(); }
-				draw_sprite(_item.sprite, 0, _itemSprX + inventoryXAdder, _itemSprY); //item sprite
-				shader_reset();
-				drawStatistics(i, _itemSprX, _itemSprY, _border); //item properties
-				drawEnchants(i, _itemSprX, _itemSprY, _border); //item enchants
-				var _col = setToSelectionColorSelectedTheme();
-				draw_set_color(_col);  
-			}
-			else { draw_set_color(c_white); }
+				drawItemSprite(_item, _itemSprX, _itemSprY);
+				drawStatistics(i, _itemSprX, _itemSprY, _border);
+				drawEnchants(i, _itemSprX, _itemSprY, _border);
+				
+				_col = setToSelectionColorSelectedTheme();
+			} else { _col = setToGuiTextColorSelectedTheme(); }
 			
-			if (_item.enchanted == true) { setEnchantText(i); }
-			
-			//Drawing the Item Name
+			draw_set_color(_col); 
+			if (_item.enchanted == true) { setEnchantTextCol(i); }
 			draw_set_font(fHungrySkinny);
-			var scale = 0.5;
-			var sep = 0.5;
-			var w = 50;	
-			
-			//Left Side
-			if (i < 4) {
-				draw_text_ext_transformed(_itemNameX + inventoryXAdder, _itemNameY + _border * i, _item.name, sep, w, scale, scale, 0);
-				shader_reset();
-				continue;
-			}
-			//Right Side
-			_itemNameX = _inventoryX + _border + string_width("PNE") + 5;
-			draw_text_ext_transformed(_itemNameX + inventoryXAdder, _itemNameY + _border * j, _item.name, sep, w, scale, scale, 0);
-			shader_reset();
-			j++;
+			j = drawItemsNames(_item, _itemNameX + inventoryXAdder, _inventoryX, _itemNameY, _border, i, j);
 		}
 		
 		var _itemInfoBgX = _inventoryX + _border;
@@ -159,42 +135,9 @@ if (!isInBulletHellSection()) {
 		var _itemInfoX = _itemInfoBgX - _border / 2;
 		var _itemInfoY = _itemInfoBgY - 2;
 		
-		draw_sprite_stretched(sItemInfoBG, 0, _itemInfoX + inventoryXAdder, _itemInfoY, _bgW - _border, _bgH / 2 + _border / 2 - _border);
-		
-		//Drawing the Item Information
-		if (!instance_exists(itemOutputMessage)) {	
-			var scale = 0.5;
-			var sep = 0.5;
-			var w = 50;
-			draw_set_color(c_white);
-			var _info = itemInfo(selected_option);
-			draw_text_ext_transformed(_itemInfoX + _infoBorder * 2 + inventoryXAdder,  _itemInfoBgY + _border / 2, _info, 20, 200, scale, scale, 0);
-		}
-		
-		//Drawing the Battle Book related things
-		var _bookSpr = setToGuiItemBookSelectedTheme();
-		var _bookW = sprite_get_width(_bookSpr);
-		var _bookH = sprite_get_height(_bookSpr);
-		var _bookX = _inventoryX + _bgW - _bookW - _border;
-		var _bookY = _itemInfoBgY + _border / 2 + 1.5;
-		var _bookSubImg = 0;
-		
-		var _mX = _bookX + inventoryXAdder;
-		var _mY = _bookY;
-		var _mW = _mX +_bookW;
-		var _mH = _mY + _bookH;
-		
-		if (mouseCursorIsOn(_mX, _mY, _mW, _mH)) {
-			_bookSubImg = 1;
-			if (mouse_check_button_pressed(mb_left) && (decidingSubAction == true)) {
-				if (!instance_exists(oBattleInvBookManager)) { openBattleBook(); }
-				else { 
-					if (oBattleInvBookManager.isFading() == true) { reOpenBattleBook(); }
-					else { closeBattleBook();  }
-				}
-			}
-		}
-		draw_sprite(_bookSpr, _bookSubImg, _bookX + inventoryXAdder, _bookY - 2);
+		drawItemTextBox(_itemInfoX, _itemInfoBgY, _bgW, _bgH, _border, _infoBorder);
+		drawAndManageBattleBook(_inventoryX, _itemInfoBgY, _bgW, _border);
+	
 		draw_set_alpha(1);
 	}
 	#endregion

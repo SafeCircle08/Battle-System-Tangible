@@ -106,12 +106,6 @@ function steamPunkEnemyBattleInfo() {
 		]
 	]
 	#endregion
-	#region PORTRAITS
-	var _portraits = loadEnemyPortrtaitsThemes(
-		sGUI_SteamPunkMiniPortrait_ORANGE,
-		sGUI_SteamPunkMiniPortrait_NIGHT_VISION
-	);
-	#endregion
 	
 	global.monsterHP = 1500;
 	global.maxMonsterHp = 1500;
@@ -120,5 +114,5 @@ function steamPunkEnemyBattleInfo() {
 	global.textList = steamEnemyText;
 	global.inUseGenerator = steamPunkBulletGenerator;
 	global.battleFlavourTexts = steamPunkBattleFlavourTexts;
-	global.enemyPortrait = _portraits[global.portraitIndex];
+	global.enemyPortrait = setToGuiEnemyPortraitSelectedTheme();
 }

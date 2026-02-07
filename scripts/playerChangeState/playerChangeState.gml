@@ -13,6 +13,7 @@ function setUpPlayerStateVars(_globalStateInfo) {
 function playerChangeState(_globalStateInfo, _additionlVarsMethod = function() {}) {
 	with (oSoul) {
 		setUpPlayerStateVars(_globalStateInfo);	
+		createPlayerStateEffect(selectedState.effectSpr);
 		_additionlVarsMethod();
 	}
 }

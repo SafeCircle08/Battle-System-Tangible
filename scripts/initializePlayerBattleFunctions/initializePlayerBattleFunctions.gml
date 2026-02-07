@@ -96,7 +96,7 @@ function initializeInventoryOptionFunctions() {
 	#endregion
 	
 	#region setEnchantText()
-	setEnchantText = function(_index, _col = c_purple) {
+	setEnchantTextCol = function(_index, _col = c_purple) {
 		if (selected_option != _index) { draw_set_color(_col); }
 		setGlintShader();
 	}
@@ -122,8 +122,9 @@ function initializeInventoryOptionFunctions() {
 		
 		var _x = INVENTORY_X + _border + inventoryXAdder;
 		var _y = INVENTORY_Y + (_bgH / 2) + _border / 2;
+		var _depth = 500;
 		
-		itemOutputMessage = instance_create_depth(_x, _y, 0, oInventoryText);
+		itemOutputMessage = instance_create_depth(_x, _y, _depth, oInventoryText);
 		itemOutputMessage.actualArray = usingItem(selected_option);
 		itemOutputMessage.visible = true;
 		itemOutputMessage.textDelay = 30;
