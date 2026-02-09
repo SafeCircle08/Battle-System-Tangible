@@ -71,7 +71,7 @@ global.theme_NIGHT_VISION = createNewGuiTheme(
 global.theme_SUMMER = createNewGuiTheme(
 	sGUI_BackGround_SUMMER,
 	sGUI_BattleButton_SUMMER,
-	sGUI_TextBox_lights_SUMMER,
+	sGUI_TextBox_SUMMER,
 	sGUI_PlayerMiniPortrait_SUMMER,
 	sGUI_InventoryMiniPortrait_SUMMER,
 	sGUI_EnemyPortrait_SUMMER,

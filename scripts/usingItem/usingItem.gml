@@ -1,6 +1,6 @@
-function callItemFunctions(_itemFuncList) {
+function callItemFunctions(_item, _itemFuncList) {
 	for (var i = 0; i < MAX_PROPERTIES_NUMBER; i++) { 
-		_itemFuncList[i](); 
+		_itemFuncList[i].func(_item); 
 	}	
 }
 
@@ -23,7 +23,7 @@ function createEnchantMiniCardFx(_itemEnchList, i) {
 function callItemEnchantments(_itemEnchList) {
 	var _enchantsN = array_length(_itemEnchList);
 	for (var i = 0; i < _enchantsN; i++) {
-		_itemEnchList[i].func();
+		_itemEnchList[i].func(global.candy);
 		createEnchantMiniCardFx(_itemEnchList, i);
 	}
 }
@@ -38,7 +38,7 @@ function playerFullHP(_addedHps) {
 
 function usingItem(_index) {
 	var _actualItem = global.equippedItems[_index];
-	var _itemFunctions = _actualItem._itemFuncs;
+	var _itemFunctions = _actualItem.itemProperties;
 	var _itemEnchants = _actualItem.enchants;
 	var _gainedHps = _actualItem.hp;
 	var _message;
@@ -46,8 +46,9 @@ function usingItem(_index) {
 
 	_message = _actualItem.outPutMessage;
 	if (playerFullHP(_gainedHps)) { _message = _actualItem.fullHPText; }
-	callItemFunctions(_itemFunctions);
+	callItemFunctions(_actualItem, _itemFunctions);
 	callItemEnchantments(_itemEnchants);
+	addItemToInventory(_actualItem);
 	return _message;
 }
 

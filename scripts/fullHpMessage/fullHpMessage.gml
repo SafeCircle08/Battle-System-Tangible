@@ -1,4 +1,4 @@
-function fullHpMessage(_msg) {
+function fullHpOutMessage(_msg) {
 	var _hpMaxed = "HPs MAXED OUT!";
 	if (digitNotEqualsToSpecialChars(_msg)) { return changeLastDigit(_msg) + _hpMaxed; }
 	return _msg + "\n" + _hpMaxed;		

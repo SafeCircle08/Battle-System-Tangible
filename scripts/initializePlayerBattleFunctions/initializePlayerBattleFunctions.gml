@@ -58,8 +58,9 @@ function initializeInventoryOptionFunctions() {
 	
 	drawStatistics = function(_index, _itemSprX, _itemSprY, _border) {
 		var _item = global.equippedItems[_index];
-		for (var k = 0; k < MAX_PROPERTIES_NUMBER; k++) {	
-			draw_sprite(_item.propertiesList[k], 0, _itemSprX - _border - 1 + inventoryXAdder, _itemSprY + (10 * k + (1 * k)));	
+		for (var k = 0; k < MAX_PROPERTIES_NUMBER; k++) {
+			var _prop = _item.itemProperties[k].sprite;
+			draw_sprite(_prop, 0, _itemSprX - _border - 1 + inventoryXAdder, _itemSprY + (10 * k + (1 * k)));	
 		}	
 	}
 	#endregion
