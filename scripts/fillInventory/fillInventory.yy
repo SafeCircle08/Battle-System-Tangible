@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"fillInventory",
   "parent":{
-    "name":"INVENTORY",
-    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/INVENTORY.yy",
+    "name":"Actions",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/INVENTORY/Actions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

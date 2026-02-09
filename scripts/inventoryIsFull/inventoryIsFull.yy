@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"inventoryIsFull",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"inventoryIsFull",
+  "parent":{
+    "name":"State",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/INVENTORY/State.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

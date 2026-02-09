@@ -6,7 +6,7 @@ function addEnchant(_item, _specificEnch = undefined) {
 	var _index = irandom_range(0, array_length(global.enchantsInGame) - 1);
 	var _choosenEnchant = global.enchantsInGame[_index];
 	array_push(_item.enchants,_choosenEnchant);	
-	setItemToEnchantedState(_item);
+	_item = setItemToEnchantedState(_item);
 	return _item;
 }
 

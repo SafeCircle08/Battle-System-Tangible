@@ -18,8 +18,6 @@ function getSavedItem(section) {
 	return item;
 }
 
-
-
 function loadItemsSimple() {
     if (!file_exists(FILE_NAME_ITEMS)) { return; }
     

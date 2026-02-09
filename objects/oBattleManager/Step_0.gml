@@ -1,15 +1,5 @@
 randomize();
 
-if (keyboard_check_released(ord("I"))) {
-	setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_2);	
-}
-if (keyboard_check_released(ord("O"))) {
-	setPlayerToIceSlide(SEGNALINO_LEVEL.LEVEL_2);	
-}
-if (keyboard_check_released(ord("P"))) {
-	setPlayerToBrokenBones(SEGNALINO_LEVEL.LEVEL_2);	
-}
-
 if (playerMainActionTurn()) {
 	navigatingBattle(0, 3);
 	if (confirmPressed()) {

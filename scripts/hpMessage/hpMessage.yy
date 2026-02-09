@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"hpMessage",
   "parent":{
-    "name":"INVENTORY",
-    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/INVENTORY.yy",
+    "name":"ITEMS",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

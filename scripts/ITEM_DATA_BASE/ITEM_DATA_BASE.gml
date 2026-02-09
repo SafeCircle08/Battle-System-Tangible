@@ -50,7 +50,7 @@ function itemAddToInvProp() {
 	return {
 		sprite: sAddToInvProp,
 		func: function(item) {
-			addItemToInventory(item.toAddItem);
+			addItemToInventory(item.toAddItem, true);
 		}
 	}
 }
@@ -74,6 +74,18 @@ global.bandages = createItemAddToInv(ITEM_TYPE.GENERIC, global.painKiller, "M.Wr
 	fullHpOutMessage("Your deepest wounds got healed"),
 	"Cuts are less annoying if they are protected.",
 	propertyDoubleHeal(), itemAddToInvProp());
+
+global.mathMinyChip = createItemEat("Smol_C.", sMathLittleChipItem, 50, 
+	itemInfoMessage("Just a mini funny mathematical chip.", 50),
+	fullHpOutMessage("Seriously? You're full after one chip?"),
+	"It gave you the perfect energy to keep on going!", 
+	propertyHeal());
+
+global.mathChips = createItemAddToInv(ITEM_TYPE.EAT, global.mathMinyChip, "M.Chips", sMathChipsItem, 215, 
+	itemInfoMessage("Math Chips. Eat them during Calculus!", 215),
+	fullHpOutMessage("You'll never fail Calculus II again!"),
+	"Definitely tastier than derivatives...", 
+	propertyHeal(), itemAddToInvProp(), itemAddToInvProp());
 
 /*
 global.joice = createNewItem("Joice", sJoiceItem, 233, sndPlayerDrinkingHeal,
@@ -142,4 +154,9 @@ global.soup = createNewItem("Soup", sSoup, 450, sndPlayerEatingHeal,
 
 //putItemsInInventory(MAX_ITEMS_NUM);
 
-fillInventory();
+
+addItemToInventory(global.mathChips);
+addItemToInventory(global.mathChips);
+addItemToInventory(global.mathChips);
+addItemToInventory(global.bandages);
+addItemToInventory(global.bandages);

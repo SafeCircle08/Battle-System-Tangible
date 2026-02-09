@@ -1,5 +1,6 @@
-function addItemToInventory(_specificItem = undefined) {	
+function addItemToInventory(_specificItem = undefined, _playSound = false) {	
 	if (cadAddToInventory()) {
+		if (_playSound) playSoundNotPlaying(sndAddItemToInv, SOUND_CHANNEL_4);
 		if (_specificItem != undefined) {
 			array_push(global.equippedItems, _specificItem);	
 		} else {

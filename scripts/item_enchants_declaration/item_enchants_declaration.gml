@@ -13,6 +13,12 @@ function goldifier(){
 	}
 }
 
+function doubleUsage(item, _enchIndex) {
+	var _reusedItem = removeEnchant(item, _enchIndex);
+	if (array_length(global.equippedItems) == 8) global.equippedItems[MAX_ITEMS_NUM - 1] = _reusedItem;
+	else addItemToInventory(_reusedItem);
+}
+
 function removePoisonTag() {
 	removeSegnalino(oPoisonSegnalino);
 }
@@ -42,6 +48,7 @@ function createEnchant(_enchName, _spr, _func, _desc = "") {
 }
 
 global.enchGoldy = createEnchant("Goldifier", sGoldyEnchProperty, goldifier);
-global.enchPoisonFree = createEnchant("Posion Free", sPoisonFreeEnchProperty, removePoisonTag);
+global.enchPoisonFree = createEnchant("Poison Free", sPoisonFreeEnchProperty, removePoisonTag);
 global.enchSlownessFree = createEnchant("Slowness Free", sRemoveSlownessEnchProperty, removeSlownessTag);
 global.enchRemoveSegnalini = createEnchant("Remove Segnalini", sRemoveSegEnchProperty, removeSegnalini);
+global.doubleusageEnch = createEnchant("Double Usage", sDoubleUsageEnchProp, function(item, _enchIndex) { doubleUsage(item, _enchIndex); })

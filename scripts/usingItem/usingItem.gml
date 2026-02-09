@@ -17,13 +17,13 @@ function createEnchantMiniCardFx(_itemEnchList, i) {
 	var _enchFx = instance_create_layer(_enchCardFxX, _enchCardFxY, LAYER_EFFECT_TOP_3, oEnchFxTest);
 	_enchFx.frame = irandom_range(10, 90);
 	_enchFx.spriteRef = _itemEnchList[i].sprite
-	_enchFx.setNewSprite();		
+	_enchFx.setNewSprite();	
 }
 
-function callItemEnchantments(_itemEnchList) {
+function callItemEnchantments(_item, _itemEnchList) {
 	var _enchantsN = array_length(_itemEnchList);
 	for (var i = 0; i < _enchantsN; i++) {
-		_itemEnchList[i].func(global.candy);
+		_itemEnchList[i].func(_item, i);
 		createEnchantMiniCardFx(_itemEnchList, i);
 	}
 }
@@ -47,8 +47,7 @@ function usingItem(_index) {
 	_message = _actualItem.outPutMessage;
 	if (playerFullHP(_gainedHps)) { _message = _actualItem.fullHPText; }
 	callItemFunctions(_actualItem, _itemFunctions);
-	callItemEnchantments(_itemEnchants);
-	addItemToInventory(_actualItem);
+	callItemEnchantments(_actualItem, _itemEnchants);
 	return _message;
 }
 

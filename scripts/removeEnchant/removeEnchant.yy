@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"removeEnchant",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"removeEnchant",
+  "parent":{
+    "name":"ENCHANTS",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

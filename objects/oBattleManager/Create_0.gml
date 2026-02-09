@@ -249,12 +249,21 @@ drawAndManageBattleBook = function(_x, _y, _bgW, _border) {
 }
 
 drawItemDesc = function(_infoX, _infoY, _infoBorder, _border) {
+	var sep = 20;
+	var w = 200;
 	var scale = 0.5;
-	var sep = 0.5;
-	var w = 50;
+	var angle = 0;
 	draw_set_color(c_white);
 	var _info = itemInfo(selected_option);
-	draw_text_ext_transformed(_infoX + _infoBorder * 2 + inventoryXAdder,  _infoY + _border / 2, _info, 20, 200, scale, scale, 0);		
+	
+	var _longStringVal = 55;
+	var _yPadding = 2;
+	if (string_length(_info) >= _longStringVal) { _infoY -= _yPadding; }
+	
+	var _finalInfoX = _infoX + _infoBorder * 2 + inventoryXAdder;
+	var _finalInfoY = _infoY + _border / 2;
+	
+	draw_text_ext_transformed(_finalInfoX, _finalInfoY, _info, sep, w, scale, scale, angle);		
 }
 
 drawInventoryCapacity = function(_inventoryX, _inventoryY, _border) {
