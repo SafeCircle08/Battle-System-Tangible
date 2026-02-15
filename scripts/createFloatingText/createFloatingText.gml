@@ -26,7 +26,7 @@ function createFloatingText(_x, _y, _txtRef, _type) {
 	if (mouseIsTooFarWindow()) {
 		var _heightOffSet = 60;
 		_x = room_width / 2 + irandom_range(-_randomX, _randomX);
-		_y = (room_width / 2 - _heightOffSet) + (15 * _fTextN);	
+		_y = (room_height / 2 - _heightOffSet) + (15 * _fTextN) + 30;
 	}
 	
 	var floatingText = instance_create_layer(_x, _y, LAYER_EFFECT_TOP_2, oFloatingText);

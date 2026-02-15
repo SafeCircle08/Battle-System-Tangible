@@ -1,6 +1,7 @@
 bookBgW = 68;
 bookBgH = room_height * 2;
 drawAlpha = 0;
+PROPS_PER_ROW = 5;
 
 //X Coords
 bookStartX = room_width;
@@ -23,6 +24,22 @@ fadeInDone = false;
 fadingOut = false;
 scrollingAmount = 7;
 hovering = false;
+
+drawPropertiesFrame = function() {
+	var bookBgX = bookX;
+	var bookBgY = bookY;
+
+	var bookBgSpr = setToGuiBgSelectedTheme();
+
+	draw_set_alpha(drawAlpha);
+
+	draw_sprite_stretched(bookBgSpr, 0, bookBgX, bookBgY, bookBgW, bookBgH);		
+}
+
+drawPropertyText = function(_x, _y, _index, _yAdder) {
+	var _propText = global.propertiesKind[_index][PROPERTY_TEXT_SPRITE];
+	draw_sprite(_propText, 0, _x, _y + _yAdder);	
+}
 
 setToFadeOut = function() {
 	fadingOut = true;
@@ -87,3 +104,37 @@ scrollingBookDown = function(upWheelAmount = scrollingAmount) {
 	bookY -= upWheelAmount;
 	bookY = clamp(bookY, -bookBgH / 2, bookBgH);
 }
+	
+createPropMiniCard = function(_actualProp, _x, _y, _index) {
+	var _w = sprite_get_width(sHealProperty);
+	var _fx = instance_create_layer(_x + 5 + (_w * (_index - 1) + 1 * (_index - 1)), _y + 5, LAYER_EFFECT_TOP_2, oMiniPropCardFX);
+	_fx.sprite_index = _actualProp.sprite;
+	_fx.duplicateSprite();
+	_fx.setSpriteOffSet();	
+}
+	
+createBattleBookPropDesc = function(_actualProp) {
+	var _propDescObj = instance_create_layer(x, y, LAYER_EFFECT_TOP, oBattleInvBookPropDesc);
+	_propDescObj.description = _actualProp.desc;
+	_propDescObj.detSprite = _actualProp.detailedSprite;
+	_propDescObj.enchFx = _actualProp.enchanted;
+}	
+	
+drawMiniProp = function(_actualProp, _x, _y, _index) {
+	var _w = sprite_get_width(sHealProperty);
+	if (_actualProp.enchanted == true) { setGlintShader(); }
+	draw_sprite(_actualProp.sprite, 0, _x + (_w * (_index - 1) + 1 * (_index - 1)), _y);
+	shader_reset();		
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

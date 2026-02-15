@@ -17,4 +17,4 @@ function setUpPropertyInfos(property, propertyDesc, detSprite = sHealPropertyDet
 }
 
 loadItemBookPropertiesKind();
-loadInGamePropertyes();
+loadInGameProperties();

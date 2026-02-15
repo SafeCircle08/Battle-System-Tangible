@@ -1,5 +1,4 @@
-function setGlintShader(draw = false, r = 0, g = 0, b = 0)
-{
+function setGlintShader(r = 0, g = 0, b = 0) {
 	shader_set(shd_glint);
 
 	// associa texture del glint allo stage 1
@@ -19,9 +18,4 @@ function setGlintShader(draw = false, r = 0, g = 0, b = 0)
 	var _str = _offsetX;
 	_str = clamp(_str, 0.1, 0.1);
 	shader_set_uniform_f(shader_get_uniform(shd_glint, "u_strength"), 0.1);
-
-	if (draw == true) {
-		// disegna sprite
-		draw_sprite(sprite_index, image_index, x, y);		
-	}
 }

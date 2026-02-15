@@ -24,8 +24,7 @@ drawItemOutPutText = function() {
 	var _itemOutPutTxt = actualArray;
 	var _itemOutPutTxtX = x;
 	var _itemOutPutTxtY = y;
-	
-	if (string_length(actualArray) >= 50) { _itemOutPutTxtY = y - 4; }
+	if (string_length(actualArray) > 45) { _itemOutPutTxtY = y - 2; }
 	
 	draw_text_ext_transformed(
 		_itemOutPutTxtX + 1,  _itemOutPutTxtY, _itemOutPutTxt, 

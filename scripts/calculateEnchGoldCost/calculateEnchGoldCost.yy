@@ -6,7 +6,7 @@
   "name":"calculateEnchGoldCost",
   "parent":{
     "name":"EnchantmentsValues",
-    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS/EnchantsFunction/EnchantmentsValues.yy",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS/otherFuncs/EnchantmentsValues.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

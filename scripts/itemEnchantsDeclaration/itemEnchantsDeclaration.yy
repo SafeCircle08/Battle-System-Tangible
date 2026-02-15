@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"itemEnchantsDeclaration",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"itemEnchantsDeclaration",
+  "parent":{
+    "name":"ENCHANTS_DATA_BASE",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS/ENCHANTS_DATA_BASE.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

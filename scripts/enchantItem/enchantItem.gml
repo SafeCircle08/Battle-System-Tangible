@@ -2,12 +2,23 @@
 
 #region OTHER_FUNCTIONS
 
-function addEnchant(_item, _specificEnch = undefined) {
-	var _index = irandom_range(0, array_length(global.enchantsInGame) - 1);
-	var _choosenEnchant = global.enchantsInGame[_index];
+function addEnchant(_item, _curse = false, _specificEnch = undefined) {
+	
+	var _list = global.enchantsInGame;
+	if (_curse) { 
+		_list = global.cursesInGame;
+		_item.cursed = true;
+	}
+	
+	var _index = irandom_range(0, array_length(_list) - 1);
+	var _choosenEnchant = _list[_index];
 	array_push(_item.enchants,_choosenEnchant);	
 	_item = setItemToEnchantedState(_item);
 	return _item;
+}
+
+function addCurse(_item, _specificCurse = undefined) { 
+	addEnchant(_item, true, _specificCurse); 
 }
 
 function canEnchant(_item) {
@@ -29,20 +40,24 @@ function isEnchanted(_item) {
 
 #endregion
 
-function enchantItem(_item, enchantsN = undefined, specificEnch = undefined) {
+function enchantItem(_item, _curse = false, enchantsN = undefined, specificEnch = undefined) {
 	var _changedItem = variable_clone(_item);
 	if (canEnchant(_item)) {
 		if (enchantsN == undefined) {
-			_changedItem = addEnchant(_changedItem);
+			_changedItem = addEnchant(_changedItem, _curse, specificEnch);
 		} else {
 			for (var i = array_length(_item.enchants); i < enchantsN; i++) {
-				addEnchant(_item);
+				addEnchant(_item, _curse, specificEnch);
 			}
 		}
 		changeToNewEnchants(_changedItem);
 		playSound(sndEnchanting, SOUND_CHANNEL_1);
 	}
 	return _changedItem;
+}
+
+function curseItem(_item, cursesN = undefined, specificCurse = undefined) {
+	
 }
 
 function disenchantItem(_item) {

@@ -1,7 +1,17 @@
+#macro MAX_PROPERTIES_NUMBER 3
+#macro MAX_ITEMS_NUM 8
+#macro MAX_CHARS_FOR_LINE 17
+
 global.itemsNumber = 0;
 global.itemsInGame = [];
 global.equippedItems = [];
 global.itemsById = ds_map_create();
+
+enum ITEM_HP_TYPE {
+	NORMAL,
+	DOUBLE,
+	HALF
+}
 
 enum ITEM_TYPE {
 	GENERIC,
@@ -17,7 +27,7 @@ function setItemProp(item, prop, index) {
 
 function createNewItem(
 	_name, spr, _hp, _info, fullHpTxt, outPutMsg,
-	prop1 = {}, prop2 = itemNooneProp(), prop3 = itemNooneProp()) {
+	prop1 = {}, prop2 = propertyNoone(), prop3 = propertyNoone(), _hpType = ITEM_HP_TYPE.NORMAL) {
 		
 	var item = {
 		name: _name,
@@ -33,9 +43,10 @@ function createNewItem(
 		],
 		enchants: [],
 		enchanted: false,
+		cursed: false,
+		hpType: _hpType,
 		id_item: _name
 	}
-
 	ds_map_add(global.itemsById, item.id_item, item);
 	array_push(global.itemsInGame, item);
 	return item;
@@ -49,22 +60,21 @@ function itemSetOutSound(_item) {
 	}
 }
 
-function createItemEat(_name, _spr, _hp, _info, _fullHpTxt, _outPutMsg, prop1 = itemNooneProp(), prop2 = itemNooneProp(), prop3 = itemNooneProp()) {
-	var _item = createNewItem(_name, _spr, _hp, _info, _fullHpTxt, _outPutMsg, prop1, prop2, prop3);
+function createItemEat(_name, _spr, _hp, _info, _fullHpTxt, _outPutMsg, prop1 = propertyNoone(), prop2 = propertyNoone(), prop3 = propertyNoone(), _hpType = ITEM_HP_TYPE.NORMAL) {
+	var _item = createNewItem(_name, _spr, _hp, _info, _fullHpTxt, _outPutMsg, prop1, prop2, prop3, _hpType);
 	_item._type = ITEM_TYPE.EAT;
 	_item.outSound = itemSetOutSound(_item);
-	
 	return _item;
 }
-function createItemDrink(_name, _spr, _hp, _info, _fullHpTxt, _outPutMsg, prop1 = itemNooneProp(), prop2 = itemNooneProp(), prop3 = itemNooneProp()) {
-	var _item = createNewItem(_name, _spr, _hp, _info, _fullHpTxt, _outPutMsg, prop1, prop2, prop3);
+function createItemDrink(_name, _spr, _hp, _info, _fullHpTxt, _outPutMsg, prop1 = propertyNoone(), prop2 = propertyNoone(), prop3 = propertyNoone(), _hpType = ITEM_HP_TYPE.NORMAL) {
+	var _item = createNewItem(_name, _spr, _hp, _info, _fullHpTxt, _outPutMsg, prop1, prop2, prop3, _hpType);
 	_item._type = ITEM_TYPE.DRINK;
 	_item.outSound = itemSetOutSound(_item);
 	return _item;
 }
 
-function createItemAddToInv(_itemType, _itemToAdd,  _name, _spr, _hp, _info, _fullHpTxt, _outPutMsg, prop1 = itemNooneProp(), prop2 = itemNooneProp(), prop3 = itemNooneProp()) {
-	var _item = createNewItem(_name, _spr, _hp, _info, _fullHpTxt, _outPutMsg, prop1, prop2, prop3);
+function createItemAddToInv(_itemType, _itemToAdd,  _name, _spr, _hp, _info, _fullHpTxt, _outPutMsg, prop1 = propertyNoone(), prop2 = propertyNoone(), prop3 = propertyNoone(), _hpType = ITEM_HP_TYPE.NORMAL) {
+	var _item = createNewItem(_name, _spr, _hp, _info, _fullHpTxt, _outPutMsg, prop1, prop2, prop3, _hpType);
 	_item._type = _itemType;
 	_item.outSound = itemSetOutSound(_item);
 	_item.toAddItem = _itemToAdd;

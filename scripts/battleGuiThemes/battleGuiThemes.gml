@@ -1,17 +1,6 @@
 global.selectedGuiTheme = undefined;
-global.portraitIndex = undefined;
 
-function loadEnemyPortrtaitsThemes() {
-	var _portraitsList = [];
-	for (var i = 0; i < argument_count; i++) {
-		_portraitsList[i] = argument[i];
-	}
-	return _portraitsList;
-}
-
-function impostGuiTheme(_theme) {
-	global.selectedGuiTheme = _theme;
-}
+function impostGuiTheme(_theme) { global.selectedGuiTheme = _theme; }
 
 function createNewGuiTheme (
 	_basicBG, _buttons, _txtBox, 
@@ -38,7 +27,6 @@ function createNewGuiTheme (
 		textColor: _textColor,
 		textBgCol: _bgTextCol
 	}
-
 	return _newGuiSet;
 }
 
@@ -96,4 +84,4 @@ global.theme_VINTAGE_COOKIE = createNewGuiTheme(
 	c_vintage_cookie_bg_txt_color
 );
 
-impostGuiTheme(global.theme_SUMMER);
+impostGuiTheme(global.theme_NIGHT_VISION);

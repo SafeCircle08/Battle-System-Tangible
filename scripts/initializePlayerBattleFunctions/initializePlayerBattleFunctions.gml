@@ -60,7 +60,9 @@ function initializeInventoryOptionFunctions() {
 		var _item = global.equippedItems[_index];
 		for (var k = 0; k < MAX_PROPERTIES_NUMBER; k++) {
 			var _prop = _item.itemProperties[k].sprite;
-			draw_sprite(_prop, 0, _itemSprX - _border - 1 + inventoryXAdder, _itemSprY + (10 * k + (1 * k)));	
+			var _propX = _itemSprX - _border + inventoryXAdder - 1;
+			var _propY = _itemSprY + (10 * k + (1 * k));
+			draw_sprite(_prop, 0, _propX, _propY);	
 		}	
 	}
 	#endregion
@@ -77,20 +79,15 @@ function initializeInventoryOptionFunctions() {
 		var _enchantsN = array_length(_item.enchants);
 		var _itemSprW = sprite_get_width(sBandagesItem);
 		for (var k = 0; k < MAX_ENCHANTS_PER_ITEM_NUM; k++) {
+			var _enchX = _itemSprX + _itemSprW + inventoryXAdder + 1;
+			var _enchY = _itemSprY + (10 * k + (1 * k));
 			if (k < _enchantsN) {
 				setGlintShader();
 				var _enchSpr = _item.enchants[k].sprite;
-				draw_sprite(_enchSpr, 0, _itemSprX + _itemSprW + 1 + inventoryXAdder, _itemSprY + (10 * k + (1 * k)));
+				draw_sprite(_enchSpr, 0, _enchX, _enchY);
 				shader_reset();
 				continue;
-			}
-			else { 
-				draw_sprite(
-					sNoEnchants, 0, 
-					_itemSprX + _itemSprW + 1 + inventoryXAdder, 
-					_itemSprY + (10 * k + (1 * k))
-				); 
-			}
+			} else { draw_sprite(sNoEnchants, 0, _enchX, _enchY); }
 		}
 	}
 	
@@ -190,7 +187,7 @@ function initializeInventoryOptionFunctions() {
 		invHandleConfirmation(_getInputs);
 		
 		//Only for debugging
-		if (keyboard_check_pressed(ord("V"))) { enchantItem(global.equippedItems[selected_option]); }
+		if (keyboard_check_pressed(ord("V"))) { enchantItem(global.equippedItems[selected_option], true); }
 		if (keyboard_check_pressed(ord("O"))) { disenchantItem(global.equippedItems[selected_option]); }
 	}
 	#endregion
@@ -271,8 +268,7 @@ function initializeUnbindFunctions() {
 		);
 	}	
 }
-function initializeDefenceFunctions()
-{
+function initializeDefenceFunctions() {
 	selectedDefenceFunction = function() { selectAction(false, false, undefined, [], method(self, function() { hideMirrors(); }))}
 	defenceFunction = function() {
 		createAnimationObject(sUmbrellaEffectGUI, ["<>You decided to defend!"],
@@ -280,7 +276,6 @@ function initializeDefenceFunctions()
 	}
 }
 function initializePrayFunctions()  {
-	
 	createAdDeco = function() {
 		var _downAds = instance_create_layer(x, y, layer, oAdSlidingManager);
 		_downAds._sign = 1;
@@ -289,8 +284,7 @@ function initializePrayFunctions()  {
 		_upAds._sign = -1;
 		_upAds.xPos = room_width - (sprite_get_width(sPizzaAd));
 		_upAds.createVerticalAds();			
-	}
-	
+	}	
 	selectedPrayOption = function() { 
 		selectAction(true, true, undefined, ["*You decided to pray."], method(self, function() { inventoryAlpha = 0; }));
 		

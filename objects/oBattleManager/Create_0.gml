@@ -245,7 +245,7 @@ drawAndManageBattleBook = function(_x, _y, _bgW, _border) {
 			}
 		}
 	}
-	draw_sprite(_bookSpr, _bookSubImg, _bookX + inventoryXAdder, _bookY - 2);		
+	draw_sprite(_bookSpr, _bookSubImg, _bookX + inventoryXAdder, _bookY);		
 }
 
 drawItemDesc = function(_infoX, _infoY, _infoBorder, _border) {

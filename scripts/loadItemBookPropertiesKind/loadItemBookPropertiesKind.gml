@@ -4,6 +4,7 @@ function loadItemBookPropertiesKind() {
 	global.propertyOfPains = [sPainsPropertyText];
 	global.propertyOfEnchantments = [sMagickPropertyText];
 	global.propertyOfSegnalini = [sTagsPropertyText];
+	global.propertiesOfCurses = [sCursesPropertyText];
 	
 	//here goes another property kind
 	

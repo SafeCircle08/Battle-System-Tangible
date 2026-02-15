@@ -32,20 +32,17 @@ function removeItemFromInventory(_itemList, _index, _number = 1) {
 	array_delete(_itemList, _index, _number);	
 }
 
-function playerFullHP(_addedHps) {
-	return 	(global.playerHP + _addedHps >= global.playerMAX_HP);
-}
 
 function usingItem(_index) {
 	var _actualItem = global.equippedItems[_index];
 	var _itemFunctions = _actualItem.itemProperties;
 	var _itemEnchants = _actualItem.enchants;
-	var _gainedHps = _actualItem.hp;
 	var _message;
 	removeItemFromInventory(global.equippedItems, _index);
 
 	_message = _actualItem.outPutMessage;
-	if (playerFullHP(_gainedHps)) { _message = _actualItem.fullHPText; }
+	if (playerFullHpAfterConsumingItem(_actualItem)) { _message = _actualItem.fullHPText; }
+	show_debug_message("Curse status: " + string(_actualItem.cursed));
 	callItemFunctions(_actualItem, _itemFunctions);
 	callItemEnchantments(_actualItem, _itemEnchants);
 	return _message;

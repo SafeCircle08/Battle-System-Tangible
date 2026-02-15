@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"overTimeHeal",
   "parent":{
-    "name":"EnchantsFunction",
-    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS/EnchantsFunction.yy",
+    "name":"otherFuncs",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS/otherFuncs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

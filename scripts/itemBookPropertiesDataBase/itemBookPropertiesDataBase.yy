@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"define_book_properties_info",
+  "%Name":"itemBookPropertiesDataBase",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"define_book_properties_info",
+  "name":"itemBookPropertiesDataBase",
   "parent":{
     "name":"ITEM_BOOK",
     "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEM_BOOK.yy",

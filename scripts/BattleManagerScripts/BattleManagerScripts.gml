@@ -8,14 +8,13 @@ function createBattleManagerObjects(_layer = LAYER_EFFECT) {
 function selectAction(main = true, _moreStepsAct = true, _sound = undefined, _flavourText = [], _method = function() {}) {
 	dontGetTextInputs();
 	if (_sound != undefined) { playSound(_sound, SOUND_CHANNEL_2); }
+	_method();
 	if (main) {
-		_method();
 		moreStepsAct = _moreStepsAct;
 		actionsFlavourText = _flavourText;
 		if (moreStepsAct) { showingSubWindow = true; }
 	}
 	else {
-		_method();
 		actionChoosen = true; 
 		playingGuiAnimation = false;
 		showingSubWindow = false;
@@ -62,6 +61,7 @@ function resetNavigation(_lastOption = 0, _sound = undefined, _resetMethod = fun
 	selected_option = _lastOption;
 	lastPressed = _lastOption;
 	decidingSubAction = false;
+	showingSubWindow = false;
 	moreStepsAct = false;
 	actualDrawAlpha = 0;
 	battleDelay = 3;

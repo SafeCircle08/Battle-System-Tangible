@@ -1,70 +1,43 @@
-var bookBgX = bookX;
-var bookBgY = bookY;
+drawPropertiesFrame();
 
-var bookBgSpr = setToGuiBgSelectedTheme();
-
-draw_set_alpha(drawAlpha);
-
-draw_sprite_stretched(bookBgSpr, 0, bookX, bookBgY, bookBgW, bookBgH);
 var _yAdder = 0;
-
 var hoovering = false;
 
 //Draws the text
 for (var i = 0; i < array_length(global.propertiesKind); i++) {
 	var _miniPropBorder = 7;
-	var _miniPropW = sprite_get_width(sHealProperty);
-	var _miniPropH = sprite_get_height(sHealProperty);
+	var _miniPropSpr = sHealProperty;
+	var _miniPropW = sprite_get_width(_miniPropSpr);
+	var _miniPropH = sprite_get_height(_miniPropSpr);
 	var _propTextX = bookX + (bookBgW / 2);
-	var _propTextY = bookY + 10;
+	var _propTextY = bookY + _miniPropH;
 	
-	var _propsPerRow = 5;
-	var _rowsOfProps = ceil((array_length(global.propertiesKind[i]) - 1) / _propsPerRow);
+	drawPropertyText(_propTextX, _propTextY, i, _yAdder);
+	
+	var _rowsOfProps = ceil((array_length(global.propertiesKind[i]) - 1) / PROPS_PER_ROW);
 	var z = 1;
-	
-	var _propText = global.propertiesKind[i][PROPERTY_TEXT_SPRITE];
-	draw_sprite(_propText, 0, _propTextX, _propTextY + _yAdder);
 	
 	//Draws the actual mini props 
 	for (var j = 0; j < _rowsOfProps; j++) {
 		var _miniPropX = bookX + _miniPropBorder;
-		var _miniPropY = _propTextY + _miniPropBorder * 2 + (_miniPropH * j + 1 * j) + _yAdder;
+		var _miniPropY = _propTextY + _miniPropBorder * 2 + (j * (_miniPropH + 1)) + _yAdder;
+		var _border = 1;
 		z = 1;
 		
-		for (var k = 1 + 5 * j; k < 6 + 5 * j; k++) {	
-			var _mPropX = _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1));
+		for (var k = _border + (PROPS_PER_ROW * j); k < (PROPS_PER_ROW + _border) + (PROPS_PER_ROW * j); k++) {	
+			var _mPropX = _miniPropX + ((z - _border) * (_miniPropW + _border));
 			var _mPropY = _miniPropY;
-			var _mPropW = _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1)) + 10;
-			var _mPropH = _miniPropY + 10;
+			var _mPropW = _miniPropX + ((z - _border) * (_miniPropW + _border)) + _miniPropW;
+			var _mPropH = _miniPropY + _miniPropW;
+			var _actualProp = global.propertiesKind[i][k];
 			
 			if (mouseCursorIsOn(_mPropX, _mPropY, _mPropW, _mPropH, true)) {
 				hoovering = true;
-				var _actualProp = global.propertiesKind[i][k];
-				
-				//Creates the FX
-				if (!instance_exists(oMiniPropCardFX)) {
-					var _fx = instance_create_layer(_miniPropX + 5 + (_miniPropW * (z - 1) + 1 * (z - 1)), _miniPropY + 5, LAYER_EFFECT_TOP_2, oMiniPropCardFX);
-					_fx.sprite_index = _actualProp.sprite;
-					_fx.duplicateSprite();
-					_fx.setSpriteOffSet();
-				}
-				
-				if (!instance_exists(oBattleInvBookPropDesc)) {
-					var _propDescObj = instance_create_layer(x, y, LAYER_EFFECT_TOP, oBattleInvBookPropDesc);
-					_propDescObj.description = _actualProp.desc;
-					_propDescObj.detSprite = _actualProp.detailedSprite;
-					_propDescObj.enchFx = _actualProp.enchanted;
-				}	
+				if (!instance_exists(oMiniPropCardFX)) createPropMiniCard(_actualProp, _miniPropX, _miniPropY, z);
+				if (!instance_exists(oBattleInvBookPropDesc)) createBattleBookPropDesc(_actualProp);
 			}
-				
-			//Drawing the mini prop
-			if (_miniPropY > 0 && _miniPropY < 210)
-			{
-				var _actualProp = global.propertiesKind[i][k];
-				if (_actualProp.enchanted == true) { setGlintShader(); }
-				draw_sprite(_actualProp.sprite, 0, _miniPropX + (_miniPropW * (z - 1) + 1 * (z - 1)), _miniPropY);
-				shader_reset();
-			}
+			
+			if (_miniPropY > 0 && _miniPropY < 210) drawMiniProp(_actualProp, _miniPropX, _miniPropY, z); 
 		
 			z += 1;
 			if (k >= array_length(global.propertiesKind[i]) - 1) { break; }
@@ -75,12 +48,12 @@ for (var i = 0; i < array_length(global.propertiesKind); i++) {
 }
 
 if (hoovering == false) {
-	if (instance_exists(oBattleInvBookPropDesc)) {
-		instance_destroy(oBattleInvBookPropDesc);
-	}
+	if (instance_exists(oBattleInvBookPropDesc)) instance_destroy(oBattleInvBookPropDesc);
 	if (instance_exists(oMiniPropCardFX)) {
-		if (!isFading()) { oMiniPropCardFX.changeToFadeOut(); } 
-		else { instance_destroy(oMiniPropCardFX); }
+		if (!isFading()) 
+			oMiniPropCardFX.changeToFadeOut(); 
+		else 
+			instance_destroy(oMiniPropCardFX);
 	}
 }	
 draw_set_alpha(1);

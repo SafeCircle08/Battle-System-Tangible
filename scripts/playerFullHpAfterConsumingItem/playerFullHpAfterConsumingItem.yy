@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"playerFullHpAfterConsumingItem",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"playerFullHpAfterConsumingItem",
+  "parent":{
+    "name":"OTHER_FUNCS",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/OTHER_FUNCS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -3,7 +3,7 @@ key_left = keyboard_check(ord(global.keyBinds.left));
 key_up = keyboard_check(ord(global.keyBinds.up));
 key_down = keyboard_check(ord(global.keyBinds.down));
 
-global.playerHP = clamp(global.playerHP, -666, global.playerMAX_HP);
+global.playerHP = clamp(global.playerHP, 0, global.playerMAX_HP);
 
 if (keyboard_check(vk_alt) && (keyboard_check_pressed(ord("C")))) {
 	if (!instance_exists(oDeveloperCommandsManager)) {
@@ -20,7 +20,11 @@ if (keyboard_check(vk_alt) && (keyboard_check_pressed(ord("C")))) {
 	}
 }
 
+if (keyboard_check_pressed(ord("V"))) setPlayerToIceSlide(SEGNALINO_LEVEL.LEVEL_4);
+
 if (!inBulletHell()) exit;
+
+
 
 if (beamAnimationIsActive()) {
 	if (beamAnimationFirstFrame() && !beamAnimationFinalAnimationIsActive()) setToStartTurnX();

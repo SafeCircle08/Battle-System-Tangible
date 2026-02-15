@@ -30,7 +30,6 @@ if (decidingSubAction == true) {
 } else { global.settedMainBattleOptions[mainPressed]._fadeOutFunc(); }
 
 if (isNotPlayerTurn()) {
-	global.playerHP = clamp(global.playerHP, -666, global.playerMAX_HP);
 	increaseEnemyTurnTimer();
 	if (turnIsEndingFrame()) { startBeamAnimation(false); }
 	if (enemyTimerEnded()) { finishTurn(); }

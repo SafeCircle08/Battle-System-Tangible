@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"propertyOfCurses",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"propertyOfCurses",
+  "parent":{
+    "name":"Properties",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEM_BOOK/PROPERTIES_&_ENCHANTS_DEFINES/Properties.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

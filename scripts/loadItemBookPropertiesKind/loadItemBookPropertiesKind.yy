@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"loadItemBookPropertiesKind",
   "parent":{
-    "name":"PropertyesLists",
-    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEM_BOOK/PROPERTYES_&_ENCHANTS_DEFINES/PropertyesLists.yy",
+    "name":"PropertiesLists",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEM_BOOK/PROPERTIES_&_ENCHANTS_DEFINES/PropertiesLists.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

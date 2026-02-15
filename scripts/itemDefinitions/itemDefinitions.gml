@@ -5,55 +5,7 @@ function DEBUG_addCustomEnchList(_item, _enchList) {
 	_item.enchanted = true;
 }
 
-function itemHeal(_item) { healPlayer(_item.hp, _item.outSound); }
-function itemHit(_item) { hitPlayer(-_item.hp); }
-
-function createProperty(_spr, _func) {
-	return {
-		sprite: _spr,
-		func: _func
-	}
-}
-
-function itemNooneProp() {
-	return createProperty(sNooneProperty, function() {});
-}
-function propertyHeal() {
-    return {
-        sprite: sHealProperty,
-        func: function(item) {
-            itemHeal(item);
-        }
-    };
-}
-function propertyHit() {
-	return {
-		sprite: sBioHaazardProperty,
-		func: function(item) {
-			hitPlayer(-item.hp);	
-		}
-	}
-}
-function propertyDoubleHeal() {
-	return {
-		sprite: sDoubleHealProperty,
-		func: function(item) {
-			itemHeal(item);
-			itemHeal(item);
-		}
-	}
-}
-function itemDefProp() {
-	return createProperty(sDefenceProperty, function() {});
-}
-function itemAddToInvProp() {
-	return {
-		sprite: sAddToInvProp,
-		func: function(item) {
-			addItemToInventory(item.toAddItem, true);
-		}
-	}
-}
+loadItemPropertiesFuncs();
 
 #region ITEMS CREATED
 
@@ -73,7 +25,7 @@ global.bandages = createItemAddToInv(ITEM_TYPE.GENERIC, global.painKiller, "M.Wr
 	itemInfoMessage("Bandages used to treat Injuries", 215),
 	fullHpOutMessage("Your deepest wounds got healed"),
 	"Cuts are less annoying if they are protected.",
-	propertyDoubleHeal(), itemAddToInvProp());
+	propertyDoubleHeal(), propertyAddToInv(), void(), ITEM_HP_TYPE.DOUBLE);
 
 global.mathMinyChip = createItemEat("Smol_C.", sMathLittleChipItem, 50, 
 	itemInfoMessage("Just a mini funny mathematical chip.", 50),
@@ -85,15 +37,27 @@ global.mathChips = createItemAddToInv(ITEM_TYPE.EAT, global.mathMinyChip, "M.Chi
 	itemInfoMessage("Math Chips. Eat them during Calculus!", 215),
 	fullHpOutMessage("You'll never fail Calculus II again!"),
 	"Definitely tastier than derivatives...", 
-	propertyHeal(), itemAddToInvProp(), itemAddToInvProp());
+	propertyHeal(), propertyAddToInv(), propertyAddToInv());
 
-/*
-global.joice = createNewItem("Joice", sJoiceItem, 233, sndPlayerDrinkingHeal,
+global.joice = createItemDrink("Joice", sJoiceItem, 233, 
 	itemInfoMessage("JOICE, the juice made with joy!", 233),
 	fullHpOutMessage("Drinking JOICE made your day better!"),
 	"One sip of Joice is enough to make a grown man cry...",
-	propertyHeal(), itemDefProp());
+	propertyHeal(), propertyDefence());
 
+global.honeyHoneyComb = createItemEat("HHComb", sHHComb, 150,
+	itemInfoMessage("A HoneyComb made of Honey", 150),
+	fullHpOutMessage("That taste... Thank you Glucose for existing!"),
+	"You ate the HHComb so quicly your hands got dirty.",
+	propertyHeal());
+
+global.soup = createItemDrink("Soup", sSoup, 450,
+	itemInfoMessage("Warmed you up in the inside", 450),
+	fullHpOutMessage("real"),
+	"How can it still be that hot???", 
+	propertyHeal(), propertyWarmUp());
+
+/*
 global.cyanide = createNewItem("CN-", sCyanideItem, -237, sndPlayerEatingHeal,
 	"A pill of cyanide. You would never eat this.",
 	"There is no HP lol",
@@ -101,13 +65,7 @@ global.cyanide = createNewItem("CN-", sCyanideItem, -237, sndPlayerEatingHeal,
 	propertyHit());  
 
 /*
-global.honeyHoneyComb = createNewItem("HHComb", sHHComb, 150, sndPlayerEatingHeal,
-	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_DEF, ITEM_PROPERTY_NOONE],
-	itemInfoMessage("A HoneyComb made of Honey", 150),
-	fullHpOutMessage("That taste... Thank you Glucose for existing!"),
-	"You ate the HHComb so quicly your hands got dirty.",
-	method(self, function() { itemHeal(global.honeyHoneyComb); }));
-	
+
 global.mint = createNewItem("Dropint", sMintDrop, 75, sndPlayerEatingHeal,
 	[ITEM_PROPERTY_HEAL, ITEM_PROPERTY_NOONE, ITEM_PROPERTY_NOONE],
 	itemInfoMessage("Gathered from pine drops.", 75),
@@ -150,13 +108,9 @@ global.soup = createNewItem("Soup", sSoup, 450, sndPlayerEatingHeal,
 
 #endregion
 
-//DEBUG_addCustomEnchList(global.soup, [ENCHANT_GOLDY, ENCHANT_GOLDY, sNoEnchants]);
-
-//putItemsInInventory(MAX_ITEMS_NUM);
-
-
 addItemToInventory(global.mathChips);
 addItemToInventory(global.mathChips);
 addItemToInventory(global.mathChips);
 addItemToInventory(global.bandages);
 addItemToInventory(global.bandages);
+addItemToInventory(global.soup);

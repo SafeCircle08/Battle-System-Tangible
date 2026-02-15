@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"loadCurses",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"loadCurses",
+  "parent":{
+    "name":"ENCHANTS_DATA_BASE",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS/ENCHANTS_DATA_BASE.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

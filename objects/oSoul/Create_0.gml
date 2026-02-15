@@ -42,6 +42,7 @@ setToDefaultPos();
 
 
 
+
 setToSlide = function(_iceFrictionValue) { 
 	iceFriction = _iceFrictionValue;
 	isSliding = true;

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"propertyOfEnchantments",
   "parent":{
-    "name":"Propertyes",
-    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEM_BOOK/PROPERTYES_&_ENCHANTS_DEFINES/Propertyes.yy",
+    "name":"Properties",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEM_BOOK/PROPERTIES_&_ENCHANTS_DEFINES/Properties.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

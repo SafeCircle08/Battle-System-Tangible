@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"setItemToEnchantedState",
   "parent":{
-    "name":"ENCHANTS",
-    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS.yy",
+    "name":"EnchantUtils",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS/EnchantUtils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

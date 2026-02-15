@@ -6,7 +6,7 @@
   "name":"removeSegnalino",
   "parent":{
     "name":"SEGNALINI_ENCH_FUNCS",
-    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS/EnchantsFunction/SEGNALINI_ENCH_FUNCS.yy",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ENCHANTS/otherFuncs/SEGNALINI_ENCH_FUNCS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

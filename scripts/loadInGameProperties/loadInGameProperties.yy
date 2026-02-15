@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"loadInGameProperties",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"loadInGameProperties",
+  "parent":{
+    "name":"PROPERTIES_&_ENCHANTS_DEFINES",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/ITEM_BOOK/PROPERTIES_&_ENCHANTS_DEFINES.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

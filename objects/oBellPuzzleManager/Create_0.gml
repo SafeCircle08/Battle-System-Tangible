@@ -11,34 +11,28 @@ shatterWallTimer = 300;
 
 performing = false;
 
-correctSolutionCheck = function()
-{
+correctSolutionCheck = function() {
 	shatterWallTimer = setTimer(shatterWallTimer);
-	if (shatterWallTimer == 0)
-	{
+	if (shatterWallTimer == 0) {
 		glassWallInstanceRef.createShards();
 		instance_destroy(self);
 	}
 }
 
 //You press play sounds button
-hearCorrectSolSounds = function(goesToSolution = false)
-{
+hearCorrectSolSounds = function(goesToSolution = false) {
 	performing = true;
 	//Play the sounds
 	soundDelay = setTimer(soundDelay);
-	if ((soundDelay == 0) && (actualSound != 3))
-	{
+	if ((soundDelay == 0) && (actualSound != 3)) {
 		audio_play_sound(correctSolution[actualSound], 50, false, 1, 2);
 		soundDelay = soundDelayRef;
 		actualSound++;
 	} 
 	
 	//All sounds played
-	if (actualSound == 3)
-	{
-		if (goesToSolution == false)
-		{
+	if (actualSound == 3) {
+		if (goesToSolution == false) {
 			//Reset the function
 			checkingSound = false;
 			soundDelay = soundDelayRef;
@@ -51,8 +45,7 @@ hearCorrectSolSounds = function(goesToSolution = false)
 
 
 //When you choose on bell button
-input = function(soundIndex, collider)
-{
+input = function(soundIndex, collider) {
 	performing = true;
 	
 	//Player cant move
@@ -68,8 +61,7 @@ input = function(soundIndex, collider)
 }
 
 //When you press reset button
-resetInputs = function()
-{
+resetInputs = function() {
 	performing = true;
 	audio_play_sound(sndExclamation, 50, false);
 	playerSolution = [];

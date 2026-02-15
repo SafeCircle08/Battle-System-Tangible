@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"playerHasItems",
   "parent":{
-    "name":"ITEMS",
-    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS.yy",
+    "name":"OTHER_FUNCS",
+    "path":"folders/Scripts/INVENTORY_&_ITEMS_&_ENCHANTS/ITEMS/OTHER_FUNCS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
