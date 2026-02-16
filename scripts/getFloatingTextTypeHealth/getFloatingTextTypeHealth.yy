@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"getFloatingTextTypeHealth",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"getFloatingTextTypeHealth",
+  "parent":{
+    "name":"SECONDARY_SCRIPTS",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

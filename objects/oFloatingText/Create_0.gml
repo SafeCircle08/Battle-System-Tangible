@@ -3,7 +3,8 @@ enum FLOATING_TEXT_TYPES {
 	SHIELD,
 	HEALTH,
 	TXT,
-	GOLD
+	GOLD,
+	HEALTH_EXPIRED
 }
 
 enum FLOATING_TEXT_DIR {
@@ -16,7 +17,8 @@ colors = [
 	c_custom_shield_color, 
 	c_custom_light_green,
 	c_white,
-	c_yellow
+	c_yellow,
+	c_green
 ];
 
 drawColor = undefined;

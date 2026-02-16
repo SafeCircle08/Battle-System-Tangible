@@ -42,7 +42,6 @@ function usingItem(_index) {
 
 	_message = _actualItem.outPutMessage;
 	if (playerFullHpAfterConsumingItem(_actualItem)) { _message = _actualItem.fullHPText; }
-	show_debug_message("Curse status: " + string(_actualItem.cursed));
 	callItemFunctions(_actualItem, _itemFunctions);
 	callItemEnchantments(_actualItem, _itemEnchants);
 	return _message;

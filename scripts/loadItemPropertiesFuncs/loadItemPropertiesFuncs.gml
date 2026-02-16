@@ -6,7 +6,7 @@ function setUpProperty(_sprite, _func) {
 }
 
 function loadItemPropertiesFuncs() {
-	function itemHeal(_item) { healPlayer(_item.hp, _item.outSound); }
+	function itemHeal(_item) { healPlayer(_item.hp, _item.outSound, SOUND_CHANNEL_1, getFloatingTextHealthType(_item)); }
 	function itemHit(_item) { hitPlayer(-_item.hp); }
 	
 	function propertyHit() { return setUpProperty(sBioHaazardProperty, function(item) { hitPlayer(-item.hp); }) }

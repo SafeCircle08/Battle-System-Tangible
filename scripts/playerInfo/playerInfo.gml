@@ -1,7 +1,7 @@
 //General info:
 global.playerName = "Misery";
 global.playerMAX_HP = 512;
-global.playerHP = 2;
+global.playerHP = 296;
 global.playerShield = 0;
 global.playerMaxShield = 50;
 global.playerGold = 9863;

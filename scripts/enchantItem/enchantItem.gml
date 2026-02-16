@@ -2,16 +2,19 @@
 
 #region OTHER_FUNCTIONS
 
+function applyCurseStatsToItem(_item, _choosenEnchant) { _choosenEnchant.curseInstantFunc(_item); }
+
 function addEnchant(_item, _curse = false, _specificEnch = undefined) {
-	
 	var _list = global.enchantsInGame;
 	if (_curse) { 
 		_list = global.cursesInGame;
 		_item.cursed = true;
 	}
-	
 	var _index = irandom_range(0, array_length(_list) - 1);
 	var _choosenEnchant = _list[_index];
+	
+	if (_curse) { applyCurseStatsToItem(_item, _choosenEnchant); }
+	
 	array_push(_item.enchants,_choosenEnchant);	
 	_item = setItemToEnchantedState(_item);
 	return _item;
@@ -46,8 +49,8 @@ function enchantItem(_item, _curse = false, enchantsN = undefined, specificEnch 
 		if (enchantsN == undefined) {
 			_changedItem = addEnchant(_changedItem, _curse, specificEnch);
 		} else {
-			for (var i = array_length(_item.enchants); i < enchantsN; i++) {
-				addEnchant(_item, _curse, specificEnch);
+			for (var i = array_length(_changedItem.enchants); i < enchantsN; i++) {
+				_changedItem = addEnchant(_changedItem, _curse, specificEnch);
 			}
 		}
 		changeToNewEnchants(_changedItem);

@@ -36,11 +36,7 @@ function createNewItem(
 		info: _info,
 		fullHPText: fullHpTxt,
 		outPutMessage: outPutMsg,
-		itemProperties: [
-			prop1,
-			prop2,
-			prop3
-		],
+		itemProperties: [ prop1, prop2, prop3 ],
 		enchants: [],
 		enchanted: false,
 		cursed: false,

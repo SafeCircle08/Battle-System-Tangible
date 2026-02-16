@@ -188,7 +188,7 @@ function initializeInventoryOptionFunctions() {
 		
 		//Only for debugging
 		if (keyboard_check_pressed(ord("V"))) { enchantItem(global.equippedItems[selected_option], true); }
-		if (keyboard_check_pressed(ord("O"))) { disenchantItem(global.equippedItems[selected_option]); }
+		if (keyboard_check_pressed(ord("O"))) { enchantItem(global.equippedItems[selected_option], false); }
 	}
 	#endregion
 }

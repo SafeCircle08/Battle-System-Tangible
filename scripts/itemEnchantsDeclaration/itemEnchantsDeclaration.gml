@@ -2,7 +2,7 @@ global.enchantsById = ds_map_create();
 global.enchantsInGame = [];
 global.cursesInGame = [];
 
-function createEnchant(_enchName, _spr, _func, _cursed = false, _desc = "") {
+function createEnchant(_enchName, _spr, _func, _cursed = false, _curseInstantFunc = function() {}, _desc = "") {
 	var _newEnch = {
 		name: _enchName,
 		sprite: _spr,
@@ -10,6 +10,7 @@ function createEnchant(_enchName, _spr, _func, _cursed = false, _desc = "") {
 		desc: _desc,
 		ench_id: _enchName,
 		cursed: _cursed,
+		curseInstantFunc: _curseInstantFunc
 	}
 	ds_map_add(global.enchantsById, _newEnch.ench_id, _newEnch);
 	if (_cursed) { array_push(global.cursesInGame, _newEnch); }
