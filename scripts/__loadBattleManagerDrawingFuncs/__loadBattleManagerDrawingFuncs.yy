@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__loadBattleManagerDrawingFuncs",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__loadBattleManagerDrawingFuncs",
+  "parent":{
+    "name":"ManagerBattleUtilsFunctions",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/BattleManagerScripts/ManagerBattleUtilsFunctions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -385,7 +385,7 @@ function initializeEnchantingFunctions() {
 	
 }
 
-function initializeAllCreatedFunctions() {
+function __initializeAllBattleCreatedFunctions() {
 	initializeNavigatingBattleOptionFunctions();
 	initialiseCryOptionFunction();
 	initializeInventoryOptionFunctions();

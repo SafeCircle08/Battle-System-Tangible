@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__loadBattleManagerEnemyUtilsFuncs",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__loadBattleManagerEnemyUtilsFuncs",
+  "parent":{
+    "name":"ManagerBattleUtilsFunctions",
+    "path":"folders/Scripts/PLAYER_&_BATTLE/BATTLE/BattleManagerScripts/ManagerBattleUtilsFunctions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

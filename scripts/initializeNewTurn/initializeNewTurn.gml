@@ -21,10 +21,9 @@ function finishTurn() {
 	with (oBattleManager) {
 		backGroundLayersVisible(layers, false);
 		oBattleBox.visible = false;
-		if (enemyWillTalkAfterBulletHellSection == false) setManagerValuesToStartTurn();
+		if (enemyWillTalkAfterBulletHellSection == false) setToTurnFinished();
 		else setToEnemySpeakingAfterBulletHell();
 	}
-	resetPlayerBattleVars();
 	destroyBulletsGensExtras(); //[DEBUG] (useless) 
 	resetCardsPositions();
 }

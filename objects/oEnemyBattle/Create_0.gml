@@ -6,20 +6,11 @@ inBox = true;
 character = false;
 isActionFlavourText = false;
 inBattle = true;
-
 myTextInstance = undefined;
 
-enemyWillTalkAfterTurn = function() {
-	return (oBattleManager.isEnemySpeaking() && (myTextInstance == undefined) && (oBattleManager.enemyWillTalkAfterBulletHellSection));	
-}
-
-enemyWillNotTalkAfterTurn = function() {
-	return (oBattleManager.isEnemySpeaking() && (myTextInstance == undefined) && (oBattleManager.enemyWillTalkAfterBulletHellSection == false));		
-}
-
-createBasicEnemyText = function() {
+createBasicEnemyText = function(_text = getTextPage()) {
 	myTextInstance = instance_create_layer(x, y, "Instances", oTextInstance);
-	myTextInstance.text = getTextPage();
+	myTextInstance.text = _text;
 	myTextInstance.font = fHungrySkinny;
 	myTextInstance.character = false;
 	myTextInstance.isActionsFlavourText = false;
@@ -34,17 +25,7 @@ createBasicEnemyText = function() {
 createEnemyTextAfterPlayerAction = function() { createBasicEnemyText(); }
 
 createEnemyTextAfterBulletHellSection = function() {
-	myTextInstance = instance_create_layer(x, y, "Instances", oTextInstance);
-	myTextInstance.text = ["Hello! I'm testing this!"]
-	myTextInstance.font = fHungrySkinny;
-	myTextInstance.character = false;
-	myTextInstance.isActionsFlavourText = false;
-	myTextInstance.inBox = false;
-	myTextInstance.inBattle = true;
-	myTextInstance.sound = enemyVoiceSound;
-	myTextInstance.enemySpeech = true;
-	myTextInstance.txtX = enemyTxtBoxX;
-	myTextInstance.txtY = enemyTxtBoxY;		
+	createBasicEnemyText(["Testing after\nbullet hell\nsection text!"]);
 	myTextInstance.enemyAfterTurnText = true;
 }
 

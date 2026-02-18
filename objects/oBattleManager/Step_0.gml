@@ -1,30 +1,21 @@
 randomize();
 
-if (objsCreated == false) {
-	createBattleManagerObjects();	
-	objsCreated = true;
-}
+if (objsCreated == false) { createBattleManagerObjects(); objsCreated = true; }
+if (enemyIntroDone == false) && (hasEnemyIntro) { terminateAction(enemyIntroText); enemyIntroDone = true; }
 
 if (playerMainActionTurn()) {
 	navigatingBattle(0, 3);
 	if (confirmPressed()) {
 		decidingSubAction = true;
 		oBulletGeneratorManager.generatorCreated = false;
-		
 		mainPressed = selected_option;
 		global.settedMainBattleOptions[selected_option]._selectFunction();
-	
 		if (moreStepsAct == false) { terminateAction(); }
 	}
 }
 
-if (!isInBulletHellSection()) { 
-	if (oBlack.image_alpha > 0) { oBlack.image_alpha -= 0.05; } 
-	if (oPinkDetails.image_alpha > 0) { oPinkDetails.image_alpha -= 0.05; }
-}
-
-if (canIncreaseMenuXPos()) increaseMainMenuXPos();
-else { decreaseMainMenuXPos(); }
+if (!isInBulletHellSection()) fadeInBattleBlackPinkBgs();
+if (canIncreaseMenuXPos()) increaseMainMenuXPos(); else { decreaseMainMenuXPos(); }
 
 //Navigating sub actions windows (ex. inventory menu or battle sub menu)
 if (decidingSubAction == true) {

@@ -1,1 +1,1 @@
-startBattle(steamPunkEnemyBattleInfo(), true, ["HELLO"]);
+if (!instance_exists(oBattleManager)) startBattle(steamPunkEnemyBattleInfo(), true, ["HELLO"]);

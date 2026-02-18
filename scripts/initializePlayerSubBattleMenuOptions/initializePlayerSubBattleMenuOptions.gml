@@ -12,7 +12,7 @@ function buildNewSubOption(_textSprite, selectFunc, func, actionsFlavourText, sp
 		_failedAttackFlavourText: specialFlavourText //gonna changw this to -> special flavour text (for special occasions)
 	}
 }
-function initializePlayerSubBattleMenuOptions() {	
+function __initializePlayerSubBattleMenuOptions() {	
 	attack_function = buildNewSubOption(sAttackTextSprite, selectedAttackFunction, attackFunction,
 				 ["*The player decided\n to attack!"], 
 				 ["*The player has tried\n to ATTACK..."]);

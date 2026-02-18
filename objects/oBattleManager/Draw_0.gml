@@ -15,39 +15,15 @@ if (!isInBulletHellSection()) {
 	var _dsX = camera_get_view_x(view_camera[view_current]);
 	var _dsY = camera_get_view_height(view_camera[view_current]);
 	var _border = 10;
-	
-	#endregion
-	
-	#region DRAWING PLAYER HP & CAGE STATE
-	//Draws the player variables
-	draw_set_font(fHungryBig);
 	var _playerInfoX = BUFFER - 8;
-	var _playerInfoY = guiY - (_textBoxH) - 13;
-	
-	draw_set_colour(c_black);
-	draw_rectangle(0, _playerInfoY, room_width, _playerInfoY + 15, false);
-	
-	//Hp
-	draw_set_colour(playerHpTextColor);
-	draw_text(_playerInfoX, _playerInfoY, "HP:" + string(global.playerHP) + "/" + string(global.playerMAX_HP));
-	draw_set_color(c_white);
-	
-	//Cage State
-	var _csX = _playerInfoX + (10 * BUFFER) -35;
+	var _playerInfoY = guiY - (_textBoxH) - 13;	
+	var _csX = _playerInfoX + (10 * BUFFER) - 35;
 	var _csY = _playerInfoY + 3;
 	var _barCsW = 121;
 	var _barCsH = 10;
-	draw_text(_csX, _playerInfoY, "CS: ");
-	draw_sprite(sCSBarBG, 0, _csX + 22, _csY);
-	draw_sprite_stretched(sCSBar, 0, _csX + 22, _csY, (global.CSvalue/global.CSvalueMax) * _barCsW, _barCsH);
 	
-	//Gold
-	var _goldStr = string(global.playerGold);
-	var _strL = string_length(_goldStr);
-	var _goldX = _csX + _barCsW + 32 - (2 * _strL - 3);
-	draw_text(_goldX, _playerInfoY, string(global.playerGold) + "$");
 	
-	#endregion
+	drawGuiPlayer();
 	
 	#region DRAWING ENEMY INFO
 	//Draws the monster variables
@@ -93,13 +69,8 @@ if (!isInBulletHellSection()) {
 		_bgW = sprite_get_width(_sprBG) * 3;
 		_bgH = sprite_get_height(_sprBG) * 2;
 
-		//Draws the inventory BackGround
 		draw_sprite_stretched(_sprBG, 0, _inventoryX + inventoryXAdder, _inventoryY, _bgW, _bgH);
-		
-		//Draws the Inventory Mini Portrait (can an inventory have a portrait?, Idk lol)
 		draw_sprite(global.selectedGuiTheme.inventoryPortrait, 0, _inventoryX + _bgW - 30 + inventoryXAdder, _inventoryY + 3)
-		
-		//Draws the inventory space (useless but cool)
 		drawInventoryCapacity(_inventoryX, _inventoryY, _border);
 		
 		//Draws the Item name, properties, info ecc...
@@ -180,5 +151,3 @@ else {
 	
 	#endregion
 }
-
-draw_set_color(c_white);

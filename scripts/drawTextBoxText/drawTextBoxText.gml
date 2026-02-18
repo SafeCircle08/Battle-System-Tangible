@@ -1,4 +1,4 @@
-#macro TEXT_FINISHED_TIMER 20
+#macro TEXT_FINISHED_TIMER 15
 global.getTextBoxInputs = true;
 
 #region TEXT FUNCTIONS UTILS

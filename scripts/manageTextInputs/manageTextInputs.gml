@@ -39,12 +39,7 @@ function manageTextInputs(text, inBattle, isActionFlavourText, _enemyAfterBullet
 		else {
 			if (oBattleManager.isEnemySpeaking()) {
 				if (_enemyAfterBulletHellTxt == false) oBattleManager.changeTurnAfterEnemySpeech();
-				else {
-					with (oBattleManager) {
-						setToEnemyFinishedSpeaking();
-						setManagerValuesToStartTurn();
-					}
-				}
+				else with (oBattleManager) setToTurnFinished();
 			} else if (oBattleManager.showingExtraMonologueText) {
 				setToOriginalBattleFlavourText();
 				return;
@@ -53,8 +48,8 @@ function manageTextInputs(text, inBattle, isActionFlavourText, _enemyAfterBullet
 		
 		if (isActionFlavourText) {
 			with (oBattleManager) {
-				if (!enemyTextShowed) { showEnemyText(); }
-				else { changeTurn(); show_debug_message("cambiato turno dopo flavour"); }
+				if (!enemyTextShowed) showEnemyText();
+				else { setToStartTurn(); }
 			}
 		}
 		

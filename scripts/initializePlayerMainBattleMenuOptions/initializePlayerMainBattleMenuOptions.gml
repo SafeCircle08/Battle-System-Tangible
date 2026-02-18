@@ -66,7 +66,7 @@ function buildNewMainMenuOptions(_name, _decoSprite, _textSprite, selectFunc, fu
 	}
 }
 
-function initializePlayerMainBattleMenuOptions() {	
+function __initializePlayerMainBattleMenuOptions() {	
 	choosing_battle_option = buildNewMainMenuOptions("(SUB)", sAttackDeco, sSubTextSprite, selectedBattleOption, navigatingSubMenuFunction,
 			method(self, function() { with (oBattleManager) { subMenuFadeIn(); }}),
 			method(self, function() { with (oBattleManager) { subMenuFadeOut();}}));
