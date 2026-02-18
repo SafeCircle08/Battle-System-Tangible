@@ -6,6 +6,22 @@ shading = false;
 triggeredChangeRoomTrigger = false;
 playerFacing = PLAYER_FACING_CHECK.FACING_NOONE;
 
+xPosBattleStart = 0;
+yPosBattleStart = 0;
+sprBattleStart = sPlayerOwFront;
+
+savePlayerInfosWhenBattleStarts = function() {
+	xPosBattleStart = x;
+	yPosBattleStart = y;
+	sprBattleStart = sprite_index;
+}
+
+applyBattleStartInfos = function() {
+	x = xPosBattleStart;
+	y = yPosBattleStart;
+	sprite_index = sprBattleStart;
+}
+
 stopMovement = function() {
 	canMove = 0;
 	hspd = 0;

@@ -9,6 +9,8 @@ enemySpeech = false;
 txtX = undefined;
 txtY = undefined;
 
+enemyAfterTurnText = false;
+
 commaDelay = 7;
 pointDelay = 10;
 

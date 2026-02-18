@@ -1,5 +1,10 @@
 randomize();
 
+if (objsCreated == false) {
+	createBattleManagerObjects();	
+	objsCreated = true;
+}
+
 if (playerMainActionTurn()) {
 	navigatingBattle(0, 3);
 	if (confirmPressed()) {

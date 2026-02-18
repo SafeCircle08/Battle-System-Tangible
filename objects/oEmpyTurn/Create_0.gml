@@ -17,7 +17,7 @@ setPlayerToIceSlide(SEGNALINO_LEVEL.LEVEL_1);
 global.xOffset = 60;
 global.yOffset = (global.borderHeight / 2) - 80;
 
-initializeNewTurn(0, false, 600, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateGravity);
+initializeNewTurn(0, false, 220, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateGravity);
 oSoul.image_alpha = 1;
 oSoul.canMove = true;
 oBattleBox.draw = true;
@@ -28,6 +28,8 @@ var _x = getBattleBoxVertexX(BOX_VERTEXES.TOP_LEFT);
 var _y = getBattleBoxVertexY(BOX_VERTEXES.TOP_LEFT);
 
 instance_create_layer(_x + 20, _y + 20, LAYER_BULLETS, oHealTouch);
+
+oBattleManager.enemyWillTalkAfterBulletHellSection = false;
 
 /*
 instance_create_layer(global.boxOriginX, global.boxOriginY, "Instances", oPlatform);

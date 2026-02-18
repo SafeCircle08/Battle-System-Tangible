@@ -5,6 +5,11 @@ actionsFlavourText = []; //text about a specific action
 showingExtraMonologueText = false;
 battleFlavourText = global.battleFlavourTexts[flavourTextIndex]; //texts specific to the battle 
 
+hasEnemyIntro = false;
+enemyIntroText = [];
+
+enemyWillTalkAfterBulletHellSection = false;
+
 global.borderWidth = 100;
 global.borderHeight = 100;
 
@@ -91,6 +96,11 @@ isEnemySpeaking = function(){
 		   (enemyTextShowed == false)	
 }
 
+setToEnemySpeaking = function() {
+	enemyCanShowText = true;
+	enemyTextShowed = false;
+}
+
 playerMainActionTurn = function(){
 	return (playerTurn == true) &&
 		   (showActionsFlavourText == false) && 
@@ -99,7 +109,13 @@ playerMainActionTurn = function(){
 
 isNotPlayerTurn = function(){
 	return (playerTurn == false) &&
-		   (showActionsFlavourText == false)
+		   (showActionsFlavourText == false) &&
+		   (isInBulletHellSection())
+}
+
+setToNotPlayerTurn = function() {
+	playerTurn = false;
+	
 }
 
 playerIsDefended = function() {
@@ -277,7 +293,7 @@ drawInventoryCapacity = function(_inventoryX, _inventoryY, _border) {
 
 #endregion
 
-createBattleManagerObjects();
+objsCreated = false;
 
 //Initialize the "coded" functions
 initializeAllCreatedFunctions();
@@ -285,3 +301,5 @@ initializeAllCreatedFunctions();
 //Initialize the functions the player havs
 initializePlayerSubBattleMenuOptions();
 initializePlayerMainBattleMenuOptions();
+
+if (hasEnemyIntro) { terminateAction(enemyIntroText); }

@@ -20,11 +20,12 @@ if (keyboard_check(vk_alt) && (keyboard_check_pressed(ord("C")))) {
 	}
 }
 
-if (keyboard_check_pressed(ord("V"))) setPlayerToIceSlide(SEGNALINO_LEVEL.LEVEL_4);
+if (keyboard_check_pressed(ord("V"))) {
+	terminateBattle(rm_Intro);
+	exit;
+}
 
 if (!inBulletHell()) exit;
-
-
 
 if (beamAnimationIsActive()) {
 	if (beamAnimationFirstFrame() && !beamAnimationFinalAnimationIsActive()) setToStartTurnX();

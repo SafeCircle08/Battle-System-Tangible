@@ -8,8 +8,7 @@ finalCamY = oPlayerOW.y - (_h / 2);
 
 camTrailSpd = 0.1;
 
-function clampCameraValue()
-{
+function clampCameraValue() {
 	var _w = camera_get_view_width(view_camera[0]);
 	var _h = camera_get_view_height(view_camera[0]);
 

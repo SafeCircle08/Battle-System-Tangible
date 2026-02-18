@@ -1,7 +1,6 @@
-//if (!instance_exists(oPlayerOW)) { instance_destroy(view_camera[0]) }
+if (room == Room_Battle) { exit; }
 
-if (keyboard_check_pressed(vk_f12))
-{
+if (keyboard_check_pressed(vk_f12)) {
 	window_set_fullscreen(!window_get_fullscreen());
 }
 

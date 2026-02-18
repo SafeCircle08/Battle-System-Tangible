@@ -1,4 +1,4 @@
-function manageTextInputs(text, inBattle, isActionFlavourText) {
+function manageTextInputs(text, inBattle, isActionFlavourText, _enemyAfterBulletHellTxt = false) {
 	#region	DECLARING X, Y POSITIONS
 	
 	var _cam = view_camera[view_current];
@@ -26,7 +26,7 @@ function manageTextInputs(text, inBattle, isActionFlavourText) {
 	#region ACTUAL INPUTS SECTION
 	
 	if (global.getTextBoxInputs == false) return;
-	manageEnemySpeechAutoSkip(text, inBattle);
+	//manageEnemySpeechAutoSkip(text, inBattle);
 	
 	if (confirmTextPressed() && textFinished(text)) {
 		if (morePages(text)) {
@@ -38,7 +38,11 @@ function manageTextInputs(text, inBattle, isActionFlavourText) {
 		if (!inBattle) { destroyTextBoxOW(_txtBoxX, _txtBoxY); }
 		else {
 			if (oBattleManager.isEnemySpeaking()) {
-				oBattleManager.changeTurnAfterEnemySpeech();
+				if (_enemyAfterBulletHellTxt == false) oBattleManager.changeTurnAfterEnemySpeech();
+				else {
+					//changeTurnAfterEnemyTextAfterBulletHellSection();	
+					//(goes to start turn)
+				}
 			} else if (oBattleManager.showingExtraMonologueText) {
 				setToOriginalBattleFlavourText();
 				return;
@@ -47,7 +51,7 @@ function manageTextInputs(text, inBattle, isActionFlavourText) {
 		
 		if (isActionFlavourText) {
 			with (oBattleManager) {
-				if (!enemyTextShowed) showEnemyText();
+				if (!enemyTextShowed) { showEnemyText(); }
 				else { changeTurn(); }
 			}
 		}

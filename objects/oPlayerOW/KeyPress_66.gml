@@ -1,1 +1,1 @@
-startBattle(steamPunkEnemyBattleInfo());
+startBattle(steamPunkEnemyBattleInfo(), true, ["HELLO"]);

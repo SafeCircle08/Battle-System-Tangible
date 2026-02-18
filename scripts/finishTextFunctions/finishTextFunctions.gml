@@ -4,7 +4,6 @@ function destroyTextBoxOW(_x = room_width / 2, _y = room_height / 2) {
 	instance_destroy();	
 }
 
-
 function showEnemyText() {
 	resetTextVars();
 	textFinishedTimer = 10;
