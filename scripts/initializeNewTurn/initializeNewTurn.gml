@@ -20,8 +20,9 @@ function finishTurn() {
 	if (instance_exists(oBoxSidePlatformParent)) { instance_destroy(oBoxSidePlatformParent); }
 	with (oBattleManager) {
 		backGroundLayersVisible(layers, false);
-		if (oBattleManager.enemyWillTalkAfterBulletHellSection == false) setManagerValuesToStartTurn();
-		else { setToEnemySpeaking(); }
+		oBattleBox.visible = false;
+		if (enemyWillTalkAfterBulletHellSection == false) setManagerValuesToStartTurn();
+		else setToEnemySpeakingAfterBulletHell();
 	}
 	resetPlayerBattleVars();
 	destroyBulletsGensExtras(); //[DEBUG] (useless) 

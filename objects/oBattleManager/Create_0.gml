@@ -124,7 +124,7 @@ playerIsDefended = function() {
 
 goToBulletHellSection = function() {
 	resetTextVars();
-	enemyTextShowed = true;
+	setToEnemyFinishedSpeaking();
 	showActionsFlavourText = false;
 	playerTurn = false; 
 }
@@ -147,7 +147,22 @@ changeTurn = function() {
 }
 
 isInBulletHellSection = function() { 
-	return (oBattleBox.visible); 
+	return (oBattleBox.visible) && (global.enemyAttackTime > 0); 
+}
+
+canIncreaseMenuXPos = function() {
+	return (!isInBulletHellSection() && (playerTurn == true) && (showActionsFlavourText == false))
+}
+
+setToEnemyFinishedSpeaking = function() {
+	enemyTextShowed = true;
+	enemyCanShowText = false;
+}
+
+setToEnemySpeakingAfterBulletHell = function() {
+	instance_destroy(oTextInstance);
+	setToEnemySpeaking();
+	oEnemyBattle.createEnemyTextAfterBulletHellSection();
 }
 
 increaseTurn = function() {
@@ -159,6 +174,7 @@ setToStartTurn = function() {
 	selected_option = 0;
 	showActionsFlavourText = true;
 	actualDrawAlpha = 0;
+	enemyIntroText = false;
 	oBattleBox.setToStartTurn();
 	global.enemyTimer = 0;
 	global.getTextBoxInputs = true;
@@ -172,7 +188,7 @@ setToStartTurn = function() {
 }
 	
 changeTurnAfterEnemySpeech = function() {
-	enemyTextShowed = true;
+	setToEnemyFinishedSpeaking();
 	changeTurn();
 }
 

@@ -29,7 +29,7 @@ var _y = getBattleBoxVertexY(BOX_VERTEXES.TOP_LEFT);
 
 instance_create_layer(_x + 20, _y + 20, LAYER_BULLETS, oHealTouch);
 
-oBattleManager.enemyWillTalkAfterBulletHellSection = false;
+oBattleManager.enemyWillTalkAfterBulletHellSection = true;
 
 /*
 instance_create_layer(global.boxOriginX, global.boxOriginY, "Instances", oPlatform);

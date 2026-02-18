@@ -10,5 +10,5 @@ isActionFlavourText = false;
 sound = sndBasicTxt5;
 
 canCreateText = function() {
-	return (!oBattleManager.showActionsFlavourText)
+	return (!oBattleManager.showActionsFlavourText);
 }
