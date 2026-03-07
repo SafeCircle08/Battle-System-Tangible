@@ -1,4 +1,4 @@
-function manageTextInputs(text, inBattle, isActionFlavourText, _enemyAfterBulletHellTxt = false) {
+function manageTextInputs(inBattle, isActionFlavourText, _enemyAfterBulletHellTxt = false) {
 	#region	DECLARING X, Y POSITIONS
 	
 	var _cam = view_camera[view_current];
@@ -28,8 +28,11 @@ function manageTextInputs(text, inBattle, isActionFlavourText, _enemyAfterBullet
 	if (global.getTextBoxInputs == false) return;
 	//manageEnemySpeechAutoSkip(text, inBattle);
 	
+	var text = pagesList[page].contents;
+	
 	if (confirmTextPressed() && textFinished(text)) {
-		if (morePages(text)) {
+		
+		if (morePages(pagesList)) {
 			goToNextPage();
 			return;
 		}
@@ -38,8 +41,12 @@ function manageTextInputs(text, inBattle, isActionFlavourText, _enemyAfterBullet
 		if (!inBattle) { destroyTextBoxOW(_txtBoxX, _txtBoxY); }
 		else {
 			if (oBattleManager.isEnemySpeaking()) {
-				if (_enemyAfterBulletHellTxt == false) oBattleManager.changeTurnAfterEnemySpeech();
-				else with (oBattleManager) setToTurnFinished();
+				if (_enemyAfterBulletHellTxt == false) {
+					oBattleManager.changeTurnAfterEnemySpeech();
+					//mettere qui la funzione per al posto ti terminare il turno
+					//andare ad iniziarlo: setToStartTurn() (mi sembra fosse)
+				}
+				else with (oBattleManager)  setToTurnFinished();
 			} else if (oBattleManager.showingExtraMonologueText) {
 				setToOriginalBattleFlavourText();
 				return;
@@ -48,7 +55,7 @@ function manageTextInputs(text, inBattle, isActionFlavourText, _enemyAfterBullet
 		
 		if (isActionFlavourText) {
 			with (oBattleManager) {
-				if (!enemyTextShowed) showEnemyText();
+				if (!enemyTextShowed) { showEnemyText(); }
 				else { setToStartTurn(); }
 			}
 		}

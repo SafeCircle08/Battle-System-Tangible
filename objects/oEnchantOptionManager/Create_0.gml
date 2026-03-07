@@ -79,8 +79,8 @@ playerHasGold = function() {
 }
 
 confirmEnchant = function() {
-	if (!canEnchant(placedItem)) {
-		setMonologueTextToNewString(["*Placed Item already\n on Max Enchantments\n level!"]);
+	if (!canEnchant(placedItem)) { 
+		setNewMonologueText("*Placed Item already\n on Max Enchantments\n level!");
 		return;
 	}
 	

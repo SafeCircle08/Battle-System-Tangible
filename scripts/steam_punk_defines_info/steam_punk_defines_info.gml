@@ -1,11 +1,38 @@
 //Initialize function
+
+function addAsPage(_text) {
+	var _page = {
+		contents: _text,
+		faceSprRef: noone,
+		expression: noone,
+		effect: TEXT_ANIMATIONS_FXS.TEXT_NO_FXS,
+		destroyPageFunc: function() {},
+		color: setToGuiTextColorSelectedTheme()
+	}
+	return _page;
+}
+
 function steamPunkEnemyBattleInfo() {
 	#region DIALOGUE
 	//Dialogue list
 	var steamEnemyText = [
-		setEnemyBattlePage(
-			[ "This new text\nsystem is\nawesome!", "Now, I can\neven have\nfaces!" ]
-		),
+		[
+			addAsPage("This new text\nsystem is\nawesome!111"), 
+			addAsPage("Now, I can\neven have\nfaces!222")
+		],
+		[
+			addAsPage("This new text\nsystem is\nawesome!333"), 
+			addAsPage("Now, I can\neven have\nfaces!444")
+		],
+		[
+			addAsPage("This new text\nsystem is\nawesome!555"), 
+			addAsPage("Now, I can\neven have\nfaces!666")
+		],
+		[
+			addAsPage("This new text\nsystem is\nawesome!777"), 
+			addAsPage("Now, I can\neven have\nfaces!888")
+		],
+
 		setEnemyBattlePage(
 			["This is so cool!"]
 		),
@@ -80,29 +107,29 @@ function steamPunkEnemyBattleInfo() {
 	#region	FLAVOUR TEXTS 
 	var steamPunkBattleFlavourTexts = [
 		[
-			"*The heat in the room is\n starting to become\n impossible to manage...", 
-			"*You should end this as\n fast possible...\n*Oh, get some Water too!"
+			addAsPage("*The heat in the room is\n starting to become\n impossible to manage..."), 
+			addAsPage("*You should end this as\n fast possible...\n*Oh, get some Water too!")
 		],
 		[
-			"*Everyone thinks Hell looks\n like this.", 
-			"*Hell is prolly less\n warm than this\n f*****g place."
+			addAsPage("*Everyone thinks Hell looks\n like this."), 
+			addAsPage("*Hell is prolly less\n warm than this\n f*****g place.")
 		],
 		[
-			"*It smells like burned brain\n && failed equations...", 
-			"*Do equations even have\n a smell?"
+			addAsPage("*It smells like burned brain\n && failed equations..."), 
+			addAsPage("*Do equations even have\n a smell?")
 		],
 		[
-			"*I can't wait for Winter\n to come.",
-			"*Dark Afternoons,\n\n*(very dark afternoons)",
-			"*Cozy Blankets,\n\n*(cozy, cozy)", 
-			"*Hoodies...\n\n*(Nirvana Ones...)", 
-			"*How Isn't that the best of\n feelings?"
+			addAsPage("*I can't wait for Winter\n to come."),
+			addAsPage("*Dark Afternoons,\n\n*(very dark afternoons)"),
+			addAsPage("*Cozy Blankets,\n\n*(cozy, cozy)"), 
+			addAsPage("*Hoodies...\n\n*(Nirvana Ones...)"), 
+			addAsPage("*How Isn't that the best of\n feelings?")
 		],
 		[
-			"*SteamPunk is sitting in\n the Distance.",
-			"*He has a confused look\n on his Face.",
-			"*Or rather...",
-			"*His Mask."
+			addAsPage("*SteamPunk is sitting in\n the Distance."),
+			addAsPage("*He has a confused look\n on his Face."),
+			addAsPage("*Or rather..."),
+			addAsPage("*His Mask.")
 		]
 	]
 	#endregion

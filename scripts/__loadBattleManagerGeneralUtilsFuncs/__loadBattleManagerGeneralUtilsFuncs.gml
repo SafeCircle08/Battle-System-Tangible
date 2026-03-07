@@ -34,4 +34,5 @@ function __loadBattleManagerGeneralUtilsFuncs() {
 		if (oBlack.image_alpha > 0) { oBlack.image_alpha -= 0.05; } 
 		if (oPinkDetails.image_alpha > 0) { oPinkDetails.image_alpha -= 0.05; }	
 	}
+	resetActionsFlavourText = function() { actionsFlavourText = []; }
 }

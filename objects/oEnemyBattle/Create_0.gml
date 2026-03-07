@@ -8,9 +8,17 @@ isActionFlavourText = false;
 inBattle = true;
 myTextInstance = undefined;
 
-createBasicEnemyText = function(_text = getTextPage()) {
+pagesList = [];
+
+getPagesList = function() {
+	return global.textList[oBattleManager.turnNumber];	
+}
+
+createBasicEnemyText = function(_pageList = getPagesList()) {
 	myTextInstance = instance_create_layer(x, y, "Instances", oTextInstance);
-	myTextInstance.text = _text;
+	
+	myTextInstance.pagesList = _pageList;
+
 	myTextInstance.font = fHungrySkinny;
 	myTextInstance.character = false;
 	myTextInstance.isActionsFlavourText = false;
@@ -25,10 +33,7 @@ createBasicEnemyText = function(_text = getTextPage()) {
 createEnemyTextAfterPlayerAction = function() { createBasicEnemyText(); }
 
 createEnemyTextAfterBulletHellSection = function() {
-	createBasicEnemyText(["Testing after\nbullet hell\nsection text!"]);
+	createBasicEnemyText([addAsPage("Testing after\nbullet hell\nsection text!"), addAsPage("I fucking love\npizza")]);
 	myTextInstance.enemyAfterTurnText = true;
 }
 
-getTextPage = function() {
-	return global.textList[oBattleManager.turnNumber].text;	
-}

@@ -24,14 +24,14 @@ function goToNextPage() {
 	charCount = 0;
 }
 
-function textUnfinished(_textList) {
-	return (charCount < string_length(_textList[page]));
+function textUnfinished(_text) {
+	return (charCount < string_length(_text));
 }	
 
-function textFinished(_textList) {
+function textFinished(_text) {
 	textFinishedTimer = setTimer(textFinishedTimer);
 	if (textFinishedTimer <= 0) {
-		return (charCount >= string_length(_textList[page]));
+		return (charCount >= string_length(_text));
 	}
 }
 
@@ -39,29 +39,29 @@ function pagesFinished(_textList) {
 	return (page == array_length(_textList));
 }
 
-function showFullText(_textList) {
-	charCount = string_length(_textList[page]);	
+function showFullText(_text) {
+	charCount = string_length(_text);	
 }	
 
-function checkForPauses(_textList, _pointDelay = poinDelay, _commaDelay = commaDelay) {
-	if (string_char_at(_textList[page], charCount) == "." || 
-		string_char_at(_textList[page], charCount) == "?" || 
-		string_char_at(_textList[page], charCount) == "!" ) { dialogueDelay = commaDelay; }
-	if (string_char_at(_textList[page], charCount) == ",") { dialogueDelay = commaDelay; }	
+function checkForPauses(_text, _pointDelay = poinDelay, _commaDelay = commaDelay) {
+	if (string_char_at(_text, charCount) == "." || 
+		string_char_at(_text, charCount) == "?" || 
+		string_char_at(_text, charCount) == "!" ) { dialogueDelay = commaDelay; }
+	if (string_char_at(_text, charCount) == ",") { dialogueDelay = commaDelay; }	
 }
 
-function canAdvanceText(_textList) {
-	return (dialogueDelay == 0) && (charCount < string_length(_textList[page]));
+function canAdvanceText(_text) {
+	return (dialogueDelay == 0) && (charCount < string_length(_text));
 }
 
 function morePages(_textList) {
 	return (page + 1 < array_length(_textList));
 }
 
-function advanceText(_textList, _advanceSound, _pDel = 10, _cDel = 5) {
+function advanceText(_text, _advanceSound, _pDel = 10, _cDel = 5) {
 	charCount += speechSpeed;	
-	playVoice(_advanceSound, 1, _textList);
-	checkForPauses(_textList, _pDel, _cDel);
+	playVoice(_advanceSound, 1, _text);
+	checkForPauses(_text, _pDel, _cDel);
 }
 
 function drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scale, _angle, _offset = 0.5, _col = setToGuiTextBgColorSelectedTheme()) {
@@ -93,7 +93,7 @@ function drawEnemySpeech(_textList, _x, _y, arrowIndex) {
 #endregion
 
 function drawTextBoxText(
-	_textList, _font = Mono, _character = false, isActionsFlavourText = false, 
+	_font = Mono, isActionsFlavourText = false, 
 	inBox = true, inBattle = false, _sound = sndBasicTxt5, _enemySpeech = false, _textX = undefined, _textY = undefined,
 ) {
 	#region INITIALIZATION SECTION
@@ -131,8 +131,17 @@ function drawTextBoxText(
 	#endregion
 	
 	#region TEXT PROPERTIES + COORDINATES, ARROW DECO, 
+	var _textList = pagesList;
+	var _page = _textList[page];
+	var _text = _page.contents;
+	var _faceSprRef = _page.faceSprRef;
+	var _expression = _page.expression;
+	var _effect = _page.effect;
+	var _destroyPageFunc = _page.destroyPageFunc;
+	
 	var _textCol = setToGuiTextColorSelectedTheme();
-	var _textBgCol = setToGuiTextBgColorSelectedTheme();
+	var _textBgCol = setToGuiTextBgColorSelectedTheme();	
+
 	var _borderX = _bX;
 	var _borderY = _bY;
 	var _lineSep = _lSep;
@@ -154,7 +163,7 @@ function drawTextBoxText(
 	if (_enemySpeech) {
 		_scaleX = 0.5;
 		_scaleY = 0.5;
-		drawEnemySpeech(_textList, _textX, _textY, arrowIndex);
+		drawEnemySpeech(_page.contents, _textX, _textY, arrowIndex);
 	}
 	
 	#endregion
@@ -163,16 +172,15 @@ function drawTextBoxText(
 	var _pDel = 10;
 	var _cDel = 5;
 	dialogueDelay = setTimer(dialogueDelay);
-	if (canAdvanceText(_textList)) { advanceText(_textList, _sound, _pDel, _cDel); }
+	if (canAdvanceText(_page.contents)) { advanceText(_page.contents, _sound, _pDel, _cDel); }
 	
 	//The drawn text
-	var _textPart = string_copy(_textList[page], 1, charCount);
+	var _textPart = string_copy(_text, 1, charCount);
 	var _offset = 0.5;
 	draw_set_font(_font);
 	
-	if (_character == true && characterFaces[page] != FACIAL_EXPRESSIONS.FACIAL_HIDDEN_FACE) {
-		var _face = characterFaces[page];
-		draw_sprite(faceSpriteRef, _face, _txtX - 2, _txtY - 1);
+	if (_faceSprRef != noone && _expression != FACIAL_EXPRESSIONS.FACIAL_HIDDEN_FACE) {
+		draw_sprite(_faceSprRef, _expression, _txtX - 2, _txtY - 1);
 		_txtX = 65;
 	}
 	
@@ -181,7 +189,7 @@ function drawTextBoxText(
 	try {
 		var _amplitude = 5;
 		var _freq = 30;		
-		switch (pagesWithFXs[page]) {
+		switch (_page.effect) {
 			case TEXT_ANIMATIONS_FXS.TEXT_AN_SHAKE:
 				var _shakeAmpli = 1;
 				_txtX += irandom_range(-_shakeAmpli, _shakeAmpli);
@@ -208,11 +216,10 @@ function drawTextBoxText(
 		}
 	} catch (_exception) {}
 	
-	if (_character == true) { _textCol = colors[page]; }
 	draw_set_color(_textCol);
 	draw_text_ext_transformed(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, _scaleY, 0);		
 	
-	if (textFinished(_textList)) {
+	if (textFinished(_text)) {
 		if (_enemySpeech == false) {
 			if (!morePages(_textList)) { draw_sprite(sPagesAllWritten_NowRestart, 0, _txtBoxX + 118, _txtBoxY - 7); }
 			draw_sprite(sNextPageArrow, arrowIndex, _txtBoxX + 108, _txtBoxY - 7); 

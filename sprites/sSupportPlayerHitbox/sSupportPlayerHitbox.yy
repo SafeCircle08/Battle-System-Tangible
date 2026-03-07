@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"PLAYER_SPRITES",
-    "path":"folders/Sprites/PLAYER_SPRITES.yy",
+    "name":"playerStatesSprites",
+    "path":"folders/Sprites/PLAYER_SPRITES/playerStatesSprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -11,4 +11,4 @@ if (inBattle) {
 	}
 }
 
-manageTextInputs(text, inBattle, isActionsFlavourText, enemyAfterTurnText);
+manageTextInputs(inBattle, isActionsFlavourText, enemyAfterTurnText);

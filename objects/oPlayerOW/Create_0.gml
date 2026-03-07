@@ -10,6 +10,10 @@ xPosBattleStart = 0;
 yPosBattleStart = 0;
 sprBattleStart = sPlayerOwFront;
 
+isStill = function() {
+	return (hsp == 0) && (vsp == 0);	
+}
+
 savePlayerInfosWhenBattleStarts = function() {
 	xPosBattleStart = x;
 	yPosBattleStart = y;
@@ -45,7 +49,9 @@ function startChangeRoom(_dest, _newX, _newY) {
 
 checkingText = function() {
 	var _trigger = instance_place(x, y, oTextTrigger);
+	
 	if ((_trigger) && ((keyboard_check_pressed(vk_enter)))) {
+		
 		var _canCreateText = false;
 		
 		if (_trigger.playerShouldFace == PLAYER_FACING_CHECK.FACING_ALL) { _canCreateText = true; } 

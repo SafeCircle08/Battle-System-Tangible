@@ -1,6 +1,6 @@
 function setToOriginalBattleFlavourText(){
 	with (oBattleFlavourTextManager.myTextInstance) {
-		text = 	global.battleFlavourTexts[oBattleManager.flavourTextIndex];
+		pagesList = global.battleFlavourTexts[oBattleManager.flavourTextIndex];
 		setToFirstPage();
 	}
 	

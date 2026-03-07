@@ -84,4 +84,4 @@ global.theme_VINTAGE_COOKIE = createNewGuiTheme(
 	c_vintage_cookie_bg_txt_color
 );
 
-impostGuiTheme(global.theme_NIGHT_VISION);
+impostGuiTheme(global.theme_SUMMER);

@@ -1,4 +1,4 @@
-text = undefined;
+page = undefined;
 font = undefined;
 character = undefined;
 inBox = undefined;
@@ -15,9 +15,13 @@ myTextInstance = undefined;
 
 canCreateText = function() {}
 
+pagesList = [];
+
+
 createText = function() {
 	myTextInstance = instance_create_layer(x, y, textLayer, oTextInstance);
-	myTextInstance.text = text;
+	
+	myTextInstance.pagesList = text;
 	myTextInstance.font = font;
 	myTextInstance.character = character;
 	myTextInstance.inBox = inBox;

@@ -17,6 +17,7 @@ if (playerMainActionTurn()) {
 if (!isInBulletHellSection()) fadeInBattleBlackPinkBgs();
 if (canIncreaseMenuXPos()) increaseMainMenuXPos(); else { decreaseMainMenuXPos(); }
 
+
 //Navigating sub actions windows (ex. inventory menu or battle sub menu)
 if (decidingSubAction == true) {
 	if (playingGuiAnimation) { 

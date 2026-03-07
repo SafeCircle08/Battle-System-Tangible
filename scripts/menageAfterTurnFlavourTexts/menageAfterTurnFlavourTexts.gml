@@ -1,15 +1,16 @@
-function menageAfterTurnFlavourTexts() {
-	//all the different texts that can appear
-	var _flavourTexts = [flavourPlayerHurt, shieldDestroyed];
+function menageAfterTurnFlavourTexts(_prop1 = 1, _prop2 = 7) {
+	var _winN = 5;
+	var _n = irandom_range(_prop1, _prop2)
+	if !(_n == _winN) return;
 	
-	var _l = array_length(_flavourTexts);
+	var _flavourTexts = [flavourPlayerHurt, shieldDestroyed];
 	var _index = arrayGetValidIndex(_flavourTexts);
-	var _stringsToAdd = _flavourTexts[_index]();
-	var _refString = actionsFlavourText;
+	var _strings = _flavourTexts[_index]();
+	
+	var _pagesToAdd = stringArrayToPagesArray(_strings);
+	
 	with (oBattleManager) {
-		for (var i = 0; i < array_length(_stringsToAdd); i++) {
-			var _actualString = _stringsToAdd[i];
-			_refString = addStringToArray(_refString, _actualString);
-		}
+		for (var i = 0; i < array_length(_pagesToAdd); i++) 
+			array_push(actionsFlavourText, _pagesToAdd[i]);
 	}
 }

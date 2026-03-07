@@ -1,8 +1,8 @@
 enum PLAYER_FACING_CHECK {
-	FACING_UP,
-	FACING_DOWN,
-	FACING_LEFT,
 	FACING_RIGHT,
+	FACING_UP,
+	FACING_LEFT,
+	FACING_DOWN,
 	FACING_ALL,
 	FACING_NOONE
 }
@@ -30,22 +30,20 @@ faceSpriteRef = undefined;
 characterFaces = [];
 colors = [];
 pagesWithFXs = [];
+pagesFuncs = [];
 
 setPlayerPositionCheck = function(_posToCheck) { playerShouldFace = _posToCheck; }
 excludePlayerPosition = function(_posToExclude) { playerExcludePosFace = _posToExclude; }
 
+pagesList = [];
+
 createTextInst = function() {
 	var _textInst = instance_create_layer(x, y, "Text", oTextInstance);
-	_textInst.text = textList;
-	_textInst.spriteFace = spriteFace;
-	_textInst.hasCharacter = hasCharacter;
-	_textInst.faceSpriteRef = faceSpriteRef;
-	_textInst.characterFaces = characterFaces;
-	_textInst.colors = colors;
-	_textInst.pagesWithFXs = pagesWithFXs;
+	_textInst.pagesList = pagesList;
 }
 
-addCharPage = function(_text, _faceSprRef, _moods, _fxWanted = TEXT_ANIMATIONS_FXS.TEXT_NO_FXS, _color = setToGuiTextColorSelectedTheme()) {
+
+addCharPage = function(_text, _faceSprRef, _moods, _fxWanted = TEXT_ANIMATIONS_FXS.TEXT_NO_FXS, _func = function() {  }, _color = setToGuiTextColorSelectedTheme()) {
 	hasCharacter = true;
 	faceSpriteRef = _faceSprRef;
 	array_push(textList, _text);

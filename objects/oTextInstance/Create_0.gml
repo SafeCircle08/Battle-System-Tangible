@@ -29,13 +29,16 @@ sound = sndBasicTxt1;
 existanceTextTime = 0;
 
 character = 0;
-textFinishedTimer = 30;
+textFinishedTimer = 10;
 textHasFinished = false;
 faceSpriteRef = undefined;
+
+pagesList = [];
 
 characterFaces = [];
 colors = [];
 pagesWithFXs = [];
+pagesFuncs = [];
 
 autoSkipTimerRef = 150;
 autoSkipTimer = autoSkipTimerRef;

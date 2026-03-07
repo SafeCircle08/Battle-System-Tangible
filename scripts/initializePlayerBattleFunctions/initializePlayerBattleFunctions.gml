@@ -145,7 +145,7 @@ function initializeInventoryOptionFunctions() {
 			}));
 		}
 		else { 
-			setMonologueTextToNewString(["*Cannot open the inventory\n right now...", "*You don't have any\n Items."]);
+			setNewMonologueText(["*Cannot open the inventory\n right now...", "*You don't have any\n Items."]);
 			resetNavigation(3, undefined, method(self, function() { moreStepsAct = true; })); 
 		}
 	}
@@ -159,24 +159,22 @@ function initializeInventoryOptionFunctions() {
 		}		
 	}
 	#endregion
-	
 	#region invHandleConfirmation()
 	invHandleConfirmation = function(_getInputs) {
-		if (_getInputs) { 
-			if (cancelPressed()) && (!instance_exists(itemOutputMessage)) { 
-				resetNavigation(3, sndClosingInventory); 
-			} 
+		
+		if (_getInputs) {
+			if (cancelPressed()) && (!instance_exists(itemOutputMessage)) { resetNavigation(3, sndClosingInventory); }
 			
 			takenOptionDelay = setTimer(takenOptionDelay);
 			if (takenOptionDelay == 0) {
-				if (confirmPressed()) { 
+				if (confirmPressed()) {
 					if (instance_exists(itemOutputMessage)) { 
 						instance_destroy(itemOutputMessage);
 						terminateAction(["*Finished Using the\n Inventory!"]);
-					} else { createOutPutMessage(); }
+					} else createOutPutMessage();
 				}
-			}
-		}		
+			}	
+		}
 	}
 	#endregion
 	
@@ -187,8 +185,8 @@ function initializeInventoryOptionFunctions() {
 		invHandleConfirmation(_getInputs);
 		
 		//Only for debugging
-		if (keyboard_check_pressed(ord("V"))) { enchantItem(global.equippedItems[selected_option], true); }
-		if (keyboard_check_pressed(ord("O"))) { enchantItem(global.equippedItems[selected_option], false); }
+		if (keyboard_check_pressed(ord("V"))) { enchantItem(global.equippedItems[selected_option], false); }
+		if (keyboard_check_pressed(ord("O"))) { disenchantItem(global.equippedItems[selected_option]); }
 	}
 	#endregion
 }
@@ -237,24 +235,24 @@ function initializeAttackFunctions() {
 					Da fare che alla fine dei colpi,
 					Vengono mostrate degli "attacchi" addosso all'enemy,
 					e quando concludono quelle,
-					//Il turno del player effettivamente finisce e viene
-					mostrato il danno nel player
-				*/
-				////////
-				var _dmg = string(global.eqDrumPad.damage);
+						//Il turno del player effettivamente finisce e viene
+						mostrato il danno nel player
+					*/
+					////////
+					var _dmg = string(global.eqDrumPad.damage);
 				
-				terminateAction(
-					global.playerOptions.attack_function._flavourText,
-					method(self, function() {
-						var _dmg = string(global.eqDrumPad.damage);
-						addNewActionFlavourTextPage("Damage dealt: " + _dmg, "!");
-						oDrumPadObjectsParent.reduceDimensionsAlpha = true;
-						global.playerAttackTime = 0;
-					})
-				);
+					terminateAction(
+						global.playerOptions.attack_function._flavourText,
+						method(self, function() {
+							var _dmg = string(global.eqDrumPad.damage);
+							addNewActionFlavourTextPage("Damage dealt: " + _dmg, "!");
+							oDrumPadObjectsParent.reduceDimensionsAlpha = true;
+							global.playerAttackTime = 0;
+						})
+					);
+				}
+				return;
 			}
-			return;
-		}
 	}	
 }
 function initializeUnbindFunctions() {
@@ -266,7 +264,7 @@ function initializeUnbindFunctions() {
 				global.CSvalue -= 10;	
 			})
 		);
-	}	
+	}
 }
 function initializeDefenceFunctions() {
 	selectedDefenceFunction = function() { selectAction(false, false, undefined, [], method(self, function() { hideMirrors(); }))}
@@ -287,8 +285,7 @@ function initializePrayFunctions()  {
 	}	
 	selectedPrayOption = function() { 
 		selectAction(true, true, undefined, ["*You decided to pray."], method(self, function() { inventoryAlpha = 0; }));
-		
-		if (!instance_exists(oAdSlidingManager)) { createAdDeco(); }	
+		if (!instance_exists(oAdSlidingManager)) createAdDeco();
 	}
 	
 	#region	PRAY FUNCTIONS
@@ -337,7 +334,8 @@ function initializePrayFunctions()  {
 				addToInvPrayFunc,
 				removeAllSegnaliniPrayFunc
 			];
-			var _index = arrayGetValidIndex(_possPrayFuncs);
+			var _index = 2//(_possPrayFuncs);
+			
 			var _choosedPrayFunc = _possPrayFuncs[_index];
 			_choosedPrayFunc(); 
 		}));
@@ -346,7 +344,7 @@ function initializePrayFunctions()  {
 
 function initializeEnchantingFunctions() {
 	selectedEnchantOption = function() { 
-		selectAction(true, true, undefined, ["*You enchanted an Item.","*You'll be able\n to use it next turn."]);
+		selectAction(true, true, undefined, ["*You enchanted an Item.", "*You'll be able\n to use it next turn."]);
 		showCursor();
 		if (!instance_exists(oEnchantOptionManager)) { instance_create_layer(x, y, "Instances", oEnchantOptionManager); } 
 		else { oEnchantOptionManager.setTofadeIn(); }
@@ -365,7 +363,7 @@ function initializeEnchantingFunctions() {
 				_enchantManager.showingInv = false; //doesnt call the invFunc anymore
 				goToPreviousOption(method(self, function() { 
 					oEnchantOptionManager.setToStartStateItemVars();
-				}));					
+				}));
 			}
 		}
 
@@ -378,7 +376,7 @@ function initializeEnchantingFunctions() {
 						selected_option = 0; 
 						_enchantManager.showingInv = true; 
 					}
-				} else { setMonologueTextToNewString(["*Can't Enchant any Item.\n*(Inventory Empty)\n *So [___] angry!"]); }
+				} else { setNewMonologueText(["*Can't Enchant any Item.\n*(Inventory Empty)\n *So [___] angry!"]); }
 			}
 		}
 	}

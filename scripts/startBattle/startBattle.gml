@@ -6,8 +6,8 @@ function startBattle(_enemyInfo = function() {}, _enemyIntro = false, _introTxt 
 	
 	oPlayerOW.savePlayerInfosWhenBattleStarts();
 	
-	if (_enemyIntro) {
+	/*if (_enemyIntro) {
 		_myBattleManager.hasEnemyIntro = _enemyIntro;
 		_myBattleManager.enemyIntroText = _introTxt;
-	}
+	}*/
 }

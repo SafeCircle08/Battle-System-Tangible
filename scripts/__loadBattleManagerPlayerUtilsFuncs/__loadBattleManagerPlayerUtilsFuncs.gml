@@ -1,8 +1,9 @@
 function __loadBattleManagerPlayerUtilsFuncs(){
-	playerMainActionTurn = function(){
+	playerMainActionTurn = function() {
 		return (playerTurn == true) &&
 			   (showActionsFlavourText == false) && 
-			   (decidingSubAction == false)	
+			   (decidingSubAction == false) && 
+			   (!isEnemySpeaking())
 	}
 	isNotPlayerTurn = function(){
 		return (playerTurn == false) &&

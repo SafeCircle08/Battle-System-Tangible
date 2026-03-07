@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"getPagesFromStringArray",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"getPagesFromStringArray",
+  "parent":{
+    "name":"TEXT",
+    "path":"folders/Scripts/TEXT.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

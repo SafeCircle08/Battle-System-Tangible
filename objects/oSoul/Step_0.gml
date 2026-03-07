@@ -21,8 +21,8 @@ if (keyboard_check(vk_alt) && (keyboard_check_pressed(ord("C")))) {
 }
 
 if (keyboard_check_pressed(ord("V"))) {
-	terminateBattle(rm_Intro);
-	exit;
+	//terminateBattle(rm_Intro);
+	//exit;
 }
 
 if (!inBulletHell()) exit;

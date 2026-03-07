@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"addingText",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"addingText",
+  "parent":{
+    "name":"TEXT",
+    "path":"folders/Scripts/TEXT.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,5 +1,6 @@
 function __loadBattleManagerTurnsManagementUtilsFuncs(){
 	changeTurn = function() {
+		show_debug_message("turno cambiato")
 		showActionsFlavourText = false;
 		playerTurn = !playerTurn; 
 		buttonFrame = 0;
@@ -12,16 +13,20 @@ function __loadBattleManagerTurnsManagementUtilsFuncs(){
 	}
 	setToFinishTurnFlavourTxt = function() {
 		showActionsFlavourText = true;
-		actionsFlavourText = ["*Turn Finished."]; //special actions text meaning the turn is over
-		var _flavourTextProbs = irandom_range(0, 7);
-		if (_flavourTextProbs == 6) { menageAfterTurnFlavourTexts(); }
+		
+		actionsFlavourText = [addAsPage("*Turn Finished.")];
+		menageAfterTurnFlavourTexts();
+		
 		flavourTextIndex = getRandomIndex(global.battleFlavourTexts);
 		battleFlavourText = global.battleFlavourTexts[flavourTextIndex];
 	}
 	setToStartTurn = function() {
 		resetTextVars();
 		resetPlayerBattleVars();
+		resetActionsFlavourText();
+		
 		increaseTurn();
+		showActionsFlavourText = false;
 		flavourTextIndex = 0;
 		selected_option = 0;
 		actualDrawAlpha = 0;

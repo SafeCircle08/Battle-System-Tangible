@@ -4,17 +4,19 @@ function createBattleManagerObjects(_layer = LAYER_EFFECT) {
 	instance_create_layer(x, y, _layer, oActionFlavourTextManager);
 }
 
-//When you choose an action in the submenu
+
 function selectAction(main = true, _moreStepsAct = true, _sound = undefined, _flavourText = [], _method = function() {}) {
 	dontGetTextInputs();
 	if (_sound != undefined) { playSound(_sound, SOUND_CHANNEL_2); }
 	_method();
 	if (main) {
 		moreStepsAct = _moreStepsAct;
-		actionsFlavourText = _flavourText;
-		if (moreStepsAct) { showingSubWindow = true; }
-	}
-	else {
+		resetActionsFlavourText();
+		if (moreStepsAct) showingSubWindow = true;
+		
+		for (var i = 0; i < array_length(_flavourText); i++)
+			array_push(actionsFlavourText, addAsPage(_flavourText[i]));	
+	} else {
 		actionChoosen = true; 
 		playingGuiAnimation = false;
 		showingSubWindow = false;
@@ -85,6 +87,7 @@ function goToPreviousOption(_goToPrevious = function() {}) {
 }
 
 function terminateAction(_ds_list = [], _method = function() {}) {
+	
 	with (oBattleManager) {
 		oAttackBG.fadingOut = true;
 		showActionsFlavourText = true;
@@ -97,7 +100,7 @@ function terminateAction(_ds_list = [], _method = function() {}) {
 		
 		//Adds the next text line to the actionsFlavourText
 		for (var i = 0; i < array_length(_ds_list); i++) {
-			array_push(actionsFlavourText, _ds_list[i]);	
+			array_push(actionsFlavourText, addAsPage(_ds_list[i]));	
 		}
 		
 		closeBattleBook();
