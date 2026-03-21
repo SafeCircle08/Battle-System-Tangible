@@ -1,0 +1,4 @@
+enum MINIGAMES {
+	NOONE,
+	HAND_SHAKE	
+}

@@ -25,7 +25,7 @@ function goToNextPage() {
 }
 
 function textUnfinished(_text) {
-	return (charCount < string_length(_text));
+	return (round(charCount) < string_length(_text) - 2);
 }	
 
 function textFinished(_text) {

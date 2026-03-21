@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"minigamesEnum",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"minigamesEnum",
+  "parent":{
+    "name":"Minigames",
+    "path":"folders/Scripts/TEXT/Minigames.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

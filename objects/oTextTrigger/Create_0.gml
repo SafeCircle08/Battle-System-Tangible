@@ -36,10 +36,11 @@ setPlayerPositionCheck = function(_posToCheck) { playerShouldFace = _posToCheck;
 excludePlayerPosition = function(_posToExclude) { playerExcludePosFace = _posToExclude; }
 
 pagesList = [];
+myTextInstance = noone;
 
 createTextInst = function() {
-	var _textInst = instance_create_layer(x, y, "Text", oTextInstance);
-	_textInst.pagesList = pagesList;
+	myTextInstance = instance_create_layer(x, y, "Text", oTextInstance);
+	myTextInstance.pagesList = pagesList;
 }
 
 

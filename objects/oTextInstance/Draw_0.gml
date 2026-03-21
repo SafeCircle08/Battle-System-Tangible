@@ -1,3 +1,5 @@
+if (!isHandlingText()) return;
+
 draw_self();
 
 if (specialDelay > 0) {

@@ -10,8 +10,8 @@
   "name":"oInventoryText",
   "overriddenProperties":[],
   "parent":{
-    "name":"GUIobjects",
-    "path":"folders/Objects/OVER_WORLD/PLAYER_OVER_WORLD/GUIobjects.yy",
+    "name":"GUI",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/GUI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -33,7 +33,7 @@ createBasicEnemyText = function(_pageList = getPagesList()) {
 createEnemyTextAfterPlayerAction = function() { createBasicEnemyText(); }
 
 createEnemyTextAfterBulletHellSection = function() {
-	createBasicEnemyText([addAsPage("Testing after\nbullet hell\nsection text!"), addAsPage("I fucking love\npizza")]);
+	createBasicEnemyText([addTextAsPage("Testing after\nbullet hell\nsection text!"), addTextAsPage("I fucking love\npizza")]);
 	myTextInstance.enemyAfterTurnText = true;
 }
 

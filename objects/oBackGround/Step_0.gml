@@ -1,7 +1,6 @@
 if (canScroll == true)
 {
-	if (frame == -1)
-	{
+	if (frame == -1) {
 		oShake.shake = true;
 		frame = 0;
 	}

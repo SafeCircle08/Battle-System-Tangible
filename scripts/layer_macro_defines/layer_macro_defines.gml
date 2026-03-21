@@ -11,3 +11,16 @@
 #macro LAYER_SCOPE "Scope"
 #macro LAYER_CURSOR "CursorLayer"
 #macro LAYER_SEGNALINI_CARDS "SegnaliniCards"
+
+
+/* OVER WORLD LAYERS */
+
+#macro LAYER_OW_DARK "Dark"
+#macro LAYER_OW_TEXT "Text"
+#macro LAYER_OW_TEXT_TRIGGERS "TextTriggers"
+#macro LAYER_OW_INSTANCES_TOP "InstancesTop_2"
+#macro LAYER_OW_INSTANCES_DOWN_1 "InstancesDown_1"
+#macro LAYER_OW_INSTANCES_DOWN_2 "InstancesDown_2"
+#macro LAYER_OW_INSTANCES "Instances"
+
+#macro LAYER_OW_MANAGERS "Managers"

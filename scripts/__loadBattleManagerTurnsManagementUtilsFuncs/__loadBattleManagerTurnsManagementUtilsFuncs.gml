@@ -14,7 +14,7 @@ function __loadBattleManagerTurnsManagementUtilsFuncs(){
 	setToFinishTurnFlavourTxt = function() {
 		showActionsFlavourText = true;
 		
-		actionsFlavourText = [addAsPage("*Turn Finished.")];
+		actionsFlavourText = [addTextAsPage("*Turn Finished.")];
 		menageAfterTurnFlavourTexts();
 		
 		flavourTextIndex = getRandomIndex(global.battleFlavourTexts);

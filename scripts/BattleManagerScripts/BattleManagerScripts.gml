@@ -15,7 +15,7 @@ function selectAction(main = true, _moreStepsAct = true, _sound = undefined, _fl
 		if (moreStepsAct) showingSubWindow = true;
 		
 		for (var i = 0; i < array_length(_flavourText); i++)
-			array_push(actionsFlavourText, addAsPage(_flavourText[i]));	
+			array_push(actionsFlavourText, addTextAsPage(_flavourText[i]));	
 	} else {
 		actionChoosen = true; 
 		playingGuiAnimation = false;
@@ -100,7 +100,7 @@ function terminateAction(_ds_list = [], _method = function() {}) {
 		
 		//Adds the next text line to the actionsFlavourText
 		for (var i = 0; i < array_length(_ds_list); i++) {
-			array_push(actionsFlavourText, addAsPage(_ds_list[i]));	
+			array_push(actionsFlavourText, addTextAsPage(_ds_list[i]));	
 		}
 		
 		closeBattleBook();

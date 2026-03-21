@@ -14,6 +14,8 @@ isStill = function() {
 	return (hsp == 0) && (vsp == 0);	
 }
 
+
+
 savePlayerInfosWhenBattleStarts = function() {
 	xPosBattleStart = x;
 	yPosBattleStart = y;
@@ -26,7 +28,7 @@ applyBattleStartInfos = function() {
 	sprite_index = sprBattleStart;
 }
 
-stopMovement = function() {
+disableMovement = function() {
 	canMove = 0;
 	hspd = 0;
 	vspd = 0;
@@ -45,6 +47,22 @@ function startChangeRoom(_dest, _newX, _newY) {
 	_myTrans.destination = _dest;
 	_myTrans.playerX = _newX;
 	_myTrans.playerY = _newY;
+}
+
+managePlayerMovement = function() {
+	var key_right = keyboard_check(ord("D")); 
+	var key_left = keyboard_check(ord("A")); 
+	var key_up = keyboard_check(ord("W"));
+	var key_down = keyboard_check(ord("S"));
+	
+	if (key_up) { sprite_index = sPlayerOwBehind; image_speed = 1; playerFacing = PLAYER_FACING_CHECK.FACING_UP; }
+	if (key_down) { sprite_index = sPlayerOwFront; image_speed = 1; playerFacing = PLAYER_FACING_CHECK.FACING_DOWN; }
+	if (key_right) { sprite_index = sPlayerOwRight; image_speed = 1; playerFacing = PLAYER_FACING_CHECK.FACING_RIGHT; }
+	if (key_left) { sprite_index = sPlayerOwLeft; image_speed = 1; playerFacing = PLAYER_FACING_CHECK.FACING_LEFT; }	
+	
+	hsp = (key_right - key_left) * owSpd;
+	vsp = (key_down - key_up) * owSpd;
+
 }
 
 checkingText = function() {

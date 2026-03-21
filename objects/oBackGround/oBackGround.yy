@@ -4,13 +4,14 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"oBackGround",
   "overriddenProperties":[],
   "parent":{
-    "name":"GUIobjects",
-    "path":"folders/Objects/OVER_WORLD/PLAYER_OVER_WORLD/GUIobjects.yy",
+    "name":"GUI",
+    "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/GUI.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sBackGround_toFinish",
-    "path":"sprites/sBackGround_toFinish/sBackGround_toFinish.yy",
+    "name":"sLavaBg",
+    "path":"sprites/sLavaBg/sLavaBg.yy",
   },
   "spriteMaskId":null,
   "visible":true,

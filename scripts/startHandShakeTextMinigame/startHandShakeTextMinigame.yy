@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"startHandShakeTextMinigame",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"startHandShakeTextMinigame",
+  "parent":{
+    "name":"Minigames",
+    "path":"folders/Scripts/TEXT/Minigames.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

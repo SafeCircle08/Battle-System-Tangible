@@ -1,52 +1,41 @@
 function manageTextInputs(inBattle, isActionFlavourText, _enemyAfterBulletHellTxt = false) {
 	#region	DECLARING X, Y POSITIONS
 	
-	var _cam = view_camera[view_current];
-	var _camW = camera_get_view_width(_cam);
-	var _camH = camera_get_view_height(_cam);
-	var _camX = camera_get_view_x(_cam);
-	var _camY = camera_get_view_y(_cam);
-	
-	//Sprite properties
-	var _sprTextBox = setToGuiTxtBoxSelectedTheme();
-	var _boxW = sprite_get_width(_sprTextBox); 
-	var _boxH = sprite_get_height(_sprTextBox);
-	var _txtBoxX = _camX + (_camW / 2);
-	var _txtBoxY = _camY + _camH - 3;
-	
 	if (inBattle == false) {
 		var _tollerance = 20;
-		if (oPlayerOW.y > _camH / 2) {
-			_txtBoxY = _camY + _boxH; 
-		}
+		if (oPlayerOW.y > camH / 2) { txtBoxY = camY + boxH; }
 	}
 	
 	#endregion
 	
 	#region ACTUAL INPUTS SECTION
-	
 	if (global.getTextBoxInputs == false) return;
-	//manageEnemySpeechAutoSkip(text, inBattle);
 	
-	var text = pagesList[page].contents;
+	var pag = pagesList[page];
+	var text = pag.contents;
+	
+	if (pag.isMinigame == true) { 
+		manageMinigamePage(pag);
+		return;
+	}
 	
 	if (confirmTextPressed() && textFinished(text)) {
-		
 		if (morePages(pagesList)) {
 			goToNextPage();
 			return;
 		}
 		
 		//if the pages are over
-		if (!inBattle) { destroyTextBoxOW(_txtBoxX, _txtBoxY); }
-		else {
+		if (!inBattle) { 
+			destroyTextBoxOW(txtBoxX, txtBoxY);
+		} else {
 			if (oBattleManager.isEnemySpeaking()) {
 				if (_enemyAfterBulletHellTxt == false) {
 					oBattleManager.changeTurnAfterEnemySpeech();
 					//mettere qui la funzione per al posto ti terminare il turno
 					//andare ad iniziarlo: setToStartTurn() (mi sembra fosse)
 				}
-				else with (oBattleManager)  setToTurnFinished();
+				else with (oBattleManager) setToTurnFinished();
 			} else if (oBattleManager.showingExtraMonologueText) {
 				setToOriginalBattleFlavourText();
 				return;
@@ -65,7 +54,7 @@ function manageTextInputs(inBattle, isActionFlavourText, _enemyAfterBulletHellTx
 		return;	
 	}
 	
-	if (confirmTextPressed() && charCount >= 1 && textUnfinished(text)) showFullText(text);
+	if (confirmTextPressed() && charCount > 1 && textUnfinished(text)) showFullText(text);
 	
 	#endregion
 }

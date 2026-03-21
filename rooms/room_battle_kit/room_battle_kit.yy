@@ -12,7 +12,6 @@
     {"name":"inst_2F6732D3_1_1","path":"rooms/room_battle_kit/room_battle_kit.yy",},
     {"name":"inst_69746E1C_1_1","path":"rooms/room_battle_kit/room_battle_kit.yy",},
     {"name":"inst_6E032C40_1_1","path":"rooms/room_battle_kit/room_battle_kit.yy",},
-    {"name":"inst_974236B_1_1","path":"rooms/room_battle_kit/room_battle_kit.yy",},
     {"name":"inst_245BDB28_1_1","path":"rooms/room_battle_kit/room_battle_kit.yy",},
     {"name":"inst_42DC0C65_1_1","path":"rooms/room_battle_kit/room_battle_kit.yy",},
     {"name":"inst_2DAA87E2_1_1","path":"rooms/room_battle_kit/room_battle_kit.yy",},
@@ -38,7 +37,6 @@
     {"$GMRInstanceLayer":"","%Name":"Explosion","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Explosion","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Effect","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_6E032C40_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6E032C40_1_1","objectId":{"name":"oShake","path":"objects/oShake/oShake.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":224.0,},
-        {"$GMRInstance":"v4","%Name":"inst_974236B_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_974236B_1_1","objectId":{"name":"oThinking","path":"objects/oThinking/oThinking.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":288.0,},
       ],"layers":[],"name":"Effect","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"BulletBox","assets":[],"depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"BulletBox","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Bullets","depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Bullets","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
@@ -68,7 +66,7 @@
   "name":"room_battle_kit",
   "parent":{
     "name":"Battle",
-    "path":"folders/Rooms/InUseRooms/Battle.yy",
+    "path":"folders/Rooms/Battle.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -1,3 +1,6 @@
+if (!isHandlingText()) return;
+
+updateCoords();
 existanceTextTime++;
 
 if (specialDelay > 0) {
@@ -6,9 +9,7 @@ if (specialDelay > 0) {
 }
 
 if (inBattle) {
-	if (oBattleManager.isInBulletHellSection()) { 
-		exit;
-	}
+	if (oBattleManager.isInBulletHellSection()) exit;
 }
 
 manageTextInputs(inBattle, isActionsFlavourText, enemyAfterTurnText);

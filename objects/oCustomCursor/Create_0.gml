@@ -1,6 +1,7 @@
 sprite_index = global.choosenCursor.sprite;
 image_speed = global.choosenCursor.imageSpd;
 if (global.choosenCursor.enableRotation) { image_angle = global.choosenCursor.angle;}
+hideCursor();
 
 cursorOn = false;
 
