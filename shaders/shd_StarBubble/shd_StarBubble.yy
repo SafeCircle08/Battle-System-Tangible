@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_StarBubble",
+  "name":"shd_StarBubble",
+  "parent":{
+    "name":"SHADER_TESTS",
+    "path":"folders/SHADER_TESTS.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"addingText",
+  "%Name":"setTextCentered",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"addingText",
+  "name":"setTextCentered",
   "parent":{
-    "name":"MAIN_TEXT",
-    "path":"folders/Scripts/TEXT/textScripts/MAIN_TEXT.yy",
+    "name":"POSITIONS",
+    "path":"folders/Scripts/TEXT/textScripts/POSITIONS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

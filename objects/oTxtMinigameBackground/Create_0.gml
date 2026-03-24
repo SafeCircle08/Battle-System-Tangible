@@ -11,6 +11,15 @@ vy = -6;
 grav = 0.4;
 
 onEnding = false;
+description = "";
+
+drawDescription = function() {
+	setTextCentered();
+		draw_set_font(fHungrySkinny);
+		var _dy = 7;
+		drawTextOutline(description, oCamera.getX() + (oCamera.getWidth() / 2), oCamera.getY() + oCamera.getHeight() - _dy, 0.5)
+	resetTextHalignValign();
+}
 
 startDestroyAnimation = function() {
 	onEnding = true;	

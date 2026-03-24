@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"mosueCursorIsColliding",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mosueCursorIsColliding",
+  "parent":{
+    "name":"CURSOR_SETTINGS",
+    "path":"folders/Scripts/CUSTOMIZATION__CURSORS_&_BATTLE_STYLES/CURSOR/CURSOR_SETTINGS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

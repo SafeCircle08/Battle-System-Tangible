@@ -8,6 +8,12 @@ bgY = 0;
 goalBgX = 0;
 goalBgY = 0;
 
+description = "";
+
+ascDotDesc = function() { return "<Pop the Bubbles ins ASC. order>"; }
+desDotDesc = function() { return "<Pop the Bubbles in DESC. order>"; }
+anyDotDesc = function() { return "<Pop the Bubbles in ANY order>"; }
+
 createBackGround = function(_textInst) {
 	bgX = _textInst.txtBoxX;
 	bgY = _textInst.txtBoxY;
@@ -15,6 +21,7 @@ createBackGround = function(_textInst) {
 	goalBgY = bgY - (_textInst.camH / 2);
 	
 	myBackground = instance_create_layer(bgX, bgY, LAYER_OW_TEXT, oTxtMinigameBackground);
+	myBackground.description = description;
 	myBackground.startY = bgY;
 	myBackground.goalX = goalBgX;
 	myBackground.goalY = goalBgY;	
@@ -30,9 +37,18 @@ createHolders = function() {
 	
 }
 
+createDot = function(_x, _y, _index = 0, _layer = LAYER_EFFECT_TOP_3) {
+	var _dot = instance_create_layer(_x - 5, _y, LAYER_EFFECT_TOP_3, oTxtMinigameDot);
+	_dot.dotN = _index;
+}
+
 createDots = function() {
-	
-}	
+	var _y = oCamera.getDims(DIMS.HALF_HEIGHT) + 40;
+	for (var i = 0; i < 5; i++) {
+		var _x = 50 + (50 * i) - 5;
+		createDot(_x, _y, i + 1);
+	}
+}
 
 checkWin = function() {
 		
@@ -49,8 +65,22 @@ destroyBg = function() {
 	instance_destroy(myBackground); 
 }
 
+destroyDot = function(_dot) {
+	instance_destroy(_dot);
+}
+
+destroyDots = function() {
+	if (!instance_exists(oTxtMinigameDot)) return;
+	show_debug_message(instance_number(oTxtMinigameDot));
+	for (var i = instance_number(oTxtMinigameDot) - 1; i >= 0; i--) {
+		var d = instance_find(oTxtMinigameDot, i);
+		destroyDot(d);
+	}	
+}
+
 destroyInstances = function() {
 	destroyHolder();
+	destroyDots();
 }
 
 manageTextInstanceRefInputs = function() {

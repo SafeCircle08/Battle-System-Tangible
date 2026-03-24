@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"resetTextHalignValign",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"resetTextHalignValign",
+  "parent":{
+    "name":"POSITIONS",
+    "path":"folders/Scripts/TEXT/textScripts/POSITIONS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"canPlayTextVoice",
   "parent":{
-    "name":"textScripts",
-    "path":"folders/Scripts/TEXT/textScripts.yy",
+    "name":"MISCELLANOUS",
+    "path":"folders/Scripts/TEXT/textScripts/MISCELLANOUS.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

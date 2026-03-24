@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"getPagesFromStringArray",
+  "%Name":"drawTextOutline",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"getPagesFromStringArray",
+  "name":"drawTextOutline",
   "parent":{
     "name":"MISCELLANOUS",
     "path":"folders/Scripts/TEXT/textScripts/MISCELLANOUS.yy",

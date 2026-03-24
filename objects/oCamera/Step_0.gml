@@ -19,7 +19,6 @@ finalCamY += ((_camY - finalCamY) * camTrailSpd);
 finalCamX = lerp(finalCamX, _camX, 0.1);
 finalCamY = lerp(finalCamY, _camY, 0.1);
 
-
 camera_set_view_pos(_camera, finalCamX, finalCamY);
 
 /*
