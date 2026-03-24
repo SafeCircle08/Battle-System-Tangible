@@ -11,12 +11,10 @@ draw_set_alpha(drawAlpha);
 		shader_set_uniform_f(starPower_uniform, starPower);
 		shader_set_uniform_f(alpha_uniform, drawAlpha);
 		
-		var dx = bubbleW / 2;
-		var dy = bubbleH / 2;
-		var _x = x - dx;
-		var _y = y - dy;
+		shader_set_uniform_f_array(color1_uniform, [5.0, 5.0, 5.0])
+		shader_set_uniform_f_array(color2_uniform, [5.0, 5.0, 5.0])
 		
-		draw_surface_ext(bubbleSurf, _x, _y, 1, 1, 0, c_white, 1);
+		draw_surface_ext(bubbleSurf, drawX, drawY, 1, 1, 0, c_white, 1);
 	shader_reset();
 
 	draw_set_font(fFontino);

@@ -58,8 +58,7 @@ function setBoxOrigin(_originX, _originY)
 }
 
 //A function that set a certain time and drop it to 0
-function setTimer(_timer)
-{
+function setTimer(_timer) {
 	if (_timer > 0)	{ _timer = _timer - 1 }
 	return _timer; 
 }

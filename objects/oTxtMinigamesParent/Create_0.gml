@@ -42,9 +42,9 @@ createDot = function(_x, _y, _index = 0, _layer = LAYER_EFFECT_TOP_3) {
 	_dot.dotN = _index;
 }
 
-createDots = function() {
+createDots = function(_dotsN = 5) {
 	var _y = oCamera.getDims(DIMS.HALF_HEIGHT) + 40;
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i < _dotsN; i++) {
 		var _x = 50 + (50 * i) - 5;
 		createDot(_x, _y, i + 1);
 	}

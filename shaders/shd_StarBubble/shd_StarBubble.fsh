@@ -9,6 +9,9 @@ uniform float u_freqSpd;
 uniform float u_starPower;
 uniform float u_alpha;
 
+uniform vec4 u_color1;
+uniform vec4 u_color2;
+
 void main() {
 	
 	vec2 uv = v_vTexcoord;
