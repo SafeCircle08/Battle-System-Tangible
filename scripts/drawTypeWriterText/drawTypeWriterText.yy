@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"drawTypeWriterText",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"drawTypeWriterText",
+  "parent":{
+    "name":"TypeWriterText",
+    "path":"folders/Scripts/TEXT/textScripts/MAIN_TEXT/TypeWriterText.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

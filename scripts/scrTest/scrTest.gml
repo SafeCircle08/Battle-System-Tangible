@@ -1,5 +1,5 @@
 
-function setEnemyBattlePage(_txt, _facialExpr = FACIAL_EXPRESSIONS.FACIAL_HIDDEN_FACE) {
+function setEnemyBattlePage(_txt, _facialExpr = FACES.HIDDEN) {
 	var _page = {
 		text:  _txt,
 		sprite: _facialExpr
@@ -9,19 +9,19 @@ function setEnemyBattlePage(_txt, _facialExpr = FACIAL_EXPRESSIONS.FACIAL_HIDDEN
 
 global.textTest = [
 	[
-		setEnemyBattlePage("Io sono molto fico!", FACIAL_EXPRESSIONS.FACIAL_ANGRY),
-		setEnemyBattlePage("D'altronde, io sono lo SCIENTISTA QUI!", FACIAL_EXPRESSIONS.FACIAL_ANGRY),
-		setEnemyBattlePage("D'altronde, io sono lo SCIENTISTA QUI!", FACIAL_EXPRESSIONS.FACIAL_ANGRY),
-		setEnemyBattlePage("D'altronde, io sono lo SCIENTISTA QUI!", FACIAL_EXPRESSIONS.FACIAL_ANGRY)
+		setEnemyBattlePage("Io sono molto fico!", FACES.ANGRY),
+		setEnemyBattlePage("D'altronde, io sono lo SCIENTISTA QUI!", FACES.ANGRY),
+		setEnemyBattlePage("D'altronde, io sono lo SCIENTISTA QUI!", FACES.ANGRY),
+		setEnemyBattlePage("D'altronde, io sono lo SCIENTISTA QUI!", FACES.ANGRY)
 	],
 	[
-		setEnemyBattlePage("No dai scherzavo lol", FACIAL_EXPRESSIONS.FACIAL_ANGRY),
-		setEnemyBattlePage("Sono un tipo abbastanza tranquillo in realtà", FACIAL_EXPRESSIONS.FACIAL_ANGRY),
-		setEnemyBattlePage("Sono un tipo abbastanza tranquillo in realtà", FACIAL_EXPRESSIONS.FACIAL_ANGRY),
-		setEnemyBattlePage("Sono un tipo abbastanza tranquillo in realtà", FACIAL_EXPRESSIONS.FACIAL_ANGRY),
-		setEnemyBattlePage("Sono un tipo abbastanza tranquillo in realtà", FACIAL_EXPRESSIONS.FACIAL_ANGRY),
-		setEnemyBattlePage("Sono un tipo abbastanza tranquillo in realtà", FACIAL_EXPRESSIONS.FACIAL_ANGRY),
-		setEnemyBattlePage("Sono un tipo abbastanza tranquillo in realtà", FACIAL_EXPRESSIONS.FACIAL_ANGRY)
+		setEnemyBattlePage("No dai scherzavo lol", FACES.ANGRY),
+		setEnemyBattlePage("Sono un tipo abbastanza tranquillo in realtà", FACES.ANGRY),
+		setEnemyBattlePage("Sono un tipo abbastanza tranquillo in realtà", FACES.ANGRY),
+		setEnemyBattlePage("Sono un tipo abbastanza tranquillo in realtà", FACES.ANGRY),
+		setEnemyBattlePage("Sono un tipo abbastanza tranquillo in realtà", FACES.ANGRY),
+		setEnemyBattlePage("Sono un tipo abbastanza tranquillo in realtà", FACES.ANGRY),
+		setEnemyBattlePage("Sono un tipo abbastanza tranquillo in realtà", FACES.ANGRY)
 	]
 ];
 

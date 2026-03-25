@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"drawFormatShakyText",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"drawFormatShakyText",
+  "parent":{
+    "name":"ShakyText",
+    "path":"folders/Scripts/TEXT/textScripts/MAIN_TEXT/ShakyText.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

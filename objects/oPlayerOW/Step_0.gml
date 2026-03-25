@@ -1,3 +1,14 @@
+timer += 0.5;
+
+charCount += 0.5;
+
+if (char_index < string_length(text)) {
+    if (timer >= 1) {
+        char_index += 1;
+        timer = 0;
+    }
+}
+
 if (room == Room_Battle) { exit; }
 
 if (canMove == true) {

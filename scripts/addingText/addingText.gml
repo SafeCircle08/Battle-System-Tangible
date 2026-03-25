@@ -1,7 +1,7 @@
 //Only creates the page. Won't add it to the textTrigger pagesList.
 function createPageBasic(
 	_text, _faceSprRef, _moods, 
-	_fxWanted = TEXT_ANIMATIONS_FXS.TEXT_NO_FXS, 
+	_fxWanted = TXT_ANIM.NOONE, 
 	_func = function() {  }, _color = setToGuiTextColorSelectedTheme(), 
 	_isMinigame = false, _minigameType = MINIGAMES.NOONE)
 {
@@ -21,7 +21,7 @@ function createPageBasic(
 //Already add its page to textTrigger pagesList.
 function createPage(
 	_text, _faceSprRef, _moods, 
-	_fxWanted = TEXT_ANIMATIONS_FXS.TEXT_NO_FXS, 
+	_fxWanted = TXT_ANIM.NOONE, 
 	_func = function() {  }, _color = setToGuiTextColorSelectedTheme(), 
 	_isMinigame = false, _minigameType = MINIGAMES.NOONE) 
 {
@@ -30,13 +30,13 @@ function createPage(
 }
 
 function addMinigamePage(_minigameType) {
-	createPage("", noone, noone, TEXT_ANIMATIONS_FXS.TEXT_NO_FXS, function() {}, setToGuiTextColorSelectedTheme(), true, _minigameType);
+	createPage("", noone, noone, TXT_ANIM.NOONE, function() {}, setToGuiTextColorSelectedTheme(), true, _minigameType);
 }
 
-function addNormalPage(_text,  _fxWanted = TEXT_ANIMATIONS_FXS.TEXT_NO_FXS, _func = function() {  }, _color = setToGuiTextColorSelectedTheme()) {
+function addNormalPage(_text,  _fxWanted = TXT_ANIM.NOONE, _func = function() {  }, _color = setToGuiTextColorSelectedTheme()) {
 	createPage(_text, noone, noone, _fxWanted, _func, _color);
 }
 
-function addCharacterPage(_text, _faceSprRef, _moods, _fxWanted = TEXT_ANIMATIONS_FXS.TEXT_NO_FXS, _func = function() {  }, _color = setToGuiTextColorSelectedTheme()) {
+function addCharacterPage(_text, _faceSprRef, _moods, _fxWanted = TXT_ANIM.NOONE, _func = function() {  }, _color = setToGuiTextColorSelectedTheme()) {
 	createPage(_text, _faceSprRef, _moods, _fxWanted, _func, _color);
 }

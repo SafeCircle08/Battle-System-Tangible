@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"drawFormatWaveyText",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"drawFormatWaveyText",
+  "parent":{
+    "name":"WaveyText",
+    "path":"folders/Scripts/TEXT/textScripts/MAIN_TEXT/WaveyText.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,13 +1,17 @@
 function addTextAsPage(_text) {
 	var _page = createPageBasic(
 		_text, noone, noone,
-		TEXT_ANIMATIONS_FXS.TEXT_NO_FXS, 
+		TXT_ANIM.NOONE, 
 		function() {}, 
 		setToGuiTextColorSelectedTheme(), 
 		false,
-		MINIGAMES.HAND_SHAKE
+		MINIGAMES.NOONE
 	);
 	return _page;
+}
+
+function addTextAsPageFx(_text, _fx) {
+	return createPageBasic(_text, noone, noone, _fx);
 }
 
 function steamPunkEnemyBattleInfo() {
@@ -105,8 +109,11 @@ function steamPunkEnemyBattleInfo() {
 	#region	FLAVOUR TEXTS 
 	var steamPunkBattleFlavourTexts = [
 		[
-			addTextAsPage("*The heat in the room is\n starting to become\n impossible to manage..."), 
-			addTextAsPage("*You should end this as\n fast possible...\n*Oh, get some Water too!")
+			addTextAsPageFx("*The heat in the room is\n starting to become\n impossible to manage...", TXT_ANIM.WAVEY),
+			addTextAsPageFx("*You should end this as\n fast possible...\n*Oh, get some Water too!", TXT_ANIM.WAVEY),
+			addTextAsPageFx("*WHY DIDN'T I FUCKING\n STAY AT HOME...", TXT_ANIM.SHAKY),
+			addTextAsPage("*I hate It here.....\n .................\n ..............."),
+			addTextAsPageFx("*..........................\n ..........................\n ..........................", TXT_ANIM.WAVEY),
 		],
 		[
 			addTextAsPage("*Everyone thinks Hell looks\n like this."), 

@@ -19,7 +19,6 @@ if (dragging && mouse_check_button(mb_left)) {
 	hoveringTime++;	
     x = mouse_x + drag_offset_x;
     y = mouse_y + drag_offset_y;
-	clampPositions();
 }
 
 if (!dragging && mouseIsHovering()) {

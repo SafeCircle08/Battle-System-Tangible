@@ -30,8 +30,6 @@ void main() {
     float r2 = dot(p, p);
     if (r2 > 1.05) discard;
 	
-	
-
     float z = sqrt(1.0 - r2);
     vec3 normal = normalize(vec3(p, z*z));
 

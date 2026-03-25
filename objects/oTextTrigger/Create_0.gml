@@ -7,14 +7,13 @@ enum PLAYER_FACING_CHECK {
 	FACING_NOONE
 }
 
-enum TEXT_ANIMATIONS_FXS {
-	TEXT_AN_SHAKE,
-	TEXT_AN_COS,
-	TEXT_AN_SIN,
-	TEXT_AN_CIRCLE,
-	TEXT_AN_W_H_CHANGE,
-	TEXT_NO_FXS
+enum TXT_ANIM {
+	WAVEY,
+	SHAKY,
+	NOONE
 }
+
+
 
 playerShouldFace = PLAYER_FACING_CHECK.FACING_ALL; //(and the different sprites)
 playerExcludePosFace = PLAYER_FACING_CHECK.FACING_NOONE;
@@ -44,7 +43,7 @@ createTextInst = function() {
 }
 
 
-addCharPage = function(_text, _faceSprRef, _moods, _fxWanted = TEXT_ANIMATIONS_FXS.TEXT_NO_FXS, _func = function() {  }, _color = setToGuiTextColorSelectedTheme()) {
+addCharPage = function(_text, _faceSprRef, _moods, _fxWanted = TXT_ANIM.NOONE, _func = function() {  }, _color = setToGuiTextColorSelectedTheme()) {
 	hasCharacter = true;
 	faceSpriteRef = _faceSprRef;
 	array_push(textList, _text);

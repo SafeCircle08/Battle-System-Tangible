@@ -14,8 +14,6 @@ isStill = function() {
 	return (hsp == 0) && (vsp == 0);	
 }
 
-
-
 savePlayerInfosWhenBattleStarts = function() {
 	xPosBattleStart = x;
 	yPosBattleStart = y;
@@ -65,6 +63,8 @@ managePlayerMovement = function() {
 
 }
 
+charCount = 0;
+
 checkingText = function() {
 	var _trigger = instance_place(x, y, oTextTrigger);
 	
@@ -79,3 +79,8 @@ checkingText = function() {
 		if (_canCreateText) { _trigger.createTextInst(); }
 	}
 }
+
+
+text = "Sono un piccolo\ntesto";
+char_index = 0;
+timer = 0;

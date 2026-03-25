@@ -24,6 +24,12 @@ updateCoords = function() {
 	updateBoxCoords();
 }
 
+time_uniform = shader_get_uniform(shd_StarBubble, "u_time");
+radius_uniform = shader_get_uniform(shd_StarBubble, "u_radius");
+freqSpd_uniform = shader_get_uniform(shd_StarBubble, "u_freqSpd");
+starPower_uniform = shader_get_uniform(shd_StarBubble, "u_starPower");
+alpha_uniform = shader_get_uniform(shd_StarBubble, "u_alpha");
+
 text = [];
 font = Mono;
 hasCharacter = false;
@@ -45,6 +51,7 @@ pointDelay = 10;
 page = 0;
 dialogueDelay = 5;
 speechSpeed = 0.5;
+textProgress = 0;
 xPos = 0;
 yPos = 0;
 charCount = 0;

@@ -78,6 +78,11 @@ function manageEnemySpeechAutoSkip(_textList, _inBattle) {
 	}		
 }
 
+function nextPageIsMinigame(_textList) {
+	if (page + 1 >= array_length(_textList)) return false;
+	return _textList[page + 1].isMinigame == true
+}
+
 function drawEnemySpeech(_textList, _x, _y, arrowIndex) {
 	var _bgSpr = sTextBG;
 	draw_sprite(_bgSpr, 0, _x, _y);
@@ -176,54 +181,40 @@ function drawTextBoxText(
 	
 	//The drawn text
 	var _textPart = string_copy(_text, 1, charCount);
-	var _offset = 0.5;
 	draw_set_font(_font);
 	
-	if (_faceSprRef != noone && _expression != FACIAL_EXPRESSIONS.FACIAL_HIDDEN_FACE) {
+	if (_faceSprRef != noone && _expression != FACES.HIDDEN) {
 		draw_sprite(_faceSprRef, _expression, _txtX - 2, _txtY - 1);
 		_txtX = 65;
 	}
-	
-	drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, 0);
-	
-	try {
-		var _amplitude = 5;
-		var _freq = 30;		
-		switch (_page.effect) {
-			case TEXT_ANIMATIONS_FXS.TEXT_AN_SHAKE:
-				var _shakeAmpli = 1;
-				_txtX += irandom_range(-_shakeAmpli, _shakeAmpli);
-				_txtY += irandom_range(-_shakeAmpli, _shakeAmpli);
-				_txtX = clamp(_txtX, _txtX -_shakeAmpli, _txtX + _shakeAmpli);
-				_txtY = clamp(_txtY, _txtY -_shakeAmpli, _txtY + _shakeAmpli);				
-			break;
-			case TEXT_ANIMATIONS_FXS.TEXT_AN_COS:
-				_txtX += cos(existanceTextTime / _freq) * _amplitude;
-			break;
-			case TEXT_ANIMATIONS_FXS.TEXT_AN_SIN:
-				_txtY += sin(existanceTextTime / _freq) * _amplitude;
-			break;
-			case TEXT_ANIMATIONS_FXS.TEXT_AN_CIRCLE:
-				_txtX += cos(existanceTextTime / _freq) * _amplitude;
-				_txtY += sin(existanceTextTime / _freq) * _amplitude;
-			break;
-			case TEXT_ANIMATIONS_FXS.TEXT_AN_W_H_CHANGE:
-				_scaleX += (cos(existanceTextTime) / _freq * 50) / 70;
-				_scaleY += (sin(existanceTextTime) / _freq * 50) / 70;
-				_scaleX = clamp(_scaleX, -1, 1.3);
-				_scaleY = clamp(_scaleY, -1, 1.3);
-			break;
-		}
-	} catch (_exception) {}
-	
-	draw_set_color(_textCol);
-	draw_text_ext_transformed(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, _scaleY, 0);		
+
+	/*
+		DA MIGLIORARE ASSOLUTAMENTE QUESTA
+		ZONA DELLO switch
+	*/
+
+	switch (_page.effect) {
+		case TXT_ANIM.WAVEY:
+			drawFormattedWaveyText(_txtX, _txtY, _textPart, _lSep, _page.color, _scaleX);
+		break;
+		case TXT_ANIM.SHAKY:
+			drawFormatShakyText(_txtX, _txtY, _textPart, _lSep, _page.color, _scaleX);
+		break;
+		case TXT_ANIM.NOONE:
+			if (_enemySpeech) draw_text_ext_transformed(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, _scaleY, 0);
+			else drawFormatTypeWriterText(_txtX, _txtY, _textPart, _lSep, 0.6, _page.color, _scaleX);
+		break;
+	}
 	
 	if (textFinished(_text)) {
-		if (_enemySpeech == false) {
-			if (!morePages(_textList)) { draw_sprite(sPagesAllWritten_NowRestart, 0, _txtBoxX + 118, _txtBoxY - 7); }
-			draw_sprite(sNextPageArrow, arrowIndex, _txtBoxX + 108, _txtBoxY - 7); 
+		if (_enemySpeech == true) return;
+		if (nextPageIsMinigame(_textList)) { draw_sprite(sNextPageTxtMinigame, arrowIndex, _txtBoxX + 108, _txtBoxY - 7);
+			show_debug_message("è minigioco")
 		}
+		else draw_sprite(sNextPageArrow, arrowIndex, _txtBoxX + 108, _txtBoxY - 7);
+		if (!morePages(_textList)) draw_sprite(sPagesAllWritten_NowRestart, 0, _txtBoxX + 118, _txtBoxY - 7);
+		
+		
 	}
 	#endregion
 }
