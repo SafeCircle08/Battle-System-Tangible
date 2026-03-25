@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"drawTextStyle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"drawTextStyle",
+  "parent":{
+    "name":"MAIN_TEXT",
+    "path":"folders/Scripts/TEXT/textScripts/MAIN_TEXT.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

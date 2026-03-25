@@ -1,4 +1,4 @@
-function manageTextInputs(inBattle, isActionFlavourText, _enemyAfterBulletHellTxt = false) {
+function manageTextInputs() {
 	#region	DECLARING X, Y POSITIONS
 	
 	if (inBattle == false) {
@@ -30,7 +30,7 @@ function manageTextInputs(inBattle, isActionFlavourText, _enemyAfterBulletHellTx
 			destroyTextBoxOW(txtBoxX, txtBoxY);
 		} else {
 			if (oBattleManager.isEnemySpeaking()) {
-				if (_enemyAfterBulletHellTxt == false) {
+				if (enemyAfterTurnText == false) {
 					oBattleManager.changeTurnAfterEnemySpeech();
 					//mettere qui la funzione per al posto ti terminare il turno
 					//andare ad iniziarlo: setToStartTurn() (mi sembra fosse)
@@ -42,7 +42,7 @@ function manageTextInputs(inBattle, isActionFlavourText, _enemyAfterBulletHellTx
 			}
 		}
 		
-		if (isActionFlavourText) {
+		if (isActionsFlavourText) {
 			with (oBattleManager) {
 				if (!enemyTextShowed) { showEnemyText(); }
 				else { setToStartTurn(); }

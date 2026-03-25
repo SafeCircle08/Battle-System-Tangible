@@ -2,7 +2,6 @@
 global.getTextBoxInputs = true;
 
 #region TEXT FUNCTIONS UTILS
-
 function dontGetTextInputs() { 
 	global.getTextBoxInputs = false;
 	return global.getTextBoxInputs;
@@ -11,64 +10,31 @@ function getTextInputs() {
 	global.getTextBoxInputs = true; 
 	return global.getTextBoxInputs;	
 }
-
 function setToFirstPage() {
 	textFinishedTimer = TEXT_FINISHED_TIMER;
 	charCount = 0;
 	page = 0;
 }	
-
 function goToNextPage() {
 	textFinishedTimer = TEXT_FINISHED_TIMER;
 	page++;
 	charCount = 0;
 }
-
 function textUnfinished(_text) {
 	return (round(charCount) < string_length(_text) - 2);
-}	
-
+}
 function textFinished(_text) {
 	textFinishedTimer = setTimer(textFinishedTimer);
 	if (textFinishedTimer <= 0) {
 		return (charCount >= string_length(_text));
 	}
 }
-
-function pagesFinished(_textList) {
-	return (page == array_length(_textList));
-}
-
 function showFullText(_text) {
 	charCount = string_length(_text);	
 }	
-
-function checkForPauses(_text, _pointDelay = poinDelay, _commaDelay = commaDelay) {
-	if (string_char_at(_text, charCount) == "." || 
-		string_char_at(_text, charCount) == "?" || 
-		string_char_at(_text, charCount) == "!" ) { dialogueDelay = commaDelay; }
-	if (string_char_at(_text, charCount) == ",") { dialogueDelay = commaDelay; }	
-}
-
-function canAdvanceText(_text) {
-	return (dialogueDelay == 0) && (charCount < string_length(_text));
-}
-
 function morePages(_textList) {
 	return (page + 1 < array_length(_textList));
 }
-
-function advanceText(_text, _advanceSound, _pDel = 10, _cDel = 5) {
-	charCount += speechSpeed;	
-	playVoice(_advanceSound, 1, _text);
-	checkForPauses(_text, _pDel, _cDel);
-}
-
-function drawUnderText(_txtX, _txtY, _textPart, _lineSep, _maxW, _scale, _angle, _offset = 0.5, _col = setToGuiTextBgColorSelectedTheme()) {
-	draw_set_color(_col);
-	draw_text_ext_transformed(_txtX + _offset, _txtY + _offset, _textPart, _lineSep, _maxW, _scale, _scale, 0);		
-}
-
 function manageEnemySpeechAutoSkip(_textList, _inBattle) {
 	if (textFinished(_textList) && (_inBattle) && (!morePages(_textList))) {
 		if (oBattleManager.isEnemySpeaking()) {
@@ -77,144 +43,113 @@ function manageEnemySpeechAutoSkip(_textList, _inBattle) {
 		}
 	}		
 }
-
-function nextPageIsMinigame(_textList) {
-	if (page + 1 >= array_length(_textList)) return false;
-	return _textList[page + 1].isMinigame == true
-}
-
-function drawEnemySpeech(_textList, _x, _y, arrowIndex) {
-	var _bgSpr = sTextBG;
-	draw_sprite(_bgSpr, 0, _x, _y);
-	var _bgW = sprite_get_width(_bgSpr);
-	var _bgH = sprite_get_height(_bgSpr);
-	var _borderX = 30;
-	var _borderY = 12;
-	if (textFinished(_textList)) { 
-		draw_sprite(sNextPageArrow, arrowIndex, _x + _bgW - _borderX, _y + _bgH - _borderY); 
-	}		
-}
-
 #endregion
 
-function drawTextBoxText(
-	_font = Mono, isActionsFlavourText = false, 
-	inBox = true, inBattle = false, _sound = sndBasicTxt5, _enemySpeech = false, _textX = undefined, _textY = undefined,
-) {
-	#region INITIALIZATION SECTION
-	var _cam = view_camera[view_current];
-	var _camW = camera_get_view_width(_cam);
-	var _camH = camera_get_view_height(_cam);
-	var _camX = camera_get_view_x(_cam);
-	var _camY = camera_get_view_y(_cam);
-	
-	//Sprite properties
-	var _sprTextBox = setToGuiTxtBoxSelectedTheme();
-	var _boxW = sprite_get_width(_sprTextBox); 
-	var _boxH = sprite_get_height(_sprTextBox);
-	
+function drawTextBoxText() {
 	var _scale = 1;
 	var _bX = 10;
 	var _bY = _bX - 1;
 	var _lSep = 15;
-	var _maxWidth = sprite_get_width(setToGuiTxtBoxSelectedTheme()) - _bX;
+	var _maxW = sprite_get_width(sprTextBox) - _bX;
 	
-	var _scaleX = _scale;
-	var _scaleY = _scale;
-	var _txtBoxX = _camX + (_camW / 2);
-	var _txtBoxY = _camY + _camH - 3;
-	
-	if (inBattle == false) {
-		var _tollerance = 20;
-		if (oPlayerOW.y > _camH / 2) {
-			_txtBoxY = _camY + _boxH; 
-		}
+	#region LOCAL FUNCTIONS
+	static canAdvanceText = function(_text) {
+		return (dialogueDelay == 0) && (charCount < string_length(_text));
+	}	
+	static pagesFinished = function(_textList) {
+		return (page == array_length(_textList));
 	}
-	
-	if (inBox) { draw_sprite(_sprTextBox, 0, _txtBoxX, _txtBoxY); }
-	
+	static drawTextBoxText_hasPortrait = function(_page) {
+		return (_page.faceSprRef != noone && _page.expression != FACES.HIDDEN);
+	}
+	static nextPageIsMinigame = function(_textList) {
+		if (page + 1 >= array_length(_textList)) return false;
+			return _textList[page + 1].isMinigame == true
+	}
+	static drawEnemySpeechBox = function(_x, _y) {
+		var _bgSpr = sTextBG;
+		draw_sprite(_bgSpr, 0, _x, _y);	
+	}
+	static txtHasCoords = function() {
+		return (txtX != undefined) && (txtY != undefined);
+	}
+	static hasPortrait = function(_page) {
+		return (_page.faceSprRef != noone && _page.expression != FACES.HIDDEN);
+	}
+	static advanceText = function(_text, _advanceSound, _pDel = 10, _cDel = 5) {
+		static checkForPauses = function(_text, _pointDelay = poinDelay, _commaDelay = commaDelay) {
+			if (string_char_at(_text, charCount) == "." || 
+				string_char_at(_text, charCount) == "?" || 
+				string_char_at(_text, charCount) == "!" ) { dialogueDelay = commaDelay; }
+			if (string_char_at(_text, charCount) == ",") { dialogueDelay = commaDelay; }	
+		}
+		charCount += speechSpeed;	
+		playVoice(_advanceSound, 1, _text);
+		checkForPauses(_text, _pDel, _cDel);
+	}
 	#endregion
 	
-	#region TEXT PROPERTIES + COORDINATES, ARROW DECO, 
+	if (inBox) draw_sprite(sprTextBox, 0, txtBoxX, txtBoxY);
+	if (inBattle == false) {
+		if (oPlayerOW.y > camH / 2 + 20) txtBoxY = camY + _boxH; 
+	}
+	
+	static arrowIndex = 0.1;
 	var _textList = pagesList;
 	var _page = _textList[page];
 	var _text = _page.contents;
 	var _faceSprRef = _page.faceSprRef;
 	var _expression = _page.expression;
-	var _effect = _page.effect;
+	var _txtEffect = _page.effect;
+	var _txtCol = _page.color;
 	var _destroyPageFunc = _page.destroyPageFunc;
-	
-	var _textCol = setToGuiTextColorSelectedTheme();
-	var _textBgCol = setToGuiTextBgColorSelectedTheme();	
-
 	var _borderX = _bX;
 	var _borderY = _bY;
-	var _lineSep = _lSep;
-	var _maxW = _maxWidth;
-	var _txtScale = _scale;
-	var _txtX = _txtBoxX - (_boxW / 2) + _borderX;
-	var _txtY = _txtBoxY - _boxH + _borderY;
-	if (_textX != undefined) && (_textY != undefined) {
-		_txtX = _textX + 5;
-		_txtY = _textY;
+	var _txtX = txtBoxX - (boxW / 2) + _borderX;
+	var _txtY = txtBoxY - boxH + _borderY;
+	if (txtHasCoords()) {
+		_txtX = txtX + 5;
+		_txtY = txtY;
 	}	
 	
-	static arrowIndex = 0.1;
-	arrowIndex += 0.1;
-	
-	#endregion
-	
-	#region ENEMY SPEECH SECTION
-	if (_enemySpeech) {
-		_scaleX = 0.5;
-		_scaleY = 0.5;
-		drawEnemySpeech(_page.contents, _textX, _textY, arrowIndex);
+	//EnemySpeechBox
+	if (enemySpeech == true) {
+		_scale = 0.5;
+		drawEnemySpeechBox(txtX, txtY);
 	}
 	
-	#endregion
-	
-	#region THE TEXTBOX DRAWN TEXT
-	var _pDel = 10;
-	var _cDel = 5;
-	dialogueDelay = setTimer(dialogueDelay);
-	if (canAdvanceText(_page.contents)) { advanceText(_page.contents, _sound, _pDel, _cDel); }
-	
-	//The drawn text
-	var _textPart = string_copy(_text, 1, charCount);
-	draw_set_font(_font);
-	
-	if (_faceSprRef != noone && _expression != FACES.HIDDEN) {
+	//NPCs Portraits
+	if (drawTextBoxText_hasPortrait(_page)) {
 		draw_sprite(_faceSprRef, _expression, _txtX - 2, _txtY - 1);
 		_txtX = 65;
 	}
+	
+	//Actual Drawn Text
+	dialogueDelay = setTimer(dialogueDelay);
+	if (canAdvanceText(_text)) advanceText(_text, sound, 10, 5);
+	var _textPart = string_copy(_text, 1, charCount);
+	draw_set_font(font);
 
-	/*
-		DA MIGLIORARE ASSOLUTAMENTE QUESTA
-		ZONA DELLO switch
-	*/
-
-	switch (_page.effect) {
+	switch (_txtEffect) {
 		case TXT_ANIM.WAVEY:
-			drawFormattedWaveyText(_txtX, _txtY, _textPart, _lSep, _page.color, _scaleX);
+			drawFormattedWaveyText(_txtX, _txtY, _textPart, _lSep, _txtCol, _scale);
 		break;
 		case TXT_ANIM.SHAKY:
-			drawFormatShakyText(_txtX, _txtY, _textPart, _lSep, _page.color, _scaleX);
+			drawFormatShakyText(_txtX, _txtY, _textPart, _lSep, _txtCol, _scale);
 		break;
 		case TXT_ANIM.NOONE:
-			if (_enemySpeech) draw_text_ext_transformed(_txtX, _txtY, _textPart, _lineSep, _maxW, _scaleX, _scaleY, 0);
-			else drawFormatTypeWriterText(_txtX, _txtY, _textPart, _lSep, 0.6, _page.color, _scaleX);
+			if (enemySpeech) draw_text_ext_transformed(_txtX, _txtY, _textPart, _lSep, _maxW, _scale, _scale, 0);
+			else drawFormatTypeWriterText(_txtX, _txtY, _textPart, _lSep, 0.6, _txtCol, _scale);
 		break;
 	}
 	
 	if (textFinished(_text)) {
-		if (_enemySpeech == true) return;
-		if (nextPageIsMinigame(_textList)) { draw_sprite(sNextPageTxtMinigame, arrowIndex, _txtBoxX + 108, _txtBoxY - 7);
-			show_debug_message("è minigioco")
-		}
-		else draw_sprite(sNextPageArrow, arrowIndex, _txtBoxX + 108, _txtBoxY - 7);
-		if (!morePages(_textList)) draw_sprite(sPagesAllWritten_NowRestart, 0, _txtBoxX + 118, _txtBoxY - 7);
+		arrowIndex += 0.1;
+		if (enemySpeech == true) return;
+		if (nextPageIsMinigame(_textList)) draw_sprite(sNextPageTxtMinigame, arrowIndex, txtBoxX + 108, txtBoxY - 7);
+		else draw_sprite(sNextPageArrow, arrowIndex, txtBoxX + 108, txtBoxY - 7);
 		
-		
+		if (!morePages(_textList)) draw_sprite(sPagesAllWritten_NowRestart, 0, txtBoxX + 118, txtBoxY - 7);
 	}
 	#endregion
 }

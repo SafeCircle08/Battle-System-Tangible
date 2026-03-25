@@ -80,7 +80,6 @@ checkingText = function() {
 	}
 }
 
-
-text = "Sono un piccolo\ntesto";
-char_index = 0;
 timer = 0;
+char_index = 0;
+text = "";

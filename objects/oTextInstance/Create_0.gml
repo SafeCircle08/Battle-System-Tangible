@@ -68,11 +68,6 @@ faceSpriteRef = undefined;
 
 pagesList = [];
 
-characterFaces = [];
-colors = [];
-pagesWithFXs = [];
-pagesFuncs = [];
-
 autoSkipTimerRef = 150;
 autoSkipTimer = autoSkipTimerRef;
 
