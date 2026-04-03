@@ -89,10 +89,11 @@ function drawTextBoxText() {
 	}
 	#endregion
 	
-	if (inBox) draw_sprite(sprTextBox, 0, txtBoxX, txtBoxY);
+	
 	if (inBattle == false) {
-		if (oPlayerOW.y > camH / 2 + 20) txtBoxY = camY + _boxH; 
+		if (oPlayerOW.y > camH / 2 + 20) txtBoxY = camY + boxH; 
 	}
+	if (inBox) draw_sprite(sprTextBox, 0, txtBoxX, txtBoxY);
 	
 	static arrowIndex = 0.1;
 	var _textList = pagesList;

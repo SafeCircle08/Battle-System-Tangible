@@ -1,4 +1,4 @@
-shader_set(Shader7);
+shader_set(shd_LavaHotFluid);
 
 var t = current_time / 1000;
 var s = sin(t);

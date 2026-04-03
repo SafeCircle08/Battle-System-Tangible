@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_LavaHotFluid",
+  "name":"shd_LavaHotFluid",
+  "parent":{
+    "name":"BACKGROUNDs",
+    "path":"folders/Shaders/BACKGROUNDs.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

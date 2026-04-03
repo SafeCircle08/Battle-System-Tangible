@@ -21,8 +21,8 @@ if (keyboard_check(vk_alt) && (keyboard_check_pressed(ord("C")))) {
 }
 
 if (keyboard_check_pressed(ord("V"))) {
-	//terminateBattle(rm_Intro);
-	//exit;
+	terminateBattle(rm_Intro);
+	exit;
 }
 
 if (!inBulletHell()) exit;
@@ -39,7 +39,12 @@ if (beamAnimationIsActive()) {
 	}
 }
 
-if (canState == true) state();
+if (canState == true) { 
+	state();
+	if (equippedUmbrellaShoot == true) && (!instance_exists(oSoulUmbrella)) {
+		instance_create_layer(x, y, LAYER_UNDER_EFFECT, oSoulUmbrella);	
+	}
+}
 
 /*
 if (keyboard_check_pressed(ord("M"))) {

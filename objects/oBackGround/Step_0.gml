@@ -14,3 +14,5 @@ if (canScroll == true)
 		y = -50;
 	}
 }
+
+time += 0.005;

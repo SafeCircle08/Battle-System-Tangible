@@ -3,8 +3,8 @@
   "%Name":"shd_StarBubble",
   "name":"shd_StarBubble",
   "parent":{
-    "name":"SHADER_TESTS",
-    "path":"folders/SHADER_TESTS.yy",
+    "name":"EVERY_TIME_USE",
+    "path":"folders/Shaders/EVERY_TIME_USE.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",

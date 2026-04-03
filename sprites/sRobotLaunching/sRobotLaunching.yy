@@ -34,7 +34,7 @@
   "origin":4,
   "parent":{
     "name":"sToolsBullets",
-    "path":"folders/Sprites/Bullets/steamPunkFight/sToolsBullets.yy",
+    "path":"folders/Sprites/ENEMIES/steamPunkFight/sToolsBullets.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

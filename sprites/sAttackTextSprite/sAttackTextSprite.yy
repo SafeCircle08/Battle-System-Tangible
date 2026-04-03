@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"OptionsTextSprites",
-    "path":"folders/Sprites/OptionsTextSprites.yy",
+    "path":"folders/Sprites/GUI/OptionsTextSprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

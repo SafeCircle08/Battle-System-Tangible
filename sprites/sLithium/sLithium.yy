@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"sChemistryBullets",
-    "path":"folders/Sprites/Bullets/steamPunkFight/sChemistryBullets.yy",
+    "path":"folders/Sprites/ENEMIES/steamPunkFight/sChemistryBullets.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -40,7 +40,6 @@ setToDefaultPos();
 
 #region OTHERs
 
-
 setToSlide = function(_iceFrictionValue) { 
 	iceFriction = _iceFrictionValue;
 	isSliding = true;
@@ -63,6 +62,8 @@ drawBeamAnimation = function() {
 inBulletHell = function() {
 	return oBattleManager.isInBulletHellSection();	
 }
+
+equippedUmbrellaShoot = false;
 
 #endregion
 

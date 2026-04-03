@@ -83,7 +83,7 @@ function steamPunkEnemyBattleInfo() {
 	#region BULLET PATTERNS
 	var steamPunkBulletGenerator = [
 		oEmpyTurn,
-		oSteamPunkMaskIdle, //
+		oSteamPunkMaskShowBlueprint, //
 		oSteamPunkMaskIdle, //
 		oSteamPunkMaskIdle, //
 		oBallAttack, //

@@ -49,7 +49,7 @@
   "origin":4,
   "parent":{
     "name":"FunkyBullets",
-    "path":"folders/Sprites/Bullets/steamPunkFight/FunkyBullets.yy",
+    "path":"folders/Sprites/ENEMIES/steamPunkFight/FunkyBullets.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

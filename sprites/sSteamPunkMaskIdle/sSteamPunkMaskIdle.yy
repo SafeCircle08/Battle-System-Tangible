@@ -30,7 +30,7 @@
   "origin":4,
   "parent":{
     "name":"SteamPunkMask",
-    "path":"folders/Sprites/SteamPunkMask.yy",
+    "path":"folders/Sprites/ENEMIES/steamPunkFight/SteamPunkMask.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

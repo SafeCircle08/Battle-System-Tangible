@@ -26,7 +26,7 @@
   "origin":1,
   "parent":{
     "name":"steamPunkFight",
-    "path":"folders/Sprites/Bullets/steamPunkFight.yy",
+    "path":"folders/Sprites/ENEMIES/steamPunkFight.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

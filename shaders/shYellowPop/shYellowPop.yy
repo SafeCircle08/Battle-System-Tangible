@@ -3,8 +3,8 @@
   "%Name":"shYellowPop",
   "name":"shYellowPop",
   "parent":{
-    "name":"Shaders",
-    "path":"folders/Shaders.yy",
+    "name":"PLAYER",
+    "path":"folders/Shaders/PLAYER.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",

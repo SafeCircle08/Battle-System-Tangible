@@ -1,4 +1,4 @@
-goalY = (room_height / 2) - 65;
+goalY = (room_height / 2) - 60;
 
 x = room_width / 2;
 y = -50;
@@ -7,19 +7,22 @@ sprite_index = sSteamPunkMaskIdle;
 image_alpha = 0;
 image_speed = 0;
 
-//maskEyes = instance_create_layer(x, y, LAYER_EFFECT_TOP_2, oMaskIntroEyes);
-
 maskFrame = 0;
 maskReady = false;
 maskOnIdle = false;
 maskOnFadingOut = false;
+maskOnBlueprint = false;
+
+core = instance_create_layer(x, y, LAYER_UNDER_EFFECT, oSteamPunkMask_WeakPoint);
+getCoreX = function() { return core.x; }
+getCoreY = function() { return core.y; }
 
 maskSetBaseState = function() {
 	maskOnIdle = false;
-	maskOnFadingOut = false;	
+	maskOnFadingOut = false;
+	maskOnBlueprint = false;
 	image_speed = 0;
 }
-
 
 maskSetIdle = function() {
 	maskSetBaseState();
@@ -38,7 +41,7 @@ maskEnterIn = function() {
 		var _dist = goalY - y;
 		var _spdFactor = 0.04;
 		y += _dist * _spdFactor;
-		if (y > 20) { image_alpha += 0.05; }
+		if (y > 20 && image_alpha < 1.0) { image_alpha += 0.05; }
 		if (image_alpha >= 1) && (y >= goalY - 1) {
 			maskReady = true;
 			maskSetIdle();
@@ -58,4 +61,14 @@ maskFadingOut = function() {
 	y -= _dist * _spdFactor;
 	image_alpha -= 0.07;
 	if (image_alpha <= 0) { instance_destroy(self); }
+	exit;
 }
+
+maskSetOnBlueprint = function() {
+	maskSetBaseState();
+	maskOnBlueprint = true;
+	image_speed = 1.0;
+}
+
+maskShowingBlueprint = function() {};
+

@@ -3,8 +3,8 @@
   "%Name":"shd_glint",
   "name":"shd_glint",
   "parent":{
-    "name":"Shaders",
-    "path":"folders/Shaders.yy",
+    "name":"ENCHANTS",
+    "path":"folders/Shaders/ENCHANTS.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",

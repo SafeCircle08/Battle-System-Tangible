@@ -17,7 +17,7 @@ drawDescription = function() {
 	setTextCentered();
 		draw_set_font(fHungrySkinny);
 		var _dy = 7;
-		drawTextOutline(description, oCamera.getX() + (oCamera.getWidth() / 2), oCamera.getY() + oCamera.getHeight() - _dy, 0.3)
+		drawTextOutline(description, oCamera.getX() + (oCamera.getWidth() / 2), oCamera.getY() + oCamera.getHeight() - _dy, 0.2);
 	resetTextHalignValign();
 }
 

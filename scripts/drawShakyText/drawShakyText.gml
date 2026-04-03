@@ -1,5 +1,8 @@
-function drawShakyText(_x, _y, _string, _lSep, _color = c_white, _xShakePow = 1, _yShakePow = 1, scale = 1) {
-	var _charN = floor(charCount);
+function drawShakyText(_x, _y, _string, _lSep, _color = c_white, scale = 1, _static = false) {
+	var _charN;
+	if (_static == false) _charN = floor(charCount);
+	else _charN = string_length(_string);
+	
 	var _baseX = _x;
 	var _baseY = _y;
 	draw_set_colour(_color);
@@ -24,4 +27,3 @@ function drawShakyText(_x, _y, _string, _lSep, _color = c_white, _xShakePow = 1,
 	}
 	draw_set_colour(c_white);
 }
-

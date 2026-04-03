@@ -33,7 +33,7 @@
   "origin":1,
   "parent":{
     "name":"BasicBullets",
-    "path":"folders/Sprites/Bullets/steamPunkFight/BasicBullets.yy",
+    "path":"folders/Sprites/ENEMIES/steamPunkFight/BasicBullets.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

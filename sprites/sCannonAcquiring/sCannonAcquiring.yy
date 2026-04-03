@@ -32,7 +32,7 @@
   "origin":9,
   "parent":{
     "name":"Blasters",
-    "path":"folders/Sprites/Bullets/steamPunkFight/Blasters.yy",
+    "path":"folders/Sprites/ENEMIES/steamPunkFight/Blasters.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
