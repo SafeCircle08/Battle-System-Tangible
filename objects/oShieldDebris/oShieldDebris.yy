@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"ShieldShards",
-    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/MISCELLANOUS/FXs/ShieldShards.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BOX_PROPS/MISCELLANOUS/FXs/ShieldShards.yy",
   },
   "parentObjectId":{
     "name":"oExtrasParent",

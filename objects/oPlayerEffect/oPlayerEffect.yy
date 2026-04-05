@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"FloatingText-FXs",
-    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/MISCELLANOUS/FXs/FloatingText-FXs.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BOX_PROPS/MISCELLANOUS/FXs/FloatingText-FXs.yy",
   },
   "parentObjectId":null,
   "persistent":false,

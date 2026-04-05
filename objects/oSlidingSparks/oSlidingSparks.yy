@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"CartFXs",
-    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/MISCELLANOUS/FXs/CartFXs.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BOX_PROPS/MISCELLANOUS/FXs/CartFXs.yy",
   },
   "parentObjectId":{
     "name":"oExtrasParent",

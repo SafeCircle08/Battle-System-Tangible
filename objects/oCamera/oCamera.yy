@@ -10,8 +10,8 @@
   "name":"oCamera",
   "overriddenProperties":[],
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"PLAYER",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER.yy",
   },
   "parentObjectId":null,
   "persistent":true,

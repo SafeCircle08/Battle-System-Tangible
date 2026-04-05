@@ -31,11 +31,11 @@ function manageTextInputs() {
 		} else {
 			if (oBattleManager.isEnemySpeaking()) {
 				if (enemyAfterTurnText == false) {
-					oBattleManager.changeTurnAfterEnemySpeech();
-					//mettere qui la funzione per al posto ti terminare il turno
+					oBattleManager.changeTurnAfterEnemySpeech(); //enemy speech -> bullet hell
+					//mettere qui la funzione per al posto di terminare il turno
 					//andare ad iniziarlo: setToStartTurn() (mi sembra fosse)
 				}
-				else with (oBattleManager) setToTurnFinished();
+				else with (oBattleManager) setToTurnFinished(); //enemy speech after bullet hell -> player turn
 			} else if (oBattleManager.showingExtraMonologueText) {
 				setToOriginalBattleFlavourText();
 				return;

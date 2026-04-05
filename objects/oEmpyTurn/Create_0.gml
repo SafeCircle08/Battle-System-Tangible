@@ -13,8 +13,6 @@ setPlayerToPoisoned(SEGNALINO_LEVEL.LEVEL_5);
 
 setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_5);
 
-oSoul.equippedUmbrellaShoot = true;
-
 global.xOffset = 60;
 global.yOffset = (global.borderHeight / 2) - 80;
 

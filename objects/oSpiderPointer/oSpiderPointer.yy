@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"SpiderFXs",
-    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/MISCELLANOUS/FXs/SpiderFXs.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BOX_PROPS/MISCELLANOUS/FXs/SpiderFXs.yy",
   },
   "parentObjectId":{
     "name":"oExtrasParent",

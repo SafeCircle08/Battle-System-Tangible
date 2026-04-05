@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sound_macro_defines",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sound_macro_defines",
+  "parent":{
+    "name":"COSTANTS",
+    "path":"folders/Scripts/HARDWARE_&_COSTANTS_&_SETTING_&_OPTIMIZATION/COSTANTS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"JumpFXs",
-    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/MISCELLANOUS/FXs/JumpFXs.yy",
+    "path":"folders/Objects/PLAYER_&_BATTLE/PLAYER/PLAYER_IN_BOX_PROPS/MISCELLANOUS/FXs/JumpFXs.yy",
   },
   "parentObjectId":null,
   "persistent":false,

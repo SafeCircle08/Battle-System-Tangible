@@ -17,6 +17,9 @@ core = instance_create_layer(x, y, LAYER_UNDER_EFFECT, oSteamPunkMask_WeakPoint)
 getCoreX = function() { return core.x; }
 getCoreY = function() { return core.y; }
 
+leftTenna = undefined;
+rightTenna = undefined;
+
 maskSetBaseState = function() {
 	maskOnIdle = false;
 	maskOnFadingOut = false;
@@ -64,6 +67,63 @@ maskFadingOut = function() {
 	exit;
 }
 
+reactivateLeftTenna = function() { leftTenna.activate(); }
+reactivateRightTenna = function() { rightTenna.activate(); }
+reactivateBothTennas = function() { 
+	reactivateLeftTenna();
+	reactivateRightTenna();
+}
+
+enum TENNA {
+	LEFT,
+	RIGHT
+}
+
+tennaShake = function(_min = 1, _max = 2) {
+	oCamera.shake(irandom_range(_min, _max));
+}
+
+activateTennaL = function(_shake = false, _yOffset = 10) {
+	if (instance_exists(leftTenna) && leftTenna.isActive()) return;
+	if (_shake) tennaShake();
+	var _maskW = sprite_get_width(sSteamPunkMaskIdle);
+	leftTenna = instance_create_layer(x + (_maskW / 2), y - _yOffset, layer, oSteamPunkMaskTenna);
+	leftTenna.depth = depth + 1;
+	leftTenna.setUp(TENNA_SIDE.LEFT);
+}
+
+activateTennaR = function(_shake = false, _yOffset = 10) {
+	if (instance_exists(rightTenna) && rightTenna.isActive()) return;
+	if (_shake) tennaShake();
+	var _maskW = sprite_get_width(sSteamPunkMaskIdle);
+	rightTenna = instance_create_layer(x - (_maskW / 2), y - _yOffset, layer, oSteamPunkMaskTenna);
+	rightTenna.depth = depth + 1;
+	rightTenna.setUp(TENNA_SIDE.RIGHT);
+}	
+
+activateBothTennas = function() {
+	activateTennaL();
+	activateTennaR();
+}	
+
+deactivateTenna = function(_tenna, _shake = false) {
+	switch (_tenna) {
+		case TENNA.LEFT:
+			if (!instance_exists(leftTenna) || !leftTenna.isActive()) return;
+			leftTenna.setToDeactivate(); 
+		break;	
+		case TENNA.RIGHT: 
+			if (!instance_exists(rightTenna) || !rightTenna.isActive()) return;
+			rightTenna.setToDeactivate(); 
+		break;	
+	}
+	if (_shake) tennaShake();
+}
+deactivateBothTennas = function() {
+	deactivateTenna(TENNA.LEFT);
+	deactivateTenna(TENNA.RIGHT);
+}
+	
 maskSetOnBlueprint = function() {
 	maskSetBaseState();
 	maskOnBlueprint = true;
@@ -71,4 +131,3 @@ maskSetOnBlueprint = function() {
 }
 
 maskShowingBlueprint = function() {};
-

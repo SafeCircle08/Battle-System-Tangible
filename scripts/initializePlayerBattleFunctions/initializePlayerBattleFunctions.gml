@@ -14,14 +14,12 @@
 #macro INVENTORY_X room_width / 2 - 80 - (59)
 #macro INVENTORY_Y room_width / 2 - 55
 
-function createAnimationObject(sprite, _messages, _method = function() {})
-{
-	if (!instance_exists(fadeInOutAnimationsParent))
-	{
+function createTerminateActionAnimationObject(sprite, _endMsg, _endMethod = function() {}) {
+	if (!instance_exists(fadeInOutAnimationsParent)) {
 		var _myEffect = instance_create_layer(0, 0, LAYER_EFFECT, fadeInOutAnimationsParent);
 		_myEffect.sprite_index = sprite;
-		_myEffect.messages = _messages;
-		_myEffect.myMethod = _method;
+		_myEffect.messages = _endMsg;
+		_myEffect.myMethod = _endMethod;
 	}
 	return;
 }
@@ -43,11 +41,11 @@ function initializeNavigatingBattleOptionFunctions() {
 		}
 	}
 }
-
 function initialiseCryOptionFunction() {
-	selectedCryOption = function() { selectAction(true, false, sndSelecting_2, ["<>Crying won't do nothing\n  but dehydratate you to death.", "\n<>Stop it."]); }		
+	selectedCryOption = function() { 
+		selectAction(true, false, sndSelecting_2, ["*Crying won't do nothing\n but dehydratate you to death.", "\n*Stop it."]); 
+	}		
 }
-
 function initializeInventoryOptionFunctions() {
 	#region	 drawStatistics()
 	
@@ -267,9 +265,11 @@ function initializeUnbindFunctions() {
 	}
 }
 function initializeDefenceFunctions() {
-	selectedDefenceFunction = function() { selectAction(false, false, undefined, [], method(self, function() { hideMirrors(); }))}
+	selectedDefenceFunction = function() { 
+		selectAction(false, false, undefined, [], method(self, function() { hideMirrors(); }));
+	}
 	defenceFunction = function() {
-		createAnimationObject(sUmbrellaEffectGUI, ["<>You decided to defend!"],
+		createTerminateActionAnimationObject(sUmbrellaEffectGUI, global.playerOptions.defence_function._flavourText,
 				method(self, function() { defended = true; }));
 	}
 }
@@ -326,7 +326,7 @@ function initializePrayFunctions()  {
 	#endregion
 	
 	prayOption = function() { 
-		createAnimationObject(sSendYourPrayAnimation_good, [],
+		createTerminateActionAnimationObject(sSendYourPrayAnimation_good, [],
 		method(self, function() {
 			var _possPrayFuncs = [
 				notAcceptedPrayFunc, 
@@ -334,14 +334,13 @@ function initializePrayFunctions()  {
 				addToInvPrayFunc,
 				removeAllSegnaliniPrayFunc
 			];
-			var _index = 2//(_possPrayFuncs);
+			var _index = 2;
 			
 			var _choosedPrayFunc = _possPrayFuncs[_index];
 			_choosedPrayFunc(); 
 		}));
 	}
 }
-
 function initializeEnchantingFunctions() {
 	selectedEnchantOption = function() { 
 		selectAction(true, true, undefined, ["*You enchanted an Item.", "*You'll be able\n to use it next turn."]);
@@ -380,7 +379,6 @@ function initializeEnchantingFunctions() {
 			}
 		}
 	}
-	
 }
 
 function __initializeAllBattleCreatedFunctions() {

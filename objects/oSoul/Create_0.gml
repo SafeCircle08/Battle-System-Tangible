@@ -63,7 +63,15 @@ inBulletHell = function() {
 	return oBattleManager.isInBulletHellSection();	
 }
 
+equipUmbrellaShotgun = function() {
+	equippedUmbrellaShoot = true;	
+}
+unequipUmbrellaShotgun = function() {
+	equippedUmbrellaShoot = false;	
+}
 equippedUmbrellaShoot = false;
+
+equipUmbrellaShotgun();
 
 #endregion
 

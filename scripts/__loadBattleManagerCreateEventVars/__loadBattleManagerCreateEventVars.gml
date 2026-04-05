@@ -15,7 +15,7 @@ function __loadBattleManagerCreateEventVars(){
 		global.borderWidth = 100;
 		global.borderHeight = 100;
 
-		turnNumber = 0;
+		turnNumber = 2;
 		defended = false;
 		playerDeath = false;
 		playerTurn = true;
