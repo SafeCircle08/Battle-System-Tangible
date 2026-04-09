@@ -1,8 +1,7 @@
 if (instance_number(oElectronCircular) < oElectronCircle.maxElectrons) { exit; }
 delayTimer = setTimer(delayTimer);
 
-if (delayTimer == 0)
-{
+if (delayTimer == 0) {
 	frame += 0.5;
 	cosMultiplier = cosMultiplier * 1.1;
 	cosMultiplier = clamp(cosMultiplier, 0, 50);
@@ -11,8 +10,7 @@ if (delayTimer == 0)
 	image_angle += 5;
 }
 
-if (frame % 25 == 0)
-{
+if (frame % 25 == 0) {
 	var _myEffect = instance_create_layer(x, y,	LAYER_EFFECT, oBulletEffect);
 	_myEffect.callerId = id;
 	_myEffect.sprite_index = sElectronCircle;

@@ -79,6 +79,17 @@ enum TENNA {
 	RIGHT
 }
 
+enum EYES {
+	LEFT, 
+	RIGHT
+}
+
+createElectroBallGroup = function(_group) {
+	var _ebg = instance_create_layer(x, y, layer, oSteamPunkMaskElectroBallGroup);	
+	_ebg.group = _group;
+	_ebg.canStart = true;
+}
+
 tennaShake = function(_min = 1, _max = 2) {
 	oCamera.shake(irandom_range(_min, _max));
 }
@@ -122,6 +133,54 @@ deactivateTenna = function(_tenna, _shake = false) {
 deactivateBothTennas = function() {
 	deactivateTenna(TENNA.LEFT);
 	deactivateTenna(TENNA.RIGHT);
+}
+
+getEyeY = function(_eye) {
+	return y;
+}
+
+getEyeX = function(_eye) {
+	var dx = 13;
+	var _leftEyeX = x - dx;
+	var _rightEyeX = x + dx;
+	
+	if (_eye == EYES.LEFT) return _leftEyeX;
+	return _rightEyeX;
+}
+
+chooseEye = function() {
+	return choose(EYES.LEFT, EYES.RIGHT);
+}
+
+spawnElectroBallGroub = function(_groupN = 5, _timeDelay = electroBallgroupDelay, _random = true, _eye = EYES.LEFT) {
+	var _e = _eye;
+	if (_random) _eye = chooseEye();
+	static t = 0;
+	t++;
+	
+	var _xAdder = irandom_range(-5, 5);
+	var _yAdder = irandom_range(-5, 5);
+	if (t % _timeDelay == 0) { 
+		spawnElectroBall(false, _xAdder, _yAdder, electroBallGroupGroup);
+		electroBallGroupN++;
+		if (electroBallGroupN == _groupN) {
+			electroBallGroupN = 0;
+			electroBallGroupGroup = chooseEye();
+		}
+	}
+}
+
+spawnElectroBall = function(_random = true, _xAdder = 0, _yAdder = 0, _eye = EYES.LEFT) {
+	var _e = _eye;
+	if (_random) _eye = chooseEye();
+	
+	var _electroBall;
+	var dy = 10;
+	var _ebX = getEyeX(_eye);
+	var _ebY = getEyeY(_eye) - dy;
+	
+	_electroBall = instance_create_layer(_ebX + _xAdder, _ebY + _yAdder, LAYER_BULLETS, oElectroBall_Bullet);
+	instance_create_layer(x, y, LAYER_UNDER_EFFECT, oSteamPunkMaskEyesFX);
 }
 	
 maskSetOnBlueprint = function() {

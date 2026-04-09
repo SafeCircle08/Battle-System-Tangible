@@ -13,6 +13,9 @@ shakeTimer = SHAKE_TIMER_REF;
 hittedTimes = 0;
 hitFlash = 0;
 image_alpha = 0;
+goalImageAngle = 0;
+
+image_angle = 45;
 
 deactivating = false;
 moving = true;
@@ -33,9 +36,11 @@ setUp = function(_side) {
 	if (side == TENNA_SIDE.LEFT) {
 		xGoal = xstart - X_OFFSET;
 		image_xscale = -1;
+		image_angle = -45;
 	}	else {
 		xGoal = xstart + X_OFFSET;
 		image_xscale = 1;
+		image_angle = 45;
 	}
 }
 reset = function() {
@@ -46,6 +51,7 @@ reset = function() {
 move = function() {
 	if (image_alpha < 1.0) image_alpha += 0.05;
 	x = lerp(x, xGoal, 0.3);
+	image_angle = lerp(image_angle, 0, 0.1);
 }
 setToDeactivate = function() {
 	moving = false;

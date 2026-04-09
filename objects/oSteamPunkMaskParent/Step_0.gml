@@ -20,3 +20,6 @@ if (maskOnFadingOut) { maskFadingOut(); }
 if (maskOnIdle) { maskIdling(); }
 
 if (maskOnBlueprint) { maskShowingBlueprint(); }
+
+if (global.enemyTimer % 50 == 0) spawnElectroBall(true);
+//if (global.enemyTimer % 150 == 0) createElectroBallGroup(choose(4, 5, 6));
