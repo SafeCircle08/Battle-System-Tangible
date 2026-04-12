@@ -84,6 +84,7 @@ function steamPunkEnemyBattleInfo() {
 	var steamPunkBulletGenerator = [
 		oEmpyTurn,
 		oSteamPunkMaskShowBlueprint, //
+		oEmpyTurn,
 		oSteamPunkMaskIdle, //
 		oSteamPunkMaskIdle, //
 		oBallAttack, //

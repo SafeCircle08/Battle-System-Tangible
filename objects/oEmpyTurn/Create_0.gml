@@ -1,22 +1,10 @@
 event_inherited();
-setPlayerInUseGravity(global.playerJumpStateMoveInfo.gravityBasic);
 
-/*setPlayerToBrokenBones(SEGNALINO_LEVEL.LEVEL_3);
-
-setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_2);
-*/
-
-/*setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_5);
-setPlayerToBrokenBones(SEGNALINO_LEVEL.LEVEL_5);
-setPlayerToPoisoned(SEGNALINO_LEVEL.LEVEL_5);
-*/
-
-setPlayerToSlowness(SEGNALINO_LEVEL.LEVEL_5);
+initializeNewTurn(0, false, 99999, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateFree);
 
 global.xOffset = 60;
 global.yOffset = (global.borderHeight / 2) - 80;
 
-initializeNewTurn(0, false, 99999, 0, 220, 100, room_width / 2, room_height / 2 - 15, global.playerStateFree);
 oSoul.image_alpha = 1;
 oSoul.canMove = true;
 oBattleBox.draw = true;
@@ -27,8 +15,6 @@ var _x = getBattleBoxVertexX(BOX_VERTEXES.TOP_LEFT);
 var _y = getBattleBoxVertexY(BOX_VERTEXES.TOP_LEFT);
 
 instance_create_layer(_x + 20, _y + 20, LAYER_BULLETS, oHealTouch);
-
-oBattleManager.enemyWillTalkAfterBulletHellSection = true;
 
 /*
 instance_create_layer(global.boxOriginX, global.boxOriginY, "Instances", oPlatform);

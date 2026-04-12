@@ -1,7 +1,6 @@
 draw_self();
 
 if (maskOnBlueprint) {
-	
 	var _alpha = 0.0;
 	if (instance_exists(myBlueprint)) _alpha = myBlueprint.image_alpha;
 	

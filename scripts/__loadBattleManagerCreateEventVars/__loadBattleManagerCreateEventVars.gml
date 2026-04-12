@@ -9,13 +9,15 @@ function __loadBattleManagerCreateEventVars(){
 
 		hasEnemyIntro = false;
 		enemyIntroDone = false;
+		bulletHellAfterIntro = false;
 		enemyIntroText = [];
 		enemyWillTalkAfterBulletHellSection = false;
 
 		global.borderWidth = 100;
 		global.borderHeight = 100;
 
-		turnNumber = 2;
+		canAdvanceTurn = true;
+		turnNumber = 0;
 		defended = false;
 		playerDeath = false;
 		playerTurn = true;

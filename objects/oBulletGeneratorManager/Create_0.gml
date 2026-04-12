@@ -8,7 +8,7 @@ createGenerator = function() {
 		var _actualGenerator = global.inUseGenerator[oBattleManager.turnNumber];
 		instance_create_layer(x, y, LAYER_BULLETS_MANAGER, _actualGenerator);
 		generatorCreated = true;
-	}		
+	}
 }
 
 /* DA TENERE IN MENTE:

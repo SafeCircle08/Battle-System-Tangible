@@ -18,3 +18,5 @@ if (animateBoxTimer <= BOX_START_ANIM_TIMER_CHECK && !boxAnimationFinished()) {
 		increaseBorders(_divideTo);
 	} else { decreaseBorders(_divideTo); }
 }
+
+print(draw);

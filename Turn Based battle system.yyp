@@ -580,7 +580,6 @@
     {"id":{"name":"oSegnalinoParent","path":"objects/oSegnalinoParent/oSegnalinoParent.yy",},},
     {"id":{"name":"oSettingBTNParent","path":"objects/oSettingBTNParent/oSettingBTNParent.yy",},},
     {"id":{"name":"oShadow_1","path":"objects/oShadow_1/oShadow_1.yy",},},
-    {"id":{"name":"oShake","path":"objects/oShake/oShake.yy",},},
     {"id":{"name":"oShell","path":"objects/oShell/oShell.yy",},},
     {"id":{"name":"oShellFalling","path":"objects/oShellFalling/oShellFalling.yy",},},
     {"id":{"name":"oShieldDebris","path":"objects/oShieldDebris/oShieldDebris.yy",},},

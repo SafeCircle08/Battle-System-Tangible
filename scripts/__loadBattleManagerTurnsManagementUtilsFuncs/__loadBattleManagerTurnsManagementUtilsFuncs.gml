@@ -1,16 +1,35 @@
 function __loadBattleManagerTurnsManagementUtilsFuncs(){
-	changeTurn = function() {
-		show_debug_message("turno cambiato")
+	changeTurn = function(_specific = noone, _playerTurn = noone) {
+		
 		showActionsFlavourText = false;
-		playerTurn = !playerTurn; 
 		buttonFrame = 0;
+		
+		if (_specific == noone) playerTurn = !playerTurn;
+		else {
+			playerTurn = _playerTurn;
+		}
+		
 	
 		if (playerTurn == false) goToBulletHellSection();
-		else resetEnemySpeakingVars(); 
+		else resetEnemySpeakingVars();
 	}
+	
+	setToCanAdvanceTurn = function() {
+		canAdvanceTurn = true;
+	}
+	
+	setToCannotAdvanceTurn = function() {
+		canAdvanceTurn = false;
+	}
+	
 	increaseTurn = function() {
-		turnNumber += 1;
+		if (canAdvanceTurn) turnNumber += 1;
 	}
+	
+	onFirstTurn = function() {
+		return turnNumber = 0;	
+	}
+	
 	setToFinishTurnFlavourTxt = function() {
 		showActionsFlavourText = true;
 		
@@ -20,7 +39,7 @@ function __loadBattleManagerTurnsManagementUtilsFuncs(){
 		flavourTextIndex = getRandomIndex(global.battleFlavourTexts);
 		battleFlavourText = global.battleFlavourTexts[flavourTextIndex];
 	}
-	setToStartTurn = function() {
+	setToStartTurn = function(_specific = true, _playerTurn = true) {
 		resetTextVars();
 		resetPlayerBattleVars();
 		resetActionsFlavourText();
@@ -35,6 +54,7 @@ function __loadBattleManagerTurnsManagementUtilsFuncs(){
 		oBattleBox.setToStartTurn();
 		global.enemyTimer = 0;
 		global.getTextBoxInputs = true;
-		changeTurn();
+		changeTurn(_specific, _playerTurn);
 	}
+
 }

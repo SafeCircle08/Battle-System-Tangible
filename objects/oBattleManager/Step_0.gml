@@ -1,7 +1,10 @@
 randomize();
 
 if (objsCreated == false) { createBattleManagerObjects(); objsCreated = true; }
-if (enemyIntroDone == false) && (hasEnemyIntro) { terminateAction(enemyIntroText); enemyIntroDone = true; }
+if (enemyIntroDone == false) && (hasEnemyIntro) { 
+	terminateAction(enemyIntroText); 
+	enemyIntroDone = true; 
+}
 
 if (playerMainActionTurn()) {
 	navigatingBattle(0, 3);
@@ -16,7 +19,6 @@ if (playerMainActionTurn()) {
 
 if (!isInBulletHellSection()) fadeInBattleBlackPinkBgs();
 if (canIncreaseMenuXPos()) increaseMainMenuXPos(); else { decreaseMainMenuXPos(); }
-
 
 //Navigating sub actions windows (ex. inventory menu or battle sub menu)
 if (decidingSubAction == true) {

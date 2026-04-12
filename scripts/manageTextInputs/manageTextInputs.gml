@@ -6,8 +6,7 @@ function manageTextInputs() {
 		if (oPlayerOW.y > camH / 2) { txtBoxY = camY + boxH; }
 	}
 	
-	#endregion
-	
+	#endregion	
 	#region ACTUAL INPUTS SECTION
 	if (global.getTextBoxInputs == false) return;
 	
@@ -25,27 +24,28 @@ function manageTextInputs() {
 			return;
 		}
 		
-		//if the pages are over
 		if (!inBattle) { 
 			destroyTextBoxOW(txtBoxX, txtBoxY);
 		} else {
-			if (oBattleManager.isEnemySpeaking()) {
-				if (enemyAfterTurnText == false) {
-					oBattleManager.changeTurnAfterEnemySpeech(); //enemy speech -> bullet hell
-					//mettere qui la funzione per al posto di terminare il turno
-					//andare ad iniziarlo: setToStartTurn() (mi sembra fosse)
+			with (oBattleManager) {
+				if (isEnemySpeaking()) {
+					if (onFirstTurn() && (bulletHellAfterIntro)) {
+						setToStartTurn();
+						return;
+					}
+					if (other.enemyAfterTurnText == false) changeTurnAfterEnemySpeech();
+					else setToTurnFinished();						
+				} else if (showingExtraMonologueText) {
+					setToOriginalBattleFlavourText();
+					return;
 				}
-				else with (oBattleManager) setToTurnFinished(); //enemy speech after bullet hell -> player turn
-			} else if (oBattleManager.showingExtraMonologueText) {
-				setToOriginalBattleFlavourText();
-				return;
 			}
 		}
 		
 		if (isActionsFlavourText) {
 			with (oBattleManager) {
-				if (!enemyTextShowed) { showEnemyText(); }
-				else { setToStartTurn(); }
+				if (!enemyTextShowed) showEnemyText();
+				else setToStartTurn();
 			}
 		}
 		

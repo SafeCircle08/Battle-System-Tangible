@@ -14,7 +14,10 @@
     "name":"MaskPatterns",
     "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/BULLETS_PATTERNS/MaskPatterns.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oExtrasParent",
+    "path":"objects/oExtrasParent/oExtrasParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
