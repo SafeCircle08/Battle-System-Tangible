@@ -15,11 +15,14 @@ if (maskReady == false) {
 if (global.enemyTimer == global.enemyAttackTime - 150) { maskSetFadingOut(); }
 
 //Performing the set function function
-if (maskOnFadingOut) { maskFadingOut(); }
+if (maskOnFadingOut) { 
+	maskFadingOut();
+	exit;
+}
 
 if (maskOnIdle) { maskIdling(); }
 
 if (maskOnBlueprint) { maskShowingBlueprint(); }
 
-if (global.enemyTimer % 50 == 0) spawnElectroBall(true);
+if (global.enemyTimer % 120 == 0) spawnElectroBall(true);
 //if (global.enemyTimer % 150 == 0) createElectroBallGroup(choose(4, 5, 6));

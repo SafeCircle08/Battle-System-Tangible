@@ -1,14 +1,21 @@
-function navigatingBattle(_minClam, _maxClamp) {
+function navigatingBattle(_minClamp, _maxClamp) {
 	if (!gettingGameInputs()) return;
 	
 	with (oBattleManager) {
-		var _firstValue = selected_option;
-		if keyboard_check_pressed(ord(global.keyBinds.down)) { selected_option++; }
-		if keyboard_check_pressed(ord(global.keyBinds.up)) { selected_option--; }
-		
-		selected_option = clamp(selected_option, _minClam, _maxClamp);
-	
-		var soundGain = 0.6;
-		if (selected_option != _firstValue) { playSound(sndNavigating_2, SOUND_CHANNEL_2, false, soundGain); }	
+		selected_option = navigate(selected_option, sndNavigating_2, _minClamp, _maxClamp);
 	}
+}
+
+function navigate(_value, _snd = sndNavigating_2, _minClamp, _maxClamp) {
+	if (!gettingGameInputs()) return;
+	
+	var _firstValue = _value;
+	if keyboard_check_pressed(ord(global.keyBinds.down)) { _value++; }
+	if keyboard_check_pressed(ord(global.keyBinds.up)) { _value--; }
+		
+	_value = clamp(_value, _minClamp, _maxClamp);
+	
+	var soundGain = 0.6;
+	if (_value != _firstValue) { playSound(_snd, SOUND_CHANNEL_2, false, soundGain); }
+	return _value;
 }

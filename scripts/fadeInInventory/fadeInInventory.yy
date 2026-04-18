@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"fadeInInventory",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"fadeInInventory",
+  "parent":{
+    "name":"INVENTORY_FADE_IN_OUT",
+    "path":"folders/Scripts/INVENTORY_FADE_IN_OUT.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

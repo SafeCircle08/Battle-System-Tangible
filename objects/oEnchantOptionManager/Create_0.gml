@@ -1,5 +1,4 @@
-showingInv = false;
-canFadeInv = true;
+event_inherited();
 
 fadingIn = true;
 fadedIn = false;
@@ -100,15 +99,13 @@ setToStartStateItemVars = function() {
 	placeItemTimer = 2;
 }
 
-setTofadeIn = function()
-{
+setTofadeIn = function() {
 	fadingOut = false;
 	fadedIn = false;
 	fadingIn = true;
 }
 
-setToFadeOut = function()
-{
+setToFadeOut = function() {
 	fadedIn = true;
 	fadingOut = true;		
 }

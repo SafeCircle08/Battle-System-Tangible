@@ -37,7 +37,7 @@ function initializeNavigatingBattleOptionFunctions() {
 		var _subManager = instance_find(oSubMenuManager, instance_number(oSubMenuManager) - 1);
 		if (cancelPressed()) { 
 			_subManager.setToFadeOut();
-			resetNavigation(0); 
+			resetNavigation(); 
 		}
 	}
 }
@@ -144,7 +144,7 @@ function initializeInventoryOptionFunctions() {
 		}
 		else { 
 			setNewMonologueText(["*Cannot open the inventory\n right now...", "*You don't have any\n Items."]);
-			resetNavigation(3, undefined, method(self, function() { moreStepsAct = true; })); 
+			resetNavigation(undefined, method(self, function() { moreStepsAct = true; })); 
 		}
 	}
 	#endregion
@@ -161,7 +161,7 @@ function initializeInventoryOptionFunctions() {
 	invHandleConfirmation = function(_getInputs) {
 		
 		if (_getInputs) {
-			if (cancelPressed()) && (!instance_exists(itemOutputMessage)) { resetNavigation(3, sndClosingInventory); }
+			if (cancelPressed()) && (!instance_exists(itemOutputMessage)) { resetNavigation(sndClosingInventory); }
 			
 			takenOptionDelay = setTimer(takenOptionDelay);
 			if (takenOptionDelay == 0) {
@@ -177,14 +177,19 @@ function initializeInventoryOptionFunctions() {
 	#endregion
 	
 	#region MAIN INVENTORY FUNCTION
+	
+	navigatingInventoryFunctionNoInputs = function() {
+		navigatingInventoryFunction(DONT_GET_INPUTS, CAN_NAVIGATE);	
+	}
+	
 	navigatingInventoryFunction = function(_getInputs = GET_INPUTS, _canNavigate = CAN_NAVIGATE) {
 		easeInBg();
 		invHandleNavigation(_canNavigate);
 		invHandleConfirmation(_getInputs);
 		
 		//Only for debugging
-		if (keyboard_check_pressed(ord("V"))) { enchantItem(global.equippedItems[selected_option], false); }
-		if (keyboard_check_pressed(ord("O"))) { disenchantItem(global.equippedItems[selected_option]); }
+		if (keyboard_check_pressed(ord("V"))) { enchantItem(global.equippedItems[selected_option], true); }
+		if (keyboard_check_pressed(ord("O"))) { disenchantItem(global.equippedItems[selected_option], false); }
 	}
 	#endregion
 }
@@ -357,9 +362,9 @@ function initializeEnchantingFunctions() {
 			if (_enchantManager.showingInv == false) {
 				_enchantManager.setToStartStateItemVars();
 				_enchantManager.setToFadeOut();
-				resetNavigation(1); 				
+				resetNavigation(); 				
 			} else {
-				_enchantManager.showingInv = false; //doesnt call the invFunc anymore
+				_enchantManager.closeSpecialInventory();
 				goToPreviousOption(method(self, function() { 
 					oEnchantOptionManager.setToStartStateItemVars();
 				}));
@@ -373,10 +378,27 @@ function initializeEnchantingFunctions() {
 					setSelectionDelay();
 					if (_enchantManager.showingInv == false) { 
 						selected_option = 0; 
-						_enchantManager.showingInv = true; 
+						_enchantManager.openSpecialInventory();
 					}
 				} else { setNewMonologueText(["*Can't Enchant any Item.\n*(Inventory Empty)\n *So [___] angry!"]); }
 			}
+		}
+	}
+}
+
+function initializeDispelFunctions() {
+	selectedDispelOption = function() {
+		selectAction(true, true);
+		if (!instance_exists(oDispelOptionManager)) instance_create_layer(x, y, LAYER_EFFECT_TOP_2, oDispelOptionManager);
+		else oDispelOptionManager.openSpecialInventory(); 
+	}
+	
+	dispelOption = function() {
+		easeInBg();
+		var _dispelManager = instance_find(oDispelOptionManager, instance_number(oDispelOptionManager) - 1);
+		if (cancelPressed(false) && _dispelManager.selected == false) {
+			_dispelManager.closeSpecialInventory();
+			resetNavigation(sndClosingInventory);
 		}
 	}
 }
@@ -391,4 +413,5 @@ function __initializeAllBattleCreatedFunctions() {
 	initializeDefenceFunctions();
 	initializePrayFunctions();
 	initializeEnchantingFunctions();
+	initializeDispelFunctions();
 }

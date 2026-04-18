@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"getItemInvSprX",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"getItemInvSprX",
+  "parent":{
+    "name":"ItemSprYInventory",
+    "path":"folders/Scripts/SECONDARY_SCRIPTS/generalUse/In_battle/ItemSprYInventory.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

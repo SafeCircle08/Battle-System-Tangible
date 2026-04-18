@@ -4,6 +4,8 @@
 #macro MAIN_MENU_SPECIAL 2
 #macro MAIN_MENU_INVENTORY 3
 
+#macro INVENTORY_MAX_X_ADDER 59
+
 function initializeInventoryAnimations() 
 {
 	inventoryXAdder = 0;
@@ -13,7 +15,7 @@ function initializeInventoryAnimations()
 	inventoryFadeIn = function()
 	{
 		inventoryXAdder += 7;
-		inventoryXAdder = clamp(inventoryXAdder, 0, 59);
+		inventoryXAdder = clamp(inventoryXAdder, 0, INVENTORY_MAX_X_ADDER);
 		inventoryAlpha += 0.05;
 		inventoryAlpha = clamp(inventoryAlpha, 0, 1);	
 	}
@@ -21,7 +23,7 @@ function initializeInventoryAnimations()
 	inventoryFadeOut = function()
 	{
 		if (inventoryXAdder > 0) { inventoryXAdder -= 5; }
-		inventoryXAdder = clamp(inventoryXAdder, 0, 59);
+		inventoryXAdder = clamp(inventoryXAdder, 0, INVENTORY_MAX_X_ADDER);
 		if (inventoryAlpha > 0) { inventoryAlpha -= 0.05; }
 		inventoryAlpha = clamp(inventoryAlpha, 0, 1);		
 	}
@@ -90,6 +92,10 @@ function __initializePlayerMainBattleMenuOptions() {
 	choosing_enchant_option = buildNewMainMenuOptions("(MGK)", sEnchantDeco, sMagicTextSprite, selectedEnchantOption, enchantingOption,
 			method(self, function() {}),
 			method(self, function() {}));
+			
+	choosing_dispel_option = buildNewMainMenuOptions("(DISPEL)", sDispelDeco, sDispelTextSprite, selectedDispelOption, dispelOption,
+			method(self, function() {}),
+			method(self, function() {}));
 	
 	//The global list of all the options inside the game
 	global.mainMenuOptions = {
@@ -97,12 +103,13 @@ function __initializePlayerMainBattleMenuOptions() {
 		choosing_enchant_option,
 		choosing_inventory_option,
 		choosing_heal_option,
-		choosing_pray_option
+		choosing_pray_option,
+		choosing_dispel_option,
 	};
 	
 	//The global list of the options the player can use in battle
 	global.settedMainBattleOptions[MAIN_MENU_BATTLE] = global.mainMenuOptions.choosing_battle_option;
 	global.settedMainBattleOptions[MAIN_MENU_DEFEND_old] = global.mainMenuOptions.choosing_enchant_option;
 	global.settedMainBattleOptions[MAIN_MENU_SPECIAL] = global.mainMenuOptions.choosing_pray_option;
-	global.settedMainBattleOptions[MAIN_MENU_INVENTORY] = global.mainMenuOptions.choosing_inventory_option;
+	global.settedMainBattleOptions[MAIN_MENU_INVENTORY] = global.mainMenuOptions.choosing_dispel_option;
 }

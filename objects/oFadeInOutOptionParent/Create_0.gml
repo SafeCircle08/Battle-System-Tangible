@@ -13,15 +13,13 @@ fadingIn = true;
 fadedIn = false;
 fadingOut = true;
 
-setTofadeIn = function()
-{
+setTofadeIn = function() {
 	fadingOut = false;
 	fadedIn = false;
 	fadingIn = true;
 }
 
-setToFadeOut = function()
-{
+setToFadeOut = function() {
 	battleDelay = 3;
 	fadedIn = true;
 	fadingOut = true;		

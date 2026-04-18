@@ -10,14 +10,7 @@ if (finishedEnchanting == false) {
 	}
 }
 
-if (showingInv) {
-	with (oBattleManager) {
-		if (other.canFadeInv) { inventoryFadeIn(); }
-		else { inventoryFadeOut(); } 
-		navigatingInventoryFunction(DONT_GET_INPUTS, CAN_NAVIGATE);
-	}
-	if (confirmPressed(false)) { placeItem(); }
-} else { with (oBattleManager) { inventoryFadeOut(); } }
+manageSpecialInventory(DONT_GET_INPUTS, CAN_NAVIGATE, placeItem);
 
 //Animationd
 if (fadingIn == true) && (fadedIn == false) { fadeIn(); }

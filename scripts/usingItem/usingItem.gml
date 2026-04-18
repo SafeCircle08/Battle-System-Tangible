@@ -38,6 +38,7 @@ function usingItem(_index) {
 	var _itemFunctions = _actualItem.itemProperties;
 	var _itemEnchants = _actualItem.enchants;
 	var _message;
+	
 	removeItemFromInventory(global.equippedItems, _index);
 
 	_message = _actualItem.outPutMessage;

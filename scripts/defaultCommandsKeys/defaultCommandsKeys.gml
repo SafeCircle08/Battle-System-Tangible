@@ -12,9 +12,9 @@ function confirmPressed(_playSound = true, _key = ord(global.keyBinds.confirm), 
 	return false;
 }
 
-function cancelPressed(_key = ord(global.keyBinds.cancel), _cancelSound = sndResetNavigation) {
+function cancelPressed(_playSound = true, _key = ord(global.keyBinds.cancel), _cancelSound = sndResetNavigation) {
 	if (keyboard_check_pressed(_key) && gettingGameInputs()) {
-		playSound(_cancelSound, SOUND_CHANNEL_1);
+		if (_playSound) playSound(_cancelSound, SOUND_CHANNEL_1);
 		return true;
 	}	
 	return false;

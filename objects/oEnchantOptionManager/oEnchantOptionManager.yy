@@ -13,7 +13,10 @@
     "name":"Enchanting",
     "path":"folders/Objects/PLAYER_&_BATTLE/BATTLE/MANAGERS/Enchanting.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oSpecialInventoryParent",
+    "path":"objects/oSpecialInventoryParent/oSpecialInventoryParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

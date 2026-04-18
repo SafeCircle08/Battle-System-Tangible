@@ -57,7 +57,7 @@ function easeOutBg(_finalAlpha = 0, _bgObj = oAttackBG)
 }
 
 //When you are in the sub menu and you press "X"
-function resetNavigation(_lastOption = 0, _sound = undefined, _resetMethod = function() {}) {
+function resetNavigation(_sound = undefined, _resetMethod = function() {}, _lastOption = oBattleManager.mainPressed) {
 	getTextInputs();
 	actualDrawAlpha = 0;
 	selected_option = _lastOption;
